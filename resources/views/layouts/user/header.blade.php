@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+<nav class="navbar navbar-expand-lg bg-primary navbar-light sticky-top p-0">
     <a href="{{url('/beranda')}}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
         <h2 class="m-3s text-primary">PANTI ASUHAN PUTRI ‘AISYIYAH</h2>
     </a>
@@ -12,9 +12,9 @@
                 <a href="{{url('/profil/sejarah')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil</a>
                 <div class="dropdown-menu bg-light m-0">
                     <a href="{{url('/profil/sejarah')}}" class="dropdown-item">Sejarah</a>
-                    <a href="quote.html" class="dropdown-item">Visi, Misi & Tujuan</a>
-                    <a href="team.html" class="dropdown-item">Kegiatan</a>
-                    <a href="testimonial.html" class="dropdown-item">Struktur Kepengurusan</a>
+                    <a href="{{url('/profil/visi')}}" class="dropdown-item">Visi, Misi & Tujuan</a>
+                    <a href="{{url('/profil/kegiatan')}}" class="dropdown-item">Kegiatan</a>
+                    <a href="{{url('/profil/struktur-kepengurusan')}}" class="dropdown-item">Struktur Kepengurusan</a>
                 </div>
             </div>
             <a href="about.html" class="nav-item nav-link">Galeri</a>
