@@ -38,7 +38,11 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Galeri;
+        $model->gambar = $request->gambar;
+        $model->save();
+
+        return redirect('galeri');
     }
 
     /**
@@ -60,7 +64,8 @@ class GaleriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Galeri::find($id);
+        return view('galeri.edit', compact('model'));
     }
 
     /**
@@ -72,7 +77,7 @@ class GaleriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = Galeri::find
     }
 
     /**
