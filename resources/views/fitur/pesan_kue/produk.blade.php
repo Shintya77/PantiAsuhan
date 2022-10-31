@@ -19,7 +19,9 @@
                             <div class="box">
                                 <span>{{$d->nama}}</span>
                                 <img src="{{$d->gambar}}" width="300" height="200">
-                                <h4>Rp. {{$d->harga}}</h4>
+                                <p>Harga Normal : Rp. {{$d->harga_normal}}</p>
+                                <p>Harga Tanggung : Rp. {{$d->harga_tanggung}}</p>
+                                <p>Harga Mini : Rp. {{$d->harga_mini}}</p>
                                 <a href="#" class="btn btn-primary btn-sm">Keranjang</a>
                                 <a class="btn btn-warning btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
                             </div>

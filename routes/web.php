@@ -31,3 +31,9 @@ Route::prefix('profil')->group(function () {
 Route::resource('produk', ProdukController::class);
 Route::get('/produk', [ProdukController::class, 'index']);
 Route::get('/produk/detail', [ProdukController::class, 'show']);
+Route::get('/pesan', function () {
+    return view('fitur.pesan_kue.pesan');
+});
+Route::get('/login_pesan_kue', function () {
+    return view('fitur.pesan_kue.login');
+});
