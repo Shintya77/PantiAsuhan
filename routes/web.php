@@ -23,7 +23,7 @@ use App\Http\Controllers\VisiController;
 Route::get('/beranda ',[BerandaController::class, 'beranda']);
 Route::prefix('profil')->group(function () {
     Route::get('/sejarah ',[SejarahController::class, 'sejarah']);
-    Route::get('/struktur-kepengurusan ',[StrukturController::class, 'struktur']);
+    Route::get('/struktur-kepengurusan',[KegiatanController::class, 'struktur']);
     Route::get('/visi ',[VisiController::class, 'visi']);
     Route::get('/kegiatan ',[KegiatanController::class, 'kegiatan']);
 });
