@@ -10,4 +10,8 @@ class KegiatanController extends Controller
         return view('fitur.user.profil.kegiatan', 
         ['title'=> 'Kegiatan Panti Asuhan Putri Aisyiyah']);
     }
+    public function struktur(){
+        return view('fitur.user.profil.struktur', 
+        ['title'=> 'Struktut Kepengurusan Panti Asuhan Putri Aisyiyah']);
+    }
 }

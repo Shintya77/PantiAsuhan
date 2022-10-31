@@ -4,10 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
+<<<<<<< HEAD
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\StrukturController;
 
+=======
+use App\Http\Controllers\ProdukController;
+>>>>>>> 1ec15702a389fd9ba0f9f849e493b34f1b24009a
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,13 +29,17 @@ use App\Http\Controllers\StrukturController;
 Route::get('/beranda ',[BerandaController::class, 'beranda']);
 Route::prefix('profil')->group(function () {
     Route::get('/sejarah ',[SejarahController::class, 'sejarah']);
-    Route::get('/struktur-kepengurusan ',[StrukturController::class, 'struktur']);
+    Route::get('/struktur-kepengurusan',[KegiatanController::class, 'struktur']);
     Route::get('/visi ',[VisiController::class, 'visi']);
     Route::get('/kegiatan ',[KegiatanController::class, 'kegiatan']);
 });
 
 
-
+Route::resource('produk', ProdukController::class);
 Route::get('/produk', [ProdukController::class, 'index']);
+<<<<<<< HEAD
 Route::resource('galeri', GaleriController::class);
 Route::resource('struktur', StrukturController::class);
+=======
+Route::get('/produk/detail', [ProdukController::class, 'show']);
+>>>>>>> 1ec15702a389fd9ba0f9f849e493b34f1b24009a
