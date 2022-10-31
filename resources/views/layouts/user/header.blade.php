@@ -20,7 +20,7 @@
             <a href="about.html" class="nav-item nav-link">Galeri</a>
             <a href="about.html" class="nav-item nav-link">Kegiatan</a>
             <a href="service.html" class="nav-item nav-link">Donasi</a>
-            <a href="project.html" class="nav-item nav-link">Pesan Kue</a>
+            <a href="\produk" class="nav-item nav-link">Pesan Kue</a>
         </div>
         <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
