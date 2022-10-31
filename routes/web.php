@@ -30,3 +30,4 @@ Route::prefix('profil')->group(function () {
 
 Route::resource('produk', ProdukController::class);
 Route::get('/produk', [ProdukController::class, 'index']);
+Route::get('/produk/detail', [ProdukController::class, 'show']);

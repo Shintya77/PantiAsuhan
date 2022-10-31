@@ -17,7 +17,7 @@ class ProdukController extends Controller
     {
          //
          $data = Produk::all();
-         return view('fitur.user.pesan_kue.produk', ['active'=>'active', 'title'=>'produk'], compact('data'));
+         return view('fitur.pesan_kue.produk', ['active'=>'active', 'title'=>'produk'], compact('data'));
     }
 
     /**
