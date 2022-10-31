@@ -5,6 +5,8 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\VisiController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\StrukturController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,5 @@ Route::prefix('profil')->group(function () {
 
 
 Route::get('/produk', [ProdukController::class, 'index']);
+Route::resource('galeri', GaleriController::class);
+Route::resource('struktur', StrukturController::class);
