@@ -4,12 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
-<<<<<<< HEAD
 use App\Http\Controllers\ProdukController;
-=======
-use App\Http\Controllers\VisiController;
->>>>>>> 2b80ccc09d891b667bff210440df7a5c808abdf8
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
