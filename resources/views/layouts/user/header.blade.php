@@ -22,6 +22,12 @@
             <a href="service.html" class="nav-item nav-link text-white">Donasi</a>
             <a href="\produk" class="nav-item nav-link text-white">Pesan Kue</a>
         </div>
-        <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
+        <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Login</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="3" class="dropdown-item ">Login Donatur</a>
+                    <a href="{{url('/login_pesan_kue')}}" class="dropdown-item ">Login Pesan Kue</a>
+                </div>
+        </div>
     </div>
 </nav>

@@ -36,3 +36,16 @@ Route::get('/produk', [ProdukController::class, 'index']);
 Route::resource('galeri', GaleriController::class);
 Route::resource('struktur', StrukturController::class);
 Route::get('/produk/detail', [ProdukController::class, 'show']);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Route::get('/pesan', function () {
+    return view('fitur.pesan_kue.pesan');
+});
+Route::get('/login_pesan_kue', function () {
+    return view('fitur.pesan_kue.login');
+});
+=======
+>>>>>>> 1ec15702a389fd9ba0f9f849e493b34f1b24009a
+>>>>>>> 570022cf54a4747df7859516a2c36a8849fbf0ee
+>>>>>>> fbb9e06560d34927cf1479e8c2a8d8a6e8ae78bb
