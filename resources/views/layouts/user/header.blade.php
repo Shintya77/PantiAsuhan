@@ -9,9 +9,9 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{url('/beranda')}}" class="nav-item nav-link active">Beranda</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil</a>
+                <a href="{{url('/profil/sejarah')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil</a>
                 <div class="dropdown-menu bg-light m-0">
-                    <a href="feature.html" class="dropdown-item">Sejarah</a>
+                    <a href="{{url('/profil/sejarah')}}" class="dropdown-item">Sejarah</a>
                     <a href="quote.html" class="dropdown-item">Visi, Misi & Tujuan</a>
                     <a href="team.html" class="dropdown-item">Kegiatan</a>
                     <a href="testimonial.html" class="dropdown-item">Struktur Kepengurusan</a>
