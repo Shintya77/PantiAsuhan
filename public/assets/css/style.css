@@ -749,3 +749,113 @@
     color: #f6b024;
   }
   
+/* why us */
+.why-us {
+    padding-top: 10px;
+  }
+  .why-us .box {
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.3s;
+  }
+  .why-us .box span {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #FF7F00;
+  }
+  .why-us .box h4 {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    margin: 20px 0;
+    color: #191919;
+  }
+  .why-us .box p {
+    color: #aaaaaa;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  .why-us .box:hover {
+    background: #fac553;
+    padding: 30px 30px 50px 30px;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+  }
+  .why-us .box:hover span, .why-us .box:hover h4, .why-us .box:hover p {
+    color: #fff;
+  }
+  
+  /* Sections General */
+  section {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+  }
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #191919;
+    position: relative;
+    z-index: 2;
+  }
+  .section-title span {
+    position: absolute;
+    top: 30px;
+    color: #f4f4f4;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 52px;
+    text-transform: uppercase;
+    line-height: 0;
+  }
+  .section-title p {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 575px) {
+    .section-title h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    .section-title span {
+      font-size: 38px;
+    }
+  }
+  
+  /* box detail */
+  .about .info-box {
+    color: #444444;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 20px 10px 50px 20px;
+  }
+  .about .info-box h2 {
+    font-size: 30px;
+    color: #FF7F00;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  .about .info-box h3 {
+    font-size: 25px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  .about .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }

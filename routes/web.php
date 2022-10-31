@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,5 @@ Route::prefix('profil')->group(function () {
 });
 
 
-
+Route::resource('produk', ProdukController::class);
 Route::get('/produk', [ProdukController::class, 'index']);
