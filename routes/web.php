@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
-
+use App\Http\Controllers\ProdukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +19,7 @@ use App\Http\Controllers\KegiatanController;
 Route::get('/beranda', function () {
     return view('fitur.user.beranda');
 });
-Route::get('/beranda',[BerandaController::class, 'beranda']);
+
 Route::prefix('profil')->group(function () {
     Route::get('/sejarah ',[SejarahController::class, 'sejarah']);
     Route::get('/struktur-kepengurusan ',[StrukturController::class, 'struktur']);
@@ -27,3 +27,6 @@ Route::prefix('profil')->group(function () {
     Route::get('/kegiatan ',[KegiatanController::class, 'kegiatan']);
 });
 
+
+
+Route::get('/produk', [ProdukController::class, 'index']);
