@@ -29,7 +29,7 @@ class GaleriController extends Controller
     public function create()
     {
         $model = new Galeri;
-        return view('fitur.admin.tambahGaleri', compact('model'));
+        return view('fitur.admin.profil.galeri.tambah', compact('model'));
     }
 
     /**
@@ -40,10 +40,15 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Galeri;
-        $model->gambar = $request->gambar;
-        $model->save();
+        dd($request);
+        if ($request->file('gambar')){
+            $image_name = $request->file('gambar')->store('galeri', 'public');
+        }
 
+        $model = new Galeri;
+        $model->gambar= $image_name;
+
+        $model->save();
         return redirect('galeri');
     }
 
@@ -67,7 +72,7 @@ class GaleriController extends Controller
     public function edit($id)
     {
         $model = Galeri::find($id);
-        return view('galeri.edit', compact('model'));
+        return view('fitur.admin.profil.galeri.edit', compact('model'));
     }
 
     /**
@@ -80,6 +85,14 @@ class GaleriController extends Controller
     public function update(Request $request, $id)
     {
         $model = Galeri::find($id);
+        if ($model->gambar && file_exists(storage_path('app/public/'.$model->galeri))){
+            \Storage::delete('public/'. $model->galeri);
+        }
+        $image_name = $request->file('gambar')->store('galeri', 'public');
+        $model->gambar = $image_name;
+
+        $model->save();
+        return redirect('galeri');
     }
 
     /**
@@ -90,6 +103,8 @@ class GaleriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Galeri::find($id);
+        $model->delete();
+        return redirect('galeri');
     }
 }

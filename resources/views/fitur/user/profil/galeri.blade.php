@@ -10,7 +10,7 @@
                 <h1 class="mb-4">Experienced Team Members</h1>
             </div>
             <div>
-                <a class = "btn btn-info" href="{{url('galeri/create'}}">Tambah</a>
+                <a class="btn btn-info" href="{{url('galeri/create')}}">Tambah</a>
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>

@@ -17,7 +17,7 @@
                     <a href="{{url('/struktur')}}" class="dropdown-item ">Struktur Kepengurusan</a>
                 </div>
             </div>
-            <a href="{{url('/struktur')}}" class="nav-item nav-link text-white">Galeri</a>
+            <a href="{{url('/galeri')}}" class="nav-item nav-link text-white">Galeri</a>
             <a href="about.html" class="nav-item nav-link text-white">Kegiatan</a>
             <a href="service.html" class="nav-item nav-link text-white">Donasi</a>
             <a href="\produk" class="nav-item nav-link text-white">Pesan Kue</a>

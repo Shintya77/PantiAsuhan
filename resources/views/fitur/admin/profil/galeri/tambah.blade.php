@@ -2,7 +2,7 @@
 
 <form method="POST" action = "{{ url('galeri')}}">
     @csrf
-    Gambar : <input type="text" name="gambar"><br/>>
+    Gambar : <input type="file" name="gambar"><br/>>
     <button type="submit">SIMPAN</button>
 </from>
 @section('content')

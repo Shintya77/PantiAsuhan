@@ -13,9 +13,10 @@ class CreateGaleriTable extends Migration
      */
     public function up()
     {
-        Schema::create('galeri', function (Blueprint $table) {
+        Schema::create('galeris', function (Blueprint $table) {
             $table->id();
             $table->string('gambar');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateGaleriTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeri');
+        Schema::dropIfExists('galeris');
     }
 }
