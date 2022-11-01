@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStruktursTable extends Migration
+class CreateStrukturTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,6 +17,7 @@ class CreateStruktursTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('jabatan');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
