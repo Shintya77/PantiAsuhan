@@ -8,7 +8,6 @@
             <section id="about" class="about">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
-                        <p><p><p><p><p><p><p><p></p></p></p></p></p></p></p></p>
                         <span>Produk</span>
                         <h2>Produk</h2>
                         <p>Berbagai macam produk kue kami sediakan</p>
