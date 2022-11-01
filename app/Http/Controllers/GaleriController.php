@@ -16,7 +16,7 @@ class GaleriController extends Controller
     {
         $galeri = Galeri::all();
        
-        return view ('fitur.user.profil.galeri', [
+        return view ('fitur.user.galeri', [
             'data' => $galeri
         ]);
     }
