@@ -12,9 +12,9 @@
               <p>
                <br>
                <br>
-               <li><a href="#">Situs </a></li>
-                <strong>Phone:</strong> 082*********<br>
-                <strong>Email:</strong> Email Panti<br>
+               {{-- <li><a href="#">Situs </a></li> --}}
+                <strong>Phone :</strong> 0341 582717<br>
+                <strong>Email    : </strong><a href="mailto:aisyiyahpaputri@gmail.com">aisyiyahpaputri@gmail.com</a><br>
               </p>
           </div>
 
@@ -22,16 +22,16 @@
             <h4>Kontak Kami</h4><br><br>
             <div class="">
                    <div class="m-2 d-flex">
-                    <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href=""><i class="fab fa-facebook-f"></i></a> 
-                    <p>ig panti</p>
+                    <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://www.instagram.com/pa_aisyiyah_malang/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/pa_aisyiyah_malang/">pa_aisyiyah_malang</a>
                   </div>
                     <div class="m-2 d-flex">
                       <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href=""><i class="fab fa-facebook-f"></i></a>
-                      <p>fb panti</p>
+                      <a href="" >PA Putri AIsyiyah</a>
                     </div>
                     <div class="m-2 d-flex">
-                      <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href=""><i class="fab fa-youtube"></i></a>
-                      <p>yt panti</p>
+                      <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg"><i class="fab fa-youtube"></i></a>
+                      <a href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg">Paputri Aisyiyah</a>
                     </div>
 
                    
