@@ -15,6 +15,13 @@ class GaleriSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('galeris')->insert([
+            'gambar' => ''
+        ],
+        [
+            'gambar' => 'Aning Rochani',
+        ],
         
+        );
     }
 }
