@@ -29,7 +29,7 @@ class StrukturController extends Controller
     public function create()
     {
         $model = new Struktur;
-        return view('fitur.admin.tambah', compact('model'));
+        return view('fitur.admin.profil.struktur.tambah', compact('model'));
     }
 
     /**
@@ -72,7 +72,7 @@ class StrukturController extends Controller
     public function edit(Struktur $struktur)
     {
         $model = Struktur::find($id);
-        return view('fitur.admin.edit', compact('model'));
+        return view('fitur.admin.profil.struktur.edit', compact('model'));
     }
 
     /**
