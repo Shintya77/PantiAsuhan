@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Galeri;
+use App\Models\Kegiatan;
 
-class GaleriController extends Controller
+class KegiatanDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,10 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        $galeri = Galeri::all();
+        $kegiatan = Kegiatan::all();
        
-        return view ('fitur.user.galeri', [
-            'data' => $galeri
+        return view ('fitur.user.kegiatanDetail', [
+            'data' => $kegiatan
         ]);
     }
 
@@ -28,8 +28,8 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        $model = new Galeri;
-        return view('fitur.admin.profil.galeri.tambah', compact('model'));
+        $kegiatan = new Kegiatan;
+        return view('fitur.admin.profil.kegiatan.tambah', compact('kegiatan'));
     }
 
     /**
@@ -40,19 +40,17 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        // $img->resize(100, 100, function ($constraint) {
-        //     $constraint->aspectRatio();
-        // })->save($destinationPath.'/'.$input['imagename']);
-
-        if ($request->file('gambar')){
-            
+        if ($request->file('foto')){
+            $image_name = $request->file('foto')->store('foto', 'public');
         }
-        $image_name = $request->file('gambar')->store('galeri', 'public');
-        $model = new Galeri;
-        $model->gambar= $image_name;
 
-        $model->save();
-        return redirect('galeri');
+        $kegiatan = new Kegiatan;
+        $kegiatan->foto = $image_name;
+        $kegiatan->judul = $request->judul;
+        $kegiatan->deskripsi = $request->deskripsi;
+        $kegiatan->save();
+
+        return redirect('kegiatan');
     }
 
     /**
@@ -74,8 +72,8 @@ class GaleriController extends Controller
      */
     public function edit($id)
     {
-        $model = Galeri::find($id);
-        return view('fitur.admin.profil.galeri.edit', compact('model'));
+        $kegiatan = Kegiatan::find($id);
+        return view('fitur.admin.profil.kegiatan.edit', compact('kegiatan'));
     }
 
     /**
@@ -87,15 +85,19 @@ class GaleriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = Galeri::find($id);
-        if ($model->gambar && file_exists(storage_path('app/public/'.$model->galeri))){
-            \Storage::delete('public/'. $model->galeri);
+        $kegiatan = Kegiatan::find($id);
+        if ($kegiatan->foto && file_exists(storage_path('app/public/'.$kegiatan->foto))){
+            \Storage::delete('public/'. $kegiatan->foto);
         }
-        $image_name = $request->file('gambar')->store('galeri', 'public');
-        $model->gambar = $image_name;
 
-        $model->save();
-        return redirect('galeri');
+        $image_name = $request->file('foto')->store('foto', 'public');
+
+        $kegiatan->name = $request->name;
+        $kegiatan->judul = $image_name;
+        $kegiatan->deskripsi = $request->deskripsi;
+        $kegiatan->save();
+
+        return redirect('kegiatan');
     }
 
     /**
@@ -106,8 +108,8 @@ class GaleriController extends Controller
      */
     public function destroy($id)
     {
-        $model = Galeri::find($id);
-        $model->delete();
-        return redirect('galeri');
+        $data = Kegiatan::find($id);
+        $data->delete();
+        return redirect('kegiatan');
     }
 }

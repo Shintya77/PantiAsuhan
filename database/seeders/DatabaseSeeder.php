@@ -15,9 +15,14 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+<<<<<<< HEAD
         $this->call([
             // ProdukSeeder::class,
             HargaSeeder::class,
+=======
+        $this -> call([
+            StrukturSeeder::class,
+>>>>>>> 13915a72f8db11866cc994c3212ad630b7cce561
         ]);
     }
 }

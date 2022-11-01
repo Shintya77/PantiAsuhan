@@ -9,8 +9,12 @@ use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
+<<<<<<< HEAD
 use App\Http\Controllers\PesanController;
 
+=======
+use App\Http\Controllers\KegiatanDetailController;
+>>>>>>> 13915a72f8db11866cc994c3212ad630b7cce561
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +38,7 @@ Route::prefix('profil')->group(function () {
 });
 
 
+<<<<<<< HEAD
 
 
 Route::resource('galeri', GaleriController::class);
@@ -58,3 +63,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth', 'Pesan'])->group(function (){
     
 });
+=======
+Route::resource('produk', ProdukController::class);
+Route::get('/produk', [ProdukController::class, 'index']);
+Route::resource('galeri', GaleriController::class);
+Route::resource('struktur', StrukturController::class);
+Route::resource('kegiatan', KegiatanDetailController::class);
+Route::get('/produk/detail', [ProdukController::class, 'show']);
+>>>>>>> 13915a72f8db11866cc994c3212ad630b7cce561

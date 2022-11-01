@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Struktur;
-
+use Illuminate\Http\Request;
 
 class StrukturController extends Controller
 {
@@ -15,10 +14,11 @@ class StrukturController extends Controller
      */
     public function index()
     {
-        $data = Struktu::all();
-        
-        return view('fitur.user.profil.struktur', compact('data'));
-
+        $struktur = Struktur::all();
+       
+        return view ('fitur.user.profil.struktur', [
+            'data' => $struktur
+        ]);
     }
 
     /**
@@ -29,7 +29,7 @@ class StrukturController extends Controller
     public function create()
     {
         $model = new Struktur;
-        return view('fitur.admin.tambahStruktur', compact('model'));
+        return view('fitur.admin.profil.struktur.tambah', compact('model'));
     }
 
     /**
@@ -40,16 +40,25 @@ class StrukturController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Struktur;
+        $data->name = $request->name;
+        $data->jabatan = $request->jabatan;
+        $data->keterangan = $request->keterangan;
+        $data->save();
+
+        return redirect('struktur');
+        
+
+    
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Struktur $struktur)
     {
         //
     }
@@ -57,34 +66,43 @@ class StrukturController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Struktur $struktur)
     {
-        //
+        $model = Struktur::find($id);
+        return view('fitur.admin.profil.struktur.edit', compact('model'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Struktur $struktur)
     {
-        //
+        $data = Struktur::find($id);
+        $data->name = $request->name;
+        $data->jabatan = $request->jabatan;
+        $data->keterangan = $request->keterangan;
+        $data->save();
+
+        return redirect('struktur');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Struktur $struktur)
     {
-        //
+        $data = Struktur::find($id);
+        $data->delete();
+        return redirect('struktur');
     }
 }

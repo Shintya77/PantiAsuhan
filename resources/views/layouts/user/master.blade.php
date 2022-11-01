@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Solartec - Renewable Energy Website Template</title>
+    <title>Panti Asuhan Putri 'Aisyiyah Malang</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{asset('assets')}}/img/favicon.ico" rel="icon">
+    <link href="{{asset('assets')}}/img/fav.jpg" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,10 +47,10 @@
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>email panti</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>aisyiyahpaputri@gmail.com</p>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>nomor panti</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>0341 582717</p>
                 </div>
             </div>
             {{-- <div class="col-lg-5 px-5 text-end">

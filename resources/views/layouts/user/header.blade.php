@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary navbar-light sticky-top p-0">
     <a href="{{url('/beranda')}}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-        <h2 class="m-3s text-white">PANTI ASUHAN PUTRI ‘AISYIYAH</h2>
+        <h6 class="m-3s text-white">PANTI ASUHAN PUTRI ‘AISYIYAH</h6>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -14,12 +14,13 @@
                     <a href="{{url('/profil/sejarah')}}" class="dropdown-item ">Sejarah</a>
                     <a href="{{url('/profil/visi')}}" class="dropdown-item ">Visi, Misi & Tujuan</a>
                     <a href="{{url('/profil/kegiatan')}}" class="dropdown-item ">Kegiatan</a>
-                    <a href="{{url('/profil/struktur-kepengurusan')}}" class="dropdown-item ">Struktur Kepengurusan</a>
+                    <a href="{{url('/struktur')}}" class="dropdown-item ">Struktur Kepengurusan</a>
                 </div>
             </div>
-            <a href="about.html" class="nav-item nav-link text-white">Galeri</a>
-            <a href="about.html" class="nav-item nav-link text-white">Kegiatan</a>
+            <a href="{{url('/galeri')}}" class="nav-item nav-link text-white">Galeri</a>
+            <a href="{{url('/kegiatan')}}" class="nav-item nav-link text-white">Kegiatan</a>
             <a href="service.html" class="nav-item nav-link text-white">Donasi</a>
+<<<<<<< HEAD
             <a href="/produk" class="nav-item nav-link text-white">Pesan Kue</a>
         </div>
         <div class="nav-item dropdown">
@@ -28,6 +29,10 @@
                     <a href="3" class="dropdown-item ">Login Donatur</a>
                     <a href="{{url('/login_pesan_kue')}}" class="dropdown-item ">Login Pesan Kue</a>
                 </div>
+=======
+            <a href="\produk" class="nav-item nav-link text-white">Pesan Kue</a>
+            <a href="#" class=" nav-link text-white" data-bs-toggle="dropdown">Login</a>
+>>>>>>> 13915a72f8db11866cc994c3212ad630b7cce561
         </div>
     </div>
 </nav>
