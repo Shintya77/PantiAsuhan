@@ -13,7 +13,12 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
+    {
+        $this->middleware('Pesan')->only('show');
+    }
+
+     public function index()
     {
          //
          $data = Produk::all();
