@@ -14,9 +14,11 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        $data= Galeri::all();
-
-        return view('fitur.user.profil.galeri', compact(data));
+        $galeri = Galeri::all();
+       
+        return view ('fitur.user.profil.galeri', [
+            'data' => $galeri
+        ]);
     }
 
     /**
@@ -26,7 +28,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        $model =new Galeri;
+        $model = new Galeri;
         return view('fitur.admin.tambahGaleri', compact('model'));
     }
 
@@ -77,7 +79,7 @@ class GaleriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = Galeri::find
+        $model = Galeri::find($id);
     }
 
     /**
