@@ -17,17 +17,11 @@
                     <a href="{{url('/struktur')}}" class="dropdown-item ">Struktur Kepengurusan</a>
                 </div>
             </div>
-            <a href="about.html" class="nav-item nav-link text-white">Galeri</a>
+            <a href="{{url('/struktur')}}" class="nav-item nav-link text-white">Galeri</a>
             <a href="about.html" class="nav-item nav-link text-white">Kegiatan</a>
             <a href="service.html" class="nav-item nav-link text-white">Donasi</a>
             <a href="\produk" class="nav-item nav-link text-white">Pesan Kue</a>
-        </div>
-        <div class="nav-item dropdown">
-                <a href="#" class=" nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Login</a>
-                <div class="dropdown-menu bg-light m-0">
-                    <a href="3" class="dropdown-item ">Login Donatur</a>
-                    <a href="{{url('/login_pesan_kue')}}" class="dropdown-item ">Login Pesan Kue</a>
-                </div>
+            <a href="#" class=" nav-link text-white" data-bs-toggle="dropdown">Login</a>
         </div>
     </div>
 </nav>

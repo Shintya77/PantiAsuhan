@@ -23,7 +23,7 @@ class StrukturSeeder extends Seeder
     //    ]);
         DB::table('strukturs')->insert([
             'name' => 'Aning Rochani',
-               'jabatan' => 'Kepala Panti'
+            'jabatan' => 'Kepala Panti'
         ]);
     }
 }
