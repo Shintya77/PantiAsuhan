@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\Harga;
 use DB;
 
 class ProdukController extends Controller
@@ -15,13 +16,19 @@ class ProdukController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('Pesan')->only('show');
+        $this->middleware('guest')->except('logout');
     }
-
+    protected function redirectTo(){
+        if (Auth::user()->level == 'pemesan'){
+            return 'produk';
+        }else {
+            return '/beranda';
+        }
+    }
      public function index()
     {
          //
-         $data = Produk::all();
+         $data = Harga::all();
          return view('fitur.pesan_kue.produk', ['active'=>'active', 'title'=>'produk'], compact('data'));
     }
 
@@ -55,9 +62,9 @@ class ProdukController extends Controller
     public function show($id)
     {
          //menampilkan detail data siswa berdasarkan Id siswa
-         $produk = DB::table('produk')->where('id',$id)->first();
+         $harga = Harga::where('id',$id)->first();
          $title = 'Detail Produk';
-         return view('fitur.pesan_kue.detail', compact('produk', 'title'));
+         return view('fitur.pesan_kue.detail', compact('harga', 'title'));
     }
 
     /**

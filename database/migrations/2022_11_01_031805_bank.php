@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TableProduk extends Migration
+class Bank extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class TableProduk extends Migration
      */
     public function up()
     {
-        Schema::create('produk', function (Blueprint $table) {
-            $table->id();
-            $table->String('nama', 25);
+        Schema::create('bank', function (Blueprint $table) {
+            $table->id('id');
+            $table->String('nama_bank', 25);
+            $table->String('norekening');
             $table->String('gambar');
-            $table->integer('harga_normal');
-            $table->integer('harga_tanggung')->nullable();
-            $table->integer('harga_mini')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class TableProduk extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produk');
+        Schema::dropIfExists('bank');
     }
 }
