@@ -24,9 +24,9 @@
                 <tbody>
                   @foreach ($data as $str)
                   <tr>
-                  <td>{{ $str->nama}}</td>
-                  <td>{{ $str->jabatan }}</td>
-                  <td>{{ $str->keterangan }}</td>
+                  <td class="text-black">{{ $str->name}}</td>
+                  <td class="text-black">{{ $str->jabatan }}</td>
+                  <td class="text-black">{{ $str->keterangan }}</td>
                   <td><a class="btn btn-info" href="{{url('struktur/'.$str->id.'/edit')}}">Edit</td>
                   <td>
                     <form action="{{url('struktur/'.$str->id)}}" method="POST">

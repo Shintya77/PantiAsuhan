@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TabelStruktur extends Migration
+class CreateStruktursTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class TabelStruktur extends Migration
      */
     public function up()
     {
-        Schema::create('struktur', function (Blueprint $table) {
+        Schema::create('strukturs', function (Blueprint $table) {
             $table->id();
-            $table->String('nama');
-            $table->String('jabatan');
-            $table->String('keterangan');
+            $table->string('name');
+            $table->string('jabatan');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class TabelStruktur extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('strukturs');
     }
 }

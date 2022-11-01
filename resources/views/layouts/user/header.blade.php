@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary navbar-light sticky-top p-0">
     <a href="{{url('/beranda')}}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-        <h2 class="m-3s text-white">PANTI ASUHAN PUTRI ‘AISYIYAH</h2>
+        <h6 class="m-3s text-white">PANTI ASUHAN PUTRI ‘AISYIYAH</h6>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,7 @@
                     <a href="{{url('/profil/sejarah')}}" class="dropdown-item ">Sejarah</a>
                     <a href="{{url('/profil/visi')}}" class="dropdown-item ">Visi, Misi & Tujuan</a>
                     <a href="{{url('/profil/kegiatan')}}" class="dropdown-item ">Kegiatan</a>
-                    <a href="{{url('/profil/struktur-kepengurusan')}}" class="dropdown-item ">Struktur Kepengurusan</a>
+                    <a href="{{url('/struktur')}}" class="dropdown-item ">Struktur Kepengurusan</a>
                 </div>
             </div>
             <a href="about.html" class="nav-item nav-link text-white">Galeri</a>
@@ -23,7 +23,7 @@
             <a href="\produk" class="nav-item nav-link text-white">Pesan Kue</a>
         </div>
         <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Login</a>
+                <a href="#" class=" nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Login</a>
                 <div class="dropdown-menu bg-light m-0">
                     <a href="3" class="dropdown-item ">Login Donatur</a>
                     <a href="{{url('/login_pesan_kue')}}" class="dropdown-item ">Login Pesan Kue</a>

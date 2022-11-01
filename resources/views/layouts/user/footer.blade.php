@@ -20,11 +20,19 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Kontak Kami</h4><br><br>
-            <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> <br>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a> <br>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a> <br>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> <br>
+            <div class="">
+                   <div class="m-2 d-flex">
+                    <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href=""><i class="fab fa-facebook-f"></i></a> 
+                    <p>ig panti</p>
+                  </div>
+                    <div class="m-2 d-flex">
+                      <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href=""><i class="fab fa-facebook-f"></i></a>
+                      <p>fb panti</p>
+                    </div>
+                    <div class="m-2 d-flex">
+                      <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href=""><i class="fab fa-youtube"></i></a>
+                      <p>yt panti</p>
+                    </div>
 
                    
                 </div>
