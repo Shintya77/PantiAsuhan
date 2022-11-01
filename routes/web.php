@@ -8,6 +8,7 @@ use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\KegiatanDetailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,4 +36,5 @@ Route::resource('produk', ProdukController::class);
 Route::get('/produk', [ProdukController::class, 'index']);
 Route::resource('galeri', GaleriController::class);
 Route::resource('struktur', StrukturController::class);
+Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/produk/detail', [ProdukController::class, 'show']);
