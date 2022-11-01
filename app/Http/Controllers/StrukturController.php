@@ -15,7 +15,7 @@ class StrukturController extends Controller
      */
     public function index()
     {
-        $data = Struktu::all();
+        $data = Struktur::all();
         
         return view('fitur.user.profil.struktur', compact('data'));
 
@@ -29,7 +29,7 @@ class StrukturController extends Controller
     public function create()
     {
         $model = new Struktur;
-        return view('fitur.admin.tambahStruktur', compact('model'));
+        return view('fitur.admin.struktur.tambah', compact('model'));
     }
 
     /**
@@ -40,7 +40,13 @@ class StrukturController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Struktur;
+        $model->nama = $request->nama;
+        $model->jabatan = $request->jabatan;
+        $model->keterangan = $request->keterangan;
+        $model->save();
+
+        return redirect('struktur');
     }
 
     /**
@@ -62,7 +68,8 @@ class StrukturController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Struktur::find($id);
+        return view('fitur.admin.struktur.edit', compact('model'));
     }
 
     /**
@@ -74,7 +81,13 @@ class StrukturController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = Struktur::find($id);
+        $model->nama = $request->nama;
+        $model->jabatan = $request->jabatan;
+        $model->keterangan = $request->keterangan;
+        $model->save();
+
+        return redirect('struktur');
     }
 
     /**
@@ -85,6 +98,8 @@ class StrukturController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Struktur::find($id);
+        $model->delete();
+        return redirect('struktur');
     }
 }
