@@ -40,11 +40,14 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        if ($request->file('gambar')){
-            $image_name = $request->file('gambar')->store('galeri', 'public');
-        }
+        // $img->resize(100, 100, function ($constraint) {
+        //     $constraint->aspectRatio();
+        // })->save($destinationPath.'/'.$input['imagename']);
 
+        if ($request->file('gambar')){
+            
+        }
+        $image_name = $request->file('gambar')->store('galeri', 'public');
         $model = new Galeri;
         $model->gambar= $image_name;
 

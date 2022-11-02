@@ -13,18 +13,19 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
+                    {{-- <th></th>
                     <th></th>
-                    <th></th>
-                    <th></th>
+                    <th></th> --}}
                   </tr>
                 </thead>
                 <tbody>
-                  {{-- @foreach ($data as $gambar)
+                  @foreach ($data as $gambar)
                   <tr>
-                  <td>{{ $gambar-> }}</td>
-                  <td>{{ $gambar-> }}</td>
-                  <td>{{ $gambar-> }}</td>
-                  @endforeach --}}
+                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
+                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
+                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
+                  </tr>
+                  @endforeach
                 </tbody>
               </table>
         </div>

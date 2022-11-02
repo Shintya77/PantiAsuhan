@@ -1,7 +1,7 @@
 @extends('layouts.user.master')
 
 @section('content')
-<form method="POST" action="{{url('struktur')}}">
+<form method="POST" action = "/kegiatan" enctype="multipart/form-data">
    @csrf
    foto : <input type="file" name="foto"><br>
    judul : <input type="text" name="judul"><br>

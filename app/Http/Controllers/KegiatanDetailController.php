@@ -40,7 +40,7 @@ class KegiatanDetailController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->file('Ffoto')){
+        if ($request->file('foto')){
             $image_name = $request->file('foto')->store('foto', 'public');
         }
 
