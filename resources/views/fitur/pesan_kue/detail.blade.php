@@ -12,7 +12,6 @@
         </div>
 
         <div class="row content">
-            <form action="/keranjang" method="POST" enctype="multipart/form-data">
                 <div class="col-lg-4" data-aos="fade-up">
                     <div class="swiper-slide"><img src="{{asset($harga->produk->gambar)}}" class="img-fluid" alt=""></div>
                 </div>
@@ -36,10 +35,11 @@
                                         <td>Jumlah Pesanan</td>
                                         <td>:</td>
                                         <td>
-                                                <input type="text" name="jumlah_pesan" class="form-control" required="">
-                                        </td>
-                                        <td>
+                                            <form method="post" action="{{ url('\keranjang') }}/{{ $harga->id }}" >
+                                            @csrf
+                                            <input type="text" name="jumlah_pesan" class="form-control" required="">
                                             <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Masukkan Keranjang</button>
+                                            </form>
                                         </td>
                                     </tr>
 
