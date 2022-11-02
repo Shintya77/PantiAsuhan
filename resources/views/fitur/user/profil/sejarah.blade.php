@@ -5,8 +5,8 @@
  <!-- Carousel Start -->
  <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
   <div class="owl-carousel header-carousel position-relative">
-      <div class="owl-carousel-item position-relative" data-dot="<img src='{{asset('assets')}}/img/tempat/bg1.jpeg'>">
-          <img class="img-fluid" src="{{asset('assets')}}/img/carousel-1.jpg" alt="">
+      <div class="owl-carousel-item position-relative" data-dot="<img src='{{asset('assets')}}/img/background.jpeg'>">
+          <img class="img-fluid" src="{{asset('assets')}}/img/background.jpeg" alt="">
           <div class="owl-carousel-inner">
               <div class="container">
                   <div class="row justify-content-center">
