@@ -22,8 +22,8 @@
                   @foreach ($data as $gambar)
                   <tr>
                   <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
-                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
-                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
+                  {{-- <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
+                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td> --}}
                   </tr>
                   @endforeach
                 </tbody>
