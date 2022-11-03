@@ -9,25 +9,22 @@
                 <h1 class="mb-4">Galeri Panti Asuhan</h1>
             </div>
             <div>
-                <a class="btn btn-info" href="{{url('galeri/create')}}">Tambah</a>
-            <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    {{-- <th></th>
-                    <th></th>
-                    <th></th> --}}
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($data as $gambar)
-                  <tr>
-                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
-                  {{-- <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td>
-                  <td><img src="{{('storage/'.$gambar -> gambar)}}" alt=""></td> --}}
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
+                {{-- <a class="btn btn-info" href="{{url('galeri/create')}}">Tambah</a>
+             --}}
+              <div class="row">
+                @foreach ($data as $gambar)
+                <div class="col-lg-4 col-sm-4">
+                  <div class="card mb-3">
+                    <img src="{{('storage/'.$gambar -> gambar)}}" class="card-img-top" alt="...">
+                    {{-- <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div> --}}
+                  </div>
+                </div>
+                @endforeach
+              </div>
         </div>
         </div>
     </div>

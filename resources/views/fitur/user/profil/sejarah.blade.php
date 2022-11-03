@@ -5,14 +5,14 @@
  <!-- Carousel Start -->
  <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
   <div class="owl-carousel header-carousel position-relative">
-      <div class="owl-carousel-item position-relative" data-dot="<img src='{{asset('assets')}}/img/carousel-1.jpg'>">
-          <img class="img-fluid" src="{{asset('assets')}}/img/carousel-1.jpg" alt="">
+      <div class="owl-carousel-item position-relative" data-dot="<img src='{{asset('assets')}}/img/background.jpeg'>">
+          <img class="img-fluid" src="{{asset('assets')}}/img/background.jpeg" alt="">
           <div class="owl-carousel-inner">
               <div class="container">
-                  <div class="row justify-content-start">
-                      <div class="col-10 col-lg-8">
-                          <h1 class="display-2 text-white animated slideInDown">PROFIL PANTI ASUHAN</h1>
-                          <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                  <div class="row justify-content-center">
+                      <div class="col-10 col-lg-8 text-center">
+                          <h1 class=" text-white animated slideInDown">PROFIL PANTI ASUHAN</h1>
+                          <p class=" fw-medium text-white mb-4 pb-3">
                             Panti asuhan adalah suatu lembaga usaha kesejahteraan sosial yang mempunyai tanggung jawab untuk memberikan pelayanan kesejahteraan sosial kepada anak telantar dengan melaksanakan penyantunan dan pengentasan anak telantar, memberikan pelayanan pengganti fisik, mental, dan sosial pada anak asuh, sehingga memperoleh kesempatan yang luas, tepat dan memadai bagi perkembangan kepribadiannya sesuai dengan yang diharapkan sebagai bagian dari generasi penerus cita-cita bangsa dan sebagai insan yang akan turut serta aktif di dalam bidang pembangunan nasional
                           </p>
                       </div>

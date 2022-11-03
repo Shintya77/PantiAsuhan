@@ -93,7 +93,7 @@
             </div>
             <div class="row content-center">
                 <div class="col-10 col-lg-8">
-                    <a href="" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft text-white">Read More</a>
+                    <a href="{{url('/kegiatan')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft text-white">Read More</a>
                 </div>
             </div>
         </div>
