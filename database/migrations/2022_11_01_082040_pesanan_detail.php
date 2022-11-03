@@ -15,6 +15,7 @@ class PesananDetail extends Migration
     {
         Schema::create('pesananDetail', function (Blueprint $table) {
             $table->id('id');
+            $table->foreignId('pesan_id')->constrained();
             $table->unsignedBigInteger('harga_id')->nullable();
             $table->foreign('harga_id')->references('id')->on('harga');
             $table->date('tanggal')->nullable();

@@ -46,8 +46,11 @@ Route::get('/login_pesan_kue', function () {
     return view('fitur.pesan_kue.login');
 });
 
-
-Route::resource('/produk', ProdukController::class);
+// Route::get('/produk', function () {
+//     return 'ok';
+// });
+Route::resource('produk', ProdukController::class);
+// Route::resource('/produk', ProdukController::class);
 Route::resource('/keranjang', PesanController::class)->middleware('auth');
 
 Auth::routes();
@@ -57,9 +60,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth', 'Pesan'])->group(function (){
     
 });
-Route::resource('produk', ProdukController::class);
-Route::get('/produk', [ProdukController::class, 'index']);
+// Route::resource('produk', ProdukController::class);
+// Route::get('/produk', [ProdukController::class, 'index']);
 Route::resource('galeri', GaleriController::class);
 Route::resource('struktur', StrukturController::class);
 Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/produk/detail', [ProdukController::class, 'show']);
+
+
+
+
+Route::get('/dashboard', function () {
+    return view('layouts.admin.dashboard');
+});
+Route::get('/kelola-produk', function () {
+    return view('admin.pesan_kue.produk.index');
+});

@@ -65,6 +65,13 @@ class HargaSeeder extends Seeder
                 'harga_tanggung'=>2500,
                 'harga_mini'=>1800
             ],
+            [
+                'produk_id'=>9,
+                'harga_normal'=>4500,
+                'harga_tanggung'=>2750,
+                'harga_mini'=>2100
+            ],
+
 
             ));   
     }

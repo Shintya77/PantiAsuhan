@@ -45,7 +45,14 @@ class PesanController extends Controller
      */
     public function store(StorePesanRequest $request)
     {
+        if(empty(Pesan::where('user_id', $request->user_id)->first())) {
+            Pesan::insert([
+                'user_id' => $request->user_id
+            ]);
+        }
+        $harga = Harga::find($request->harga_id);
         
+
     }
 
     /**

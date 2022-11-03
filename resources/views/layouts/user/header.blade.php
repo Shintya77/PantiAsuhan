@@ -21,7 +21,7 @@
             <a href="{{url('/kegiatan')}}" class="nav-item nav-link text-white">Kegiatan</a>
             <a href="service.html" class="nav-item nav-link text-white">Donasi</a>
 
-            <a href="/produk" class="nav-item nav-link text-white">Pesan Kue</a>
+            <a href="/produk" class="nav-item nav-link text-white">Catering Kue</a>
             <a href="{{url('/login_pesan_kue')}}" class="nav-item nav-link text-white">Login</a>
         </div>
     </div>

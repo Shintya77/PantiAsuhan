@@ -17,11 +17,11 @@ class ProdukSeeder extends Seeder
         DB::table('produk')->insert(array(
            
          
-            // [
-            //     'gambar'=>'assets/img/lemper.jpeg',
-            //     'nama'=>'Lemper',  
+            [
+                'gambar'=>'assets/img/lemper.jpeg',
+                'nama'=>'Lemper',  
                 
-            // ],
+            ],
             [
                 'gambar'=>'assets/img/produk/cake-keju.jpeg',
                 'nama'=>'Cake Keju',  

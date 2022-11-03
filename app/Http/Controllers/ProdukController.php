@@ -14,20 +14,20 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
-    protected function redirectTo(){
-        if (Auth::user()->level == 'pemesan'){
-            return 'produk';
-        }else {
-            return '/beranda';
-        }
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
+    // protected function redirectTo(){
+    //     if (Auth::user()->level == 'pemesan'){
+    //         return 'produk';
+    //     }else {
+    //         return '/beranda';
+    //     }
+    // }
      public function index()
     {
-         //
+         
          $data = Harga::all();
          return view('fitur.pesan_kue.produk', ['active'=>'active', 'title'=>'produk'], compact('data'));
     }

@@ -24,25 +24,33 @@
                                 <p>Harga Tanggung : {{$harga->harga_tanggung}}</p>
                                 <p>Harga Mini : {{$harga->harga_mini}}</p>
                                 <p><p><p></p></p></p>
+                                <form method="post" action="keranjang">
+                                    @csrf
                                 <select class="form-select" name="harga_id" id="harga_id">
-                                    <option value="{{$harga->id}}">{{$harga->harga_normal}}</option>
-                                    <option value="{{$harga->id}}">{{$harga->harga_tanggung}}</option>
-                                    <option value="{{$harga->id}}">{{$harga->harga_mini}}</option>
+                                    <option value="Pilihan Ukuran Kue">Pilihan Ukuran Kue</option>
+                                    <option value="{{$harga->id}}">Ukuran Normal - Rp {{$harga->harga_normal}}</option>
+                                    <option value="{{$harga->id}}">Ukuran Tanggung - Rp {{$harga->harga_tanggung}}</option>
+                                    <option value="{{$harga->id}}">Ukuran Mini - Rp {{$harga->harga_mini}}</option>
                                   </select>
-                                <p></p>
+                                <p></p> <br>
                             
                                 <tr>
                                         <td>Jumlah Pesanan</td>
                                         <td>:</td>
                                         <td>
-                                            <form method="post" action="{{ url('\keranjang') }}/{{ $harga->id }}" >
-                                            @csrf
+                                           
                                             <input type="text" name="jumlah_pesan" class="form-control" required="">
                                             <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Masukkan Keranjang</button>
-                                            </form>
+                                          
                                         </td>
+                                        
                                     </tr>
-
+                                   
+                                </form>
+                                <br>
+                                <B>NB:</B> 
+                                <I>Jika ingin memesan berbeda ukuran kue.Silahkan kembali ke menu catering untuk memilih lagi jenis kue </I>
+                                
                               
                             </div>
                             
