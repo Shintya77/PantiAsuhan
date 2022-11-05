@@ -14,4 +14,8 @@ class KegiatanController extends Controller
         return view('fitur.user.profil.struktur', 
         ['title'=> 'Struktu Kepengurusan Panti Asuhan Putri Aisyiyah']);
     }
+    public function dashboard(){
+        return view('fitur.donasi.dashboard', 
+        ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
+    }
 }

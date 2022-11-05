@@ -37,6 +37,8 @@ Route::prefix('profil')->group(function () {
 
 Route::resource('galeri', GaleriController::class);
 Route::resource('struktur', StrukturController::class);
+Route::resource('kegiatan', KegiatanDetailController::class);
+Route::get('/dashboard',[KegiatanController::class, 'dashboard']);
 
 Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');
