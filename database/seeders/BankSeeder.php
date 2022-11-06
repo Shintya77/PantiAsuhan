@@ -14,13 +14,12 @@ class BankSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('bank')->insert(array(
-           
-         
+        DB::table('banks')->insert(array(
             [
-                'gambar'=>'assets/img/bri',
                 'nama_bank'=>'BRI',
+                'nama_rekening' => 'Panti Asuhan',
                 'norekening'=>123456789,
+                'gambar'=>'assets/img/bri'
             ]
          
             ));  
