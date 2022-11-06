@@ -17,7 +17,7 @@ class CreateStrukturTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('jabatan');
-            $table->string('keterangan');
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }
