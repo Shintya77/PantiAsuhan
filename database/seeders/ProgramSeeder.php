@@ -13,6 +13,13 @@ class ProgramSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('programs')->insert([
+
+            [
+                'nama_program' => 'Pendidikan',
+                'dns_butuh' => 'Rp 10.000.000'
+            ]
+        ]
+        );
     }
 }

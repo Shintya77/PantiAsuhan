@@ -26,8 +26,8 @@
                     <a href="https://www.instagram.com/pa_aisyiyah_malang/" class="text-warning">pa_aisyiyah_malang</a>
                   </div>
                     <div class="m-2 d-flex">
-                      <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href=""><i class="fab fa-facebook-f"></i></a>
-                      <a href="" class="text-warning">PA Putri AIsyiyah</a>
+                      <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://www.facebook.com/profile.php?id=100073960845242"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.facebook.com/profile.php?id=100073960845242" class="text-warning">PA Putri AIsyiyah</a>
                     </div>
                     <div class="m-2 d-flex">
                       <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg"><i class="fab fa-youtube"></i></a>
