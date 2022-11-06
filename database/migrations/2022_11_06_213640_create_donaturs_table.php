@@ -22,7 +22,7 @@ class CreateDonatursTable extends Migration
             $table->date('tgk_donasi');
             $table->string('alamat');
             $table->bigInteger('nominal');
-            $tablep->string('atas_nama');
+            $table->string('atas_nama');
             $table->string('no_rekening',25);
             $table->string('keterangan');
             $table->string('bukti_tf');
