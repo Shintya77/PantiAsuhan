@@ -10,4 +10,9 @@ class VisiController extends Controller
         return view('fitur.user.profil.visi', 
         ['title'=> 'Visi & Misi Panti Asuhan Putri Aisyiyah']);
     }
+
+    public function upload(){
+        return view('fitur.donasi.upload', 
+        ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
+    }
 }
