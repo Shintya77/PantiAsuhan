@@ -17,7 +17,7 @@ class CreateProgramsTable extends Migration
             $table->id('id_program');
             $table->string('nama_program');
             $table->string('dns_butuh');
-            $table->string('dns_terkumpul');
+            $table->string('dns_terkumpul')->nullable();
             $table->timestamps();
         });
     }

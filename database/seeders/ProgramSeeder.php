@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProgramSeeder extends Seeder
 {
@@ -17,7 +18,8 @@ class ProgramSeeder extends Seeder
 
             [
                 'nama_program' => 'Pendidikan',
-                'dns_butuh' => 'Rp 10.000.000'
+                'dns_butuh' => 'Rp 10.000.000',
+                
             ]
         ]
         );

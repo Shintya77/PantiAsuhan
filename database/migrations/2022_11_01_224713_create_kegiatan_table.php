@@ -17,7 +17,7 @@ class CreateKegiatanTable extends Migration
             $table->id();
             $table->string('foto');
             $table->string('judul');
-            $table->string('deskripsi');
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }
