@@ -39,7 +39,11 @@ Route::resource('galeri', GaleriController::class);
 Route::resource('struktur', StrukturController::class);
 Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/dashboard-donasi',[KegiatanController::class, 'dashboard']);
+<<<<<<< HEAD
 Route::get('/formulir-donasi',[KegiatanController::class, 'formulir']);
+=======
+Route::get('/donasi',[KegiatanController::class, 'donasi']);
+>>>>>>> 2b526ce66b99d55e0d05faeaa2e61d20fae992db
 
 Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');
@@ -71,11 +75,10 @@ Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/produk/detail', [ProdukController::class, 'show']);
 
 
-
-
 Route::get('/dashboard', function () {
     return view('layouts.admin.dashboard');
 });
+
 Route::get('/kelola-produk', function () {
     return view('admin.pesan_kue.produk.index');
 });
