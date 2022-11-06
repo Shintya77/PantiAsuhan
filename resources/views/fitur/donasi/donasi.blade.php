@@ -15,13 +15,11 @@
                             <p class="fs-5 fw-medium text-white mb-4 pb-3">Saudara, kini untuk melakukan donasi tidak perlu repot harus datang ke Panti Asuhan. Cukup dengan mengakses sistem ini di aplikasi pencarian anda. Sistem berbasis web ini memberikan kemudahan dan kenyamanan para Donatur untuk bertransaksi secara Online.
 
 Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, transparansi dan akuntabilitas donasi Anda lebih terjamin melalui sistem donasi ini.</p>
-                            <a href="{{url('/profil/donasi')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft">Login</a>
+                            <a href="{{url('/profil/login')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft">Login</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
         </div>
     </div>
 </div>
