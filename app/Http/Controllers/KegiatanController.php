@@ -18,6 +18,15 @@ class KegiatanController extends Controller
         return view('fitur.donasi.dashboard', 
         ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
     }
+    public function formulir(){
+        return view('fitur.donasi.formulir', 
+        ['title'=> 'Formulir Donasi Panti Asuhan Putri Aisyiyah']);
+    }
+    public function binaan(){
+        return view('fitur.donasi.daftarbinaan', 
+        ['title'=> 'Daftar Binaan Panti Asuhan Putri Aisyiyah']);
+    }
+
     public function donasi(){
         return view('fitur.donasi.donasi', 
         ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
