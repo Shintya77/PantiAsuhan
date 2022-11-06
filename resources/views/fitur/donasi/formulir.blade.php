@@ -49,6 +49,11 @@
                                     <input type="type" class="form-control border-0" placeholder="Rekening Atas Nama" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
+                                    <h6 class="text-black">Nomor Rekening Donatur</h6>
+                                    <input type="type" class="form-control border-0" placeholder="Nomor Rekening" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <h6 class="text-black">Pilih Program</h6>
                                     <select class="form-select border-0" style="height: 55px;">
                                         <option selected>Pilih Program</option>
                                         <option value="1">Program 1</option>

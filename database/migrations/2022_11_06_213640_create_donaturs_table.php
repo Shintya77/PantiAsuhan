@@ -1,0 +1,43 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateDonatursTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('donaturs', function (Blueprint $table) {
+            $table->id('id_donatur');
+            $table->foreign('id_pengguna')->references('id')->on('users');
+            $table->foreign('id_bank')->references('id_bank')->on('banks');
+            $table->foreign('id_program')->references('id_program')->on('programs');
+            $table->string('name');
+            $table->date('tgk_donasi');
+            $table->string('alamat');
+            $table->bigInteger('nominal');
+            $tablep->string('atas_nama');
+            $table->string('no_rekening',25);
+            $table->string('keterangan');
+            $table->string('bukti_tf');
+            $table->string('status');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('donaturs');
+    }
+}
