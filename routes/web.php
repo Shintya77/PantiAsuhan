@@ -40,6 +40,7 @@ Route::resource('struktur', StrukturController::class);
 Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/dashboard-donasi',[KegiatanController::class, 'dashboard']);
 Route::get('/donasi',[KegiatanController::class, 'donasi']);
+Route::get('/donasi-upload',[VisiController::class, 'upload']);
 
 Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');
