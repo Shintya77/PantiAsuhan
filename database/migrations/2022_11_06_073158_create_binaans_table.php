@@ -18,6 +18,10 @@ class CreateBinaansTable extends Migration
             $table->string('nama_binaan');
             $table->string('ttl');
             $table->string('jekel');
+            $table->string('pendidikan');
+            $table->string('umur');
+            $table->string('kelas');
+            $table->string('status');
             $table->timestamps();
         });
     }
