@@ -15,11 +15,14 @@ class CreateDonatursTable extends Migration
     {
         Schema::create('donaturs', function (Blueprint $table) {
             $table->id('id_donatur');
+            $table->unsignedBigInteger('id_pengguna')->nullable();
             $table->foreign('id_pengguna')->references('id')->on('users');
+            $table->unsignedBigInteger('id_bank')->nullable();
             $table->foreign('id_bank')->references('id_bank')->on('banks');
+            $table->unsignedBigInteger('id_program')->nullable();
             $table->foreign('id_program')->references('id_program')->on('programs');
             $table->string('name');
-            $table->date('tgk_donasi');
+            $table->date('tgl_donasi');
             $table->string('alamat');
             $table->bigInteger('nominal');
             $table->string('atas_nama');
