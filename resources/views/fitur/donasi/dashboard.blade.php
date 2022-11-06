@@ -67,7 +67,7 @@
                             {{-- <i class="fa fa-lightbulb fa-3x"></i> --}}
                         </div>
                         <h4 class="mb-3">Daftar Binaan</h4>
-                        <a class="small fw-medium" href="">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
+                        <a class="small fw-medium" href="{{url('/daftar-binaan')}}">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
