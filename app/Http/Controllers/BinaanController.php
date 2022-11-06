@@ -14,7 +14,11 @@ class BinaanController extends Controller
      */
     public function index()
     {
-        //
+        $bnn = binaan::all();
+       
+        return view ('fitur.user.donasi.daftar-binaan', [
+            'data' => $bnn
+        ]);
     }
 
     /**
@@ -24,7 +28,8 @@ class BinaanController extends Controller
      */
     public function create()
     {
-        //
+        $model = new Struktur;
+        return view('fitur.user.donasi.daftar-binaan.tambah', compact('model'));
     }
 
     /**
@@ -35,7 +40,18 @@ class BinaanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new binaan;
+        $data->id_binaan = $request->id_binaan;
+        $data->nama_binaan = $request->nama_binaan;
+        $data->ttl = $request->ttl;
+        $data->jekel = $request->jekel;
+        $data->pendidikan = $request->pendidikan;
+        $data->umur = $request->umur;
+        $data->kelas = $request->kelas;
+        $data->status = $request->status;
+        $data->save();
+
+        return redirect('binaan');
     }
 
     /**
@@ -57,7 +73,8 @@ class BinaanController extends Controller
      */
     public function edit(binaan $binaan)
     {
-        //
+        $model = binaan::find($id);
+        return view('fitur.admin.donasi.daftar-binaan', compact('model'));
     }
 
     /**
