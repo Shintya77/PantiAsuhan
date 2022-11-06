@@ -43,6 +43,7 @@ Route::get('/formulir-donasi',[KegiatanController::class, 'formulir']);
 Route::get('/daftar-binaan',[KegiatanController::class, 'binaan']);
 Route::get('/donasi',[KegiatanController::class, 'donasi']);
 Route::get('/donasi-upload',[VisiController::class, 'upload']);
+Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 
 Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');

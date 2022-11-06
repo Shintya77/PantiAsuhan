@@ -15,4 +15,9 @@ class VisiController extends Controller
         return view('fitur.donasi.upload', 
         ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
     }
+
+    public function riwayat(){
+        return view('fitur.donasi.riwayat', 
+        ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
+    }
 }

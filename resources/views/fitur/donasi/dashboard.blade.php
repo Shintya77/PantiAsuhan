@@ -55,7 +55,7 @@
                             {{-- <i class="fab fa-file-text fa-3x"></i> --}}
                         </div>
                         <h4 class="mb-3">Riwayat Donasi</h4>
-                        <a class="small fw-medium" href="">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
+                        <a class="small fw-medium" href="{{url('/donasi-riwayat')}}">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
