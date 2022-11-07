@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePesansTable extends Migration
+class CreateTablePesan extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreatePesansTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('bank_id')->nullable();
-            $table->foreign('bank_id')->references('id')->on('bank');
+            $table->foreign('bank_id')->references('id_bank')->on('banks');
             $table->timestamps();
         });
     }

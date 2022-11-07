@@ -1,7 +1,7 @@
 @extends('layouts.user.master')
 
 @section('content')
-<form method="POST" action="{{url('kegiatan')}}">
+<form method="POST" action="{{url('struktur')}}">
    @csrf
    nama : <input type="text" name="name"><br>
    jabatan : <input type="text" name="jabatan"><br>

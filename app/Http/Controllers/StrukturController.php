@@ -29,7 +29,7 @@ class StrukturController extends Controller
     public function create()
     {
         $model = new Struktur;
-        return view('fitur.admin.profil.struktur.tambah', compact('model'));
+        return view('admin.profil.struktur.tambah', compact('model'));
     }
 
     /**
@@ -40,13 +40,19 @@ class StrukturController extends Controller
      */
     public function store(Request $request)
     {
+         //melakukan validasi data
+         $request->validate([
+            'name' => 'required',
+            'jabatan' => 'required',
+        ]);
+
         $data = new Struktur;
         $data->name = $request->name;
         $data->jabatan = $request->jabatan;
         $data->keterangan = $request->keterangan;
         $data->save();
 
-        return redirect('struktur');
+        return redirect()->route('struktur.index')->with('success', 'Data Struktur Kepengurusan Berhasil Ditambahkan');
         
 
     
@@ -58,7 +64,7 @@ class StrukturController extends Controller
      * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function show(Struktur $struktur)
+    public function show(Struktur $id)
     {
         //
     }
@@ -69,10 +75,10 @@ class StrukturController extends Controller
      * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function edit(Struktur $struktur)
+    public function edit($id)
     {
         $model = Struktur::find($id);
-        return view('fitur.admin.profil.struktur.edit', compact('model'));
+        return view('admin.profil.struktur.edit', compact('model'));
     }
 
     /**
@@ -82,15 +88,21 @@ class StrukturController extends Controller
      * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Struktur $struktur)
+    public function update(Request $request, $id)
     {
+         //melakukan validasi data
+         $request->validate([
+            'name' => 'required',
+            'jabatan' => 'required',
+        ]);
+
         $data = Struktur::find($id);
         $data->name = $request->name;
         $data->jabatan = $request->jabatan;
         $data->keterangan = $request->keterangan;
         $data->save();
 
-        return redirect('struktur');
+        return redirect()->route('struktur.index')->with('success', 'Data Struktur Kepengurusan Berhasil Diupdate');
     }
 
     /**
@@ -99,10 +111,10 @@ class StrukturController extends Controller
      * @param  \App\Models\Struktur  $struktur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Struktur $struktur)
+    public function destroy($id)
     {
         $data = Struktur::find($id);
         $data->delete();
-        return redirect('struktur');
+        return redirect()->route('struktur.index')->with('success', 'Data Struktur Kepengurusan Berhasil Dihapus');
     }
 }

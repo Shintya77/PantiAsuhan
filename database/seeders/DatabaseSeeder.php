@@ -21,7 +21,12 @@ class DatabaseSeeder extends Seeder
             StrukturSeeder::class,
             UserSeeder::class,
             ProdukSeeder::class,
-            HargaSeeder::class
+            HargaSeeder::class,
+            KegiatanSeeder::class,
+            GaleriSeeder::class,
+            ProgramSeeder::class,
+            DonaturSeeder::class,
+            BinaanSeeder::class
 
         ]);
     }

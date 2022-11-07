@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKegiatanTable extends Migration
+class CreateTableBank extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateKegiatanTable extends Migration
      */
     public function up()
     {
-        Schema::create('kegiatans', function (Blueprint $table) {
-            $table->id();
-            $table->string('foto');
-            $table->string('judul');
-            $table->string('deskripsi')->nullable();
+        Schema::create('banks', function (Blueprint $table) {
+            $table->id('id_bank');
+            $table->String('nama_bank', 25);
+            $table->String('nama_rekening');
+            $table->String('norekening');
+            $table->String('gambar');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateKegiatanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kegiatans');
+        Schema::dropIfExists('banks');
     }
 }
