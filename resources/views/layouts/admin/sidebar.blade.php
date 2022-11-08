@@ -126,7 +126,23 @@
               <li class="nav-item">
                 <a href="{{url('/kelola-produk')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data Produk</p>
+                  <p>Data Produk Detail</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('harga.index')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Harga</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('kue.index')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Kue</p>
                 </a>
               </li>
             </ul>

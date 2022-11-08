@@ -18,7 +18,7 @@ class ProdukSeeder extends Seeder
            
          
             [
-                'gambar'=>'assets/img/lemper.jpeg',
+                'gambar'=>'assets/img/produk/lemper.jpeg',
                 'nama'=>'Lemper',  
                 
             ],
