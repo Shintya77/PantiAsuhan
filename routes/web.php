@@ -9,6 +9,7 @@ use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\BankController;
 
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
@@ -44,6 +45,10 @@ Route::get('/daftar-binaan',[KegiatanController::class, 'binaan']);
 Route::get('/donasi',[KegiatanController::class, 'donasi']);
 Route::get('/donasi-upload',[VisiController::class, 'upload']);
 Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
+
+// ROUTE ADMIN DONASI 
+Route::resource('bank', BankController::class);
+
 
 Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');

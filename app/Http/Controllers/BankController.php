@@ -16,7 +16,7 @@ class BankController extends Controller
     {
         $bank = Bank::all();
        
-        return view ('fitur.admin.donasi.bank.indexBank', [
+        return view ('admin.donasi.bank.indexBank', [
             'data' => $bank
         ]);
     }
