@@ -28,8 +28,8 @@ class CreateDonatursTable extends Migration
             $table->string('atas_nama');
             $table->string('no_rekening',25);
             $table->string('keterangan')->nullable();
-            $table->string('bukti_tf');
-            $table->string('status');
+            $table->string('bukti_tf')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

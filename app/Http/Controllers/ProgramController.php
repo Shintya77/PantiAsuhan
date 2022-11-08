@@ -14,7 +14,11 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        //
+        $program = program::all();
+       
+        return view ('admin.donasi.program.indexProgram', [
+            'data' => $program
+        ]);
     }
 
     /**
@@ -24,7 +28,8 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        //
+        $program = new program;
+        return view('admin.program.tambah', compact('program'));
     }
 
     /**
@@ -35,7 +40,20 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'nama_program' => 'required',
+            'dns_butuh' => 'required',
+        ]);
+
+        $program = new program;
+        $program->nama_program = $request->name;
+        $program->dns_butuh = $request->dns_butuh;
+        $program->dns_terkumpul = $request->dns_terkumpul;
+        $program->save();
+
+        return redirect()->route('program.index')->with('success', 'Data Program Berhasil Ditambahkan');
+        
     }
 
     /**
@@ -57,7 +75,8 @@ class ProgramController extends Controller
      */
     public function edit(program $program)
     {
-        //
+        $program = Program::find($id);
+        return view('admin.donasi.program.edit', compact('program'));
     }
 
     /**
@@ -69,7 +88,14 @@ class ProgramController extends Controller
      */
     public function update(Request $request, program $program)
     {
-        //
+        $proram = program::find($id);
+
+        $program->nama_program = $request->name;
+        $program->dns_butuh = $request->dns_butuh;
+        $program->dns_terkumpul = $request->dns_terkumpul;
+        $program->save();
+
+        return redirect()->route('program.index')->with('success', 'Data Program Berhasil Diupdate');
     }
 
     /**
@@ -80,6 +106,8 @@ class ProgramController extends Controller
      */
     public function destroy(program $program)
     {
-        //
+        $program = program::find($id);
+        $program->delete();
+        return redirect()->route('program.index')->with('success', 'Data Program Berhasil Dihapus');
     }
 }
