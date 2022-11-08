@@ -17,8 +17,8 @@ class ProgramSeeder extends Seeder
         DB::table('programs')->insert([
 
             [
-                'nama_program' => 'Pendidikan',
-                'dns_butuh' => 'Rp 10.000.000',
+                'nama_program' => 'Renovasi Atap',
+                'dns_butuh' => 'Rp 356.000.000,00',
                 
             ]
         ]
