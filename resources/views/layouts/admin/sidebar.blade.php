@@ -141,7 +141,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/kelola-produk')}}" class="nav-link ">
+                <a href="{{ route('detailKue.index')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Produk Detail</p>
                 </a>

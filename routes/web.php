@@ -10,20 +10,12 @@ use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 use App\Http\Controllers\BinaanController;
-=======
-
->>>>>>> 0b746d51a59d3c250a61c6c13d5ac417d27a8d02
-use App\Http\Controllers\PesanController;
->>>>>>> ec56d84534e2e33d49377822f6bfdc9d487398ce
->>>>>>> 3980466b2042c6175cf9db23bbb0794d0dafe8c5
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
+use App\Http\Controllers\DetailKueController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -110,3 +102,5 @@ Route::resource('harga', HargaKueController::class);
 Route::get('harga/cari/data', [HargaKueController::class, 'cari'])->name('harga.cari');
 Route::resource('kue', KueController::class);
 Route::get('kue/cari/data', [KueController::class, 'cari'])->name('kue.cari');
+Route::resource('detailKue', DetailKueController::class);
+Route::get('detailKue/cari/data', [DetailKueController::class, 'cari'])->name('detailKue.cari');
