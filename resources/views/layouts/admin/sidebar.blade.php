@@ -19,7 +19,7 @@
       </div>
 
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
+      {{-- <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -28,7 +28,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> --}}
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -55,32 +55,24 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="#" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profil 1</p>
+                  <i class="far fa-image nav-icon"></i>
+                  <p> Edit Galeri</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="#" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profil 1</p>
+                  <i class="far fa-star nav-icon"></i>
+                  <p>Edit Kegiatan</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="#" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profil 1</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profil 1</p>
+                  <i class="far fa-user nav-icon"></i>
+                  <p>Edit Struktur</p>
                 </a>
               </li>
             </ul>
@@ -97,8 +89,8 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/kelola-donasi')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('donatur.index')}}" class="nav-link ">
+                  <i class="far fa-user nav-icon"></i>
                   <p>Data Donatur</p>
                 </a>
               </li>
@@ -106,15 +98,15 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('program.index')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-file nav-icon"></i>
                   <p>Data Program</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/kelola-binaan')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('binaan.index')}}" class="nav-link ">
+                  <i class="far fa-user nav-icon"></i>
                   <p>Data Binaan</p>
                 </a>
               </li>
@@ -122,7 +114,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('bank.index')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-file nav-icon"></i>
                   <p>Data Bank</p>
                 </a>
               </li>
@@ -141,8 +133,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+<<<<<<< HEAD
+                <a href="{{url('/kelola-produk')}}" class="nav-link ">
+                  <i class="far fa-star nav-icon"></i>
+=======
                 <a href="{{ route('detailKue.index')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
+>>>>>>> 7b08138220f10c1edd0bb68e6b60fdc0396c1267
                   <p>Data Produk Detail</p>
                 </a>
               </li>
@@ -150,7 +147,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('harga.index')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-star nav-icon"></i>
                   <p>Data Harga</p>
                 </a>
               </li>
@@ -158,7 +155,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('kue.index')}}" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-star nav-icon"></i>
                   <p>Data Kue</p>
                 </a>
               </li>
@@ -166,7 +163,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="#" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-star nav-icon"></i>
                   <p>Data Pesanan</p>
                 </a>
               </li>
@@ -177,7 +174,7 @@
           <li class="nav-header">SETTINGS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
+              <i class="far fa-user nav-icon"></i>
               <p>
                 Pengguna
               </p>

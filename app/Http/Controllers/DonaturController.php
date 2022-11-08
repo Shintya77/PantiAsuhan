@@ -14,7 +14,10 @@ class DonaturController extends Controller
      */
     public function index()
     {
-        //
+        $donatur = donatur::all();
+        $title = 'Data Donatur';
+        $paginate = donatur::orderBy('id_donatur', 'asc')->paginate(5);
+        return view('admin.donasi.donatur.indexDonatur', compact('donatur','title','paginate'));
     }
 
     /**

@@ -66,7 +66,8 @@
                                     <textarea class="form-control border-0" placeholder="Keterangan bila perlu"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <a class="btn btn-primary mt-3" href="{{ url('/donasi-upload') }}">Berikutnya</a>
+                                    <a href="{{url('/dashboard-donasi')}}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4 animated slideInRight" href="{{ url('/donasi-upload') }}">Berikutnya</a>
                                     {{-- <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button> --}}
                                 </div>
                             </div>

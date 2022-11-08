@@ -14,11 +14,16 @@ class BinaanController extends Controller
      */
     public function index()
     {
-        $bnn = binaan::all();
+        $binaan = binaan::all();
+        $title = 'Data Binaan';
+        $paginate = binaan::orderBy('id_binaan', 'asc')->paginate(5);
+        return view('admin.donasi.binaan.indexBinaan', compact('binaan','title','paginate'));
+
+        // $bnn = binaan::all();
        
-        return view ('fitur.user.donasi.daftar-binaan', [
-            'data' => $bnn
-        ]);
+        // return view ('fitur.user.donasi.daftar-binaan', [
+        //     'data' => $bnn
+        // ]);
     }
 
     /**
@@ -28,8 +33,9 @@ class BinaanController extends Controller
      */
     public function create()
     {
-        $model = new Struktur;
-        return view('fitur.user.donasi.daftar-binaan.tambah', compact('model'));
+        $title = 'Tambah Data Binaan';
+        $binaan = new binaan;
+        return view('admin.donasi.binaan.tambah', compact('title','binaan'));
     }
 
     /**
@@ -40,18 +46,28 @@ class BinaanController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new binaan;
-        $data->id_binaan = $request->id_binaan;
-        $data->nama_binaan = $request->nama_binaan;
-        $data->ttl = $request->ttl;
-        $data->jekel = $request->jekel;
-        $data->pendidikan = $request->pendidikan;
-        $data->umur = $request->umur;
-        $data->kelas = $request->kelas;
-        $data->status = $request->status;
-        $data->save();
+        //melakukan validasi data
+        $request->validate([
+            'nama_binaan' => 'required',
+            'ttl' => 'required',
+            'jekel' => 'required',
+            'pendidikan' => 'required',
+            'umur' => 'required',
+            'kelas' => 'required',
+            'status' => 'required',
+        ]);
 
-        return redirect('binaan');
+        $binaan = new binaan;
+        $binaan->nama_binaan = $request->nama_binaan;
+        $binaan->ttl = $request->ttl;
+        $binaan->jekel = $request->jekel;
+        $binaan->pendidikan = $request->pendidikan;
+        $binaan->umur = $request->umur;
+        $binaan->kelas = $request->kelas;
+        $binaan->status = $request->status;
+        $binaan->save();
+
+        return redirect()->route('binaan.index')->with('success', 'Data Binaan Berhasil Ditambahkan');
     }
 
     /**
@@ -71,10 +87,11 @@ class BinaanController extends Controller
      * @param  \App\Models\binaan  $binaan
      * @return \Illuminate\Http\Response
      */
-    public function edit(binaan $binaan)
+    public function edit($id)
     {
-        $model = binaan::find($id);
-        return view('fitur.admin.donasi.daftar-binaan', compact('model'));
+        $binaan = binaan::all()->where('id_binaan', $id)->first();
+        $title = 'Edit Data Binaan';
+        return view('admin.donasi.binaan.edit', compact('binaan','title'));
     }
 
     /**
@@ -84,9 +101,30 @@ class BinaanController extends Controller
      * @param  \App\Models\binaan  $binaan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, binaan $binaan)
+    public function update(Request $request, $id)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'nama_binaan' => 'required',
+            'ttl' => 'required',
+            'jekel' => 'required',
+            'pendidikan' => 'required',
+            'umur' => 'required',
+            'kelas' => 'required',
+            'status' => 'required',
+        ]);
+
+        $binaan = binaan::where('id_binaan',$id)->first();
+        $binaan->nama_binaan = $request->get('nama_binaan');
+        $binaan->ttl = $request->get('ttl');
+        $binaan->jekel = $request->get('jekel');
+        $binaan->pendidikan = $request->get('pendidikan');
+        $binaan->umur = $request->get('umur');
+        $binaan->kelas = $request->get('kelas');
+        $binaan->status = $request->get('status');
+        $binaan->save();
+        
+        return redirect()->route('binaan.index')->with('success', 'Data Binaan Berhasil Diupdate');
     }
 
     /**
@@ -95,8 +133,17 @@ class BinaanController extends Controller
      * @param  \App\Models\binaan  $binaan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(binaan $binaan)
+    public function destroy($id)
     {
-        //
+        binaan::where('id_binaan',$id)->delete();
+        return redirect()->route('binaan.index')-> with('success', 'Data Binaan Berhasil Dihapus');
+    }
+    public function cari(Request $request)
+    {
+        $keyword = $request->cari;
+        $paginate = binaan::where('nama_binaan', 'like', '%' . $keyword . '%')->paginate(3);
+        $paginate->appends(['keyword' => $keyword]);
+        $title = 'Pencarian Data Daftar Binaan';
+        return view('admin.donasi.binaan.indexBinaan', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

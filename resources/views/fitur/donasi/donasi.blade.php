@@ -43,16 +43,17 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
                                 <th>Donasi terkumpul</th>
                               </tr>
                             </thead>
-                            {{-- <tbody>
-                              @foreach ($data as $str)
+                            <tbody>
+                              @foreach ($paginate as $program)
                               <tr>
-                              <td class="text-black">{{ $str->name}}</td>
-                              <td class="text-black">{{ $str->jabatan }}</td>
-                              <td class="text-black">{{ $str->keterangan }}</td>
+                              <td class="text-black">{{ $program->id_program}}</td>
+                              <td class="text-black">{{ $program->nama_program}}</td>
+                              <td class="text-black">{{ $program->dns_butuh }}</td>
+                              <td class="text-black">{{ $program->dns_terkumpul }}</td>
                                 </form>
                               </td>  
                               @endforeach
-                            </tbody> --}}
+                            </tbody>
                           </table>
                     </div>
                   </div>

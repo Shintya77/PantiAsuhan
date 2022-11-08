@@ -63,7 +63,7 @@
                         <td class="text-black">{{ $b->nama_bank}}</td>
                         <td class="text-black">{{ $b->nama_rekening}}</td>
                         <td class="text-black">{{ $b->norekening }}</td>
-                        <td><img width="100px" height="100px" src="{{$b->gambar}}"></td>
+                        <td><img width="75px" height="50px" src="{{$b->gambar}}"></td>
                         <td><a class="btn btn-info" href="{{ route('bank.edit',$b->id_bank) }}">Edit</td>
                         <td>
                           <form action="{{url('bank/'.$b->id_bank)}}" method="POST">

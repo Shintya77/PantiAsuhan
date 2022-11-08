@@ -9,6 +9,7 @@ use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\DonasiContrroler;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BinaanController;
@@ -17,7 +18,13 @@ use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
+<<<<<<< HEAD
 
+=======
+use App\Http\Controllers\DonaturController;
+
+
+>>>>>>> f57903bae00bbfeea86babcdeada2ef7121f395b
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,14 +53,16 @@ Route::resource('struktur', StrukturController::class);
 Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/dashboard-donasi',[KegiatanController::class, 'dashboard']);
 Route::get('/formulir-donasi',[KegiatanController::class, 'formulir']);
-Route::get('/daftar-binaan',[KegiatanController::class, 'binaan']);
-Route::get('/donasi',[KegiatanController::class, 'donasi']);
+Route::get('/donasi',[DonasiContrroler::class, 'program']);
+Route::get('/daftar-binaan',[DonasiContrroler::class, 'binaan']);
 Route::get('/donasi-upload',[VisiController::class, 'upload']);
 Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 
 // ROUTE ADMIN DONASI 
 Route::resource('bank', BankController::class);
 Route::resource('program', ProgramController::class);
+Route::resource('binaan', BinaanController::class);
+Route::resource('donatur', DonaturController::class);
 Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
 
 
@@ -94,9 +103,9 @@ Route::get('/kelola-donasi', function () {
     return view('admin.donasi.bank.indexBank');
 });
 
-Route::get('/kelola-binaan', function () {
-    return view('admin.donasi.binaan.indexBinaan');
-});
+// Route::get('/kelola-binaan', function () {
+//     return view('admin.donasi.binaan.indexBinaan');
+// });
 
 Route::get('/kelola-bank', function () {
     return view('admin.donasi.bank.indexBank');
