@@ -12,23 +12,15 @@ use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\DonasiContrroler;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
-<<<<<<< HEAD
 use App\Http\Controllers\BinaanController;
 use App\Http\Controllers\PesanController;
-use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
-=======
 use App\Http\Controllers\ProgramController;
-use App\Http\Controllers\BinaanController;
 use App\Http\Controllers\DonaturController;
 
-use App\Http\Controllers\PesanController;
-use App\Http\Controllers\HargaKueController;
-use App\Http\Controllers\KueController;
 
->>>>>>> 38d078cb7ac2fd8910f7a328fa9cb6789895e9ac
 /*
 |--------------------------------------------------------------------------
 | Web Routes
