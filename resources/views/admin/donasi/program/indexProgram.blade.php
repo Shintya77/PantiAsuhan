@@ -24,14 +24,6 @@
       <div class="card">
         <div class="card-header">
             <h3 class="card-title">Program Donasi</h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
         </div>
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('program.create') }}">Tambah Program</a> 
@@ -43,7 +35,7 @@
                       </div>
                     @endif 
 
-                  <form class="form" method="get" action="#">
+                  <form class="form" method="get" action="{{route('program.cari')}}">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Program</label>
                           <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Program">
@@ -61,37 +53,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $pgr)
+                        @foreach ($paginate as $pgr)
                         <tr>
-                        <td class="text-black">{{ $pgr->name}}</td>
+                        <td class="text-black">{{ $pgr->nama_program}}</td>
                         <td class="text-black">{{ $pgr->dns_butuh }}</td>
                         <td class="text-black">{{ $pgr->dns_terkumpul }}</td>
-                        <td><a class="btn btn-info" href="{{url('program/'.$pgr->id.'/edit')}}">Edit</td>
+                        <td><a class="btn btn-info" href="{{ route('program.edit',$pgr->id_program) }}">Edit</td>
                         <td>
-                          <form action="{{url('struktur/'.$pgr->id)}}" method="POST">
+                          <form action="{{url('program/'.$pgr->id_program)}}" method="POST">
                               @csrf
+                              @method('DELETE')
                               <input type="hidden" name="_method" value="DELETE">
                               <button class="btn btn-danger" type="submit">DELETE</button>
       
                           </form>
                         </td>  
-                        @endforeach
-
-                            {{-- <tr>
-                                <td>Nama Produk</td>
-                                <td>Gambar></td>
-                                <td>Harga Normal</td> 
-                                <td>Harga Tanggung</td>
-                                <td>Harga Mini</td>
-                                <td>
-                                  <form action="#" method="POST">
-                                    <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i>edit</a>
-                                   
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                  </form>
-                                </td>
-                            </tr> --}}
-                            
+                        @endforeach  
                     </tbody>
               </table>
           </div>
@@ -102,7 +79,7 @@
                         <div class="row">
                             <div class="mx-auto">
                                 <div class="paginate-button col-md-12">
-                                    pagination
+                                    {{ $paginate->links() }}
                                 </div>
                             </div>
                           </div>
