@@ -9,10 +9,20 @@ use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
+<<<<<<< HEAD
+=======
 use App\Http\Controllers\BankController;
+<<<<<<< HEAD
 use App\Http\Controllers\BinaanController;
+=======
+
+>>>>>>> 0b746d51a59d3c250a61c6c13d5ac417d27a8d02
+use App\Http\Controllers\PesanController;
+>>>>>>> ec56d84534e2e33d49377822f6bfdc9d487398ce
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
+use App\Http\Controllers\HargaKueController;
+use App\Http\Controllers\KueController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -95,3 +105,7 @@ Route::get('/kelola-binaan', function () {
 Route::get('/kelola-produk', function () {
     return view('admin.pesan_kue.produk.index');
 });
+Route::resource('harga', HargaKueController::class);
+Route::get('harga/cari/data', [HargaKueController::class, 'cari'])->name('harga.cari');
+Route::resource('kue', KueController::class);
+Route::get('kue/cari/data', [KueController::class, 'cari'])->name('kue.cari');
