@@ -11,10 +11,28 @@ use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
+<<<<<<< HEAD
 use App\Http\Controllers\ProgramController;
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use App\Http\Controllers\BinaanController;
+=======
+>>>>>>> b16b1610e94b972830b064a13ce443693b29b688
 
+>>>>>>> 0b746d51a59d3c250a61c6c13d5ac417d27a8d02
 use App\Http\Controllers\PesanController;
+>>>>>>> ec56d84534e2e33d49377822f6bfdc9d487398ce
+>>>>>>> 3980466b2042c6175cf9db23bbb0794d0dafe8c5
+use App\Http\Controllers\PesanController;
+<<<<<<< HEAD
 
+=======
+use App\Http\Controllers\KegiatanDetailController;
+use App\Http\Controllers\HargaKueController;
+use App\Http\Controllers\KueController;
+>>>>>>> b16b1610e94b972830b064a13ce443693b29b688
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,6 +105,18 @@ Route::get('/dashboard', function () {
     return view('layouts.admin.dashboard');
 });
 
+Route::get('/kelola-donasi', function () {
+    return view('admin.donasi.bank.indexBank');
+});
+
+Route::get('/kelola-binaan', function () {
+    return view('admin.donasi.binaan.indexBinaan');
+});
+
 Route::get('/kelola-produk', function () {
     return view('admin.pesan_kue.produk.index');
 });
+Route::resource('harga', HargaKueController::class);
+Route::get('harga/cari/data', [HargaKueController::class, 'cari'])->name('harga.cari');
+Route::resource('kue', KueController::class);
+Route::get('kue/cari/data', [KueController::class, 'cari'])->name('kue.cari');

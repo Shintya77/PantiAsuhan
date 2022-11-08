@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Kelola Data Bank</h1>
+            <h1>Kelola Data Kue</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-              <li class="breadcrumb-item active">Kelola Data</li>
+              <li class="breadcrumb-item active">Kelola Data Kue</li>
             </ol>
           </div>
         </div>
@@ -23,7 +23,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Daftar Bank</h3>
+            <h3 class="card-title">{{ $title }}</h3>
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                 <i class="fas fa-minus"></i>
@@ -34,7 +34,7 @@
             </div>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="#">Tambah Bank</a> 
+                  <a class="btn btn-primary" href="{{ route('kue.create')}}">Tambah Produk Kue</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))
@@ -43,10 +43,10 @@
                       </div>
                     @endif  --}}
 
-                  <form class="form" method="get" action="#">
+                  <form class="form" method="get" action="{{ route('kue.cari') }}">
                       <div class="form-group w-100 mb-3">
-                          <label for="search" class="d-block mr-2">Pencarian Data Bank</label>
-                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Bank">
+                          <label for="search" class="d-block mr-2">Pencarian Data Kue</label>
+                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Kue">
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
@@ -54,29 +54,26 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Nama Bank</th>
-                        <th>Nama Rekening</th>
-                        <th>No Rekening</th>
+                        <th>Nama Kue</th>
                         <th>Gambar</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    
+                    @foreach ($paginate as $kue)
                             <tr>
-                                <td>BRI</td>
-                                <td>PUTRI</td>
-                                <td>540 5678 9245 903</td> 
-                                <td>Gambar</td>
+                                <td>{{ $kue->nama }}</td>
+                                <td><img width="100px" height="100px" src="{{$kue->gambar}}"></td>
                                 <td>
-                                  <form action="#" method="POST">
-                                    <a class="btn btn-info" href="#"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i></a>
-                                   
+                                  <form action="{{ route('kue.destroy',$kue->id) }}" method="POST">
+                                    <a class="btn btn-primary" href="{{ route('kue.edit',$kue->id) }}"><i class="fa fa-edit"></i></a>
+                                    @csrf
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                   </form>
                                 </td>
                             </tr>
-                            
+                        @endforeach
                     </tbody>
               </table>
           </div>
@@ -87,7 +84,7 @@
                         <div class="row">
                             <div class="mx-auto">
                                 <div class="paginate-button col-md-12">
-                                    pagination
+                                {{ $paginate->links() }}
                                 </div>
                             </div>
                           </div>
