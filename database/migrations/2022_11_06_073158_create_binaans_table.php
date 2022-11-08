@@ -22,6 +22,7 @@ class CreateBinaansTable extends Migration
             $table->string('umur');
             $table->string('kelas');
             $table->string('status');
+            $table->string('domisili');
             $table->timestamps();
         });
     }

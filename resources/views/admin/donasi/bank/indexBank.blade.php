@@ -68,7 +68,7 @@
                         <td class="text-black">{{ $b->nama_bank}}</td>
                         <td class="text-black">{{ $b->nama_rekening}}</td>
                         <td class="text-black">{{ $b->norekening }}</td>
-                        <td><img width="100px" height="100px" src="{{$b->gambar}}"></td>
+                        <td><img width="75px" height="50px" src="{{$b->gambar}}"></td>
                         <td>
             
                     <form action="{{ route('bank.destroy',$b->id_bank) }}" method="POST">
