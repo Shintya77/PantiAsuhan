@@ -23,18 +23,13 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Daftar Bank</h3>
+            <h3 class="card-title">Data Bank</h3>
             <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-              </button>
+              
             </div>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="#">Tambah Bank</a> 
+                  <a class="btn btn-primary" href="{{ route('bank.create') }}">Tambah Bank</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))
@@ -58,26 +53,29 @@
                         <th>Nama Rekening</th>
                         <th>No Rekening</th>
                         <th>Gambar</th>
+                        <th>Aksi</th>
                     </tr>
+                     
                     </thead>
                     <tbody>
-                    
-                            <tr>
-                                <td>BRI</td>
-                                <td>PUTRI</td>
-                                <td>540 5678 9245 903</td> 
-                                <td>Gambar</td>
-                                <td>
-                                  <form action="#" method="POST">
-                                    <a class="btn btn-info" href="#"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i></a>
-                                   
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                  </form>
-                                </td>
-                            </tr>
-                            
-                    </tbody>
+                    @foreach ($paginate as $b)
+                    <tr>
+                        <td class="text-black">{{ $b->nama_bank}}</td>
+                        <td class="text-black">{{ $b->nama_rekening}}</td>
+                        <td class="text-black">{{ $b->norekening }}</td>
+                        <td><img width="100px" height="100px" src="{{$b->gambar}}"></td>
+                        <td><a class="btn btn-info" href="{{ route('bank.edit',$b->id_bank) }}">Edit</td>
+                        <td>
+                          <form action="{{url('bank/'.$b->id_bank)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <input type="hidden" name="_method" value="DELETE">
+                              <button class="btn btn-danger" type="submit">DELETE</button>
+      
+                          </form>
+                        </td>  
+                  @endforeach
+                </tbody>
               </table>
           </div>
           <!-- /.card-body -->
@@ -87,7 +85,7 @@
                         <div class="row">
                             <div class="mx-auto">
                                 <div class="paginate-button col-md-12">
-                                    pagination
+                                    {{ $paginate->links() }}
                                 </div>
                             </div>
                           </div>

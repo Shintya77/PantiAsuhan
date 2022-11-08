@@ -7,15 +7,26 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
+<<<<<<< HEAD
 use App\Http\Controllers\BinaanController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
+=======
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\BinaanController;
+
+use App\Http\Controllers\PesanController;
+use App\Http\Controllers\HargaKueController;
+use App\Http\Controllers\KueController;
+
+>>>>>>> 38d078cb7ac2fd8910f7a328fa9cb6789895e9ac
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +62,8 @@ Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 
 // ROUTE ADMIN DONASI 
 Route::resource('bank', BankController::class);
+Route::resource('program', ProgramController::class);
+Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
 
 
 Route::get('/pesan', function () {
@@ -93,6 +106,10 @@ Route::get('/kelola-donasi', function () {
 
 Route::get('/kelola-binaan', function () {
     return view('admin.donasi.binaan.indexBinaan');
+});
+
+Route::get('/kelola-bank', function () {
+    return view('admin.donasi.bank.indexBank');
 });
 
 Route::get('/kelola-produk', function () {
