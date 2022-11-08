@@ -19,12 +19,12 @@ class UserSeeder extends Seeder
             [
                 
                 
-                'name'=>'Anisa',
-                'email'=>'anisa@gmail.com',
-                'password' => Hash::make('password'),
+                'name'=>'Ifa',
+                'email'=>'ifa@gmail.com',
+                'password' => Hash::make('admin'),
                 'alamat'=>'malang',
-                'nohp'=>'0813305512009',
-                'role'=>'pemesan'   
+                'nohp'=>'081278903456',
+                'role'=>'admin'   
                 
             ]
             ));

@@ -18,9 +18,13 @@ use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
+<<<<<<< HEAD
+
+=======
 use App\Http\Controllers\DonaturController;
 
 
+>>>>>>> f57903bae00bbfeea86babcdeada2ef7121f395b
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,8 +53,8 @@ Route::resource('struktur', StrukturController::class);
 Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/dashboard-donasi',[KegiatanController::class, 'dashboard']);
 Route::get('/formulir-donasi',[KegiatanController::class, 'formulir']);
-Route::get('/daftar-binaan',[KegiatanController::class, 'binaan']);
-Route::get('/donasi',[DonasiContrroler::class, 'index']);
+Route::get('/donasi',[DonasiContrroler::class, 'program']);
+Route::get('/daftar-binaan',[DonasiContrroler::class, 'binaan']);
 Route::get('/donasi-upload',[VisiController::class, 'upload']);
 Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 
@@ -66,23 +70,24 @@ Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');
 });
 
-Route::get('/login', function () {
-    return view('fitur.pesan_kue.login');
-});
 
 // Route::get('/produk', function () {
 //     return 'ok';
 // });
 Route::resource('produk', ProdukController::class);
 // Route::resource('/produk', ProdukController::class);
-Route::resource('/keranjang', PesanController::class)->middleware('auth');
+Route::resource('keranjang', PesanController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth', 'Pesan'])->group(function (){
+Route::middleware(['auth', 'admin'])->group(function (){
+    Route::get('/dashboard', function () {
+    return view('layouts.admin.dashboard');
     
+
+});
 });
 // Route::resource('produk', ProdukController::class);
 // Route::get('/produk', [ProdukController::class, 'index']);
@@ -92,9 +97,7 @@ Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/produk/detail', [ProdukController::class, 'show']);
 
 
-Route::get('/dashboard', function () {
-    return view('layouts.admin.dashboard');
-});
+
 
 Route::get('/kelola-donasi', function () {
     return view('admin.donasi.bank.indexBank');
@@ -108,9 +111,6 @@ Route::get('/kelola-bank', function () {
     return view('admin.donasi.bank.indexBank');
 });
 
-Route::get('/kelola-produk', function () {
-    return view('admin.pesan_kue.produk.index');
-});
 Route::resource('harga', HargaKueController::class);
 Route::get('harga/cari/data', [HargaKueController::class, 'cari'])->name('harga.cari');
 Route::resource('kue', KueController::class);
