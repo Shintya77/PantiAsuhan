@@ -54,6 +54,7 @@ Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 // ROUTE ADMIN DONASI 
 Route::resource('bank', BankController::class);
 Route::resource('program', ProgramController::class);
+Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
 
 
 Route::get('/pesan', function () {

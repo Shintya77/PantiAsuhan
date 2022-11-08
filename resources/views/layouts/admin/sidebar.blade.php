@@ -105,7 +105,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/kelola-program')}}" class="nav-link ">
+                <a href="{{route('program.index')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Program</p>
                 </a>
