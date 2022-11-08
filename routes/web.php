@@ -7,12 +7,14 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\ProgramController;
 
 use App\Http\Controllers\PesanController;
-use App\Http\Controllers\KegiatanDetailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +50,7 @@ Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 
 // ROUTE ADMIN DONASI 
 Route::resource('bank', BankController::class);
+Route::resource('program', ProgramController::class);
 
 
 Route::get('/pesan', function () {

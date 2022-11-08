@@ -29,7 +29,7 @@ class ProgramController extends Controller
     public function create()
     {
         $program = new program;
-        return view('admin.program.tambah', compact('program'));
+        return view('admin.donasi.program.tambah', compact('program'));
     }
 
     /**
