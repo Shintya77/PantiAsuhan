@@ -41,9 +41,11 @@ class LoginController extends Controller
 
     protected function redirectTo(){
         if(Auth::user()->role == 'pemesan'){
-            return 'beranda';
+            return 'produk';
+        } else if(Auth::user()->role == 'admin') {
+            return 'dashboard';
         } else {
-            return '/login';
+            return view('auth.login');
         }
     }
 }
