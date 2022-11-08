@@ -98,6 +98,10 @@ Route::get('/kelola-binaan', function () {
     return view('admin.donasi.binaan.indexBinaan');
 });
 
+Route::get('/kelola-bank', function () {
+    return view('admin.donasi.bank.indexBank');
+});
+
 Route::get('/kelola-produk', function () {
     return view('admin.pesan_kue.produk.index');
 });

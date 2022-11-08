@@ -15,10 +15,11 @@ class BankController extends Controller
     public function index()
     {
         $bank = Bank::all();
-       
-        return view ('admin.donasi.bank.indexBank', [
-            'data' => $bank
-        ]);
+        $title = 'Data Bank';
+        $paginate = Bank::orderBy('id_bank', 'asc')->paginate(5);
+
+        return view ('admin.donasi.bank.indexBank', compact('bank', 'title', 'paginate')
+        );
     }
 
     /**
@@ -28,8 +29,9 @@ class BankController extends Controller
      */
     public function create()
     {
-        $bank = new Bank;
-        return view('admin.donasi.bank.tambah', compact('bank'));
+        $title ="Tambah Data Bank";
+        $bank = Bank::all();
+        return view('admin.donasi.bank.tambah', compact('title', 'bank'));
     }
 
     /**
@@ -45,7 +47,7 @@ class BankController extends Controller
             'nama_bank' => 'required',
             'nama_rekening' => 'required',
             'norekening' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'image|file|max:1024',
         ]);
 
         if ($request->file('gmbr_bank')){
@@ -53,7 +55,7 @@ class BankController extends Controller
         }
 
         $bank = new Bank;
-        $bank->nama_bank = $request->name;
+        $bank->nama_bank = $request->nama_bank;
         $bank->nama_rekening = $request->nama_rekening;
         $bank->norekening = $request->norekening;
         $bank->gambar = $image_name;
@@ -83,8 +85,9 @@ class BankController extends Controller
      */
     public function edit($id)
     {
+        $title = new Bank;
         $bank = Bank::find($id);
-        return view('admin.donasi.bank.edit', compact('bank'));
+        return view('admin.donasi.bank.edit', compact('title', 'bank'));
     }
 
     /**

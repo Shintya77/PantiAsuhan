@@ -23,7 +23,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Daftar Bank</h3>
+            <h3 class="card-title">Data Bank</h3>
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                 <i class="fas fa-minus"></i>
@@ -34,7 +34,7 @@
             </div>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="#">Tambah Bank</a> 
+                  <a class="btn btn-primary" href="{{ route('bank.create') }}">Tambah Bank</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))
@@ -58,26 +58,29 @@
                         <th>Nama Rekening</th>
                         <th>No Rekening</th>
                         <th>Gambar</th>
+                        <th>Aksi</th>
                     </tr>
+                     
                     </thead>
                     <tbody>
-                    
-                            <tr>
-                                <td>BRI</td>
-                                <td>PUTRI</td>
-                                <td>540 5678 9245 903</td> 
-                                <td>Gambar</td>
-                                <td>
-                                  <form action="#" method="POST">
-                                    <a class="btn btn-info" href="#"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i></a>
-                                   
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                  </form>
-                                </td>
-                            </tr>
-                            
-                    </tbody>
+                    @foreach ($paginate as $b)
+                    <tr>
+                        <td class="text-black">{{ $b->nama_bank}}</td>
+                        <td class="text-black">{{ $b->nama_rekening}}</td>
+                        <td class="text-black">{{ $b->norekening }}</td>
+                        <td><img width="100px" height="100px" src="{{$b->gambar}}"></td>
+                        <td>
+            
+                    <form action="{{ route('bank.destroy',$b->id_bank) }}" method="POST">
+                        <a class="btn btn-primary" href="{{ route('bank.edit',$b->id_bank) }}"><i class="fa fa-edit"></i>edit</a>
+                            @csrf
+                            @method('DELETE')
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    </form>
+                    </tr>
+                </td> 
+                  @endforeach
+                </tbody>
               </table>
           </div>
           <!-- /.card-body -->
