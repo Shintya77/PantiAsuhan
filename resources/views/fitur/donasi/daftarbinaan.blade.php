@@ -15,26 +15,47 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
-                                <th>Nomor</th>
+                                <th>No</th>
                                 <th>Nama Binaan</th>
-                                <th>Email</th>
+                                <th>TTL</th>
                                 <th>Jenis Kelamin</th>
-                                <th>Tempat Tanggal Lahir</th>
                                 <th>Pendidikan</th>
+                                <th>Umur</th>
+                                <th>kelas</th>
+                                <th>Status</th>
+                                <th>Domisili</th>
     
                               </tr>
                             </thead>
-                            {{-- <tbody>
-                              @foreach ($data as $str)
+                            <tbody>
+                              @foreach ($paginate as $bnn)
                               <tr>
-                              <td class="text-black">{{ $str->name}}</td>
-                              <td class="text-black">{{ $str->jabatan }}</td>
-                              <td class="text-black">{{ $str->keterangan }}</td>
+                              <td style="text-align:center"><class="text-black">{{ $bnn->id_binaan}}</td>
+                              <td class="text-black">{{ $bnn->nama_binaan}}</td>
+                              <td class="text-black">{{ $bnn->ttl }}</td>
+                              <td style="text-align:center"><class="text-black">{{ $bnn->jekel }}</td>
+                              <td class="text-black">{{ $bnn->pendidikan}}</td>
+                              <td class="text-black">{{ $bnn->umur }}</td>
+                              <td style="text-align:center"><class="text-black">{{ $bnn->kelas }}</td>
+                              <td class="text-black">{{ $bnn->status }}</td>
+                              <td class="text-black">{{ $bnn->domisili }}</td>
                                 </form>
                               </td>  
                               @endforeach
-                            </tbody> --}}
+                            </tbody> 
+                            
                           </table>
+                          <div class="paginate">
+                            <div class="container">
+                              <div class="row">
+                                <div class="mx-auto">
+                                  <div class="paginate-button col-md-12">
+                                    {{ $paginate->links() }}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     </div>
                   </div>
                 </div>
