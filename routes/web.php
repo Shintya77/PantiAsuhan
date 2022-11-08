@@ -23,9 +23,9 @@ use App\Http\Controllers\KegiatanDetailController;
 |
 */
 
-// Route::get('/beranda', function () {
-//     return view('fitur.user.beranda');
-// });
+Route::get('/', function () {
+    return view('fitur.user.beranda');
+});
 Route::get('/beranda ',[BerandaController::class, 'beranda']);
 Route::prefix('profil')->group(function () {
     Route::get('/sejarah ',[SejarahController::class, 'sejarah']);
