@@ -7,14 +7,9 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
-use App\Http\Controllers\StrukturController;s
+use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\BankController;
-
->>>>>>> 0b746d51a59d3c250a61c6c13d5ac417d27a8d02
-use App\Http\Controllers\PesanController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\HargaKueController;

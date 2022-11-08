@@ -45,27 +45,29 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="{{ route('harga.store') }}" method="POST" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('kue.update', $kue->id) }}" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="produk_id">Produk Kue</label>
+                            {{-- <input type="produk_id" name="produk_id" class="form-control" id="produk_id" value="{{ $harga->$produk->nama }}" aria-describedby="produk_id" > --}}
                             <select name="produk_id" id="produk_id" class="form-control">
-                              @foreach ($produk as $p)
-                                <option value="{{$p->id}}">{{$p->nama}}</option>
-                              @endforeach
+                                @foreach ($produk as $p)
+                                  <option value="{{$p->id}}" {{$harga->produk_id == $p->id ? 'selected' : ''}} >{{$p->nama}}</option>
+                                @endforeach
                             </select>
-                        </div>
+                          </div>
                         <div class="form-group">
                             <label for="harga_normal">Harga Normal</label>
-                            <input type="integer" name="harga_normal" class="form-control" id="harga_normal" aria-describedby="harga_normal" >
+                            <input type="integer" name="harga_normal" class="form-control" required="required" value="{{ $harga->harga_normal }}" >
                         </div>
                         <div class="form-group">
                             <label for="harga_tanggung">Harga Tanggung</label>
-                            <input type="integer" name="harga_tanggung" class="form-control" id="harga_tanggung" aria-describedby="harga_tanggung" >
+                            <input type="integer" name="harga_tanggung" class="form-control" required="required" value="{{ $harga->harga_tanggung }}" >
                         </div>
                         <div class="form-group">
-                            <label for="harga_mini">Harga Normal</label>
-                            <input type="integer" name="harga_mini" class="form-control" id="harga_mini" aria-describedby="harga_mini" >
+                            <label for="harga_mini">Harga Mini</label>
+                            <input type="integer" name="harga_mini" class="form-control" required="required" value="{{ $harga->harga_mini }}" >
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
