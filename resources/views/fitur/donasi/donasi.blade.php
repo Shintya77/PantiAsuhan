@@ -33,7 +33,6 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
               <div class="col-12 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
                   <div class="icon-box">
                       <div>
-                        {{-- <a class="btn btn-info" href="{{url('struktur/create')}}">Tambah</a> --}}
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
@@ -46,7 +45,7 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
                             <tbody>
                               @foreach ($paginate as $program)
                               <tr>
-                              <td class="text-black">{{ $program->id_program}}</td>
+                              <td style="text-align:center"><class="text-black">{{ $program->id_program}}</td>
                               <td class="text-black">{{ $program->nama_program}}</td>
                               <td class="text-black">{{ $program->dns_butuh }}</td>
                               <td class="text-black">{{ $program->dns_terkumpul }}</td>
@@ -55,6 +54,17 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
                               @endforeach
                             </tbody>
                           </table>
+                          <div class="paginate">
+                            <div class="container">
+                              <div class="row">
+                                  <div class="mx-auto">
+                                      <div class="paginate-button col-md-12">
+                                          {{ $paginate->links() }}
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                   </div>
                 </div>
