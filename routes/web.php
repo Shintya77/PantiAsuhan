@@ -7,8 +7,14 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
-use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\StrukturController;s
 use App\Http\Controllers\ProdukController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\BankController;
+
+>>>>>>> 0b746d51a59d3c250a61c6c13d5ac417d27a8d02
+use App\Http\Controllers\PesanController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\HargaKueController;
@@ -24,9 +30,9 @@ use App\Http\Controllers\KueController;
 |
 */
 
-// Route::get('/beranda', function () {
-//     return view('fitur.user.beranda');
-// });
+Route::get('/', function () {
+    return view('fitur.user.beranda');
+});
 Route::get('/beranda ',[BerandaController::class, 'beranda']);
 Route::prefix('profil')->group(function () {
     Route::get('/sejarah ',[SejarahController::class, 'sejarah']);
@@ -46,11 +52,15 @@ Route::get('/donasi',[KegiatanController::class, 'donasi']);
 Route::get('/donasi-upload',[VisiController::class, 'upload']);
 Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 
+// ROUTE ADMIN DONASI 
+Route::resource('bank', BankController::class);
+
+
 Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');
 });
 
-Route::get('/login_pesan_kue', function () {
+Route::get('/login', function () {
     return view('fitur.pesan_kue.login');
 });
 
@@ -78,6 +88,10 @@ Route::get('/produk/detail', [ProdukController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('layouts.admin.dashboard');
+});
+
+Route::get('/kelola-donasi', function () {
+    return view('admin.donasi.bank.index');
 });
 
 Route::get('/kelola-produk', function () {

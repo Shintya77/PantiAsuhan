@@ -40,8 +40,9 @@
         <p class="description">Upload Bukti Transfer</p><br> 
 <br>
 </br>
-        <a href="{{url('/profil/formulir')}}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
-        <a href="{{url('/profil/formulir')}}" class="btn btn-warning rounded-pill py-2 px-4 animated slideInRight">Submit</a>
+        <a href="{{url('/donasi/create')}}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
+        <button class="btn btn-warning rounded-pill py-2 px-4 animated slideInRight" type="submit">Submit</button>
+        {{-- <a href="{{url('/profil/formulir')}}" class="btn btn-warning rounded-pill py-2 px-4 animated slideInRight">Submit</a> --}}
 </div> 
 </section>
       </section><!-- End Icon Boxes Section -->

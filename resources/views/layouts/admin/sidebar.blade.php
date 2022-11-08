@@ -89,7 +89,7 @@
           <!-- Data Donasi -->
           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-file"></i>
               <p>
                 Kelola Data Donasi
                 <i class="fas fa-angle-left right"></i>
@@ -97,21 +97,38 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{url('/kelola-donasi')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Donasi 1</p>
+                  <p>Data Donatur</p>
                 </a>
               </li>
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{url('/kelola-program')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Donasi 1</p>
+                  <p>Data Program</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/kelola-binaan')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Binaan</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/kelola-bank')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Bank</p>
                 </a>
               </li>
             </ul>
           </li>
+
 
           <!-- Data Catering -->
           <li class="nav-item ">
