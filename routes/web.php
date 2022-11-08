@@ -49,7 +49,7 @@ Route::get('/pesan', function () {
     return view('fitur.pesan_kue.pesan');
 });
 
-Route::get('/login_pesan_kue', function () {
+Route::get('/login', function () {
     return view('fitur.pesan_kue.login');
 });
 
