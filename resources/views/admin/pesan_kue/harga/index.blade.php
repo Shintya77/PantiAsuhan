@@ -24,14 +24,6 @@
       <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ $title }}</h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
         </div>
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('harga.create')}}">Tambah Harga Kue</a> 
@@ -65,12 +57,12 @@
                     @foreach ($paginate as $harga)
                             <tr>
                                 <td>{{ $harga->produk->nama }}</td>
-                                <td>{{ $harga->harga_normal }}</td> 
-                                <td>{{ $harga->harga_tanggung }}</td>
-                                <td>{{ $harga ->harga_mini }}</td>
+                                <td>Rp. {{ $harga->harga_normal }}</td> 
+                                <td>Rp. {{ $harga->harga_tanggung }}</td>
+                                <td>Rp. {{ $harga ->harga_mini }}</td>
                                 <td>
                                   <form action="{{ route('harga.destroy',$harga->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('harga.edit',$harga->id) }}"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-warning" href="{{ route('harga.edit',$harga->id) }}"><i class="fa fa-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>

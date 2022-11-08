@@ -25,12 +25,7 @@
         <div class="card-header">
             <h3 class="card-title">Data Bank</h3>
             <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-              </button>
+              
             </div>
         </div>
           <div class="card-body">
@@ -68,17 +63,21 @@
                         <td class="text-black">{{ $b->nama_bank}}</td>
                         <td class="text-black">{{ $b->nama_rekening}}</td>
                         <td class="text-black">{{ $b->norekening }}</td>
+<<<<<<< HEAD
                         <td><img width="75px" height="50px" src="{{$b->gambar}}"></td>
+=======
+                        <td><img width="100px" height="100px" src="{{$b->gambar}}"></td>
+                        <td><a class="btn btn-info" href="{{ route('bank.edit',$b->id_bank) }}">Edit</td>
+>>>>>>> 7b08138220f10c1edd0bb68e6b60fdc0396c1267
                         <td>
-            
-                    <form action="{{ route('bank.destroy',$b->id_bank) }}" method="POST">
-                        <a class="btn btn-primary" href="{{ route('bank.edit',$b->id_bank) }}"><i class="fa fa-edit"></i>edit</a>
-                            @csrf
-                            @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                    </form>
-                    </tr>
-                </td> 
+                          <form action="{{url('bank/'.$b->id_bank)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <input type="hidden" name="_method" value="DELETE">
+                              <button class="btn btn-danger" type="submit">DELETE</button>
+      
+                          </form>
+                        </td>  
                   @endforeach
                 </tbody>
               </table>
@@ -90,7 +89,7 @@
                         <div class="row">
                             <div class="mx-auto">
                                 <div class="paginate-button col-md-12">
-                                    pagination
+                                    {{ $paginate->links() }}
                                 </div>
                             </div>
                           </div>

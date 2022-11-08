@@ -83,10 +83,10 @@ class BankController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_bank)
     {
         $title = new Bank;
-        $bank = Bank::find($id);
+        $bank = Bank::find($id_bank);
         return view('admin.donasi.bank.edit', compact('title', 'bank'));
     }
 
@@ -99,20 +99,28 @@ class BankController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $bank = Bank::find($id);
-        if ($bank->gmbr_bank && file_exists(storage_path('app/public/'.$bank->gmbr_bank))){
-            \Storage::delete('public/'. $bank->fotgmbr_banko);
+        ///melakukan validasi data
+        $request->validate([
+            'nama_bank' => 'required',
+            'nama_rekening' => 'required',
+            'norekening' => 'required',
+            'gambar' => 'image|file|max:1024',
+        ]);
+
+        $bank = Bank::where('id_bank',$id)->first();
+        $bank->nama_bank = $request->get('nama_bank');
+        $bank->nama_rekening = $request->get('nama_rekening');
+        $bank->norekening = $request->get('norekening');
+        if ($bank->gambar && file_exists(storage_path('app/public/'.$bank->gambar))){
+            Storage::delete('public/'. $bank->gambar);
         }
 
-        $image_name = $request->file('gmbr_bank')->store('gmbr_bank', 'public');
-
-        $bank->nama_bank = $request->name;
-        $bank->nama_rekening = $request->nama_rekening;
-        $bank->norekening = $request->norekening;
-        $bank->gambar = $image_name;
+        $image_name = $request->file('gambar')->store('images', 'public');
         $bank->save();
-
-        return redirect()->route('bank.index')->with('success', 'Data Bank Berhasil Diupdate');
+        
+        //jika data berhasil diupdate, akan kembali ke halaman utama
+        return redirect()->route('bank.index')
+            ->with('success', 'Data Bank Berhasil Diupdate');
     }
 
     /**
@@ -123,8 +131,7 @@ class BankController extends Controller
      */
     public function destroy($id)
     {
-        $bank = Bank::find($id);
-        $bank->delete();
+        Bank::where('id_bank',$id)->delete();
         return redirect()->route('bank.index')->with('success', 'Data Bank Berhasil Dihapus');
  
     }
