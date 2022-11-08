@@ -13,7 +13,7 @@
 
         <div class="row content">
                 <div class="col-lg-4" data-aos="fade-up">
-                    <div class="swiper-slide"><img src="{{asset($harga->produk->gambar)}}" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="{{asset('storage/'.$harga->produk->gambar)}}" width="300" height="200" class="img-fluid" alt=""></div>
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0">
                     <div class="row" data-aos="fade-up">

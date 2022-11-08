@@ -58,14 +58,14 @@ class HargaKueController extends Controller
         $harga->harga_tanggung = $request->get('harga_tanggung');
         $harga->harga_mini = $request->get('harga_mini');
 
-        $produk_id = new Produk;
+        $produk = new Produk;
         $produk->id = $request->get('produk_id');
 
-        $harga->produk()->associate($produk_id);
+        $harga->produk()->associate($produk);
         $harga->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.pesan_kue.harga.index')
+        return redirect()->route('harga.index')
         ->with('success', 'Data Harga Kue Berhasil Ditambahkan');
 
     }

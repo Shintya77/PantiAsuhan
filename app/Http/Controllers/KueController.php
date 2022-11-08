@@ -58,7 +58,7 @@ class KueController extends Controller
         $kue->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.pesan_kue.kue.index')
+        return redirect()->route('kue.index')
         ->with('success', 'Data Harga Kue Berhasil Ditambahkan');
     }
 
@@ -105,11 +105,12 @@ class KueController extends Controller
         $kue = Produk::where('id',$id)->first();
         $kue->nama = $request->get('nama');
         if ($kue->gambar && file_exists(storage_path('app/public/'.$kue->gambar))){
-            \Storage::delete('public/'. $kue->gambar);
+            Storage::delete('public/'. $kue->gambar);
         }
 
         $image_name = $request->file('gambar')->store('images', 'public');
-        $harga->save();
+        $kue->gambar = $image_name;
+        $kue->save();
         
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('kue.index')
@@ -126,7 +127,7 @@ class KueController extends Controller
     {
         //
         Produk::where('id',$id)->delete();
-        return redirect()->route('admin.pesan_kue.kue.index')
+        return redirect()->route('kue.index')
         -> with('success', 'Harga Kue Berhasil Dihapus');
     }
 

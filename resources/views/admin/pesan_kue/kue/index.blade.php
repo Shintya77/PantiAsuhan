@@ -24,14 +24,6 @@
       <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ $title }}</h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
         </div>
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('kue.create')}}">Tambah Produk Kue</a> 
@@ -63,10 +55,10 @@
                     @foreach ($paginate as $kue)
                             <tr>
                                 <td>{{ $kue->nama }}</td>
-                                <td><img width="100px" height="100px" src="{{$kue->gambar}}"></td>
+                                <td><img width="150px" height="150px" src="{{asset('storage/'.$kue->gambar)}}"></td>
                                 <td>
                                   <form action="{{ route('kue.destroy',$kue->id) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('kue.edit',$kue->id) }}"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-warning" href="{{ route('kue.edit',$kue->id) }}"><i class="fa fa-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>

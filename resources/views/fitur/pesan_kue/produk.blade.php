@@ -18,7 +18,7 @@
                         <div class="col-lg-4" data-aos="fade-up">
                             <div class="box">
                                 <span>{{$d->produk->nama}}</span>
-                                <img src="{{$d->produk->gambar}}" width="300" height="200">
+                                <img src="{{asset('storage/'.$d->produk->gambar)}}" width="300" height="200">
                                 <p>Harga Normal : Rp. {{$d->harga_normal}}</p>
                                 <p>Harga Tanggung : Rp. {{$d->harga_tanggung}}</p>
                                 <p>Harga Mini : Rp. {{$d->harga_mini}}</p>

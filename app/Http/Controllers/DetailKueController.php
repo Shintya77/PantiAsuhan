@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\donatur;
 use Illuminate\Http\Request;
+use App\Models\Harga;
+use App\Models\Produk;
 
-class DonaturController extends Controller
+class DetailKueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,10 @@ class DonaturController extends Controller
      */
     public function index()
     {
-        $donatur = donatur::all();
-        $title = 'Data Donatur';
-        $paginate = donatur::orderBy('id_donatur', 'asc')->paginate(5);
-        return view('admin.donasi.donatur.indexDonatur', compact('donatur','title','paginate'));
+        // Mengambil semua isi tabel 
+        $title = 'Data Detail Produk Kue';
+        $paginate = Harga::orderBy('id', 'asc')->paginate(5);
+        return view('admin.pesan_kue.produk.index', compact('title','paginate'));
     }
 
     /**
@@ -44,10 +45,10 @@ class DonaturController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\donatur  $donatur
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(donatur $donatur)
+    public function show($id)
     {
         //
     }
@@ -55,10 +56,10 @@ class DonaturController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\donatur  $donatur
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(donatur $donatur)
+    public function edit($id)
     {
         //
     }
@@ -67,10 +68,10 @@ class DonaturController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\donatur  $donatur
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, donatur $donatur)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,11 +79,20 @@ class DonaturController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\donatur  $donatur
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(donatur $donatur)
+    public function destroy($id)
     {
         //
+    }
+
+    public function cari(Request $request)
+    {
+        $keyword = $request->cari;
+        $paginate = Harga::where('produk->nama', 'like', '%' . $keyword . '%')->paginate(3);
+        $paginate->appends(['keyword' => $keyword]);
+        $title = 'Pencarian Data Produk Kue';
+        return view('admin.pesan_kue.produk.index', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }
