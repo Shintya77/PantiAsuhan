@@ -7,9 +7,10 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\VisiController;
 use App\Http\Controllers\GaleriController;
-use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\StrukturController;s
 use App\Http\Controllers\ProdukController;
 
+use App\Http\Controllers\PesanController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
 /*
@@ -77,6 +78,10 @@ Route::get('/produk/detail', [ProdukController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('layouts.admin.dashboard');
+});
+
+Route::get('/kelola-donasi', function () {
+    return view('admin.donasi.bank.index');
 });
 
 Route::get('/kelola-produk', function () {
