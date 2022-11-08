@@ -10,6 +10,16 @@ use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use App\Http\Controllers\BinaanController;
+=======
+
+>>>>>>> 0b746d51a59d3c250a61c6c13d5ac417d27a8d02
+use App\Http\Controllers\PesanController;
+>>>>>>> ec56d84534e2e33d49377822f6bfdc9d487398ce
+>>>>>>> 3980466b2042c6175cf9db23bbb0794d0dafe8c5
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\KegiatanDetailController;
 use App\Http\Controllers\HargaKueController;
@@ -86,7 +96,11 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/kelola-donasi', function () {
-    return view('admin.donasi.bank.index');
+    return view('admin.donasi.bank.indexBank');
+});
+
+Route::get('/kelola-binaan', function () {
+    return view('admin.donasi.binaan.indexBinaan');
 });
 
 Route::get('/kelola-produk', function () {
