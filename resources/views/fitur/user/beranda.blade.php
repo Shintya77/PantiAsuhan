@@ -13,7 +13,7 @@
                         <div class="col-10 col-lg-8 text-center">
                             <h1 class=" text-white animated slideInDown">PANTI ASUHAN PUTRI 'AISYIYAH MALANG</h1>
                             <p class="fs-5 fw-medium text-white mb-4 pb-3">Panti Asuhan Putri ‘Aisyiyah Kel. Dinoyo Kec. Lowokwaru merupakan salah satu amal usaha dibawah organisasi Muhammadiyah yang dalam hal ini berada dibawah naungan Pimpinan Daerah Muhammadiyah Kota Malang. Sementara dalam penyelenggaraan teknis berada dibawah Pimpinan Daerah ‘Aisyiyah dan Pimpinan Cabang ‘Aisyiyah Lowokwaru.</p>
-                            <a href="{{url('/profil/sejarah')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
+                            <a href="{{url('/profil/sejarah')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft">Selengkapnya</a>
                         </div>
                     </div>
                 </div>

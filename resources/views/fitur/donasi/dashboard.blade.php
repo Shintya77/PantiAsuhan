@@ -5,6 +5,7 @@
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h2 class="mb-4 text-primary" >DONASI PANTI ASUHAN </h2>
+            <h6 class="text-black"> Saudara, mari bersama-sama gotong royong untuk membantu dan memberikan senyum kebahagiaan bagi mereka. Karena kebaikan akan terasa lebih mudah jika dilakukan bersama-sama</h6>
             <h6 class="text-black">"Sesungguhnya orang-orang yang bersedekah baik laki-laki maupun perempuan dan meminjamkan kepada allah dengan pinjaman yang baik, akan dilipat gandakan (balasannya) bagi mereka; dan mereka akan mendapatkan pahala yang mulia"</h6>
             <h6 class="text-black">(QS Al Hadid ayat 18)</h6>
         </div>
