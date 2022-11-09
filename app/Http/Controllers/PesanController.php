@@ -45,12 +45,26 @@ class PesanController extends Controller
      */
     public function store(StorePesanRequest $request)
     {
-        if(empty(Pesan::where('user_id', $request->user_id)->first())) {
-            Pesan::insert([
-                'user_id' => $request->user_id
-            ]);
-        }
+        Pesan::insert([
+            'user_id' => auth()->user()->id,
+        ]);
         $harga = Harga::find($request->harga_id);
+        $pesan = Pesan::where('user_id', auth()->user()->id)->first();
+        $detailPesan = PesanDetail::where('pesan_id', $pesan->id)->first();
+
+        $addorder = [];
+        if(empty($detailPesan)){
+            $addorder = [
+                'pesan_id' => $pesan,
+                'harga_id' => $request->harga_id,
+                'jumlah' => $request->jumlah_pesan,
+                'total_harga' => $harga->harga * $request->jumlah_pesan
+
+
+            ];
+        }
+        
+
         
 
     }
