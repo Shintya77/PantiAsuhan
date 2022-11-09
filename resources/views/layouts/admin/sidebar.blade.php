@@ -133,13 +133,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-<<<<<<< HEAD
+
                 <a href="{{url('/kelola-produk')}}" class="nav-link ">
                   <i class="far fa-star nav-icon"></i>
-=======
+
                 <a href="{{ route('detailKue.index')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
->>>>>>> 7b08138220f10c1edd0bb68e6b60fdc0396c1267
+
                   <p>Data Produk Detail</p>
                 </a>
               </li>
