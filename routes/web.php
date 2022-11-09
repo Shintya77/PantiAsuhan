@@ -18,15 +18,7 @@ use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
-<<<<<<< HEAD
-
 use App\Http\Controllers\DonaturController;
-
-
-=======
-use App\Http\Controllers\DonaturController;
-
->>>>>>> b4b43f9a5b827dd537682e928485c197b87b833f
 /*
 |--------------------------------------------------------------------------
 | Web Routes
