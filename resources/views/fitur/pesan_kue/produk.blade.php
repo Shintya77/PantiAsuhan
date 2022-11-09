@@ -10,7 +10,7 @@
                     <div class="section-title">
                         <span>Produk</span>
                         <h2>Produk</h2>
-                        <p>Berbagai macam produk kue kami sediakan</p>
+                        <p>Berbagai macam produk kue kami sediakan dengan masing-masing kue berbeda ukuran yaitu ukuran normal,tanggung, dan mini</p>
                     </div>
 
                     <div class="row">
