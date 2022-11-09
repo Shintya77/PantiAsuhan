@@ -44,6 +44,8 @@ class LoginController extends Controller
             return 'produk';
         } else if(Auth::user()->role == 'admin') {
             return 'dashboard';
+        } else if(Auth::user()->role == 'donatur') {
+            return '/dashboard-donasi';
         } else {
             return view('auth.login');
         }
