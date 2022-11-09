@@ -27,23 +27,23 @@ class ProdukSeeder extends Seeder
                 'nama'=>'Cake Keju',  
             ],
             [
-                'gambar'=>'assets/img/produk/cake-coklat.jpeg',
-                'nama'=>'Cake Cokelat',  
+                'gambar'=>'assets/img/produk/brownis.jpeg',
+                'nama'=>'Brownis',  
             ],
             [
                 'gambar'=>'assets/img/produk/pudding.jpeg',
                 'nama'=>'Pudding',  
             ],
             [
-                'gambar'=>'assets/img/produk/brownis.jpeg',
-                'nama'=>'Brownis',  
+                'gambar'=>'assets/img/produk/kue-mangkok.jpeg',
+                'nama'=>'Kue Mangkok',  
             ],
             [
                 'gambar'=>'assets/img/produk/onde-onde.jpeg',
                 'nama'=>'Onde-onde',  
             ],
             [
-                'gambar'=>'assets/img/produk/onggol-onggol.jpeg',
+                'gambar'=>'assets/img/produk/onggol2.jpeg',
                 'nama'=>'Onggol-onggol',  
             ],
             [
@@ -54,6 +54,24 @@ class ProdukSeeder extends Seeder
                 'gambar'=>'assets/img/produk/pastel.jpeg',
                 'nama'=>'Pastel Ayam',  
             ],
+            [
+                'gambar'=>'assets/img/produk/long-shoes-fla.jpeg',
+                'nama'=>'Long Shoes Fla',  
+            ],
+            // [
+            //     'gambar'=>'assets/img/produk/roti-kukus.jpeg',
+            //     'nama'=>'Roti Kukus',  
+            // ],
+            [
+                'gambar'=>'assets/img/produk/risol-mayo.jpeg',
+                'nama'=>'Risol Mayo',  
+            ],
+            [
+                'gambar'=>'assets/img/produk/pisang-gulung-coklat.jpeg',
+                'nama'=>'Pisang Gulung Coklat',  
+            ],
+
+
 
 
             ));
