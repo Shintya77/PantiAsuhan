@@ -18,13 +18,10 @@ use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
-<<<<<<< HEAD
 
-=======
 use App\Http\Controllers\DonaturController;
 
 
->>>>>>> f57903bae00bbfeea86babcdeada2ef7121f395b
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,12 +55,7 @@ Route::get('/daftar-binaan',[DonasiContrroler::class, 'binaan']);
 Route::get('/donasi-upload',[VisiController::class, 'upload']);
 Route::get('/donasi-riwayat',[VisiController::class, 'riwayat']);
 
-// ROUTE ADMIN DONASI 
-Route::resource('bank', BankController::class);
-Route::resource('program', ProgramController::class);
-Route::resource('binaan', BinaanController::class);
-Route::resource('donatur', DonaturController::class);
-Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
+
 
 
 Route::get('/pesan', function () {
@@ -71,11 +63,7 @@ Route::get('/pesan', function () {
 });
 
 
-// Route::get('/produk', function () {
-//     return 'ok';
-// });
 Route::resource('produk', ProdukController::class);
-// Route::resource('/produk', ProdukController::class);
 Route::resource('keranjang', PesanController::class);
 
 Auth::routes();
@@ -85,35 +73,32 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('/dashboard', function () {
     return view('layouts.admin.dashboard');
+
+    // ROUTE ADMIN DONASI 
+    Route::resource('bank', BankController::class);
+    Route::resource('program', ProgramController::class);
+    Route::resource('binaan', BinaanController::class);
+    Route::resource('donatur', DonaturController::class);
+    Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
+
+    //ROUTE ADMIN WEB PROFIL
+    // Route::resource('galeri', GaleriController::class);
+    // Route::resource('struktur', StrukturController::class);
+    // Route::resource('kegiatan', KegiatanDetailController::class);
     
+    // ROUTE ADMIN CATERING KUE
+    Route::resource('harga', HargaKueController::class);
+    Route::get('harga/cari/data', [HargaKueController::class, 'cari'])->name('harga.cari');
+    Route::resource('kue', KueController::class);
+    Route::get('kue/cari/data', [KueController::class, 'cari'])->name('kue.cari');
+    Route::resource('detailKue', DetailKueController::class);
+    Route::get('detailKue/cari/data', [DetailKueController::class, 'cari'])->name('detailKue.cari');
+
 
 });
 });
 // Route::resource('produk', ProdukController::class);
 // Route::get('/produk', [ProdukController::class, 'index']);
-Route::resource('galeri', GaleriController::class);
-Route::resource('struktur', StrukturController::class);
-Route::resource('kegiatan', KegiatanDetailController::class);
+
 Route::get('/produk/detail', [ProdukController::class, 'show']);
 
-
-
-
-Route::get('/kelola-donasi', function () {
-    return view('admin.donasi.bank.indexBank');
-});
-
-// Route::get('/kelola-binaan', function () {
-//     return view('admin.donasi.binaan.indexBinaan');
-// });
-
-Route::get('/kelola-bank', function () {
-    return view('admin.donasi.bank.indexBank');
-});
-
-Route::resource('harga', HargaKueController::class);
-Route::get('harga/cari/data', [HargaKueController::class, 'cari'])->name('harga.cari');
-Route::resource('kue', KueController::class);
-Route::get('kue/cari/data', [KueController::class, 'cari'])->name('kue.cari');
-Route::resource('detailKue', DetailKueController::class);
-Route::get('detailKue/cari/data', [DetailKueController::class, 'cari'])->name('detailKue.cari');
