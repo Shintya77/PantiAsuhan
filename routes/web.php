@@ -70,6 +70,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('/dashboard', function () {
     return view('layouts.admin.dashboard');
+    });
 
     // ROUTE ADMIN DONASI 
     Route::resource('bank', BankController::class);
@@ -92,7 +93,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('detailKue/cari/data', [DetailKueController::class, 'cari'])->name('detailKue.cari');
 
 
-});
+
 });
 // Route::resource('produk', ProdukController::class);
 // Route::get('/produk', [ProdukController::class, 'index']);
