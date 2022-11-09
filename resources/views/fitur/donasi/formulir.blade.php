@@ -31,13 +31,17 @@
                                     <h6 class="text-black">Alamat Donatur</h6>
                                     <input type="type" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;">
                                 </div>
+
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Bank</h6>
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Bank</option>
+                                    <select name="nama_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
+                                        @foreach ($bank as $b)
+                                        <option value="{{$b->nama_bank}}" >{{$b->nama_bank}}</option>
+                                        @endforeach
+                                        {{-- <option selected>Bank</option>
                                         <option value="1">Bank 1</option>
                                         <option value="2">Bank 2</option>
-                                        <option value="3">Bank 3</option>
+                                        <option value="3">Bank 3</option> --}}
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -54,11 +58,14 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Pilih Program</h6>
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Pilih Program</option>
+                                    <select name="nama_program" id="nama_program" class="form-select border-0" style="height: 55px;">
+                                        @foreach ($program as $p)
+                                        <option value="{{$p->nama_program}}" >{{$p->nama_program}}</option>
+                                        @endforeach
+                                        {{-- <option selected>Pilih Program</option>
                                         <option value="1">Program 1</option>
                                         <option value="2">Program 2</option>
-                                        <option value="3">Program 3</option>
+                                        <option value="3">Program 3</option> --}}
                                     </select>
                                 </div>
                                 <div class="col-12">
