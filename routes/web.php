@@ -46,7 +46,7 @@ Route::resource('galeri', GaleriController::class);
 Route::resource('struktur', StrukturController::class);
 Route::resource('kegiatan', KegiatanDetailController::class);
 Route::get('/dashboard-donasi',[KegiatanController::class, 'dashboard']);
-Route::get('/formulir-donasi',[KegiatanController::class, 'formulir']);
+Route::get('/formulir-donasi',[DonasiContrroler::class, 'formulir']);
 Route::get('/donasi',[DonasiContrroler::class, 'program']);
 Route::get('/daftar-binaan',[DonasiContrroler::class, 'binaan']);
 Route::get('/donasi-upload',[VisiController::class, 'upload']);
