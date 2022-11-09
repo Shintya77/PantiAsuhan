@@ -64,14 +64,12 @@
                         <td class="text-black">{{ $b->nama_rekening}}</td>
                         <td class="text-black">{{ $b->norekening }}</td>
                         <td><img width="75px" height="50px" src="{{$b->gambar}}"></td>
-                        <td><a class="btn btn-info" href="{{ route('bank.edit',$b->id_bank) }}">Edit</td>
                         <td>
-                          <form action="{{url('bank/'.$b->id_bank)}}" method="POST">
-                              @csrf
-                              @method('DELETE')
-                              <input type="hidden" name="_method" value="DELETE">
-                              <button class="btn btn-danger" type="submit">DELETE</button>
-                          </form>
+                          <form action="{{ route('bank.destroy',$b->id_bank) }}" method="POST">
+                            <a class="btn btn-warning" href="{{ route('bank.edit',$b->id_bank) }}"><i class="fa fa-edit"></i></a>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                         </td>  
                   @endforeach
                 </tbody>
