@@ -22,7 +22,31 @@
             <a href="{{url('/donasi')}}" class="nav-item nav-link text-white">Donasi</a>
 
             <a href="{{url('/produk')}}" class="nav-item nav-link text-white">Catering Kue</a>
-            <a href="{{url('/login')}}" class="nav-item nav-link text-white">Login</a>
+                @guest
+                            @if (Route::has('login'))
+                                <a href="{{route('login')}}" class="nav-item nav-link text-white">Login</a>
+                                
+                            @endif   
+                            
+                @else
+                            <div class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-item nav-link text-white">
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </div>
+                @endguest
         </div>
     </div>
 </nav>
