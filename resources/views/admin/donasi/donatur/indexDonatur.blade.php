@@ -46,6 +46,7 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
+                      <th>No </th>
                         <th>Nama Donatur</th>
                         <th>Tanggal Donasi</th>
                         <th>Alamat</th>
@@ -61,6 +62,7 @@
                     <tbody>
                       @foreach ($paginate as $donasi)
                       <tr>
+                      <td class="text-black">{{ $donasi->id_donatur}}</td>
                       <td class="text-black">{{ $donasi->name}}</td>
                       <td class="text-black">{{ $donasi->tgl_donasi}}</td>
                       <td class="text-black">{{ $donasi->alamat }}</td>
@@ -70,7 +72,7 @@
                       <td class="text-black">{{ $donasi->keterangan }}</td>
                       <td><img width="100px" height="100px" src="{{$donasi->bukti_tf}}"></td>
                       <td class="text-black">{{ $donasi->status }}</td>
-                      <td><a class="btn btn-info" href="{{ route('donasi.edit',$donasi->id_donatur) }}">Edit</td>
+                      <td><a class="btn btn-info" href="{{ route('donatur.edit',$donasi->id_donatur) }}">Edit</td>
                       <td>
                         <form action="{{url('donatur/'.$donasi->id_donatur)}}" method="POST">
                             @csrf

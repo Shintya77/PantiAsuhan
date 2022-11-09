@@ -58,15 +58,21 @@
                         <td class="text-black">{{ $pgr->nama_program}}</td>
                         <td class="text-black">{{ $pgr->dns_butuh }}</td>
                         <td class="text-black">{{ $pgr->dns_terkumpul }}</td>
-                        <td><a class="btn btn-info" href="{{ route('program.edit',$pgr->id_program) }}">Edit</td>
+                        {{-- <td><a class="btn btn-info" href="{{ route('program.edit',$pgr->id_program) }}">Edit</td> --}}
                         <td>
-                          <form action="{{url('program/'.$pgr->id_program)}}" method="POST">
+                          <form action="{{ route('program.destroy',$pgr->id_program) }}" method="POST">
+                            <a class="btn btn-warning" href="{{ route('program.edit',$pgr->id_program) }}"><i class="fa fa-edit"></i></a>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                          </form>
+                          {{-- <form action="{{url('program/'.$pgr->id_program)}}" method="POST">
                               @csrf
                               @method('DELETE')
                               <input type="hidden" name="_method" value="DELETE">
                               <button class="btn btn-danger" type="submit">DELETE</button>
       
-                          </form>
+                          </form> --}}
                         </td>  
                         @endforeach  
                     </tbody>

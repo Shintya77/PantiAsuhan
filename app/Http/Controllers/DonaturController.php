@@ -27,7 +27,9 @@ class DonaturController extends Controller
      */
     public function create()
     {
-        //
+        $title ="Tambah Data Donatur";
+        $donatur = donatur::all();
+        return view('admin.donasi.donatur.tambah', compact('title', 'donatur'));
     }
 
     /**
@@ -38,7 +40,39 @@ class DonaturController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'name' => 'required',
+            'tgl_donasi' => 'required',
+            'alamat' => 'required',
+            'nominal' => 'required',
+            'atas_nama' => 'required',
+            'no_rekening' => 'required',
+            'keterangan' => 'required',
+            'bukti_tf' => 'image|file|max:1024',
+            'status' => 'required',
+        ]);
+
+        if ($request->file('bukti_tf')){
+            $image_name = $request->file('bukti_tf')->store('bukti_tf', 'public');
+        }
+
+        $donatur = new donatur();
+        $donatur->id_pengguna = $request->id_pengguna;
+        $donatur->id_bank = $request->id_bank;
+        $donatur->id_program = $request->id_program;
+        $donatur->name = $request->name;
+        $donatur->tgl_donasi = $request->tgl_donasi;
+        $donatur->alamat = $request->alamat;
+        $donatur->nominal = $request->nominal;
+        $donatur->atas_nama = $request->atas_nama;
+        $donatur->no_rekening = $request->no_rekening;
+        $donatur->keterangan = $request->keterangan;
+        $donatur->bukti_tf = $image_name;
+        $donatur->status = $request->status;
+        $donatur->save();
+
+        return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Ditambahkan');
     }
 
     /**
@@ -58,9 +92,11 @@ class DonaturController extends Controller
      * @param  \App\Models\donatur  $donatur
      * @return \Illuminate\Http\Response
      */
-    public function edit(donatur $donatur)
+    public function edit($id_donatur)
     {
-        //
+        $title = new donatur;
+        $donatur = donatur::find($id_donatur);
+        return view('admin.donasi.donatur.edit', compact('title', 'donatur'));
     }
 
     /**
@@ -70,7 +106,7 @@ class DonaturController extends Controller
      * @param  \App\Models\donatur  $donatur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, donatur $donatur)
+    public function update(Request $request, $id_donatur)
     {
         //
     }
@@ -81,7 +117,7 @@ class DonaturController extends Controller
      * @param  \App\Models\donatur  $donatur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(donatur $donatur)
+    public function destroy($id_donatur)
     {
         //
     }

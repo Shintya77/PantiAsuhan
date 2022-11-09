@@ -71,7 +71,6 @@
                               @method('DELETE')
                               <input type="hidden" name="_method" value="DELETE">
                               <button class="btn btn-danger" type="submit">DELETE</button>
-      
                           </form>
                         </td>  
                   @endforeach
