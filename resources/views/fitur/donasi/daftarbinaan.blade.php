@@ -59,7 +59,7 @@
                           </div>
                           <div class="col-12">
                                     <a href="{{url('/dashboard-donasi')}}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Kembali</a>
-                                </div>
+                          </div>
                     </div>
                   </div>
                 </div>

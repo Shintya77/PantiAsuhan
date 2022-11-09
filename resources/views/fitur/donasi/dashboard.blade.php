@@ -5,33 +5,35 @@
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h2 class="mb-4 text-primary" >DONASI PANTI ASUHAN </h2>
-            <h6 class="text-primary">Deskripsi singkat</h6>
+            <h6 class="text-black">"Sesungguhnya orang-orang yang bersedekah baik laki-laki maupun perempuan dan meminjamkan kepada allah dengan pinjaman yang baik, akan dilipat gandakan (balasannya) bagi mereka; dan mereka akan mendapatkan pahala yang mulia"</h6>
+            <h6 class="text-black">(QS Al Hadid ayat 18)</h6>
         </div>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/beasiswa2.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Donasi</h4>
-                        <p>Deskripi donasi</p>
+                        <h4 class="mb-3">Donasi Renovasi atap</h4>
+                        <p>Donasi ini dikhususkan untuk merenovasi atap Panti Asuhan dengan jumlah yang dibutuhkan sebesar Rp 356 juta </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/beasiswa2.jpeg" alt="">
+                    
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/parenting.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Donasi</h4>
-                        <p>Deskripi donasi</p>
+                        <h4 class="mb-3">Donasi Pendidikan</h4>
+                        <p>Donasi ini dikhususkan untuk biaya pendidikan anak binaan Panti Asuhan, dengan jumlah yang dibutuhkan sebesar Rp 30 juta</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/beasiswa2.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/parenting2.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Donasi</h4>
-                        <p>Deskripi donasi</p>
+                        <h4 class="mb-3">Donasi Kebutuhan Pokok</h4>
+                        <p>Donasi ini dikhusukan untuk membeli kebutuhan pokok anak binaan Panti Asuhan</p>
                     </div>
                 </div>
             </div>
