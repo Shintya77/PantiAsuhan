@@ -13,7 +13,7 @@
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nama Donatur</h6>
-                                    <input type="text" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; weight: ">
+                                    <input type="text" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; ">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Email</h6>
