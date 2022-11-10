@@ -46,6 +46,7 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
+                    <th>No </th>
                         <th>Nama Binaan</th>
                         <th>TTL</th>
                         <th>Jenis Kelamin</th>
@@ -59,6 +60,7 @@
                     <tbody>
                       @foreach ($paginate as $bina)
                       <tr>
+                      <td class="text-black">{{ $bina->id_binaan}}</td>
                       <td class="text-black">{{ $bina->nama_binaan}}</td>
                       <td class="text-black">{{ $bina->ttl}}</td>
                       <td class="text-black">{{ $bina->jekel }}</td>
@@ -68,14 +70,13 @@
                       <td class="text-black">{{ $bina->status }}</td>
                       <td><a class="btn btn-info" href="{{ route('binaan.edit',$bina->id_binaan) }}">Edit</td>
                       <td>
-                        <form action="{{url('binaan/'.$bina->id_binaan)}}" method="POST">
+                      <form action="{{ route('binaan.destroy',$bina->id_binaan) }}" method="POST">
+                            <a class="btn btn-warning" href="{{ route('binaan.edit',$bina->id_binaan) }}"><i class="fa fa-edit"></i></a>
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-danger" type="submit">DELETE</button>
-    
-                        </form>
-                      </td>  
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                          </form> 
+                      </td>
                       @endforeach  
                     </tbody>
               </table>

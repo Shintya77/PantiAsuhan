@@ -117,8 +117,9 @@ class DonaturController extends Controller
      * @param  \App\Models\donatur  $donatur
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_donatur)
+    public function destroy($id)
     {
-        //
+        donatur::where('id_donatur',$id)->delete();
+        return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Dihapus');
     }
 }

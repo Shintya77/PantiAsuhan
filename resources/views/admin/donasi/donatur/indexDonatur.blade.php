@@ -26,7 +26,7 @@
             <h3 class="card-title">Data Donasi</h3>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="{{ route('donatur.create') }}">Tambah Data Donasi</a> 
+                  <a class="btn btn-primary" href="{{ route('donatur.create') }}">Tambah Data Donatur</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))
@@ -37,7 +37,7 @@
 
                   <form class="form" method="get" action="#">
                       <div class="form-group w-100 mb-3">
-                          <label for="search" class="d-block mr-2">Pencarian Data Donasi</label>
+                          <label for="search" class="d-block mr-2">Pencarian Data Donatur</label>
                           <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Donasi">
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
@@ -47,12 +47,12 @@
                     <thead>
                     <tr>
                       <th>No </th>
-                        <th>Nama Donatur</th>
-                        <th>Tanggal Donasi</th>
+                        <th>Nama</th>
+                        <th>Tanggal</th>
                         <th>Alamat</th>
                         <th>Nominal</th>
                         <th>Atas Nama</th>
-                        <th>Nomor Rekening Donatur</th>
+                        <th>No Rekening Donatur</th>
                         <th>Keterangan</th>
                         <th>Bukti Transfer</th>
                         <th>Status</th>
@@ -72,16 +72,14 @@
                       <td class="text-black">{{ $donasi->keterangan }}</td>
                       <td><img width="100px" height="100px" src="{{$donasi->bukti_tf}}"></td>
                       <td class="text-black">{{ $donasi->status }}</td>
-                      <td><a class="btn btn-info" href="{{ route('donatur.edit',$donasi->id_donatur) }}">Edit</td>
                       <td>
-                        <form action="{{url('donatur/'.$donasi->id_donatur)}}" method="POST">
+                      <form action="{{ route('donatur.destroy',$donasi->id_donatur) }}" method="POST">
+                            <a class="btn btn-warning" href="{{ route('donatur.edit',$donasi->id_donatur) }}"><i class="fa fa-edit"></i></a>
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-danger" type="submit">DELETE</button>
-    
-                        </form>
-                      </td>  
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                          </form> 
+                      </td>
                       @endforeach  
                     </tbody>
               </table>
