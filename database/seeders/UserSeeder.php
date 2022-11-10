@@ -26,6 +26,17 @@ class UserSeeder extends Seeder
                 'nohp'=>'081212345678',
                 'role'=>'donatur'   
                 
+            ],
+            [
+                
+                
+                'name'=>'anisa',
+                'email'=>'anisa@gmail.com',
+                'password' => Hash::make('pemesan'),
+                'alamat'=>'malang',
+                'nohp'=>'081330551209',
+                'role'=>'pemesan'   
+                
             ]
             ));
     }

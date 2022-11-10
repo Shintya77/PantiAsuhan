@@ -45,6 +45,7 @@ class PesanController extends Controller
      */
     public function store(StorePesanRequest $request)
     {
+        dd($request->all());
         Pesan::insert([
             'user_id' => auth()->user()->id,
         ]);
@@ -59,11 +60,14 @@ class PesanController extends Controller
                 'harga_id' => $request->harga_id,
                 'jumlah' => $request->jumlah_pesan,
                 'total_harga' => $harga->harga * $request->jumlah_pesan
-
+                
 
             ];
+            dd($addorder);
+            PesananDetail::create($addorder);
         }
         
+         
 
         
 

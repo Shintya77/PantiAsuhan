@@ -51,13 +51,10 @@ Route::get('/donasi',[DonasiContrroler::class, 'program']);
 
 
 
-Route::get('/pesan', function () {
-    return view('fitur.pesan_kue.pesan');
-});
+
 
 
 Route::resource('produk', ProdukController::class);
-Route::resource('keranjang', PesanController::class);
 
 Auth::routes();
 
@@ -104,4 +101,9 @@ Route::middleware(['auth', 'donatur'])->group(function (){
 // Route::get('/produk', [ProdukController::class, 'index']);
 
 Route::get('/produk/detail', [ProdukController::class, 'show']);
+
+Route::middleware(['auth', 'pemesan'])->group(function (){
+    Route::post('/keranjang', [PesanController::class, 'store'])->name('store');
+  
+});
 

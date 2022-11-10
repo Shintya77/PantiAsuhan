@@ -17,7 +17,7 @@ class Pesan
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role == 'Pemesan') {
+        if (Auth::check() && Auth::user()->role == 'pemesan') {
             return $next($request);
         }else{
             redirect('/beranda');
