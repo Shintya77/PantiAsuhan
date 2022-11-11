@@ -24,7 +24,7 @@
                                 <p>Harga Tanggung : {{$harga->harga_tanggung}}</p>
                                 <p>Harga Mini : {{$harga->harga_mini}}</p>
                                 <p><p><p></p></p></p>
-                                <form method="post" action="keranjang">
+                                <form method="post" action="/keranjang" enctype="multipart/form-data">
                                     @csrf
                                 <select class="form-select" name="harga_id" id="harga_id">
                                     <option value="Pilihan Ukuran Kue">Pilihan Ukuran Kue</option>
