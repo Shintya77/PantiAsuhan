@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
               <li class="breadcrumb-item active">Kelola Data</li>
             </ol>
           </div>
@@ -38,7 +38,7 @@
                       </div>
                     @endif  --}}
 
-                  <form class="form" method="get" action="#">
+                  <form class="form" method="get" action="{{route('bank.cari')}}">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Bank</label>
                           <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Bank">

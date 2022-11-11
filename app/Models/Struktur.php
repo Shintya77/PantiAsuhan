@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Struktur extends Model
 {
     use HasFactory;
+    protected $table='strukturs';
+
+    protected $fillable = [
+        'name',
+        'jabatan',
+        'keterangan',
+    ];
+
 }

@@ -15,10 +15,10 @@ class StrukturController extends Controller
     public function index()
     {
         $struktur = Struktur::all();
-       
-        return view ('fitur.user.profil.struktur', [
-            'data' => $struktur
-        ]);
+        $title = 'Data Struktur Kepengurusan';
+        $paginate = Struktur::orderBy('id', 'asc')->paginate(10);
+        return view('admin.profil.struktur.indexStruktur', compact('struktur','title','paginate'));
+
     }
 
     /**
@@ -28,8 +28,9 @@ class StrukturController extends Controller
      */
     public function create()
     {
-        $model = new Struktur;
-        return view('admin.profil.struktur.tambah', compact('model'));
+        $title = 'Tambah Data Struktur Kepengurusan';
+        $struktur = new Struktur;
+        return view('admin.profil.struktur.tambah', compact('title','struktur'));
     }
 
     /**
@@ -46,16 +47,13 @@ class StrukturController extends Controller
             'jabatan' => 'required',
         ]);
 
-        $data = new Struktur;
-        $data->name = $request->name;
-        $data->jabatan = $request->jabatan;
-        $data->keterangan = $request->keterangan;
-        $data->save();
+        $struktur = new Struktur;
+        $struktur->name = $request->name;
+        $struktur->jabatan = $request->jabatan;
+        $struktur->keterangan = $request->keterangan;
+        $struktur->save();
 
         return redirect()->route('struktur.index')->with('success', 'Data Struktur Kepengurusan Berhasil Ditambahkan');
-        
-
-    
     }
 
     /**
@@ -77,8 +75,9 @@ class StrukturController extends Controller
      */
     public function edit($id)
     {
-        $model = Struktur::find($id);
-        return view('admin.profil.struktur.edit', compact('model'));
+        $struktur = Struktur::find($id);
+        $title = 'Edit Data Program Donasi';
+        return view('admin.profil.struktur.edit', compact('struktur','title'));
     }
 
     /**
@@ -96,11 +95,11 @@ class StrukturController extends Controller
             'jabatan' => 'required',
         ]);
 
-        $data = Struktur::find($id);
-        $data->name = $request->name;
-        $data->jabatan = $request->jabatan;
-        $data->keterangan = $request->keterangan;
-        $data->save();
+        $struktur = Struktur::find($id);
+        $struktur->name = $request->name;
+        $struktur->jabatan = $request->jabatan;
+        $struktur->keterangan = $request->keterangan;
+        $struktur->save();
 
         return redirect()->route('struktur.index')->with('success', 'Data Struktur Kepengurusan Berhasil Diupdate');
     }
@@ -113,8 +112,17 @@ class StrukturController extends Controller
      */
     public function destroy($id)
     {
-        $data = Struktur::find($id);
-        $data->delete();
+        $struktur = Struktur::find($id);
+        $struktur->delete();
         return redirect()->route('struktur.index')->with('success', 'Data Struktur Kepengurusan Berhasil Dihapus');
+    }
+
+    public function cari(Request $request)
+    {
+        $keyword = $request->cari;
+        $paginate = Struktur::where('name', 'like', '%' . $keyword . '%')->paginate(3);
+        $paginate->appends(['keyword' => $keyword]);
+        $title = 'Pencarian Data Struktur Kepengurusan';
+        return view('admin.profil.struktur.indexStruktur', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

@@ -14,11 +14,11 @@
                     <a href="{{url('/profil/sejarah')}}" class="dropdown-item ">Sejarah</a>
                     <a href="{{url('/profil/visi')}}" class="dropdown-item ">Visi, Misi & Tujuan</a>
                     <a href="{{url('/profil/kegiatan')}}" class="dropdown-item ">Kegiatan</a>
-                    <a href="{{url('/struktur')}}" class="dropdown-item ">Struktur Kepengurusan</a>
+                    <a href="{{url('/profil/struktur-kepengurusan')}}" class="dropdown-item ">Struktur Kepengurusan</a>
                 </div>
             </div>
-            <a href="{{url('/galeri')}}" class="nav-item nav-link text-white">Galeri</a>
-            <a href="{{url('/kegiatan')}}" class="nav-item nav-link text-white">Kegiatan</a>
+            <a href="{{url('/galeri-panti')}}" class="nav-item nav-link text-white">Galeri</a>
+            <a href="{{url('/kegiatan-panti')}}" class="nav-item nav-link text-white">Kegiatan</a>
             <a href="{{url('/donasi')}}" class="nav-item nav-link text-white">Donasi</a>
 
             <a href="{{url('/produk')}}" class="nav-item nav-link text-white">Catering Kue</a>

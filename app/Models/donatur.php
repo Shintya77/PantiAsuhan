@@ -11,8 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class donatur extends Model
 {
     use HasFactory;
-    protected $table="barang"; 
-    protected $primaryKey = 'Kd_Barang'; 
+    protected $table="donaturs"; 
 
     protected $fillable = [
         'id_donatur',

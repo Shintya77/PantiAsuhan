@@ -40,12 +40,8 @@ Route::prefix('profil')->group(function () {
     Route::get('/visi ',[VisiController::class, 'visi']);
     Route::get('/kegiatan ',[KegiatanController::class, 'kegiatan']);
 });
-
-
-Route::resource('galeri', GaleriController::class);
-Route::resource('struktur', StrukturController::class);
-Route::resource('kegiatan', KegiatanDetailController::class);
-
+Route::get('/galeri-panti',[KegiatanController::class, 'galeri']);
+Route::get('/kegiatan-panti',[KegiatanController::class, 'kegiatanDetail']);
 Route::get('/donasi',[DonasiContrroler::class, 'program']);
 
 
@@ -71,11 +67,15 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('binaan', BinaanController::class);
     Route::resource('donatur', DonaturController::class);
     Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
+    Route::get('bank/cari/data', [BankController::class, 'cari'])->name('bank.cari');
+    Route::get('binaan/cari/data', [BinaanController::class, 'cari'])->name('binaan.cari');
+    // Route::get('donatur/cari/data', [DonaturController::class, 'cari'])->name('donatur.cari');
 
     //ROUTE ADMIN WEB PROFIL
-    // Route::resource('galeri', GaleriController::class);
-    // Route::resource('struktur', StrukturController::class);
-    // Route::resource('kegiatan', KegiatanDetailController::class);
+    Route::resource('struktur', StrukturController::class);
+    Route::resource('galeri', GaleriController::class);
+    Route::resource('kegiatan', KegiatanDetailController::class);
+    Route::get('struktur/cari/data', [StrukturController::class, 'cari'])->name('struktur.cari');
     
     // ROUTE ADMIN CATERING KUE
     Route::resource('harga', HargaKueController::class);

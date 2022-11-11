@@ -10,8 +10,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-              <li class="breadcrumb-item active">Kelola Data</li>
+              <li class="breadcrumb-item"><a href="{{route('bank.cari')}}">Dashboard</a></li>
+              <li class="breadcrumb-item active">Kelola Data Program Donasi</li>
             </ol>
           </div>
         </div>

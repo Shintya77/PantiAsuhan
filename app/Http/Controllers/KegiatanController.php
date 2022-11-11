@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Struktur;
+use App\Models\Galeri;
+use App\Models\kegiatan;
 
 use Illuminate\Http\Request;
 
@@ -10,25 +13,31 @@ class KegiatanController extends Controller
         return view('fitur.user.profil.kegiatan', 
         ['title'=> 'Kegiatan Panti Asuhan Putri Aisyiyah']);
     }
+    //Struktur Kepngerusuan
     public function struktur(){
-        return view('fitur.user.profil.struktur', 
-        ['title'=> 'Struktu Kepengurusan Panti Asuhan Putri Aisyiyah']);
+        $data = Struktur::all();
+        return view ('fitur.user.profil.struktur',
+        ['data' => $data, 
+        'title'=> 'Struktuk Kepengurusan Panti Asuhan Putri Aisyiyah']
+        );
     }
+    //Dasboard Donasi sebelum login
     public function dashboard(){
         return view('fitur.donasi.dashboard', 
         ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
     }
-    public function formulir(){
-        return view('fitur.donasi.formulir', 
-        ['title'=> 'Formulir Donasi Panti Asuhan Putri Aisyiyah']);
+    //galeri user
+    public function galeri(){
+        $galeri = Galeri::all();
+        return view('fitur.user.galeri', 
+        ['data' => $galeri,
+        'title'=> 'Galeri Panti Asuhan Putri Aisyiyah']);
     }
-    public function binaan(){
-        return view('fitur.donasi.daftarbinaan', 
-        ['title'=> 'Daftar Binaan Panti Asuhan Putri Aisyiyah']);
-    }
-
-    public function donasi(){
-        return view('fitur.donasi.donasi', 
-        ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
+    //kegiatan user
+    public function kegiatanDetail(){
+        $kegiatan = Kegiatan::all();
+        return view('fitur.user.kegiatanDetail', 
+        ['data' => $kegiatan,
+        'title'=> 'Kegiatan Detail Panti Asuhan Putri Aisyiyah']);
     }
 }

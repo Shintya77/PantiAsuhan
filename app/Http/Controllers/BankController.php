@@ -135,4 +135,12 @@ class BankController extends Controller
         return redirect()->route('bank.index')->with('success', 'Data Bank Berhasil Dihapus');
  
     }
+    public function cari(Request $request)
+    {
+        $keyword = $request->cari;
+        $paginate = Bank::where('nama_bank', 'like', '%' . $keyword . '%')->paginate(3);
+        $paginate->appends(['keyword' => $keyword]);
+        $title = 'Pencarian Data Bank';
+        return view('admin.donasi.bank.indexBank', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }
