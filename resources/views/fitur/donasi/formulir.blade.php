@@ -13,23 +13,15 @@
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nama Donatur</h6>
-                                    <input type="text" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; ">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <h6 class="text-black">Email</h6>
-                                    <input type="email" class="form-control border-0" placeholder="Email Donatur" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <h6 class="text-black">Nomor Telepon </h6>
-                                    <input type="text" class="form-control border-0" placeholder="Nomor Telepon" style="height: 55px;">
+                                    <input type="text" name="name" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; ">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Tanggal Donasi</h6>
-                                    <input type="date" class="form-control border-0" placeholder="Tanggal Donasi" style="height: 55px;">
+                                    <input type="date" name="tgl_donasi" class="form-control border-0" placeholder="Tanggal Donasi" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Alamat Donatur</h6>
-                                    <input type="type" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;">
+                                    <input type="type" name="alamat" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;">
                                 </div>
 
                                 <div class="col-12 col-sm-6">
@@ -43,15 +35,15 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nominal Donasi</h6>
-                                    <input type="type" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;">
+                                    <input type="type" name="nominal" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Rekening Atas Nama</h6>
-                                    <input type="type" class="form-control border-0" placeholder="Rekening Atas Nama" style="height: 55px;">
+                                    <input type="type" name="atas_nama" class="form-control border-0" placeholder="Rekening Atas Nama" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nomor Rekening Donatur</h6>
-                                    <input type="type" class="form-control border-0" placeholder="Nomor Rekening" style="height: 55px;">
+                                    <input type="type" name="no_rekening" class="form-control border-0" placeholder="Nomor Rekening" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Pilih Program</h6>
@@ -63,7 +55,7 @@
                                 </div>
                                 <div class="col-12">
                                     <h6 class="text-black">Keterangan </h6>
-                                    <textarea class="form-control border-0" placeholder="Keterangan bila perlu"></textarea>
+                                    <textarea type="text" name="keterangan" class="form-control border-0" placeholder="Keterangan bila perlu"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <a  href="{{url('/dashboard-donasi')}}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
@@ -95,7 +87,7 @@
                 <div class="d-flex justify-content-center">
                 <p class="description">INFORMASI DONASI ANDA!!!</p><br>  
                 </div>  
-            <p class="description">Donasi anda adalah sebesar              : Rp (jumlah nominal ) </p><br> 
+            <p class="description">Donasi anda adalah sebesar              : Rp  </p><br> 
             <p class="description">Segera transfer ke rekening atas nama   :  An. (tergantung An. bank yg dipilih )</p><br>
             <p class="description">Bank                                    :  Nama Bank </p><br>  
             <p class="description">Nomor Rekening                          :  xxxxxxxxxxxxxxxxxx</p><br>  
@@ -112,7 +104,7 @@
         <br>
 </br>
         <p class="description">Upload Bukti Transfer</p><br> 
-        <input type="file" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;">
+        <input type="file" name="bukti_tf" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;">
 <br>
 </br>
         <a id="upload" onclick="upload()" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>

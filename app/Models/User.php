@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\donatur;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,4 +42,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function donatur()
+    {
+        return $this->hasMany(donatur::class);
+    }
+    
 }
