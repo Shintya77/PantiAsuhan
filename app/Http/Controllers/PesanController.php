@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pesan;
 use App\Http\Requests\StorePesanRequest;
 use App\Http\Requests\UpdatePesanRequest;
-use App\Models\Harga;
+use App\Models\Produk;
 
 class PesanController extends Controller
 {
@@ -23,7 +23,7 @@ class PesanController extends Controller
     public function index()
     {
         //
-        $data = Harga::all();
+        $data = Produk::all();
         return view('fitur.pesan_kue.pesan', ['active'=>'active', 'title'=>'Keranjang'], compact('data'));
     }
 

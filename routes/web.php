@@ -14,7 +14,6 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BinaanController;
 use App\Http\Controllers\PesanController;
-use App\Http\Controllers\HargaKueController;
 use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
@@ -78,12 +77,8 @@ Route::middleware(['auth', 'admin'])->group(function (){
     // Route::resource('kegiatan', KegiatanDetailController::class);
     
     // ROUTE ADMIN CATERING KUE
-    Route::resource('harga', HargaKueController::class);
-    Route::get('harga/cari/data', [HargaKueController::class, 'cari'])->name('harga.cari');
     Route::resource('kue', KueController::class);
     Route::get('kue/cari/data', [KueController::class, 'cari'])->name('kue.cari');
-    Route::resource('detailKue', DetailKueController::class);
-    Route::get('detailKue/cari/data', [DetailKueController::class, 'cari'])->name('detailKue.cari');
 
 
 
