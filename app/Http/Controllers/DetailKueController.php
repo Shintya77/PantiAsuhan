@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Harga;
 use App\Models\Produk;
 
 class DetailKueController extends Controller
@@ -17,7 +16,7 @@ class DetailKueController extends Controller
     {
         // Mengambil semua isi tabel 
         $title = 'Data Detail Produk Kue';
-        $paginate = Harga::orderBy('id', 'asc')->paginate(5);
+        $paginate = Produk::orderBy('id', 'asc')->paginate(5);
         return view('admin.pesan_kue.produk.index', compact('title','paginate'));
     }
 

@@ -37,29 +37,22 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="{{ route('harga.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('kue.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="produk_id">Produk Kue</label>
-                            <select name="produk_id" id="produk_id" class="form-control">
-                              @foreach ($produk as $p)
-                                <option value="{{$p->id}}">{{$p->nama}}</option>
-                              @endforeach
-                            </select>
+                            <label for="nama">Nama Kue</label>
+                            <input type="text" name="nama" class="form-control" id="nama" aria-describedby="nama" >
                         </div>
                         <div class="form-group">
-                            <label for="harga_normal">Harga Normal</label>
-                            <input type="integer" name="harga_normal" class="form-control" id="harga_normal" aria-describedby="harga_normal" >
+                            <label for="Gambar">Gambar</label>
+                            <input type="file" class="form-control" required="required" name="gambar" >
                         </div>
                         <div class="form-group">
-                            <label for="harga_tanggung">Harga Tanggung</label>
-                            <input type="integer" name="harga_tanggung" class="form-control" id="harga_tanggung" aria-describedby="harga_tanggung" >
+                            <label for="harga">Harga</label>
+                            <input type="integer" name="harga" class="form-control" id="harga" aria-describedby="harga" >
                         </div>
-                        <div class="form-group">
-                            <label for="harga_mini">Harga Mini</label>
-                            <input type="integer" name="harga_mini" class="form-control" id="harga_mini" aria-describedby="harga_mini" >
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class="btn btn-secondary " href="{{ route('kue.index') }}">Kembali</a>
+                        <button type="submit" class="btn btn-warning">Submit</button>
                     </form>
                 </div>
             </div>

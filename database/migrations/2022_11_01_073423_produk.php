@@ -15,8 +15,9 @@ class Produk extends Migration
     {
         Schema::create('produk', function (Blueprint $table) {
             $table->id('id');
-            $table->String('nama', 25);
-            $table->String('gambar');
+            $table->string('nama', 50);
+            $table->string('gambar');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

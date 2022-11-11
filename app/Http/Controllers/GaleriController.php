@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Galeri;
+use Illuminate\Support\Facades\Storage;
 
 class GaleriController extends Controller
 {
@@ -15,10 +16,11 @@ class GaleriController extends Controller
     public function index()
     {
         $galeri = Galeri::all();
-       
-        return view ('fitur.user.galeri', [
-            'data' => $galeri
-        ]);
+        $title = 'Data Galeri';
+        $paginate = Galeri::orderBy('id', 'asc')->paginate(5);
+
+        return view ('admin.profil.galeri.index', compact('galeri', 'title', 'paginate')
+        );
     }
 
     /**
@@ -28,8 +30,9 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        $model = new Galeri;
-        return view('fitur.admin.profil.galeri.tambah', compact('model'));
+        $title ="Tambah Data Galeri";
+        $galeri = Galeri::all();
+        return view('admin.profil.galeri.tambah', compact('title', 'galeri'));
     }
 
     /**
@@ -40,19 +43,20 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        // $img->resize(100, 100, function ($constraint) {
-        //     $constraint->aspectRatio();
-        // })->save($destinationPath.'/'.$input['imagename']);
+        //melakukan validasi data
+        $request->validate([
+            'gambar' => 'required',
+        ]);
 
         if ($request->file('gambar')){
-            
+            $image_name = $request->file('gambar')->store('gambar', 'public');
         }
-        $image_name = $request->file('gambar')->store('galeri', 'public');
-        $model = new Galeri;
-        $model->gambar= $image_name;
 
-        $model->save();
-        return redirect('galeri');
+        $galeri = new Galeri();
+        $galeri->gambar = $image_name;
+        $galeri->save();
+
+        return redirect()->route('galeri.index')->with('success', 'Data Galeri Berhasil Ditambahkan');
     }
 
     /**
@@ -74,8 +78,9 @@ class GaleriController extends Controller
      */
     public function edit($id)
     {
-        $model = Galeri::find($id);
-        return view('fitur.admin.profil.galeri.edit', compact('model'));
+        $title = new Galeri();
+        $galeri = Galeri::find($id);
+        return view('admin.profil.galeri.edit', compact('title', 'galeri'));
     }
 
     /**
@@ -87,15 +92,22 @@ class GaleriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = Galeri::find($id);
-        if ($model->gambar && file_exists(storage_path('app/public/'.$model->galeri))){
-            \Storage::delete('public/'. $model->galeri);
-        }
-        $image_name = $request->file('gambar')->store('galeri', 'public');
-        $model->gambar = $image_name;
+        ///melakukan validasi data
+        $request->validate([
+            'gambar' => 'image|file|max:1024',
+        ]);
 
-        $model->save();
-        return redirect('galeri');
+        $galeri = Galeri::where('id',$id)->first();
+        if ($galeri->gambar && file_exists(storage_path('app/public/'.$galeri->gambar))){
+            Storage::delete('public/'. $galeri->gambar);
+        }
+
+        $image_name = $request->file('gambar')->store('images', 'public');
+        $galeri->save();
+        
+        //jika data berhasil diupdate, akan kembali ke halaman utama
+        return redirect()->route('galeri.index')
+            ->with('success', 'Data Galeri Berhasil Diupdate');
     }
 
     /**
@@ -106,8 +118,7 @@ class GaleriController extends Controller
      */
     public function destroy($id)
     {
-        $model = Galeri::find($id);
-        $model->delete();
-        return redirect('galeri');
+        Galeri::where('id',$id)->delete();
+        return redirect()->route('galeri.index')->with('success', 'Data Galeri Berhasil Dihapus');
     }
 }

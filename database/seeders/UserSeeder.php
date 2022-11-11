@@ -37,6 +37,17 @@ class UserSeeder extends Seeder
                 'nohp'=>'081330551209',
                 'role'=>'pemesan'   
                 
+            ],
+            [
+                
+                
+                'name'=>'ifa',
+                'email'=>'ifa@gmail.com',
+                'password' => Hash::make('admin'),
+                'alamat'=>'malang',
+                'nohp'=>'081298765432',
+                'role'=>'admin'   
+                
             ]
             ));
     }

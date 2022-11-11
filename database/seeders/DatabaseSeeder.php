@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             StrukturSeeder::class,
             UserSeeder::class,
             ProdukSeeder::class,
-            HargaSeeder::class,
             KegiatanSeeder::class,
             GaleriSeeder::class,
             ProgramSeeder::class,
