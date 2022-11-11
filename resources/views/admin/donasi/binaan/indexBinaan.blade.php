@@ -68,7 +68,6 @@
                       <td class="text-black">{{ $bina->umur }}</td>
                       <td class="text-black">{{ $bina->kelas }}</td>
                       <td class="text-black">{{ $bina->status }}</td>
-                      <td><a class="btn btn-info" href="{{ route('binaan.edit',$bina->id_binaan) }}">Edit</td>
                       <td>
                       <form action="{{ route('binaan.destroy',$bina->id_binaan) }}" method="POST">
                             <a class="btn btn-warning" href="{{ route('binaan.edit',$bina->id_binaan) }}"><i class="fa fa-edit"></i></a>
