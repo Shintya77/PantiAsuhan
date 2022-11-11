@@ -13,8 +13,9 @@
                <br>
                <br>
                {{-- <li><a href="#">Situs </a></li> --}}
-                <strong>Phone :</strong> 0341 582717<br>
-                <strong>Email    : </strong><a href="mailto:aisyiyahpaputri@gmail.com" class="text-warning">aisyiyahpaputri@gmail.com</a><br>
+                <strong>Telepon :</strong> 0341 582717<br>
+                <strong>Ponsel  :</strong> 081555695526<br>
+                <strong>Email   : </strong><a href="mailto:aisyiyahpaputri@gmail.com" class="text-warning">aisyiyahpaputri@gmail.com</a><br>
               </p>
           </div>
 
