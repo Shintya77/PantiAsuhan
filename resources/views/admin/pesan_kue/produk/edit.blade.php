@@ -37,31 +37,24 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="post" action="{{ route('harga.update', $harga->id) }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('kue.update', $kue->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="produk_id">Produk Kue</label>
-                            {{-- <input type="produk_id" name="produk_id" class="form-control" id="produk_id" value="{{ $harga->$produk->nama }}" aria-describedby="produk_id" > --}}
-                            <select name="produk_id" id="produk_id" class="form-control">
-                                @foreach ($produk as $p)
-                                  <option value="{{$p->id}}" {{$harga->produk_id == $p->id ? 'selected' : ''}} >{{$p->nama}}</option>
-                                @endforeach
-                            </select>
-                          </div>
-                        <div class="form-group">
-                            <label for="harga_normal">Harga Normal</label>
-                            <input type="integer" name="harga_normal" class="form-control" required="required" value="{{ $harga->harga_normal }}" >
+                            <label for="nama">Nama Kue</label>
+                            <input type="text" name="nama" class="form-control" required="required" value="{{ $kue->nama }}" >
                         </div>
                         <div class="form-group">
-                            <label for="harga_tanggung">Harga Tanggung</label>
-                            <input type="integer" name="harga_tanggung" class="form-control" required="required" value="{{ $harga->harga_tanggung }}" >
+                            <label for="gambar">Gambar</label>
+                            <input type="file" class="form-control" required="required" name="gambar" value="{{ $kue->gambar }}" >
+                            <img width="100px" src="{{asset('storage/'.$kue->gambar)}}">
                         </div>
                         <div class="form-group">
-                            <label for="harga_mini">Harga Mini</label>
-                            <input type="integer" name="harga_mini" class="form-control" required="required" value="{{ $harga->harga_mini }}" >
+                            <label for="harga">Harga</label>
+                            <input type="integer" name="harga" class="form-control" required="required" value="{{ $kue->harga }}" >
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class="btn btn-secondary " href="{{ route('kue.index') }}">Kembali</a>
+                        <button type="submit" class="btn btn-warning">Submit</button>
                     </form>
                 </div>
             </div>

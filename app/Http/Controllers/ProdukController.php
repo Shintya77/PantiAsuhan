@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
-use App\Models\Harga;
 use DB;
 
 class ProdukController extends Controller
@@ -28,7 +27,7 @@ class ProdukController extends Controller
      public function index()
     {
          
-         $data = Harga::all();
+         $data = Produk::all();
          return view('fitur.pesan_kue.produk', ['active'=>'active', 'title'=>'produk'], compact('data'));
     }
 
@@ -62,9 +61,9 @@ class ProdukController extends Controller
     public function show($id)
     {
          //menampilkan detail data siswa berdasarkan Id siswa
-         $harga = Harga::where('id',$id)->first();
+         $produk = Produk::where('id',$id)->first();
          $title = 'Detail Produk';
-         return view('fitur.pesan_kue.detail', compact('harga', 'title'));
+         return view('fitur.pesan_kue.detail', compact('produk', 'title'));
     }
 
     /**

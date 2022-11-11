@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Kelola Data Produk Kue</h1>
+            <h1>Kelola Data Kue</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Kelola Data Produk Kue</li>
+              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+              <li class="breadcrumb-item active">Kelola Data Kue</li>
             </ol>
           </div>
         </div>
@@ -23,9 +23,11 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Detail Produk Kue</h3>
+            <h3 class="card-title">{{ $title }}</h3>
         </div>
           <div class="card-body">
+                  <a class="btn btn-primary" href="{{ route('kue.create')}}">Tambah Produk Kue</a> 
+                    <br><br>
 
                     {{-- @if ($message = Session::get('success'))
                       <div class="alert alert-success">
@@ -33,9 +35,9 @@
                       </div>
                     @endif  --}}
 
-                  <form class="form" method="get" action="{{ route('detailKue.cari') }}">
+                  <form class="form" method="get" action="{{ route('kue.cari') }}">
                       <div class="form-group w-100 mb-3">
-                          <label for="search" class="d-block mr-2">Pencarian Data Produk</label>
+                          <label for="search" class="d-block mr-2">Pencarian Data Kue</label>
                           <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Kue">
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
@@ -46,23 +48,23 @@
                     <tr>
                         <th>Nama Kue</th>
                         <th>Gambar</th>
-                        <th>Harga Normal</th>
-                        <th>Harga Tanggung</th>
-                        <th>Harga Mini</th>
+                        <th>Harga</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($paginate as $produk)
+                    @foreach ($paginate as $kue)
                             <tr>
-                                <td>{{ $produk->produk->nama }}</td>
-                                <td><img width="150px" height="150px" src="{{asset('storage/'.$produk->produk->gambar)}}"></td>
-                                <td>Rp. {{ $produk->harga_normal }}</td> 
-                                <td>Rp. {{ $produk->harga_tanggung }}</td>
-                                <td>Rp. {{ $produk->harga_mini }}</td>
+                                <td>{{ $kue->nama }}</td>
+                                <td><img width="150px" height="150px" src="{{asset('storage/'.$kue->gambar)}}"></td>
+                                <td>Rp. {{ $kue->harga }}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="{{ route('detailKue.show',$produk->id) }}"><i class="fa fa-eye"></i></a>
-                                    
+                                  <form action="{{ route('kue.destroy',$kue->id) }}" method="POST">
+                                    <a class="btn btn-warning" href="{{ route('kue.edit',$kue->id) }}"><i class="fa fa-edit"></i></a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                  </form>
                                 </td>
                             </tr>
                         @endforeach

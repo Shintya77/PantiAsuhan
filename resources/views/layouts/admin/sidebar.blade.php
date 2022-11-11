@@ -54,7 +54,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{route('galeri.index')}}" class="nav-link ">
                   <i class="far fa-image nav-icon"></i>
                   <p> Edit Galeri</p>
                 </a>
@@ -62,7 +62,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{route('kegiatan.index')}}" class="nav-link ">
                   <i class="far fa-star nav-icon"></i>
                   <p>Edit Kegiatan</p>
                 </a>
@@ -134,25 +134,9 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                
-                <a href="{{ route('detailKue.index')}}" class="nav-link ">
+                <a href="{{ route('kue.index')}}" class="nav-link ">
                   <i class="far fa-star nav-icon"></i>
-                  <p>Data Produk Detail</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('harga.index')}}" class="nav-link ">
-                  <i class="far fa-star nav-icon"></i>
-                  <p>Data Harga</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('kue.index')}}" class="nav-link ">
-                  <i class="far fa-star nav-icon"></i>
-                  <p>Data Kue</p>
+                  <p>Data Produk</p>
                 </a>
               </li>
             </ul>

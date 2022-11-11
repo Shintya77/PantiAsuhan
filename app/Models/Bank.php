@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\donatur;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,5 +13,10 @@ class Bank extends Model
 
     public function pesan(){
         return $this->hasMany(Pesan::class);
+    }
+
+    public function donatur()
+    {
+        return $this->hasMany(donatur::class);
     }
 }

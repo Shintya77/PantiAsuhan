@@ -19,8 +19,8 @@ class KueController extends Controller
         // Mengambil semua isi tabel
         $produk = Produk::all(); 
         $title = 'Data Kue';
-        $paginate = Produk::orderBy('id', 'asc')->paginate(5);
-        return view('admin.pesan_kue.kue.index', compact('produk','title','paginate'));
+        $paginate = Produk::orderBy('id', 'asc')->paginate(9);
+        return view('admin.pesan_kue.produk.index', compact('produk','title','paginate'));
     }
 
     /**
@@ -32,7 +32,7 @@ class KueController extends Controller
     {
         //
         $title = 'Data Kue';
-        return view('admin.pesan_kue.kue.create', compact('title'));
+        return view('admin.pesan_kue.produk.create', compact('title'));
     }
 
     /**
@@ -47,6 +47,7 @@ class KueController extends Controller
         $request->validate([
             'nama' => 'required',
             'gambar' => 'required',
+            'harga' => 'required',
         ]);
 
         $kue = new Produk;
@@ -55,11 +56,12 @@ class KueController extends Controller
             $image_name = $request->file('gambar')->store('images', 'public');
         }
         $kue->gambar = $image_name;
+        $kue->harga = $request->get('harga');
         $kue->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('kue.index')
-        ->with('success', 'Data Harga Kue Berhasil Ditambahkan');
+        ->with('success', 'Data Kue Berhasil Ditambahkan');
     }
 
     /**
@@ -84,7 +86,7 @@ class KueController extends Controller
         //menampilkan detail data kue berdasarkan id produk untuk diedit
         $kue = Produk::all()->where('id', $id)->first();
         $title = 'Data Kue';
-        return view('admin.pesan_kue.kue.edit', compact('kue','title'));
+        return view('admin.pesan_kue.produk.edit', compact('kue','title'));
     }
 
     /**
@@ -100,6 +102,7 @@ class KueController extends Controller
         $request->validate([
             'nama' => 'required',
             'gambar' => 'required',
+            'harga' => 'required',
         ]);
 
         $kue = Produk::where('id',$id)->first();
@@ -110,6 +113,7 @@ class KueController extends Controller
 
         $image_name = $request->file('gambar')->store('images', 'public');
         $kue->gambar = $image_name;
+        $kue->harga = $request->get('harga');
         $kue->save();
         
         //jika data berhasil diupdate, akan kembali ke halaman utama
@@ -137,6 +141,6 @@ class KueController extends Controller
         $paginate = Produk::where('nama', 'like', '%' . $keyword . '%')->paginate(3);
         $paginate->appends(['keyword' => $keyword]);
         $title = 'Pencarian Data Kue';
-        return view('admin.pesan_kue.kue.index', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('admin.pesan_kue.produk.index', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

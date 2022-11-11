@@ -13,25 +13,17 @@
 
         <div class="row content">
                 <div class="col-lg-4" data-aos="fade-up">
-                    <div class="swiper-slide"><img src="{{asset('storage/'.$harga->produk->gambar)}}" width="300" height="200" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="{{asset('storage/'.$produk->gambar)}}" width="300" height="200" class="img-fluid" alt=""></div>
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0">
                     <div class="row" data-aos="fade-up">
                         <div class="info-box mb-70">
                             <div class="col-lg-6">
-                                <p><h2>{{$harga->produk->nama}}</h2></p>
-                                <p>Harga Normal : {{$harga->harga_normal}}</p>
-                                <p>Harga Tanggung : {{$harga->harga_tanggung}}</p>
-                                <p>Harga Mini : {{$harga->harga_mini}}</p>
+                                <p><h2>{{$produk->nama}}</h2></p><br>
+                                <h4>Harga : {{$produk->harga}}</h4>
                                 <p><p><p></p></p></p>
                                 <form method="post" action="/keranjang" enctype="multipart/form-data">
                                     @csrf
-                                <select class="form-select" name="harga_id" id="harga_id">
-                                    <option value="Pilihan Ukuran Kue">Pilihan Ukuran Kue</option>
-                                    <option value="{{$harga->id}}">Ukuran Normal - Rp {{$harga->harga_normal}}</option>
-                                    <option value="{{$harga->id}}">Ukuran Tanggung - Rp {{$harga->harga_tanggung}}</option>
-                                    <option value="{{$harga->id}}">Ukuran Mini - Rp {{$harga->harga_mini}}</option>
-                                  </select>
                                 <p></p> <br>
                             
                                 <tr>
@@ -47,11 +39,6 @@
                                     </tr>
                                    
                                 </form>
-                                <br>
-                                <B>NB:</B> 
-                                <I>Jika ingin memesan berbeda ukuran kue.Silahkan kembali ke menu catering untuk memilih lagi jenis kue </I>
-                                
-                              
                             </div>
                             
                         </div>
