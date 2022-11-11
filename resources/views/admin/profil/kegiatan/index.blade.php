@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Kelola Data Galeri</h1>
+            <h1>Kelola Data Kegiatan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -23,13 +23,13 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Galeri</h3>
+            <h3 class="card-title">Data Kegiatan</h3>
             <div class="card-tools">
               
             </div>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="{{ route('galeri.create') }}">Tambah Galeri</a> 
+                  <a class="btn btn-primary" href="{{ route('kegiatan.create') }}">Tambah Kegiatan</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))
@@ -38,25 +38,34 @@
                       </div>
                     @endif  --}}
 
-                  
+                  <form class="form" method="get" action="#">
+                      <div class="form-group w-100 mb-3">
+                          <label for="search" class="d-block mr-2">Pencarian Data Kegiatan</label>
+                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Kegiatan">
+                          <button type="submit" class="btn btn-success mb-1">Cari</button>
+                      </div>
+                  </form>
 
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>No </th>
+                        <th>Foto</th>
+                        <th>Nama Kegiatan</th>
+                        <th>Deskripsi</th>
                         <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
                      
                     </thead>
                     <tbody>
-                    @foreach ($paginate as $glr)
+                    @foreach ($paginate as $kg)
                     <tr>
-                        <td class="text-black">{{ $glr->id}}</td>
-                        <td><img width="75px" height="50px" src="{{$glr->gambar}}"></td>
+                        <td><img width="75px" height="50px" src="{{$kg->foto}}"></td>
+                        <td class="text-black">{{ $kg->judul}}</td>
+                        <td class="text-black">{{ $kg->deskripsi }}</td>
                         <td>
-                          <form action="{{ route('galeri.destroy',$glr->id) }}" method="POST">
-                            <a class="btn btn-warning" href="{{ route('galeri.edit',$glr->id) }}"><i class="fa fa-edit"></i></a>
+                          <form action="{{ route('kegiatan.destroy',$kg->id) }}" method="POST">
+                            <a class="btn btn-warning" href="{{ route('kegiatan.edit',$kg->id) }}"><i class="fa fa-edit"></i></a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
