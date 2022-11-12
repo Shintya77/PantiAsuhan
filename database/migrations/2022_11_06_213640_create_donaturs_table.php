@@ -29,7 +29,7 @@ class CreateDonatursTable extends Migration
             $table->string('no_rekening',25);
             $table->string('keterangan')->nullable();
             $table->string('bukti_tf')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('proses');
             $table->timestamps();
         });
     }

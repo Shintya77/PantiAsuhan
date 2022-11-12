@@ -34,7 +34,7 @@ class donatur extends Model
     }
     public function program()
     {
-        return $this->belongsTo(program::class);
+        return $this->belongsTo(program::class, 'id_program');
     }
     public function user()
     {

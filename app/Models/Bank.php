@@ -10,6 +10,7 @@ class Bank extends Model
 {
     use HasFactory;
     protected $table='banks';
+    protected $primaryKey = 'id_bank'; 
 
     public function pesan(){
         return $this->hasMany(Pesan::class);

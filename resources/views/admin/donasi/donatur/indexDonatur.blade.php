@@ -73,6 +73,12 @@
                       <td><img width="100px" height="100px" src="{{$donasi->bukti_tf}}"></td>
                       <td class="text-black">{{ $donasi->status }}</td>
                       <td>
+                        <form action="{{ route('donatur.update',$donasi->id_donatur) }}" method="POST">
+                          @csrf
+                          @method('PUT')
+                          <button type="submit" class="btn btn-success"><i class="fa fa-check"></i></button>
+                        </form>
+
                       <form action="{{ route('donatur.destroy',$donasi->id_donatur) }}" method="POST">
                             <a class="btn btn-warning" href="{{ route('donatur.edit',$donasi->id_donatur) }}"><i class="fa fa-edit"></i></a>
                             @csrf

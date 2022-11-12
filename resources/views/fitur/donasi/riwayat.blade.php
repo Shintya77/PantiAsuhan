@@ -17,20 +17,25 @@
                               <tr>
                                 <th>Nomor</th>
                                 <th>Nama</th>
+                                <th>Program</th>
                                 <th>Tanggal Donasi</th>
                                 <th>Nominal</th>
+                                <th>Status</th>
                               </tr>
                             </thead>
-                            {{-- <tbody>
-                              @foreach ($data as $str)
+                            <tbody>
+                              @foreach ($donatur as $dtr)
                               <tr>
-                              <td class="text-black">{{ $str->name}}</td>
-                              <td class="text-black">{{ $str->jabatan }}</td>
-                              <td class="text-black">{{ $str->keterangan }}</td>
+                              <td style="text-align:center"><class="text-black">{{ $loop->iteration }}</td>
+                              <td class="text-black">{{ $dtr->name}}</td>
+                              <td class="text-black">{{ $dtr->program->nama_program }}</td>
+                              <td class="text-black">{{ $dtr->tgl_donasi }}</td>
+                              <td class="text-black">Rp {{ number_format($dtr->nominal)}}</td>
+                              <td class="text-black">{{ $dtr->status }}</td>
                                 </form>
                               </td>  
                               @endforeach
-                            </tbody> --}}
+                            </tbody>
                           </table>
                           {{-- <div class="paginate">
                             <div class="container">

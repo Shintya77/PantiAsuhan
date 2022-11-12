@@ -1,7 +1,10 @@
 @extends('layouts.user.master')
 @section('content')
 <!-- Quote Start -->
+<form action="/formulir-donasi" method="POST" enctype="multipart/form-data">
+    @csrf
 <div class="container bg-light overflow-hidden my-5 px-lg-0" id="show">
+
     <div class="container quote px-lg-0">
         <div class="row g-0 mx-lg-0">
 
@@ -9,7 +12,6 @@
                 <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <h2 class="mb-4">FORMULIR DONASI PANTI ASUHAN </h2>
-                        <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nama Donatur</h6>
@@ -21,35 +23,35 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Alamat Donatur</h6>
-                                    <input type="type" name="alamat" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;">
+                                    <input type="text" name="alamat" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;">
                                 </div>
 
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Bank</h6>
-                                    <select name="nama_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
+                                    <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
                                         {{-- <option selected>Bank</option> --}}
                                         @foreach ($bank as $b)
-                                        <option value="{{$b->nama_bank}}" >{{$b->nama_bank}}</option>
+                                        <option value="{{$b->id_bank}}" >{{$b->nama_bank}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nominal Donasi</h6>
-                                    <input type="type" name="nominal" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;">
+                                    <input type="number" name="nominal" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Rekening Atas Nama</h6>
-                                    <input type="type" name="atas_nama" class="form-control border-0" placeholder="Rekening Atas Nama" style="height: 55px;">
+                                    <input type="text" name="atas_nama" class="form-control border-0" placeholder="Rekening Atas Nama" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nomor Rekening Donatur</h6>
-                                    <input type="type" name="no_rekening" class="form-control border-0" placeholder="Nomor Rekening" style="height: 55px;">
+                                    <input type="text" name="no_rekening" class="form-control border-0" placeholder="Nomor Rekening" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Pilih Program</h6>
-                                    <select name="nama_program" id="nama_program" class="form-select border-0" style="height: 55px;">
+                                    <select name="id_program" id="nama_program" class="form-select border-0" style="height: 55px;">
                                         @foreach ($program as $p)
-                                        <option value="{{$p->nama_program}}" >{{$p->nama_program}}</option>
+                                        <option value="{{$p->id_program}}" >{{$p->nama_program}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -63,7 +65,7 @@
                                     {{-- <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button> --}}
                                 </div>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -112,7 +114,7 @@
         {{-- <a href="{{url('/profil/formulir')}}" class="btn btn-warning rounded-pill py-2 px-4 animated slideInRight">Submit</a> --}}
 </div> 
 </section>
-</section><!-- End Icon Boxes Section -->
+</form>
 
 <!-- Quote End -->
 @endsection

@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             GaleriSeeder::class,
             ProgramSeeder::class,
             DonaturSeeder::class,
-            BinaanSeeder::class
+            BinaanSeeder::class,
+            BankSeeder::class
 
         ]);
     }

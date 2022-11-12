@@ -21,11 +21,13 @@ class KegiatanController extends Controller
         'title'=> 'Struktuk Kepengurusan Panti Asuhan Putri Aisyiyah']
         );
     }
+
     //Dasboard Donasi sebelum login
     public function dashboard(){
         return view('fitur.donasi.dashboard', 
         ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
     }
+    
     //galeri user
     public function galeri(){
         $galeri = Galeri::all();

@@ -8,6 +8,7 @@ use App\Models\Bank;
 use App\Models\donatur;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DonasiContrroler extends Controller
 {
@@ -18,6 +19,7 @@ class DonasiContrroler extends Controller
         $paginate = program::orderBy('id_program', 'asc')->paginate(5);
         return view('fitur.donasi.donasi', compact('data','paginate'));      
     }
+    
     //Menampilkan Daftar Binaan
     public function binaan()
     {
@@ -32,23 +34,20 @@ class DonasiContrroler extends Controller
         ['title'=> 'Donasi Panti Asuhan Putri Aisyiyah']);
     }
 
-    public function formulir()
+    public function form()
     {
         $program = program::all();
         $bank = Bank::all();
         $donatur = donatur::all();
         return view('fitur.donasi.formulir', compact('program','bank','donatur')); 
     }
-    public function create()
+
+    public function formulir(Request $request)
     {
-        $title ="Formulir Donasi Panti Asuhan";
-        $donatur = donatur::all();
-        return view('fitur.donasi.formulir', compact('title', 'donatur'));
-    }
-    public function store(Request $request)
-    {
-        //melakukan validasi data
-        $request->validate([
+        
+        $data =  $request->validate([
+            'id_bank' => 'required',
+            'id_program' => 'required',
             'name' => 'required',
             'tgl_donasi' => 'required',
             'alamat' => 'required',
@@ -58,37 +57,27 @@ class DonasiContrroler extends Controller
             'keterangan' => 'required',
             'bukti_tf' => 'image|file|max:1024',
         ]);
+        $data['id_pengguna'] = Auth::user()->id;
 
         if ($request->file('bukti_tf')){
-            $image_name = $request->file('bukti_tf')->store('bukti_tf', 'public');
+            $data['bukti_tf'] = $request->file('bukti_tf')->store('bukti_tf', 'public');
         }
-        $user =  new user();
-        $user->id_pengguna = $request->id_pengguna;
 
-        $bank = new bank();
-        $bank->id_bank = $request->id_bank;
-
-        $program = new program();
-        $program->id_program = $request->id_program;
-
-        $donatur = new donatur();
-        $donatur->name = $request->name;
-        $donatur->tgl_donasi = $request->tgl_donasi;
-        $donatur->alamat = $request->alamat;
-        $donatur->nominal = $request->nominal;
-        $donatur->atas_nama = $request->atas_nama;
-        $donatur->no_rekening = $request->no_rekening;
-        $donatur->keterangan = $request->keterangan;
-        $donatur->bukti_tf = $image_name;
-        $donatur->status = $request->status;
-
-        $donatur->user()->associate($user);
-        $donatur->bank()->associate($bank);
-        $donatur->program()->associate($program);
-        $donatur->save();
-
-        return view('fitur.donatur.donasi')->with('success', 'Donasi Akan Segera di Proses');
+        donatur::create($data);
+        $program = program::all();
+        $bank = Bank::all();
+        $donatur = donatur::all();
+        return view('fitur.donasi.dashboard')->with('success','Donasi anda diproses oleh pihak Panti'); 
     }
 
+    //Riwayat
+    public function riwayat()
+    {
 
+        $program = program::all();
+        $bank = Bank::all();
+        $donatur = donatur::all();
+        return view('fitur.donasi.riwayat', compact('program','bank','donatur')); 
+    }
+   
 }

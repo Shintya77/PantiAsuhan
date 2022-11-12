@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\donatur;
+use App\Models\Bank;
 use Illuminate\Http\Request;
 
 class DonaturController extends Controller
@@ -95,8 +96,10 @@ class DonaturController extends Controller
     public function edit($id_donatur)
     {
         $title = new donatur;
-        $donatur = donatur::find($id_donatur);
-        return view('admin.donasi.donatur.edit', compact('title', 'donatur'));
+        $donatur = donatur::where('id_donatur', $id_donatur)->first();
+        $bank = Bank::all();
+        return view('admin.donasi.donatur.edit', compact('title', 'bank', 'donatur'));
+        
     }
 
     /**
@@ -108,7 +111,11 @@ class DonaturController extends Controller
      */
     public function update(Request $request, $id_donatur)
     {
-        //
+        donatur::where('id_donatur', $id_donatur)
+        ->update([
+            'status' => 'berhasil'
+        ]);
+        return redirect()->route('donatur.index');
     }
 
     /**
