@@ -18,7 +18,7 @@
                 <div class="col-lg-6 pt-4 pt-lg-0">
                     <div class="row" data-aos="fade-up">
                         <div class="info-box mb-70">
-                            <div class="col-lg-6">
+                            <div class="col-lg-10">
                                 <p><h2>{{$produk->nama}}</h2></p><br>
                                 <h4>Harga : {{$produk->harga}}</h4>
                                 <p><p><p></p></p></p>

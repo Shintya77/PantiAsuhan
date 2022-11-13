@@ -18,6 +18,7 @@ use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,9 +57,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'admin'])->group(function (){
-    Route::get('/dashboard', function () {
-    return view('layouts.admin.dashboard');
-    });
+    // Route::get('/dashboard', function () {
+    // return view('layouts.admin.dashboard');
+    // });
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
     // ROUTE ADMIN DONASI 
     Route::resource('bank', BankController::class);
