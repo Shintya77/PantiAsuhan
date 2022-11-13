@@ -77,6 +77,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('galeri', GaleriController::class);
     Route::resource('kegiatan', KegiatanDetailController::class);
     Route::get('struktur/cari/data', [StrukturController::class, 'cari'])->name('struktur.cari');
+    Route::get('kegiatan/cari/data', [KegiatanDetailController::class, 'cari'])->name('kegiatan.cari');
     
     // ROUTE ADMIN CATERING KUE
     Route::resource('kue', KueController::class);

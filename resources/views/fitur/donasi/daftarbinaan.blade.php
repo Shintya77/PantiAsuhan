@@ -15,22 +15,22 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
-                                <th>No</th>
-                                <th>Nama Binaan</th>
-                                <th>TTL</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Pendidikan</th>
-                                <th>Umur</th>
-                                <th>kelas</th>
-                                <th>Status</th>
-                                <th>Domisili</th>
+                                <th style="text-align:center">No </th>
+                                <th style="text-align:center">Nama </th>
+                                <th style="text-align:center">TTL</th>
+                                <th style="text-align:center">Jenis Kelamin</th>
+                                <th style="text-align:center">Pendidikan</th>
+                                <th style="text-align:center">Umur</th>
+                                <th style="text-align:center">Kelas</th>
+                                <th style="text-align:center">Status</th>
+                                <th style="text-align:center">Domisili</th>
     
                               </tr>
                             </thead>
                             <tbody>
                               @foreach ($paginate as $bnn)
                               <tr>
-                              <td style="text-align:center"><class="text-black">{{ {{ $loop->iteration}}}}</td>
+                              <td style="text-align:center"><class="text-black">{{$bnn->id_binaan}}</td>
                               <td class="text-black">{{ $bnn->nama_binaan}}</td>
                               <td class="text-black">{{ $bnn->ttl }}</td>
                               <td style="text-align:center"><class="text-black">{{ $bnn->jekel }}</td>
