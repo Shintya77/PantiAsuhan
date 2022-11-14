@@ -49,10 +49,10 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
+                        <th>No </th>
                         <th>Foto</th>
                         <th>Nama Kegiatan</th>
                         <th>Deskripsi</th>
-                        <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
                      
@@ -60,6 +60,7 @@
                     <tbody>
                     @foreach ($paginate as $kg)
                     <tr>
+                        <td class="text-black">{{ $kg->id }}</td>
                         <td><img width="75px" height="50px" src="{{$kg->foto}}"></td>
                         <td class="text-black">{{ $kg->judul}}</td>
                         <td class="text-black">{{ $kg->deskripsi }}</td>

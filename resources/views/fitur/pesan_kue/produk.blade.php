@@ -18,7 +18,7 @@
                         <div class="col-lg-4" data-aos="fade-up">
                             <div class="box">
                                 <span>{{$d->nama}}</span>
-                                <img src="{{asset('storage/'.$d->gambar)}}" width="300" height="200"><br><br>
+                                <img src="{{asset('storage/'.$d->gambar)}}" width="300" height="250"><br><br>
                                 <h5>Harga: Rp. {{$d->harga}}</h5>
                                 <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
                             </div>

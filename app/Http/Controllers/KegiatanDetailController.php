@@ -82,7 +82,7 @@ class KegiatanDetailController extends Controller
      */
     public function edit($id)
     {
-        $title = new Kegiatan();
+        $title = 'Edit Data Kegiatan';
         $kegiatan = Kegiatan::find($id);
         return view('admin.profil.kegiatan.edit', compact('title', 'kegiatan'));
     }
@@ -128,5 +128,13 @@ class KegiatanDetailController extends Controller
     {
         Kegiatan::where('id',$id)->delete();
         return redirect()->route('kegiatan.index')->with('success', 'Data Kegiatan Berhasil Dihapus');
+    }
+    public function cari(Request $request)
+    {
+        $keyword = $request->cari;
+        $paginate = Kegiatan::where('judul', 'like', '%' . $keyword . '%')->paginate(3);
+        $paginate->appends(['keyword' => $keyword]);
+        $title = 'Pencarian Data Kegiatan';
+        return view('admin.profil.kegiatan.index', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

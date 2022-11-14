@@ -95,10 +95,10 @@ class DonaturController extends Controller
      */
     public function edit($id_donatur)
     {
-        $title = new donatur;
-        $donatur = donatur::where('id_donatur', $id_donatur)->first();
-        $bank = Bank::all();
-        return view('admin.donasi.donatur.edit', compact('title', 'bank', 'donatur'));
+        // $title = new donatur;
+        // $donatur = donatur::where('id_donatur', $id_donatur)->first();
+        // $bank = Bank::all();
+        // return view('admin.donasi.donatur.edit', compact('title', 'bank', 'donatur'));
         
     }
 

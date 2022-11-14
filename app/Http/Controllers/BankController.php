@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bank;
+use Illuminate\Support\Facades\Storage;
 
 class BankController extends Controller
 {
@@ -85,7 +86,7 @@ class BankController extends Controller
      */
     public function edit($id_bank)
     {
-        $title = new Bank;
+        $title = 'Edit Data Bank';
         $bank = Bank::find($id_bank);
         return view('admin.donasi.bank.edit', compact('title', 'bank'));
     }
