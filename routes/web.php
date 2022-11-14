@@ -18,7 +18,11 @@ use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
+<<<<<<< HEAD
 use App\Http\Controllers\DashboardController;
+=======
+use App\Http\Controllers\BankCateringController;
+>>>>>>> 7acecd9 (transaksi catering)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -101,7 +105,15 @@ Route::middleware(['auth', 'donatur'])->group(function (){
 Route::get('/produk/detail', [ProdukController::class, 'show']);
 
 Route::middleware(['auth', 'pemesan'])->group(function (){
-    Route::post('/keranjang', [PesanController::class, 'store'])->name('store');
+    // Route::get('/keranjang', [PesanController::class, 'index'])->name('index');
+    // Route::post('/keranjang', [PesanController::class, 'store'])->name('store');
+    Route::resource('/keranjang', PesanController::class)->only(['index', 'store', 'destroy']);
+
+    // Route::get('/bayar', function () {
+    //     return view('fitur.pesan_kue.checkout');
+    //     });
   
+Route::get('/bayar', [BankCateringController::class, 'index']);
+Route::post('/bayar', [BankCateringController::class, 'bayar']);
 });
 

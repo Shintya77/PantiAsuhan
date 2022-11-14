@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h3><i class="fa fa-shopping-cart"></i> Check Out</h3>
                            
-                            <p align="right">Tanggal Pesan : </p>
+                            <p align="right">Tanggal Pesan : {{ $date->created_at->format('Y-m-d') }}</p>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -35,34 +35,42 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $no = 1; ?>
-
+                                    @foreach ($data as $item)
                                     <tr>
-                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>
-                                            {{-- <img src="{{ url('uploads') }}/{{ $pesanan_detail->barang->gambar }}" width="100" alt="..."> --}}
-                                            ini untuk tempat gambar
+                                            <img src="{{ asset('storage/'. $item->produk->gambar) }}" width="100" height="100"/>
                                         </td>
-                                        <td>ini produk</td>
-                                        <td>ini jumlah pesan</td>
-                                        <td align="right">Rp.harga produk </td>
-                                        <td align="right">Rp. total harga</td>
+                                        <td>{{ $item->produk->nama }}</td>
+                                        <td>{{ $item->jumlah }}</td>
+                                        <td align="right">Rp. {{ $item->produk->harga }} </td>
+                                        <td align="right">Rp. {{ $item->total }}</td>
                                         <td>
-                                            {{-- <form action="{{ url('/produk') }}" method="post">
+                                            <form action="/keranjang/{{$item->id}}" method="POST">
                                                 @csrf
-                                                {{ method_field('DELETE') }} --}}
+                                                @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus data ?');"><i class="fa fa-trash"></i></button>
-                                            {{-- </form> --}}
+                                            </form>
                                         </td>
                                     </tr>
+                                    @endforeach
+
+                                    
                                     <tr>
                                         <td colspan="5" align="right"><strong>Total Harga :</strong></td>
-                                        <td align="right"><strong>Rp. total harga</strong></td>
+                                        <form action="/bayar" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                        <td align="right"><strong>Rp. {{ $total }}</strong></td>
+                                        <input type="hidden" name="total_bayar" value="{{$total}}" />
                                         <td>
-                                            <a href="#" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
-                                                <i class="fa fa-shopping-cart"></i> Check Out
-                                            </a>
+                                            <input type="hidden" name="pesan_id" value="{{$date -> pesan_id}}">
+                                                <button type="submit" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
+                                                    <i class="fa fa-shopping-cart"></i> Check Out
+                                                </button>
+                                                
+                                            
                                         </td>
+                                    </form>
                                     </tr>
                                 </tbody>
                             </table>

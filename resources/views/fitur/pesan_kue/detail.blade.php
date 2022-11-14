@@ -13,17 +13,20 @@
 
         <div class="row content">
                 <div class="col-lg-4" data-aos="fade-up">
-                    <div class="swiper-slide"><img src="{{asset('storage/'.$produk->gambar)}}" width="300" height="200" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="" width="300" height="200" class="img-fluid" alt=""></div>
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0">
                     <div class="row" data-aos="fade-up">
                         <div class="info-box mb-70">
-                            <div class="col-lg-10">
-                                <p><h2>{{$produk->nama}}</h2></p><br>
-                                <h4>Harga : {{$produk->harga}}</h4>
-                                <p><p><p></p></p></p>
+                            <div class="col-lg-6">
                                 <form method="post" action="/keranjang" enctype="multipart/form-data">
                                     @csrf
+                                <p><h2>{{$produk->nama}}</h2></p><br>
+
+                                <h4> Harga : {{$produk->harga}}</h4>
+                               <input type="hidden" name="harga" value="{{$produk->harga}}">
+                               <input type="hidden" name="produk_id" value="{{$produk->id}}">
+                                 
                                 <p></p> <br>
                             
                                 <tr>
@@ -39,6 +42,8 @@
                                     </tr>
                                    
                                 </form>
+                                <p><p><p></p></p></p>
+                              
                             </div>
                             
                         </div>

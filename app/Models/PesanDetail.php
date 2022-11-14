@@ -9,8 +9,9 @@ class PesanDetail extends Model
 {
     use HasFactory;
     protected $table='pesanandetail';
+    protected $guarded = ['id'];
 
-    public function harga(){
-        return $this->belongsTo(Harga::class);
+    public function produk(){
+        return $this->belongsTo(Produk::class);
     }
 }
