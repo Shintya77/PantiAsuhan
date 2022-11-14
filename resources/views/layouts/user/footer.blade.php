@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-5 col-md-6 footer-info">
+          <div class="col-lg-6 col-md-6 col-sm-12">
             <h4>PANTI ASUHAN PUTRI AISYIYAH MALANG</h4>
             <p>Jl. Mayjen. Mt Haryono Gang III No. 231 A, Dinoyo, Kec. Lowokwaru Malang - Jawa Timur</p>
             
@@ -19,28 +19,23 @@
               </p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Kontak Kami</h4><br><br>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h4>Kontak Kami</h4>
             <div class="">
-                   <div class="m-2 d-flex">
+                   <div class="mb-2 d-flex">
                     <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://www.instagram.com/pa_aisyiyah_malang/"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.instagram.com/pa_aisyiyah_malang/" class="text-warning">pa_aisyiyah_malang</a>
                   </div>
-                    <div class="m-2 d-flex">
+                    <div class="mb-2 d-flex">
                       <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://www.facebook.com/profile.php?id=100073960845242"><i class="fab fa-facebook-f"></i></a>
                       <a href="https://www.facebook.com/profile.php?id=100073960845242" class="text-warning">PA Putri AIsyiyah</a>
                     </div>
-                    <div class="m-2 d-flex">
+                    <div class="mb-2 d-flex">
                       <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg"><i class="fab fa-youtube"></i></a>
                       <a href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg" class="text-warning">Paputri Aisyiyah</a>
                     </div>
-
-                   
                 </div>
           </div>
-
-          
-
         </div>
       </div>
     </div>

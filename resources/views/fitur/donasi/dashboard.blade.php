@@ -33,28 +33,28 @@
             <h6 class="text-black">(QS Al Hadid ayat 18)</h6>
         </div>
         <div class="row g-4">
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s" >
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/beasiswa2.jpeg" alt="">
+                    <img class="img-fluid" src="/assets/img/program/1.jpg" alt=""height="100px">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Donasi Renovasi atap</h4>
                         <p>Donasi ini dikhususkan untuk merenovasi atap Panti Asuhan dengan jumlah yang dibutuhkan sebesar Rp 356 juta </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s" >
                 <div class="service-item rounded overflow-hidden">
                     
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/parenting.jpeg" alt="">
+                    <img class="img-fluid" src="/assets/img/program/1.jpg" alt=""height="100px">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Donasi Pendidikan</h4>
                         <p>Donasi ini dikhususkan untuk biaya pendidikan anak binaan Panti Asuhan, dengan jumlah yang dibutuhkan sebesar Rp 30 juta</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s" >
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/parenting2.jpeg" alt="">
+                    <img class="img-fluid" src="/assets/img/program/1.jpg" alt="" height="100px">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Donasi Kebutuhan Pokok</h4>
                         <p>Donasi ini dikhusukan untuk membeli kebutuhan pokok anak binaan Panti Asuhan</p>
@@ -66,7 +66,7 @@
                     <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
-                            {{-- <i class="fa fa-file-text fa-3x"></i> --}}
+                            <i class="bi bi-file-earmark-text display-6"></i>
                         </div>
                         <h4 class="mb-3">Formulir Donasi</h4>
                         <a class="small fw-medium" href="{{url('/formulir-donasi')}}">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
@@ -75,10 +75,10 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="img/img-600x400-5.jpg" alt="">
+                    <img class="img-fluid" src="" alt="">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
-                            {{-- <i class="fab fa-file-text fa-3x"></i> --}}
+                            <i class="bi bi-clock-history display-6"></i>
                         </div>
                         <h4 class="mb-3">Riwayat Donasi</h4>
                         <a class="small fw-medium" href="{{url('/donasi-riwayat')}}">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
@@ -90,7 +90,8 @@
                     <img class="img-fluid" src="img/img-600x400-6.jpg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <div class="service-icon">
-                            {{-- <i class="fa fa-lightbulb fa-3x"></i> --}}
+                            {{-- <i class="bi bi-list-ol display-6"></i> --}}
+                            <i class="bi bi-person-lines-fill display-6"></i>
                         </div>
                         <h4 class="mb-3">Daftar Binaan</h4>
                         <a class="small fw-medium" href="{{url('/daftar-binaan')}}">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
@@ -101,5 +102,6 @@
     </div>
 </div>
 <!-- Service End -->
+@include('sweetalert::alert')
 
 @endsection

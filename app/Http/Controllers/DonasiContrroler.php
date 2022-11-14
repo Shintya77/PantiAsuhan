@@ -9,6 +9,8 @@ use App\Models\donatur;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class DonasiContrroler extends Controller
 {
@@ -64,10 +66,20 @@ class DonasiContrroler extends Controller
         }
 
         donatur::create($data);
+
+        $programUpdate = program::where('id_program', $request -> id_program) -> first();
+        
+        $donasi = donatur::where('id_program', $request -> id_program) -> sum('nominal');
+        
+        $programUpdate -> dns_terkumpul = $donasi;
+        $programUpdate -> save();
+
         $program = program::all();
         $bank = Bank::all();
         $donatur = donatur::all();
-        return view('fitur.donasi.dashboard')->with('success','Donasi anda diproses oleh pihak Panti'); 
+        Alert::success('Success', 'Donasi anda diproses oleh pihak Panti');
+
+        return redirect('/dashboard-donasi'); 
     }
 
     //Riwayat

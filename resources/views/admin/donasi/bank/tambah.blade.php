@@ -45,7 +45,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama_rekening">Nama Rekening</label>
-                            <input type="taxt" name="nama_rekening" class="form-control" id="nama_rekening" aria-describedby="nama_rekening" >
+                            <input type="text" name="nama_rekening" class="form-control" id="nama_rekening" aria-describedby="nama_rekening" >
                         </div>
                         <div class="form-group">
                             <label for="norekening">No Rekening</label>

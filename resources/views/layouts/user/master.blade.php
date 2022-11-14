@@ -30,6 +30,10 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('assets')}}/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    @include('sweetalert::alert')
+
 </head>
 
 <body>

@@ -4,7 +4,16 @@
 <form action="/formulir-donasi" method="POST" enctype="multipart/form-data">
     @csrf
 <div class="container bg-light overflow-hidden my-5 px-lg-0" id="show">
-
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> Ada Kesalahan dalam Data Penginputan<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="container quote px-lg-0">
         <div class="row g-0 mx-lg-0">
 
@@ -15,15 +24,15 @@
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nama Donatur</h6>
-                                    <input type="text" name="name" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; ">
+                                    <input type="text" name="name" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; " value="{{Auth::user() -> name}}">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Tanggal Donasi</h6>
-                                    <input type="date" name="tgl_donasi" class="form-control border-0" placeholder="Tanggal Donasi" style="height: 55px;">
+                                    <input type="date" name="tgl_donasi" class="form-control border-0" placeholder="Tanggal Donasi" style="height: 55px;" value="{{date('Y-m-d')}}">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Alamat Donatur</h6>
-                                    <input type="text" name="alamat" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;">
+                                    <input type="text" name="alamat" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;" value="{{Auth::user() -> alamat}}">
                                 </div>
 
                                 <div class="col-12 col-sm-6">

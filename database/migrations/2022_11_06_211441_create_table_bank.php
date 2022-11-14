@@ -18,7 +18,7 @@ class CreateTableBank extends Migration
             $table->String('nama_bank', 25);
             $table->String('nama_rekening');
             $table->String('norekening');
-            $table->String('gambar');
+            $table->String('gambar')->nullable();;
             $table->timestamps();
         });
     }

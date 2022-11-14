@@ -42,8 +42,10 @@
                         @method('PUT')
                         <div class="form-group">
                             <label for="gambar">Gambar</label>
-                            <input type="file" name="gambar" class="form-control" value="{{ $galeri->gambar }}" >
-                            <img width="100px" src="{{asset('storage/'.$galeri->gambar)}}">
+                            
+                            <img class="img-preview mb-3 w-100" style="border-radius: 20px;">
+                                            <input type="file" class="form-control" id="photo" placeholder="Photo"
+                                                name="gambar" required onchange="previewImage()" />
                         </div>
                         <a class="btn btn-secondary " href="{{ route('galeri.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -58,5 +60,23 @@
       <!-- /.card -->
     </section>
     <!-- /.content -->
- 
+    <script>
+      function previewImage(){
+                          const image = document.querySelector('#photo');
+                          const imgPreview = document.querySelector('.img-preview');
+                
+                          imgPreview.style.width = '150px';
+                
+                          const oFReader = new FileReader();
+                          oFReader.readAsDataURL(image.files[0]);
+                
+                          oFReader.onload = function(oFREvent){
+                            imgPreview.src = oFREvent.target.result;
+                          }
+                        }
+                
+                        document.addEventListener('trix-file-accept', function(e){
+                          e.preventDefault()
+                        })
+  </script>
 @endsection

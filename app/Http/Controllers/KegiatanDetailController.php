@@ -96,6 +96,7 @@ class KegiatanDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         ///melakukan validasi data
         $request->validate([
             'foto' => 'image|file|max:1024',
@@ -109,6 +110,7 @@ class KegiatanDetailController extends Controller
         }
         $image_name = $request->file('foto')->store('images', 'public');
         
+        $kegiatan -> foto = $image_name;
         $kegiatan->judul = $request->get('judul');
         $kegiatan->deskripsi = $request->get('deskripsi');
         $kegiatan->save();
@@ -126,6 +128,7 @@ class KegiatanDetailController extends Controller
      */
     public function destroy($id)
     {
+        // $kegiatan->delete();
         Kegiatan::where('id',$id)->delete();
         return redirect()->route('kegiatan.index')->with('success', 'Data Kegiatan Berhasil Dihapus');
     }

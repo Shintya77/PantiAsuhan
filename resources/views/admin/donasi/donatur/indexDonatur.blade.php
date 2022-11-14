@@ -70,7 +70,7 @@
                       <td class="text-black">{{ $donasi->atas_nama }}</td>
                       <td class="text-black">{{ $donasi->no_rekening }}</td>
                       <td class="text-black">{{ $donasi->keterangan }}</td>
-                      <td><img width="100px" height="100px" src="{{$donasi->bukti_tf}}"></td>
+                      <td><img width="100px" height="100px" src="{{asset('storage/'.$donasi->bukti_tf)}}"></td>
                       <td class="text-black">{{ $donasi->status }}</td>
                       <td>
                         <form action="{{ route('donatur.update',$donasi->id_donatur) }}" method="POST">

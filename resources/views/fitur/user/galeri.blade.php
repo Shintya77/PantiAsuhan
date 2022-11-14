@@ -15,7 +15,11 @@
                 @foreach ($data as $gambar)
                 <div class="col-lg-4 col-sm-4">
                   <div class="card mb-3">
+                    @if ($gambar -> gambar)
                     <img src="{{('storage/'.$gambar -> gambar)}}" class="card-img-top" alt="...">
+                    @else
+                    <img src="{{('/assets/img/kegiatan/'.$gambar -> id.'.jpeg')}}" class="card-img-top" alt="...">
+                    @endif
                     {{-- <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

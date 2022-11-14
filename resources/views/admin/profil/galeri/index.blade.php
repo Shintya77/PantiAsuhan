@@ -31,15 +31,6 @@
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('galeri.create') }}">Tambah Galeri</a> 
                     <br><br>
-
-                    {{-- @if ($message = Session::get('success'))
-                      <div class="alert alert-success">
-                        <p>{{ $message }}</p>
-                      </div>
-                    @endif  --}}
-
-                  
-
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
@@ -53,7 +44,12 @@
                     @foreach ($paginate as $glr)
                     <tr>
                         <td class="text-black">{{ $glr->id}}</td>
-                        <td><img width="75px" height="50px" src="{{$glr->gambar}}"></td>
+                        <td>
+                          @if ($glr -> foto)
+                          <img src="{{('storage/'.$glr -> foto)}}" class="img-flui" alt="..." width="350px">
+                          @else
+                          <img src="{{('assets/img/kegiatan/'.$glr -> id.'.jpeg')}}" class="img-flui" alt="..." width="350px">
+                          @endif
                         <td>
                           <form action="{{ route('galeri.destroy',$glr->id) }}" method="POST">
                             <a class="btn btn-warning" href="{{ route('galeri.edit',$glr->id) }}"><i class="fa fa-edit"></i></a>

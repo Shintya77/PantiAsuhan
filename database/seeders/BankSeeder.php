@@ -18,20 +18,19 @@ class BankSeeder extends Seeder
             [
                 'nama_bank'=>'BSI',
                 'nama_rekening' => 'Panti Asuhan Putri Aisyiyah',
-                'norekening'=> 7004777098,
-                'gambar'=>'assets/img/bsi.png'
+                'norekening'=> '7004777098'
             ],
             [
                 'nama_bank'=>'BRI',
                 'nama_rekening' => 'Panti Asuhan Putri Aisyiyah',
-                'norekening'=>'3127-01-001515-53-6',
-                'gambar'=>'assets/img/bri.png'
+                'norekening'=>'3127-01-001515-53-6'
+              
             ],
             [
                 'nama_bank'=>'BTN',
                 'nama_rekening' => 'Panti Asuhan Putri Aisyiyah',
-                'norekening'=> '0012-01-50-063175-6',
-                'gambar'=>'assets/img/btn.jpg'
+                'norekening'=> '0012-01-50-063175-6'
+             
             ]
          
             ));  

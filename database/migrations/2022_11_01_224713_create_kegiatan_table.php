@@ -15,9 +15,10 @@ class CreateKegiatanTable extends Migration
     {
         Schema::create('kegiatans', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
+            
             $table->string('judul');
             $table->string('deskripsi')->nullable();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

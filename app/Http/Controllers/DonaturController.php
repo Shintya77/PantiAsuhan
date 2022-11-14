@@ -51,7 +51,6 @@ class DonaturController extends Controller
             'no_rekening' => 'required',
             'keterangan' => 'required',
             'bukti_tf' => 'image|file|max:1024',
-            'status' => 'required',
         ]);
 
         if ($request->file('bukti_tf')){
@@ -70,7 +69,6 @@ class DonaturController extends Controller
         $donatur->no_rekening = $request->no_rekening;
         $donatur->keterangan = $request->keterangan;
         $donatur->bukti_tf = $image_name;
-        $donatur->status = $request->status;
         $donatur->save();
 
         return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Ditambahkan');

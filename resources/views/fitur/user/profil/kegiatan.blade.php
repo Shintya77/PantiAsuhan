@@ -12,7 +12,7 @@
         <div class="row g-4">
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/batik celup.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/1.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Batik Celup</h4>
                         <p>Kegiatan Batik Celup di Panti Asuhan </p>
@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/semua.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/18.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Foto Bersama</h4>
                         <p>Foto Bersama Pengurus Panti dan Anak Panti</p>
@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/jalan jalan.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/7.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Jalan Jalan Ceria</h4>
                         <p>Jalan Jalan Ceria Bersama</p>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/jalan jalan3.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/6.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Jalan Jalan Ceria</h4>
                         <p>Jalan Jalan Ceria Bersama </p>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/parenting.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/13.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Parenting</h4>
                         <p>Kegiatan Sosialisasi Parenting</p>
@@ -57,7 +57,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/kurban.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/10.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Penyembelihan Qurban</h4>
                         <p>Merayakan Hari Raya Idul Adha</p>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/beasiswa2.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/6.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Penerimaan Beasiswa</h4>
                         <p>Penerimaan Beasiswa</p>
@@ -75,7 +75,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/riilah2.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/16.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Rillah dan Pelepasan Santri</h4>
                         <p>Riilah dan Pelepasan Santri</p>
@@ -84,7 +84,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/riilah3.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/17.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Riilah dan Pelepasan Santri</h4>
                         <p>Riilah dan Pelepasan Santri</p>
@@ -93,7 +93,7 @@
             </div>
             <div class="row content-center">
                 <div class="col-10 col-lg-8">
-                    <a href="{{url('/kegiatan')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft text-white">Read More</a>
+                    <a href="{{url('/kegiatan-panti')}}" class="btn btn-warning rounded-pill py-2 m-3 px-4 animated slideInLeft text-white">Selengkapnya</a>
                 </div>
             </div>
         </div>

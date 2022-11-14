@@ -31,13 +31,6 @@
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('kegiatan.create') }}">Tambah Kegiatan</a> 
                     <br><br>
-
-                    {{-- @if ($message = Session::get('success'))
-                      <div class="alert alert-success">
-                        <p>{{ $message }}</p>
-                      </div>
-                    @endif  --}}
-
                   <form class="form" method="get" action="#">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Kegiatan</label>
@@ -61,15 +54,21 @@
                     @foreach ($paginate as $kg)
                     <tr>
                         <td class="text-black">{{ $kg->id }}</td>
-                        <td><img width="75px" height="50px" src="{{$kg->foto}}"></td>
+                        <td>
+                          @if ($kg -> foto)
+                          <img src="{{('storage/'.$kg -> foto)}}" class="img-flui" alt="..." width="350px">
+                          @else
+                          <img src="{{('assets/img/kegiatanDetail/'.$kg -> id.'.jpeg')}}" class="img-flui" alt="..." width="350px">
+                          @endif
+                        </td>
                         <td class="text-black">{{ $kg->judul}}</td>
                         <td class="text-black">{{ $kg->deskripsi }}</td>
                         <td>
+                          <a class="btn btn-warning" href="{{ route('kegiatan.edit',$kg->id) }}"><i class="fa fa-edit"></i></a>
                           <form action="{{ route('kegiatan.destroy',$kg->id) }}" method="POST">
-                            <a class="btn btn-warning" href="{{ route('kegiatan.edit',$kg->id) }}"><i class="fa fa-edit"></i></a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            <button type="submit" class="btn btn-danger" ><i class="fa fa-trash"></i></button>
                         </td>  
                   @endforeach
                 </tbody>

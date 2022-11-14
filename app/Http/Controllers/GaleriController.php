@@ -78,7 +78,7 @@ class GaleriController extends Controller
      */
     public function edit($id)
     {
-        $title = new Galeri();
+        $title = "Edit Data Galeri";
         $galeri = Galeri::find($id);
         return view('admin.profil.galeri.edit', compact('title', 'galeri'));
     }

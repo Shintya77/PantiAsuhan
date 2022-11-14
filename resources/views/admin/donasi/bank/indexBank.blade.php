@@ -63,7 +63,13 @@
                         <td class="text-black">{{ $b->nama_bank}}</td>
                         <td class="text-black">{{ $b->nama_rekening}}</td>
                         <td class="text-black">{{ $b->norekening }}</td>
-                        <td><img width="75px" height="50px" src="{{$b->gambar}}"></td>
+                        <td>
+                          @if ($b -> gambar)
+                          <img  width="75px" height="50px" src="{{asset('storage/'.$b -> gambar)}}" class="img-fluid" alt="..." width="350px">
+                          @else
+                          <img width="75px" height="50px" src="{{ asset('assets/img/'.$b -> id_bank.'.png') }}" class="img-fluid" alt="..." width="350px">
+                          @endif
+                        </td>
                         <td>
                           <form action="{{ route('bank.destroy',$b->id_bank) }}" method="POST">
                             <a class="btn btn-warning" href="{{ route('bank.edit',$b->id_bank) }}"><i class="fa fa-edit"></i></a>

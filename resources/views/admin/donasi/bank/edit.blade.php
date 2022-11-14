@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="post" action="{{ route('bank.update', $bank->id_bank) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('bank.update', $bank->id_bank) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nama_rekening">Nama Rekening</label>
-                            <input type="text" name="norekening" class="form-control" required="required" value="{{ $bank->norekening }}" >
+                            <input type="text" name="nama_rekening" class="form-control" required="required" value="{{ $bank->norekening }}" >
                         </div>
                         <div class="form-group">
                             <label for="norekening">No Rekening</label>

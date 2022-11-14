@@ -15,7 +15,12 @@
                             <p class="fs-5,5 fw-medium text-white mb-4 pb-3">Saudara, kini untuk melakukan donasi tidak perlu repot harus datang ke Panti Asuhan. Cukup dengan mengakses sistem ini di aplikasi pencarian anda. Sistem berbasis web ini memberikan kemudahan dan kenyamanan para Donatur untuk bertransaksi secara Online.
 
 Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, transparansi dan akuntabilitas donasi Anda lebih terjamin melalui sistem donasi ini.</p>
+                            @guest
                             <a href="{{url('/login')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft">Login</a>
+
+                            @else
+                            <a href="{{url('/dashboard-donasi')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft">Formulir Donasi</a>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -48,7 +53,7 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
                               <td style="text-align:center"><class="text-black">{{ $program->id_program}}</td>
                               <td class="text-black">{{ $program->nama_program}}</td>
                               <td class="text-black">{{ $program->dns_butuh }}</td>
-                              <td class="text-black">{{ $program->dns_terkumpul }}</td>
+                              <td class="text-black">Rp. {{ number_format($program->dns_terkumpul) }}</td>
                                 </form>
                               </td>  
                               @endforeach

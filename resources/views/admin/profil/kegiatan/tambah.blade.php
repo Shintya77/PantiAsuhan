@@ -50,6 +50,7 @@
                         <div class="form-group">
                             <label for="deskripsi">Deskripsi</label>
                             <input type="text" name="deskripsi" class="form-control" id="deskripsi" aria-describedby="deskripsi" >
+                        </div>
                         <button type="submit" class="btn btn-warning">Submit</button>
                     </form>
                 </div>

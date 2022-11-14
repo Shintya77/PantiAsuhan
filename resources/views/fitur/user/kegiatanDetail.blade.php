@@ -32,7 +32,11 @@
                 <div class="col-lg-4 col-sm-4">
                   
                   <div class="card mb-3">
+                    @if ($str -> foto)
                     <img src="{{('storage/'.$str -> foto)}}" class="card-img-top" alt="...">
+                    @else
+                    <img src="{{('assets/img/kegiatanDetail/'.$str -> id.'.jpeg')}}" class="card-img-top" alt="...">
+                    @endif
                     <div class="card-body">
                       <h5 class="card-title">{{ $str->judul }}</h5>
                       <p class="card-text">{{ $str->deskripsi }}</p>

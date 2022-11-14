@@ -43,6 +43,8 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd($request->all());
         //melakukan validasi data
         $request->validate([
             'nama_bank' => 'required',
@@ -100,6 +102,7 @@ class BankController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request -> all());
         ///melakukan validasi data
         $request->validate([
             'nama_bank' => 'required',
@@ -117,6 +120,7 @@ class BankController extends Controller
         }
 
         $image_name = $request->file('gambar')->store('images', 'public');
+        $bank -> gambar = $image_name;
         $bank->save();
         
         //jika data berhasil diupdate, akan kembali ke halaman utama
