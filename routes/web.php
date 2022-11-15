@@ -18,11 +18,11 @@ use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\DashboardController;
-=======
+
 use App\Http\Controllers\BankCateringController;
->>>>>>> 7acecd9 (transaksi catering)
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
