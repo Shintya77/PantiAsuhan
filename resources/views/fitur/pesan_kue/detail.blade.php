@@ -5,15 +5,19 @@
 <!-- ======= Frequently Asked Questions Section ======= -->
 <section id="about" class="about">
       <div class="container" data-aos="fade-up">
-        <p><a href="{{url('/produk')}}">< Produk</a> / Detail</p>
-        <div class="section-title">
-            <span>Detail Produk</span>
-          <h2>Detail Produk</h2>
-        </div>
+        
+      <div class="col-md-12 mt-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url('/produk') }}">Produk</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Detail Produk</li>
+                </ol>
+            </nav>
+       </div>
 
         <div class="row content">
                 <div class="col-lg-4" data-aos="fade-up">
-                    <div class="swiper-slide"><img src="" width="300" height="200" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="{{asset('storage/'.$produk->gambar)}}" width="300" height="200" class="img-fluid" alt=""></div>
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0">
                     <div class="row" data-aos="fade-up">
