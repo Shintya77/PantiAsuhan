@@ -40,6 +40,7 @@
                     <h3>{{$pesanan}}</h3>
 
                     <h4>Total Pesanan Kue</h4>
+                    <p>- Pesanan keseluruhan -</p>
                     <p></p>
                   </div>
                   <div class="icon">
@@ -53,7 +54,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>{{$pendapatan}}</h3>
+                    <h3>Rp. {{$pendapatan}}</h3>
 
                     <h4>Total Pendapatan</h4>
                     <p>- Pendapatan keseluruhan -</p>
