@@ -45,19 +45,19 @@
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s" >
                 <div class="service-item rounded overflow-hidden">
                     
-                    <img class="img-fluid" src="/assets/img/program/1.jpg" alt=""height="100px">
+                    <img class="img-fluid" src="/assets/img/program/2.jpeg" alt=""height="100px">
                     <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Donasi Pendidikan</h4>
-                        <p>Donasi ini dikhususkan untuk biaya pendidikan anak binaan Panti Asuhan, dengan jumlah yang dibutuhkan sebesar Rp 30 juta</p>
+                        <h4 class="mb-3">Donasi Bebas </h4>
+                        <p>Donasi ini dikhususkan untuk donasi bebas atau selain pada program </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s" >
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="/assets/img/program/1.jpg" alt="" height="100px">
+                    <img class="img-fluid" src="/assets/img/program/3.jpeg" alt="" height="100px">
                     <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Donasi Kebutuhan Pokok</h4>
-                        <p>Donasi ini dikhusukan untuk membeli kebutuhan pokok anak binaan Panti Asuhan</p>
+                        <h4 class="mb-3">Program Yang Akan Datang</h4>
+                        <p>Program donasi ini belum tersedia</p>
                     </div>
                 </div>
             </div>
