@@ -40,7 +40,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <h4 class="title"><a href="">Jalan - Jalan Ceria</a></h4>
-              <p class="description">Kegiatan yang dilakukan guna untuk melepas lelah dan penat selama kegiatan belajar mengajar yang diikuti oleh siswa maupun pengasuh. Kegiatan ini biasanya dilakukan setiap bla bla bla</p>
+              <p class="description">Kegiatan yang dilakukan guna untuk melepas lelah dan penat selama kegiatan belajar mengajar yang diikuti oleh siswa maupun pengasuh. Kegiatan ini merupakan salah acara liburan yang ada di Panti Asuhan ini</p>
             </div>
           </div>
 
