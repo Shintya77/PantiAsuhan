@@ -6,6 +6,7 @@ use App\Models\Pesan;
 use App\Http\Requests\StorePesanRequest;
 use App\Http\Requests\UpdatePesanRequest;
 use App\Models\Produk;
+use App\Models\PesanDetail;
 
 class PesanController extends Controller
 {
@@ -23,8 +24,16 @@ class PesanController extends Controller
     public function index()
     {
         //
-        $data = Produk::all();
-        return view('fitur.pesan_kue.pesan', ['active'=>'active', 'title'=>'Keranjang'], compact('data'));
+        $pesan = Pesan::where('user_id', auth()->user()->id)->first();
+        $data = PesanDetail::where('pesan_id', $pesan->id)->get();
+        $iniTanggal = PesanDetail::where('pesan_id', $pesan->id)->first();
+        return view('fitur.pesan_kue.pesan', [
+            'active'=>'active', 
+            'title'=>'Keranjang',
+            'data' => $data,
+            'total' => PesanDetail::where('pesan_id', $pesan->id)->get()->sum('total'),
+            'date' => $iniTanggal
+        ]);
     }
 
     /**
@@ -45,27 +54,32 @@ class PesanController extends Controller
      */
     public function store(StorePesanRequest $request)
     {
-        dd($request->all());
+        
         Pesan::insert([
             'user_id' => auth()->user()->id,
         ]);
-        $harga = Harga::find($request->harga_id);
+        $produk = Produk::find($request->produk_id);
         $pesan = Pesan::where('user_id', auth()->user()->id)->first();
-        $detailPesan = PesanDetail::where('pesan_id', $pesan->id)->first();
+        $detailPesan = PesanDetail::where('produk_id', $produk->id)->first();
+        
 
         $addorder = [];
         if(empty($detailPesan)){
             $addorder = [
-                'pesan_id' => $pesan,
-                'harga_id' => $request->harga_id,
+                'pesan_id' => $pesan->id,
+                'produk_id' => $request->produk_id,
                 'jumlah' => $request->jumlah_pesan,
-                'total_harga' => $harga->harga * $request->jumlah_pesan
+                'total' => $produk->harga * $request->jumlah_pesan
                 
 
             ];
-            dd($addorder);
-            PesananDetail::create($addorder);
+            PesanDetail::create($addorder);
+        
         }
+        else{
+            return redirect('/produk');
+        }
+        return redirect('/keranjang');
         
          
 
@@ -113,8 +127,13 @@ class PesanController extends Controller
      * @param  \App\Models\Pesan  $pesan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pesan $pesan)
+    public function destroy($id)
     {
-        //
+        $pesanDetailId = PesanDetail::where('id', $id)->first();
+        $pesan = Pesan::where('id', $pesanDetailId->pesan_id)->first();
+        $pesanDetailId->delete();
+        $pesan->delete();
+
+        return redirect('/keranjang');
     }
 }
