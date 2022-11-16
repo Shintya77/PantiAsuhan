@@ -18,17 +18,10 @@ use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
-<<<<<<< HEAD
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BankCateringController;
 use App\Http\Controllers\RekapPesanController;
-=======
 
-use App\Http\Controllers\DashboardController;
-
-use App\Http\Controllers\BankCateringController;
-
->>>>>>> 3be5920a30c476b97280705cfeea335acf291669
 /*
 |--------------------------------------------------------------------------
 | Web Routes
