@@ -21,6 +21,7 @@ class PesananDetail extends Migration
             $table->integer('jumlah');
             $table->integer('total');
             $table->integer('total_harga')->nullable();
+            $table->string('bukti_pembayaran')->nullable();
             $table->timestamps();
         });
     }
