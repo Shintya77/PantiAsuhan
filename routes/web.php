@@ -22,6 +22,7 @@ use App\Http\Controllers\DonaturController;
 use App\Http\Controllers\DashboardController;
 
 use App\Http\Controllers\BankCateringController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,5 +116,6 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
   
 Route::get('/bayar', [BankCateringController::class, 'index']);
 Route::post('/bayar', [BankCateringController::class, 'bayar']);
+Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
 });
 

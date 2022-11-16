@@ -118,7 +118,26 @@ class PesanController extends Controller
      */
     public function update(UpdatePesanRequest $request, Pesan $pesan)
     {
-        //
+        return $request->all();
+        // dd($request->all());
+        $pesan = Pesan::where('user_id', Auth::user()->id)->first();
+        $validateData = $request->validate([
+            'bukti_pembayaran' => 'image|file',
+        ]);
+        $cek = $this->validate($request, [
+            'bukti_pembayaran' => 'image|file',
+        ]);
+        // dd($cek);
+
+        // dd($validateData);
+       
+        if ($request->file('bukti_pembayaran')) {
+            $validateData['bukti_pembayaran'] = CloudinaryStorage::upload($request->file('bukti_pembayaran')->getRealPath(), $request->file('bukti_pembayaran')->getClientOriginalName());
+        }
+        // $order->status = 1;
+        // dd($validateData);
+        Order::where('user_id', Auth::user()->id)->update($validateData);
+        return redirect('/cart')->with('success', 'Pembayaran berhasil');
     }
 
     /**
@@ -132,7 +151,7 @@ class PesanController extends Controller
         $pesanDetailId = PesanDetail::where('id', $id)->first();
         $pesan = Pesan::where('id', $pesanDetailId->pesan_id)->first();
         $pesanDetailId->delete();
-        $pesan->delete();
+        // $pesan->delete();
 
         return redirect('/keranjang');
     }
