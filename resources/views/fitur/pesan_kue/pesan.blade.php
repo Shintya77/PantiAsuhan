@@ -43,8 +43,8 @@
                                         </td>
                                         <td>{{ $item->produk->nama }}</td>
                                         <td>{{ $item->jumlah }}</td>
-                                        <td align="right">Rp. {{ $item->produk->harga }} </td>
-                                        <td align="right">Rp. {{ $item->total }}</td>
+                                        <td>Rp. {{ $item->produk->harga }} </td>
+                                        <td>Rp. {{ $item->total }}</td>
                                         <td>
                                             <form action="/keranjang/{{$item->id}}" method="POST">
                                                 @csrf
@@ -60,7 +60,7 @@
                                         <td colspan="5" align="right"><strong>Total Harga :</strong></td>
                                         <form action="/bayar" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                        <td align="right"><strong>Rp. {{ $total }}</strong></td>
+                                        <td><strong>Rp. {{ $total }}</strong></td>
                                         <input type="hidden" name="total_bayar" value="{{$total}}" />
                                         <td>
                                             <input type="hidden" name="pesan_id" value="{{$date -> pesan_id}}">

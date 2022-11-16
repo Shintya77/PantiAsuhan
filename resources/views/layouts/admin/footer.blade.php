@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; Kelompok 2 TI-3E Polinema <a href="https://adminlte.io">Panti Asuhan 'Aisyiyah Malang</a></strong> 
+    <strong>Copyright &copy; Kelompok 2 TI-3E Polinema <a href="/beranda">Panti Asuhan 'Aisyiyah Malang</a></strong> 
   </footer>
 
   <!-- Control Sidebar -->

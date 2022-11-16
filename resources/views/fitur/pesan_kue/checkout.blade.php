@@ -11,9 +11,9 @@
                 <div class="col">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#" class="text-dark">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="text-dark">Keranjang</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Check Out</li>
+                            <li class="breadcrumb-item"><a href="{{url('/produk')}}" class="text-primary">Produk</a></li>
+                            <li class="breadcrumb-item"><a href="{{url('/keranjang')}}" class="text-primary">Keranjang</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Pembayaran</li>
                         </ol>
                     </nav>
                 </div>
@@ -31,7 +31,7 @@
         
             <div class="row">
                 <div class="col">
-                    <a href="#" class="btn btn-sm btn-dark"><i class="fas fa-arrow-left"></i> Kembali</a>
+                    <a href="{{url('/keranjang')}}" class="btn btn-sm btn-dark"><i class="fas fa-arrow-left"></i> Kembali</a>
                 </div>
             </div>
         
@@ -49,7 +49,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-check">
                                         <label class="form-check-label " for="exampleRadios{{ $loop -> iteration }}">
-                                            <img src="{{ asset($b->gambar) }}" alt="" height="100px"
+                                            <img src="{{asset('storage/'. $b->gambar) }}" alt="" height="100px"
                                                 style="object-fit: fill;border-radius: 20px;" class="img-target">
                                         </label>
                                         <input class="form-check-input d-none opt-radio" type="radio" name="bank_id"
@@ -70,7 +70,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse{{ $loop -> iteration }}" aria-expanded="false"
                                     aria-controls="collapse{{ $loop -> iteration }}">
-                                    {{$b->nama_bank}} <img src="{{asset($b->gambar)}}" alt="" width="75px">
+                                    {{$b->nama_bank}} <img src="{{asset('storage/'. $b->gambar)}}" alt="" width="75px">
                                 </button>
                             </h2>
                             <div id="collapse{{ $loop -> iteration }}" class="accordion-collapse collapse"
@@ -94,7 +94,7 @@
                     <form wire:submit.prevent="checkout">
         
                         <div class="form-group">
-                            <label for="">Upload Bukti</label>
+                            <label for="">Upload Bukti Transfer</label>
                             <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" wire:model="gambar"
                             value="" autocomplete="name" autofocus>
         

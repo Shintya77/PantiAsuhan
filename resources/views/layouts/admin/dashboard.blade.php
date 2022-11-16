@@ -24,7 +24,7 @@
                     <h3>{{$produk}}</h3>
 
                     <h4>Total Produk Kue</h4>
-                    <p>(Termasuk ukuran normal/tanggung/mini)</p>
+                    <p>- Termasuk ukuran normal/tanggung/mini -</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>
@@ -37,7 +37,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
-                    <h3>Jumlah</h3>
+                    <h3>{{$pesanan}}</h3>
 
                     <h4>Total Pesanan Kue</h4>
                     <p></p>
@@ -53,10 +53,10 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>Total</h3>
+                    <h3>{{$pendapatan}}</h3>
 
                     <h4>Total Pendapatan</h4>
-                    <p></p>
+                    <p>- Pendapatan keseluruhan -</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-bag"></i>

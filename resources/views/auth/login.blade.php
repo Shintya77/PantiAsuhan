@@ -36,8 +36,8 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900">Welcome Back!</h1>
-                                        <p>Please Login</p>
+                                        <h1 class="h4 text-gray-900">Panti Asuhan 'Aisyiyah Malang</h1>
+                                        <p>Login</p>
                                     </div>
                                     <form id="formAuthentication" class="user" action="{{route('login')}}" method="POST">
                                         @csrf
@@ -47,22 +47,15 @@
                                         <div class="form-group">
                                             <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
                                         <input type="submit" name="login" class="btn btn-primary btn-user btn-block">
                                         </a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="">Forgot Password?</a>
+                                        <a class="small" href="">Lupa Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="{{ url('/register')}}">Create an Account!</a>
+                                        <a class="small" href="{{ url('/register')}}">Buat akun!</a>
                                     </div>
                                 </div>
                             </div>
