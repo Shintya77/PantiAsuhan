@@ -15,11 +15,15 @@ class ProgramSeeder extends Seeder
     public function run()
     {
         DB::table('programs')->insert([
-
             [
                 'nama_program' => 'Renovasi Atap',
-                'dns_butuh' => 'Rp 356.000.000,00',
+                'dns_butuh' => '365000000',
                 
+            ],
+            [
+                'nama_program' => 'Donasi Bebas',
+                'dns_butuh' => '0',
+
             ]
         ]
         );

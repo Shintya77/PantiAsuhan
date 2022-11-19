@@ -33,7 +33,7 @@
             <h6 class="text-black">(QS Al Hadid ayat 18)</h6>
         </div>
         <div class="row g-4">
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s" >
+            {{-- <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s" >
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="/assets/img/program/1.jpg" alt=""height="100px">
                     <div class="position-relative p-4 pt-0">
@@ -60,7 +60,7 @@
                         <p>Program donasi ini belum tersedia</p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">

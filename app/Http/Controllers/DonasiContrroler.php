@@ -17,8 +17,11 @@ class DonasiContrroler extends Controller
     //menampilkan Daftar Program
     public function program()
     {
-        $data = program::all();
+        $data = program::where('id_program', 1) -> first();
         $paginate = program::orderBy('id_program', 'asc')->paginate(5);
+
+        // dd($data -> dns_butuh);
+
         return view('fitur.donasi.donasi', compact('data','paginate'));      
     }
     
@@ -56,7 +59,6 @@ class DonasiContrroler extends Controller
             'nominal' => 'required',
             'atas_nama' => 'required',
             'no_rekening' => 'required',
-            'keterangan' => 'required',
             'bukti_tf' => 'image|file|max:1024',
         ]);
         $data['id_pengguna'] = Auth::user()->id;
@@ -67,12 +69,17 @@ class DonasiContrroler extends Controller
 
         donatur::create($data);
 
-        $programUpdate = program::where('id_program', $request -> id_program) -> first();
+        $donaturUpdate = donatur::where('bukti_tf', $data['bukti_tf'])->first();
         
-        $donasi = donatur::where('id_program', $request -> id_program) -> sum('nominal');
-        
-        $programUpdate -> dns_terkumpul = $donasi;
-        $programUpdate -> save();
+        // $donaturUpdate -> name = 'Hamba Allah - '.$donaturUpdate -> id_donatur;
+        // $donaturUpdate -> update();
+
+       if($request -> hide == 'on'){
+        donatur::where('bukti_tf', $data['bukti_tf'])
+        ->update([
+            'name' => 'Hamba Allah-'.$donaturUpdate->id_donatur
+        ]);
+       }
 
         $program = program::all();
         $bank = Bank::all();
@@ -85,11 +92,33 @@ class DonasiContrroler extends Controller
     //Riwayat
     public function riwayat()
     {
-
-        $program = program::all();
-        $bank = Bank::all();
-        $donatur = donatur::all();
-        return view('fitur.donasi.riwayat', compact('program','bank','donatur')); 
+        // $program = program::all();
+        $donatur = donatur::where('id_pengguna', Auth::user()->id) -> paginate(10);
+        return view('fitur.donasi.riwayat', compact('donatur')); 
     }
+
+    //LAPORAN REKAP
+    public function rekap()
+    {
+        $program = program::all();
+        return view('fitur.donasi.rekap', compact('program')); 
+    }
+    public function rekapProgram(program $program)
+    {
+        $donatur = donatur::where('id_program', $program->id_program) -> paginate(10);
+        return view('fitur.donasi.programRekap', [
+            'program'=>$program ?? null, 'donatur'=>$donatur ?? null, 
+        ]); 
+    }
+    public function rekapCari(Request $request, program $program)
+    {
+        $keyword = $request->cari;
+        $donatur = donatur::where('name', 'like', '%' . $keyword . '%') -> paginate(5);
+        $donatur->appends(['keyword' => $keyword]);
+        return view('fitur.donasi.programRekap', [
+            'program'=>$program ?? null, 'donatur'=>$donatur ?? null, 
+        ]);
+    }
+
    
 }

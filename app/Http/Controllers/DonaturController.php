@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\donatur;
 use App\Models\Bank;
+use App\Models\program;
 use Illuminate\Http\Request;
 
 class DonaturController extends Controller
@@ -49,7 +50,6 @@ class DonaturController extends Controller
             'nominal' => 'required',
             'atas_nama' => 'required',
             'no_rekening' => 'required',
-            'keterangan' => 'required',
             'bukti_tf' => 'image|file|max:1024',
         ]);
 
@@ -109,10 +109,21 @@ class DonaturController extends Controller
      */
     public function update(Request $request, $id_donatur)
     {
+
+       
         donatur::where('id_donatur', $id_donatur)
         ->update([
-            'status' => 'berhasil'
+            'status' => 'masuk'
         ]);
+        $donatur = donatur::where('id_donatur', $id_donatur) -> first();
+        
+        $donasi = donatur::where('status', 'masuk') -> sum('nominal');
+        
+        $programUpdate = program::where('id_program', $donatur -> id_program) -> first();
+        
+        $programUpdate -> dns_terkumpul = $donasi;
+        $programUpdate -> save();
+
         return redirect()->route('donatur.index');
     }
 
@@ -124,6 +135,14 @@ class DonaturController extends Controller
      */
     public function destroy($id)
     {
+        $donasi = donatur::where('id_donatur', $id)->first();
+        $program =  program::where('id_program', $donasi -> id_program) -> first();
+
+        
+
+        $program -> dns_terkumpul -= $donasi -> nominal;
+        $program -> save();
+
         donatur::where('id_donatur',$id)->delete();
         return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Dihapus');
     }

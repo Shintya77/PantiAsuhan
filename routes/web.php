@@ -18,13 +18,11 @@ use App\Http\Controllers\KueController;
 use App\Http\Controllers\DetailKueController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
+use App\Http\Controllers\DnsNoLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BankCateringController;
-<<<<<<< HEAD
 use App\Http\Controllers\CheckoutController;
-=======
 use App\Http\Controllers\RekapPesanController;
->>>>>>> 4cb1c009a94a9c30db7dd071eabf39a73f9fb158
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +48,11 @@ Route::prefix('profil')->group(function () {
 Route::get('/galeri-panti',[KegiatanController::class, 'galeri']);
 Route::get('/kegiatan-panti',[KegiatanController::class, 'kegiatanDetail']);
 Route::get('/donasi',[DonasiContrroler::class, 'program']);
+Route::get('/formulir-donasi-panti',[DnsNoLoginController::class, 'form']);
+Route::post('/formulir-donasi-panti',[DnsNoLoginController::class, 'formulir']);
+Route::get('/rekap-donasi',[DonasiContrroler::class, 'rekap']);
+Route::get('/rekap-donasi/{program}',[DonasiContrroler::class, 'rekapProgram'])->name('rekap.donasi');
+Route::get('/rekap-program-cari', [DonasiContrroler::class, 'rekapCari'])->name('rekapProgram.cari');
 
 
 
@@ -61,7 +64,7 @@ Route::resource('produk', ProdukController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'admin'])->group(function (){
     // Route::get('/dashboard', function () {
@@ -117,14 +120,11 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     // Route::get('/bayar', function () {
     //     return view('fitur.pesan_kue.checkout');
     //     });
-  
-<<<<<<< HEAD
+
 Route::get('/bayar', [BankCateringController::class, 'index']);
 Route::post('/bayar', [BankCateringController::class, 'bayar']);
 Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
-=======
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
->>>>>>> 4cb1c009a94a9c30db7dd071eabf39a73f9fb158
 });
 
