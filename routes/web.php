@@ -20,10 +20,9 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BankCateringController;
-
 use App\Http\Controllers\CheckoutController;
-
 use App\Http\Controllers\RekapPesanController;
+
 
 
 /*
@@ -117,6 +116,7 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     // Route::get('/bayar', function () {
     //     return view('fitur.pesan_kue.checkout');
     //     });
+
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
@@ -124,6 +124,13 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     Route::post('/checkout/{id}', [CheckOutController::class, 'store']);
 
     Route::get('/riwayat', [CheckOutController::class, 'riwayat']);
+
+  
+Route::get('/bayar', [BankCateringController::class, 'index']);
+Route::post('/bayar', [BankCateringController::class, 'bayar']);
+Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
+    Route::get('/bayar', [BankCateringController::class, 'index']);
+    Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
 });
 
