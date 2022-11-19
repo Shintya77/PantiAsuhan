@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CloudinaryStorage;
 use Illuminate\Support\Facades\Auth;
@@ -41,10 +41,9 @@ class CheckOutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         
-        // dd($request->all());
         $pesan = Pesan::where('user_id', Auth::user()->id)->first();
         $PesanDetail = PesanDetail::where('pesan_id', $pesan->id)->first();
         $produk = Produk::where('id', $PesanDetail->produk_id)->first();
@@ -56,8 +55,9 @@ class CheckOutController extends Controller
         $pesans = $request->validate([
             'bank_id' => 'required',
         ]);
+
         if ($request->file('bukti_pembayaran')) {
-            $validateData['bukti_pembayaran'] = CloudinaryStorage::upload($request->file('bukti_pembayaran')->getRealPath(), $request->file('bukti_pembayaran')->getClientOriginalName());
+            $validateData['bukti_pembayaran'] = $request->file('bukti_pembayaran')->store('bukti_pembayaran', 'public');
         }
         
         PesanDetail::where('pesan_id', $pesan->id)->update([
@@ -66,7 +66,9 @@ class CheckOutController extends Controller
         ]);
         
         Pesan::where('id', $pesan->id)->update($pesans);
-        return redirect('/onProcess')->with('success', 'Pembayaran berhasil');
+        Alert::success('Berhasil', 'Pembayaran Berhasil');
+        return redirect('/riwayat');
+       
     }
 
     /**
@@ -113,4 +115,14 @@ class CheckOutController extends Controller
     {
         //
     }
+
+    public function riwayat(){
+        $pesan = Pesan::where('user_id', Auth::user()->id)->first();
+        $pesandetail = PesanDetail::where('pesan_id', $pesan->id)->get();
+        return view('fitur.pesan_kue.riwayat', [
+            'pesanDetail'=>$pesandetail
+        ]);
+
+    }
+
 }

@@ -20,7 +20,6 @@ class PesananDetail extends Migration
             $table->foreign('produk_id')->references('id')->on('produk');
             $table->integer('jumlah');
             $table->integer('total');
-            $table->integer('total_harga')->nullable();
             $table->string('bukti_pembayaran')->nullable();
             $table->timestamps();
         });

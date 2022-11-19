@@ -7,6 +7,25 @@
         <div class="container">
             <section id="about" class="about">
                 <div class="container" data-aos="fade-up">
+
+                    <a href="/keranjang" class="nav-item nav-link"><i class="fas fa-shopping-cart"
+                        style="font-size: 1.8em"></i>
+                        Keranjang
+                    {{-- @if ($orderDetails != null) --}}
+                    {{-- @if ($notifications) --}}
+                    {{-- <span class="badge bg-danger"
+                        style="transform: translateY(-20px);padding: 3px 6px;border-radius: 30px"> --}}
+                        {{-- {{ $notifications }} --}}
+                    {{-- </span> --}}
+                    {{-- @else
+                    <span></span>
+                    @endif --}}
+                    {{-- @else
+                            @endif --}}
+                </a>
+
+
+
                     <div class="section-title">
                         <span>Produk</span>
                         <h2>Produk</h2>

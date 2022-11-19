@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\Models\Pesan;
 use App\Http\Requests\StorePesanRequest;
 use App\Http\Requests\UpdatePesanRequest;
@@ -62,6 +62,20 @@ class PesanController extends Controller
         $pesan = Pesan::where('user_id', auth()->user()->id)->first();
         $detailPesan = PesanDetail::where('produk_id', $produk->id)->first();
         
+        $genap = 1600;
+        $ganjil = 1300;
+        $jumlah = 0;
+        
+        if($request->jumlah_pesan % 2 == 0){
+          $boxGenap = $request->jumlah_pesan / 4;
+          $totalGenap = $boxGenap * $genap;
+          $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGenap;
+        } else {
+          $boxGanjil = $request->jumlah_pesan / 3;
+          $totalGanjil = $boxGanjil * $ganjil;
+          $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGanjil;
+        }
+        
 
         $addorder = [];
         if(empty($detailPesan)){
@@ -69,7 +83,7 @@ class PesanController extends Controller
                 'pesan_id' => $pesan->id,
                 'produk_id' => $request->produk_id,
                 'jumlah' => $request->jumlah_pesan,
-                'total' => $produk->harga * $request->jumlah_pesan
+                'total' => $jumlah
                 
 
             ];
@@ -79,9 +93,8 @@ class PesanController extends Controller
         else{
             return redirect('/produk');
         }
+        Alert::success('Berhasil', 'Berhasil ditambahkan ke keranjang');
         return redirect('/keranjang');
-        
-         
 
         
 
@@ -137,7 +150,8 @@ class PesanController extends Controller
         // $order->status = 1;
         // dd($validateData);
         Order::where('user_id', Auth::user()->id)->update($validateData);
-        return redirect('/cart')->with('success', 'Pembayaran berhasil');
+        Alert::success('Berhasil', 'Pembayaran Berhasil');
+        return redirect('/riwayat');
     }
 
     /**
@@ -152,7 +166,7 @@ class PesanController extends Controller
         $pesan = Pesan::where('id', $pesanDetailId->pesan_id)->first();
         $pesanDetailId->delete();
         // $pesan->delete();
-
+        Alert::success('Berhasil', 'Berhasil dihapus');
         return redirect('/keranjang');
     }
 }

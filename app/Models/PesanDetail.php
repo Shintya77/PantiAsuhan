@@ -14,4 +14,7 @@ class PesanDetail extends Model
     public function produk(){
         return $this->belongsTo(Produk::class);
     }
+    public function pesan(){
+        return $this->belongsTo(Pesan::class);
+    }
 }
