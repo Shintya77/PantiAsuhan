@@ -29,7 +29,7 @@
                               @foreach ($pesanDetail as $pd)
                               <tr>
                               <td style="text-align:center"><class="text-black">{{ $loop->iteration }}</td>
-                              <td class="text-black">{{ $pd->created_at}}</td>
+                              <td class="text-black">{{ $pd->created_at->format('Y-m-d')}}</td>
                               <td class="text-black">{{ $pd->produk->nama }}</td>
                               <td class="text-black">{{ $pd->jumlah }}</td>
                               <td class="text-black">Rp {{ number_format($pd->produk->harga)}}</td>
