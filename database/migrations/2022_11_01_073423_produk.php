@@ -18,6 +18,7 @@ class Produk extends Migration
             $table->string('nama', 50);
             $table->string('gambar');
             $table->integer('harga');
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }

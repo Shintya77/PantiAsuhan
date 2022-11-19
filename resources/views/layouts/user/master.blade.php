@@ -32,7 +32,7 @@
     <link href="{{asset('assets')}}/css/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    @include('sweetalert::alert')
+
 
 </head>
 
@@ -45,7 +45,7 @@
     </div>
     <!-- Spinner End -->
 
-
+    @include('sweetalert::alert')
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark p-0">
         <div class="row gx-0 d-none d-lg-flex">
@@ -85,6 +85,7 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+   
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

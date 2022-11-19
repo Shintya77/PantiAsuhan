@@ -36,6 +36,8 @@
             </div>
         
             <div class="row mt-4">
+                <form action="/checkout/{{$details->id}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                 <div class="col">
                     <h4 class="mb-5">Pilih metode pembayaran!</h4>
                     @error('payment')
@@ -53,7 +55,7 @@
                                                 style="object-fit: fill;border-radius: 20px;" class="img-target">
                                         </label>
                                         <input class="form-check-input d-none opt-radio" type="radio" name="bank_id"
-                                            id="exampleRadios{{ $loop -> iteration }}" value="{{ $b->id }}">
+                                            id="exampleRadios{{ $loop -> iteration }}" value="{{ $b->id_bank}}">
                                     </div>
                                 </div>
                             </div>
@@ -91,11 +93,11 @@
                     
                 
                     <hr>
-                    <form wire:submit.prevent="checkout">
+                    
         
                         <div class="form-group">
                             <label for="">Upload Bukti Transfer</label>
-                            <input id="gambar" type="file" class="form-control @error('gambar') is-invalid @enderror" wire:model="gambar"
+                            <input id="gambar" type="file"  name= "bukti_pembayaran" class="form-control @error('gambar')  is-invalid @enderror" wire:model="gambar"
                             value="" autocomplete="name" autofocus>
         
                             @error('gambar')

@@ -23,6 +23,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BankCateringController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RekapPesanController;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ac9a076b44634a018a7666d5485bfe7b748511d4
 
 /*
 |--------------------------------------------------------------------------
@@ -121,10 +126,26 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     //     return view('fitur.pesan_kue.checkout');
     //     });
 
+<<<<<<< HEAD
+=======
+    Route::get('/bayar', [BankCateringController::class, 'index']);
+    Route::post('/bayar', [BankCateringController::class, 'bayar']);
+
+
+    Route::post('/checkout/{id}', [CheckOutController::class, 'store']);
+
+    Route::get('/riwayat', [CheckOutController::class, 'riwayat']);
+
+  
+>>>>>>> ac9a076b44634a018a7666d5485bfe7b748511d4
 Route::get('/bayar', [BankCateringController::class, 'index']);
 Route::post('/bayar', [BankCateringController::class, 'bayar']);
 Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ac9a076b44634a018a7666d5485bfe7b748511d4
 });
 

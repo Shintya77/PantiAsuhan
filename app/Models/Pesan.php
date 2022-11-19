@@ -13,4 +13,7 @@ class Pesan extends Model
     public function bank(){
         return $this->belongsTo(Bank::class);
     }
+    public function pesanDetail(){
+        return $this->hasMany(PesanDetail::class);
+    }
 }

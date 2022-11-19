@@ -21,7 +21,12 @@
                         <div class="card-body">
                             <h3><i class="fa fa-shopping-cart"></i> Check Out</h3>
                            
-                            <p align="right">Tanggal Pesan : {{ $date->created_at->format('Y-m-d') }}</p>
+                            @if (!empty($date->created_at))
+                                 <p align="right">Tanggal Pesan : {{ $date->created_at->format('Y-m-d') }}</p>
+                            @else 
+                                 <p align="right">Tanggal Pesan :</p>
+                            @endif
+                            
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -63,7 +68,15 @@
                                         <td><strong>Rp. {{ $total }}</strong></td>
                                         <input type="hidden" name="total_bayar" value="{{$total}}" />
                                         <td>
-                                            <input type="hidden" name="pesan_id" value="{{$date -> pesan_id}}">
+                                                
+                            @if (!empty($date -> pesan_id))
+                                     <input type="hidden" name="pesan_id" value="{{$date -> pesan_id}}">
+                            @else 
+                                     <input type="hidden" name="pesan_id" value="">
+                            @endif
+                            
+
+                                           
                                                 <button type="submit" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
                                                     <i class="fa fa-shopping-cart"></i> Check Out
                                                 </button>
