@@ -134,7 +134,6 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
 
     Route::get('/riwayat', [CheckOutController::class, 'riwayat']);
 
-<<<<<<< HEAD
   
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
@@ -145,12 +144,9 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     
 
 });
+// Route::get('/bayar', [BankCateringController::class, 'index']);
+// Route::post('/bayar', [BankCateringController::class, 'bayar']);
+// Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
+//     Route::get('/bayar', [BankCateringController::class, 'index']);
+//     Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
-=======
-Route::get('/bayar', [BankCateringController::class, 'index']);
-Route::post('/bayar', [BankCateringController::class, 'bayar']);
-Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
-    Route::get('/bayar', [BankCateringController::class, 'index']);
-    Route::post('/bayar', [BankCateringController::class, 'bayar']);
-
->>>>>>> 44198017731c9f072661a355793c3cd99b474112

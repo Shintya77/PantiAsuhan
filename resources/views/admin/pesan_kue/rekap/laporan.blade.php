@@ -28,7 +28,7 @@
                     <h3 class="card-title">Laporan Pendapatan</h3>
                     </div>
                     <div class="card-body">
-                    <h3 class="text-center">Periode Bulan {{$tanggalAwal, false}}</h3>
+                    <h3 class="text-center">Periode Tanggal {{$tanggalAwal, false}} s/d {{$tanggalAkhir, false}}</h3>
                     <br>
                     <div class="row">
                         <div class="col col-lg-4 col-md-4">
@@ -56,6 +56,9 @@
                                 <th>Tanggal</th>
                                 <th>Nama Produk</th>
                                 <th>Jumlah Kue</th>
+                                <th>Harga/Kue</th>
+                                <th>Jumlah Box</th>
+                                <th>Harga/Box</th>
                                 <th>Total Bayar</th>
                                 </tr>
                             </thead>
@@ -66,6 +69,9 @@
                                     <td>{{ $d->created_at->format('Y-m-d') }}</td>
                                     <td>{{ $d->produk->nama }}</td>
                                     <td>{{ $d->jumlah }} biji</td>
+                                    <td>Rp {{ number_format($d->produk->harga)}}</td>
+                                    <td>{{ $d->jumlah_box }}</td>
+                                    <td>Rp {{ number_format($d->harga_box)}}</td>
                                     <td>Rp. {{ $d->total }}</td>
                                 </tr>
                                 @endforeach

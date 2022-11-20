@@ -46,7 +46,6 @@
                       <th>Jumlah Box</th>
                       <th>Harga/Box</th>
                       <th>Total Bayar</th>
-                      <th>Bukti Pembayaran</th>
                       <th>Aksi</th>
                   </tr>
               </thead>
@@ -64,9 +63,6 @@
                   <td class="text-black">{{ $item->jumlah_box }}</td>
                   <td class="text-black">Rp {{ number_format($item->harga_box)}}</td>
                   <td class="text-black">{{ $item->total }}</td>
-                  <td align="center">
-                  <img src="{{ asset('storage/'. $item->bukti_pembayaran) }}" width="100" height="150"/>
-                  </td>
                   <td>
                     <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
                   </td>
