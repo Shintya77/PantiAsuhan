@@ -1,7 +1,7 @@
 @extends('layouts.user.master')
 @section('content')
 <!-- Quote Start -->
-<form action="/formulir-donasi" method="POST" enctype="multipart/form-data">
+<form action="/formulir-donasi-panti" method="POST" enctype="multipart/form-data">
     @csrf
 <div class="container bg-light overflow-hidden my-5 px-lg-0" id="show">
     @if ($errors->any())
@@ -24,8 +24,8 @@
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nama Donatur</h6>
-                                    <input type="text" name="name" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; " value="{{Auth::user() -> name}}">
-                                    <div class="form-check">
+                                    <input type="text" name="name" class="form-control border-0" placeholder="Nama Donatur" style="height: 55px; ">
+                                    <div class="form-check my-3">
                                         <input class="form-check-input" type="checkbox" name="hide" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                           Sembunyikan nama anda sebagai donatur
@@ -34,33 +34,32 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Tanggal Donasi</h6>
-                                    <input type="date" name="tgl_donasi" class="form-control border-0" placeholder="Tanggal Donasi" style="height: 55px;" value="{{date('Y-m-d')}}">
+                                    <input type="date" name="tgl_donasi" class="form-control border-0" value="{{date('Y-m-d')}}" placeholder="Tanggal Donasi" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Alamat Donatur</h6>
-                                    <input type="text" name="alamat" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;" value="{{Auth::user() -> alamat}}">
+                                    <input type="text" name="alamat" class="form-control border-0" placeholder="Alamat Donatur" style="height: 55px;" >
                                 </div>
-
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Bank</h6>
                                     <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
                                         {{-- <option selected>Bank</option> --}}
                                         @foreach ($bank as $b)
-                                        <option value="{{$b->id_bank}}" >{{$b->nama_bank}} - {{$b->norekening}}</option>
+                                        <option value="{{$b->id_bank}}">{{$b->nama_bank}} - {{$b->norekening}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nominal Donasi</h6>
-                                    <input type="number" name="nominal" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;" id="inputNominal">
+                                    <input type="number" name="nominal" id="inputNominal" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Rekening Atas Nama</h6>
-                                    <input type="text" name="atas_nama" id="input_atasNama" class="form-control border-0" placeholder="Rekening Atas Nama" style="height: 55px;">
+                                    <input type="text" name="atas_nama" id="inputAtasNama" class="form-control border-0" placeholder="Rekening Atas Nama" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nomor Rekening Donatur</h6>
-                                    <input type="text" name="no_rekening" id="input_noRekening" class="form-control border-0" placeholder="Nomor Rekening" style="height: 55px;">
+                                    <input type="text" name="no_rekening" id="inputNoRekening" class="form-control border-0" placeholder="Nomor Rekening" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Pilih Program</h6>
@@ -74,18 +73,17 @@
                                     <h6 class="text-black">Keterangan </h6>
                                     <textarea type="text" name="keterangan" class="form-control border-0" placeholder="Keterangan bila perlu"></textarea>
                                 </div>
-                                </div class="col-12">
+                                <div class="col-12">
                                     <h6 class="description">Upload Bukti Transfer</h6>
                                     <img src="" class="img-preview img-fluid mb-3 " alt="">
-                                    <input type="file" name="bukti_tf" class="form-control border-0" placeholder="Upload Bukti Transfer Donasi" style="height: 55px;" id="image" onchange="previewImage()">
+                                    <input type="file" name="bukti_tf" class="form-control border-0" placeholder="Nominal Donasi" style="height: 55px;" id="image" onchange="previewImage()">
                                 </div>
                                 <div class="col-12">
-                                    <a  href="{{url('/dashboard-donasi')}}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
+                                    <a  href="{{url('/donasi')}}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
                                     <a id="form" onclick="form()" class="btn btn-primary rounded-pill py-2 px-4 animated slideInRight" >Berikutnya</a>
                                     {{-- <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button> --}}
                                 </div>
                             </div>
-                        
                     </div>
                 </div>
             </div>
@@ -109,16 +107,16 @@
                 <div class="d-flex justify-content-center">
                 <p class="description">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p><br>  
                 </div>  
-            <p class="description">Donasi anda adalah sebesar              : <span id="nominal"></span>  </p><br> 
-            {{-- //TODO menampilkan nama program  --}}
-            <p class="description">Donasi untuk Program                    : <span id="nama_program"></span></p><br>
-            <p class="description">Nomor Rekening Anda                     : <span id="no_rekening"></span></p><br>  
-            <p class="description">Atas Nama                               : <span id="atas_nama"></span></p><br>  
+            <p class="description">Donasi anda adalah sebesar              :  <span id="nominal"></span>  </p><br> 
+            {{-- //TODO menampilkan nama program --}}
+            <p class="description">Donasi untuk Program                    :  <span id="nama_program"></p><br>
+            <p class="description">Nomor Rekening Anda                     :  <span id="no_rekening"> </p><br>  
+            <p class="description">Atas Nama                               :  <span id="atas_nama"></p><br>  
             <div class="d-flex justify-content-center">
             <p class="description">* TERIMAKASIH TELAH IKUT MEMBANTU SAUDARA-SAUDARA KITA YANG LEBIH MEMBUTUHKAN *</p><br>  
         </div> 
         <div class="d-flex justify-content-center">
-            <p class="description">*SEMOGA AMALAN BAIK ANDA KEMBALI KE ANDA, Terimakasih ^^</p><br>  
+            <p class="description">* SEMOGA AMALAN BAIK ANDA KEMBALI KE ANDA, Terimakasih ^^</p><br>  
         </div>  
                   </div>
                 </div>
@@ -130,7 +128,7 @@
 <br>
 </br>
         <a id="upload" onclick="upload()" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
-        <button class="btn btn-warning rounded-pill py-2 px-4 animated slideInRight" type="submit">Submit</button>
+        <button class="btn btn-warning rounded-pill py-2 px-4 animated slideInRight" type="submit">Donasi</button>
         {{-- <a href="{{url('/profil/formulir')}}" class="btn btn-warning rounded-pill py-2 px-4 animated slideInRight">Submit</a> --}}
 </div> 
 </section>
@@ -158,7 +156,6 @@ const upload = () => {
     // document.querySelector('#username').classList.remove('d-none');
 }
 </script>
-
 <script>
     const inputNominal = document.querySelector('#inputNominal');
     const nominal = document.querySelector('#nominal');
@@ -180,12 +177,14 @@ const upload = () => {
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
     }
-    const inputAtasNama = document.querySelector('#input_atasNama');
+
+    const inputAtasNama = document.querySelector('#inputAtasNama');
     const atasNama = document.querySelector('#atas_nama');
     inputAtasNama.addEventListener('keyup', function(e){
         atasNama.innerHTML = this.value;
     })
-    const inputNoRekening = document.querySelector('#input_noRekening');
+    
+    const inputNoRekening = document.querySelector('#inputNoRekening');
     const noRekening = document.querySelector('#no_rekening');
     inputNoRekening.addEventListener('keyup', function(e){
         noRekening.innerHTML = this.value;

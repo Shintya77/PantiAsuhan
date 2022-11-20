@@ -16,8 +16,9 @@ class CreateProgramsTable extends Migration
         Schema::create('programs', function (Blueprint $table) {
             $table->id('id_program');
             $table->string('nama_program');
-            $table->string('dns_butuh');
-            $table->string('dns_terkumpul')->nullable();
+            $table->integer('dns_butuh')->nullable();
+            $table->integer('dns_terkumpul')->nullable();
+            $table -> string('status') -> default('open');
             $table->timestamps();
         });
     }
