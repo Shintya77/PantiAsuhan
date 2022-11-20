@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PesananDetail extends Migration
+class RiwayatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class PesananDetail extends Migration
      */
     public function up()
     {
-        Schema::create('pesananDetail', function (Blueprint $table) {
+        Schema::create('riwayat', function (Blueprint $table) {
             $table->id('id');
             $table->foreignId('pesan_id')->constrained();
             $table->unsignedBigInteger('produk_id');
@@ -34,6 +34,6 @@ class PesananDetail extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesananDetail');
+        Schema::dropIfExists('riwayat');
     }
 }

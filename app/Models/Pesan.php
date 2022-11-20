@@ -16,4 +16,7 @@ class Pesan extends Model
     public function pesanDetail(){
         return $this->hasMany(PesanDetail::class);
     }
+    public function riwayat(){
+        return $this->hasMany(Riwayat::class);
+    }
 }

@@ -7,6 +7,7 @@ use App\Http\Requests\StorePesanRequest;
 use App\Http\Requests\UpdatePesanRequest;
 use App\Models\Produk;
 use App\Models\PesanDetail;
+use App\Models\Riwayat;
 
 class PesanController extends Controller
 {
@@ -21,12 +22,13 @@ class PesanController extends Controller
     //     $this->middleware('auth');
     // }
 
-    public function index()
+    public function index(StorePesanRequest $request)
     {
         //
         $pesan = Pesan::where('user_id', auth()->user()->id)->first();
         $data = PesanDetail::where('pesan_id', $pesan->id)->get();
         $iniTanggal = PesanDetail::where('pesan_id', $pesan->id)->first();
+
         return view('fitur.pesan_kue.pesan', [
             'active'=>'active', 
             'title'=>'Keranjang',
@@ -70,10 +72,16 @@ class PesanController extends Controller
           $boxGenap = $request->jumlah_pesan / 4;
           $totalGenap = $boxGenap * $genap;
           $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGenap;
+
+          $box = $boxGenap;
+          $hargaBox = $genap;
         } else {
           $boxGanjil = $request->jumlah_pesan / 3;
           $totalGanjil = $boxGanjil * $ganjil;
           $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGanjil;
+
+          $box = $boxGanjil;
+          $hargaBox = $ganjil;
         }
         
 
@@ -83,6 +91,8 @@ class PesanController extends Controller
                 'pesan_id' => $pesan->id,
                 'produk_id' => $request->produk_id,
                 'jumlah' => $request->jumlah_pesan,
+                'jumlah_box' => $box,
+                'harga_box' => $hargaBox,
                 'total' => $jumlah
                 
 
@@ -93,6 +103,19 @@ class PesanController extends Controller
         else{
             return redirect('/produk');
         }
+
+        $addriwayat = [
+            'pesan_id' => $pesan->id,
+            'produk_id' => $request->produk_id,
+            'jumlah' => $request->jumlah_pesan,
+            'jumlah_box' => $box,
+            'harga_box' => $hargaBox,
+            'total' => $jumlah
+            
+
+        ];
+        Riwayat::create($addriwayat);
+
         Alert::success('Berhasil', 'Berhasil ditambahkan ke keranjang');
         return redirect('/keranjang');
 

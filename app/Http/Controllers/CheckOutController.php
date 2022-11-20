@@ -10,6 +10,7 @@ use App\Models\Bank;
 use App\Models\Produk;
 use App\Models\PesanDetail;
 use App\Models\Pesan;
+use App\Models\Riwayat;
 
 class CheckOutController extends Controller
 {
@@ -61,6 +62,11 @@ class CheckOutController extends Controller
         }
         
         PesanDetail::where('pesan_id', $pesan->id)->update([
+            
+            'bukti_pembayaran' => $validateData['bukti_pembayaran'],
+        ]);
+
+        Riwayat::where('pesan_id', $pesan->id)->update([
             
             'bukti_pembayaran' => $validateData['bukti_pembayaran'],
         ]);
@@ -118,9 +124,9 @@ class CheckOutController extends Controller
 
     public function riwayat(){
         $pesan = Pesan::where('user_id', Auth::user()->id)->first();
-        $pesandetail = PesanDetail::where('pesan_id', $pesan->id)->get();
+        $riwayat = Riwayat::where('pesan_id', $pesan->id)->get();
         return view('fitur.pesan_kue.riwayat', [
-            'pesanDetail'=>$pesandetail
+            'riwayat'=>$riwayat
         ]);
 
     }
