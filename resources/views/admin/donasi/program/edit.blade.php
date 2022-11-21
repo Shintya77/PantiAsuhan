@@ -52,6 +52,10 @@
                             <label for="dns_terkumpul">Donasi Terkumpul</label>
                             <input type="text" name="dns_terkumpul" class="form-control" value="{{ $program->dns_terkumpul }}" >
                         </div>
+                        <div class="form-group">
+                          <label for="dns_terkumpul">Status</label>
+                          <input type="text" name="status" class="form-control" value="{{ $program->status }}" >
+                      </div>
                         <a class="btn btn-secondary " href="{{ route('program.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

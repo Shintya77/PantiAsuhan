@@ -49,6 +49,7 @@
                         <th>Nama Program</th>
                         <th>Donasi Butuh</th>
                         <th>Donasi Terkumpul</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                     </thead>
@@ -58,14 +59,35 @@
                         <td class="text-black">{{ $pgr->nama_program}}</td>
                         <td class="text-black">{{ $pgr->dns_butuh }}</td>
                         <td class="text-black">{{ $pgr->dns_terkumpul }}</td>
+                        <td class="text-black">{{ $pgr->status }}</td>
                         {{-- <td><a class="btn btn-info" href="{{ route('program.edit',$pgr->id_program) }}">Edit</td> --}}
                         <td>
+                          <form action="{{ route('program.edit',$pgr->id_program) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <a class="btn btn-warning" href="{{ route('program.edit',$pgr->id_program) }}"><i class="fa fa-edit"></i></a>
+                          </form>
+
+                            <form action="{{ route('program.update',$pgr->id_program) }}" method="POST">
+                              @csrf
+                              @method('PUT')
+                              <button type="submit" class="btn btn-info"><i class="bi bi-lock-fill"></i></button>
+                            </form>
+    
                           <form action="{{ route('program.destroy',$pgr->id_program) }}" method="POST">
+    
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                          </form> 
+  
+                          {{-- <form action="{{ route('program.destroy',$pgr->id_program) }}" method="POST">
                             <a class="btn btn-warning" href="{{ route('program.edit',$pgr->id_program) }}"><i class="fa fa-edit"></i></a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                          </form>
+                          </form> --}}
+
                           {{-- <form action="{{url('program/'.$pgr->id_program)}}" method="POST">
                               @csrf
                               @method('DELETE')

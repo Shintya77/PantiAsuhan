@@ -75,6 +75,7 @@
                             <label for="status">Status</label>
                             <input type="text" name="status" class="form-control" id="status" aria-describedby="status" >
                         </div>
+                        {{-- <a class="btn btn-secondary " href="{{ route('donatur.program') }}">Kembali</a> --}}
                         <button type="submit" class="btn btn-warning">Submit</button>
                     </form>
                 </div>

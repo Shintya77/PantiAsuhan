@@ -81,7 +81,9 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
     Route::get('bank/cari/data', [BankController::class, 'cari'])->name('bank.cari');
     Route::get('binaan/cari/data', [BinaanController::class, 'cari'])->name('binaan.cari');
-    // Route::get('donatur/cari/data', [DonaturController::class, 'cari'])->name('donatur.cari');
+    Route::get('program-donasi/{program}',[DonaturController::class, 'program'])->name('donatur.program');
+    Route::get('donatur/cari/data', [DonaturController::class, 'cari'])->name('donatur.cari');
+
 
     //ROUTE ADMIN WEB PROFIL
     Route::resource('struktur', StrukturController::class);
@@ -136,3 +138,4 @@ Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
+    });

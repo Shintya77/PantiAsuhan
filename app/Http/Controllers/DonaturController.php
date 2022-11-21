@@ -16,11 +16,30 @@ class DonaturController extends Controller
      */
     public function index()
     {
-        $donatur = donatur::all();
-        $title = 'Data Donatur';
-        $paginate = donatur::orderBy('id_donatur', 'asc')->paginate(5);
-        return view('admin.donasi.donatur.indexDonatur', compact('donatur','title','paginate'));
+        $program = program::all();
+        return view('admin.donasi.donatur.pilihProgram', compact('program')); 
     }
+
+    //PROGRAM ADMIN
+    public function program(program $program)
+    {
+        $donatur = donatur::where('id_program', $program->id_program) -> paginate(10);
+        $title = 'Data Donatur';
+        return view('admin.donasi.donatur.indexDonatur', [
+            'title'=>$title, 'program'=>$program ?? null, 'donatur'=>$donatur ?? null, 
+        ]); 
+    }
+    //function cari donatur
+    public function cari(Request $request, program $program)
+    {
+        $keyword = $request->cari;
+        $donatur = donatur::where('name', 'like', '%' . $keyword . '%') -> paginate(5);
+        $donatur->appends(['keyword' => $keyword]);
+        return view('admin.donasi.donatur.indexDonatur', [
+            'program'=>$program ?? null, 'donatur'=>$donatur ?? null, 
+        ]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -80,9 +99,12 @@ class DonaturController extends Controller
      * @param  \App\Models\donatur  $donatur
      * @return \Illuminate\Http\Response
      */
-    public function show(donatur $donatur)
+    public function show($id)
     {
-        //
+        $donatur = donatur::where('id_donatur', $id) -> first();
+        $title ="Detail Data Donatur";
+        return view('admin.donasi.donatur.detail', compact('title', 'donatur'));
+        
     }
 
     /**
@@ -146,4 +168,5 @@ class DonaturController extends Controller
         donatur::where('id_donatur',$id)->delete();
         return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Dihapus');
     }
+
 }
