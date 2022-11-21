@@ -11,30 +11,33 @@
                           <h4 class="text-center text-primary">RIWAYAT PESANAN</h4>
                       </div>
                       <div>
-                        {{-- <a class="btn btn-info" href="{{url('struktur/create')}}">Tambah</a> --}}
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
                                 <th>Nomor</th>
                                 <th>Tanggal</th>
                                 <th>Nama Kue</th>
-                                <th>Jumlah</th>
-                                <th>Harga Kue</th>
-                                <th>Total </th>
+                                <th>Jumlah Kue</th>
+                                <th>Harga/Kue</th>
+                                <th>Jumlah Box</th>
+                                <th>Harga/Box</th>
+                                <th>Total Bayar</th>
                                 <th>Bukti Pembayaran</th>
 
                               </tr>
                             </thead>
                             <tbody>
-                              @foreach ($pesanDetail as $pd)
+                              @foreach ($riwayat as $r)
                               <tr>
                               <td style="text-align:center"><class="text-black">{{ $loop->iteration }}</td>
-                              <td class="text-black">{{ $pd->created_at->format('Y-m-d')}}</td>
-                              <td class="text-black">{{ $pd->produk->nama }}</td>
-                              <td class="text-black">{{ $pd->jumlah }}</td>
-                              <td class="text-black">Rp {{ number_format($pd->produk->harga)}}</td>
-                              <td class="text-black">{{ $pd->total }}</td>
-                              <td> <img src="{{ asset('storage/'. $pd->bukti_pembayaran) }}" width="100" height="100"/></td>
+                              <td class="text-black">{{ $r->created_at->format('Y-m-d')}}</td>
+                              <td class="text-black">{{ $r->produk->nama }}</td>
+                              <td class="text-black">{{ $r->jumlah }}</td>
+                              <td class="text-black">Rp {{ number_format($r->produk->harga)}}</td>
+                              <td class="text-black">{{ $r->jumlah_box }}</td>
+                              <td class="text-black">Rp {{ number_format($r->harga_box)}}</td>
+                              <td class="text-black">{{ $r->total }}</td>
+                              <td> <img src="{{asset('storage/'.$r->bukti_pembayaran)}}" width="100" height="100"/></td>
                                 </form>
                               </td>  
                               @endforeach

@@ -27,7 +27,7 @@
                                     @csrf
                                 <p><h2>{{$produk->nama}}</h2></p><br>
 
-                                <h4> Harga : {{$produk->harga}}</h4>
+                                <h4> Harga : Rp. {{$produk->harga}}</h4>
                                <input type="hidden" name="harga" value="{{$produk->harga}}">
                                <input type="hidden" name="produk_id" value="{{$produk->id}}">
                                  

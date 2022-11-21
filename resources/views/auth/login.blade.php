@@ -51,9 +51,13 @@
                                         </a>
                                     </form>
                                     <hr>
+                                    @if (Route::has('password.request'))
                                     <div class="text-center">
-                                        <a class="small" href="">Lupa Password?</a>
+                                        <a class="small" href="{{ route('password.request') }}">
+                                            {{ __('Lupa Password?') }}
+                                        </a>
                                     </div>
+                                    @endif
                                     <div class="text-center">
                                         <a class="small" href="{{ url('/register')}}">Buat akun!</a>
                                     </div>

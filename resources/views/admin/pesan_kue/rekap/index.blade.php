@@ -41,8 +41,10 @@
                       <th>Tanggal</th>
                       <th>Gambar</th>
                       <th>Nama Produk</th>
-                      <th>Jumlah</th>
-                      <th>Harga</th>
+                      <th>Jumlah Kue</th>
+                      <th>Harga/Kue</th>
+                      <th>Jumlah Box</th>
+                      <th>Harga/Box</th>
                       <th>Total Bayar</th>
                       <th>Aksi</th>
                   </tr>
@@ -56,10 +58,13 @@
                   <img src="{{ asset('storage/'. $item->produk->gambar) }}" width="100" height="150"/>
                   </td>
                   <td align="center">{{ $item->produk->nama }}</td>
-                  <td align="center">{{ $item->jumlah }}</td>
-                  <td align="center">Rp. {{ $item->produk->harga }} </td>
-                  <td align="center">Rp. {{ $item->total }}</td>
+                  <td class="text-black">{{ $item->jumlah }}</td>
+                  <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
+                  <td class="text-black">{{ $item->jumlah_box }}</td>
+                  <td class="text-black">Rp {{ number_format($item->harga_box)}}</td>
+                  <td class="text-black">{{ $item->total }}</td>
                   <td>
+                    <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
                   </td>
                   </tr>
                   @endforeach

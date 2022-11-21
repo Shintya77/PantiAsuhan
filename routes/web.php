@@ -98,7 +98,11 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('pesan', RekapPesanController::class);
     Route::get('pesan/cari/data', [RekapPesanController::class, 'cari'])->name('pesan.cari');
 
-
+    Route::get('/form', function () {
+        return view('admin.pesan_kue.rekap.form');
+        });
+    
+    Route::get('pesan/pendapatan/data', [RekapPesanController::class, 'pendapatan'])->name('pesan.pendapatan');
 
 });
 
@@ -132,10 +136,23 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
 
     Route::get('/riwayat', [CheckOutController::class, 'riwayat']);
 
-Route::get('/bayar', [BankCateringController::class, 'index']);
-Route::post('/bayar', [BankCateringController::class, 'bayar']);
-Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
+  
+    Route::get('/bayar', [BankCateringController::class, 'index']);
+    Route::post('/bayar', [BankCateringController::class, 'bayar']);
+    Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
+<<<<<<< HEAD
     });
+=======
+    
+
+});
+// Route::get('/bayar', [BankCateringController::class, 'index']);
+// Route::post('/bayar', [BankCateringController::class, 'bayar']);
+// Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
+//     Route::get('/bayar', [BankCateringController::class, 'index']);
+//     Route::post('/bayar', [BankCateringController::class, 'bayar']);
+
+>>>>>>> 3e937caf23cb4c2192535553c5d7638306bced09

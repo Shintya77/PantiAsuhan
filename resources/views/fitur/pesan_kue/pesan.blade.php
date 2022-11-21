@@ -33,8 +33,10 @@
                                         <th>No</th>
                                         <th>Gambar</th>
                                         <th>Nama Produk</th>
-                                        <th>Jumlah</th>
-                                        <th>Harga</th>
+                                        <th>Jumlah Kue</th>
+                                        <th>Harga/Kue</th>
+                                        <th>Jumlah Box</th>
+                                        <th>Harga/Box</th>
                                         <th>Total Harga</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -49,6 +51,8 @@
                                         <td>{{ $item->produk->nama }}</td>
                                         <td>{{ $item->jumlah }}</td>
                                         <td>Rp. {{ $item->produk->harga }} </td>
+                                        <td>Rp. {{$item->jumlah_box}}</td>
+                                        <td>Rp. {{$item->harga_box}}</td>
                                         <td>Rp. {{ $item->total }}</td>
                                         <td>
                                             <form action="/keranjang/{{$item->id}}" method="POST">
@@ -62,6 +66,8 @@
 
                                     
                                     <tr>
+                                        <td></td>
+                                        <td></td>
                                         <td colspan="5" align="right"><strong>Total Harga :</strong></td>
                                         <form action="/bayar" method="POST" enctype="multipart/form-data">
                                             @csrf
@@ -87,10 +93,10 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        <a href="{{ url('/produk') }}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
 

@@ -21,4 +21,9 @@ class Produk extends Model
         return $this->hasMany(PesanDetail::class);
     }
 
+    public function Riwayat()
+    {
+        return $this->hasMany(Riwayat::class);
+    }
+
 }
