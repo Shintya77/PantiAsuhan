@@ -6,6 +6,7 @@ use App\Models\donatur;
 use App\Models\Bank;
 use App\Models\program;
 use Illuminate\Http\Request;
+use PDF;
 
 class DonaturController extends Controller
 {
@@ -169,6 +170,12 @@ class DonaturController extends Controller
 
         donatur::where('id_donatur',$id)->delete();
         return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Dihapus');
+    }
+
+    public function cetak_pdf(){
+        $donatur = donatur::all();
+        $pdf = PDF::loadview('admin.donatur.rekap.index', ['donatur'=>$donatur]);
+        return $pdf->stream();
     }
 
 }
