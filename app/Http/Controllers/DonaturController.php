@@ -172,10 +172,11 @@ class DonaturController extends Controller
         return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Dihapus');
     }
 
-    public function cetak_pdf(){
+    public function cetak_pdf(program $program){
         $donatur = donatur::all();
-        $pdf = PDF::loadview('admin.donatur.rekap.index', ['donatur'=>$donatur]);
+        $pdf = PDF::loadview('admin.donasi.donatur.rekap.index', ['donatur'=>$donatur]);
         return $pdf->stream();
     }
+
 
 }

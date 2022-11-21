@@ -84,7 +84,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     //TODO MENAMPILKAN INDEX DONATUR
     Route::get('program-donasi/{program}',[DonaturController::class, 'program'])->name('donatur.program');
     Route::get('donatur/cari/data', [DonaturController::class, 'cari'])->name('donatur.cari');
-    Route::get('donatur/cetak_pdf', [DonaturController::class, 'cetak_pdf'])->name('donatur.cetak');
+    Route::get('donatur/cetak_pdf/{program}', [DonaturController::class, 'cetak_pdf'])->name('donatur.cetak');
 
     //ROUTE ADMIN WEB PROFIL
     Route::resource('struktur', StrukturController::class);
