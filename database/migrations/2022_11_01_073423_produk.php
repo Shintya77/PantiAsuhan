@@ -15,6 +15,8 @@ class Produk extends Migration
     {
         Schema::create('produk', function (Blueprint $table) {
             $table->id('id');
+            $table->unsignedBigInteger('tipeproduk_id')->nullable();
+            $table->foreign('tipeproduk_id')->references('id')->on('tipeproduk');
             $table->string('nama', 50);
             $table->string('gambar');
             $table->integer('harga');

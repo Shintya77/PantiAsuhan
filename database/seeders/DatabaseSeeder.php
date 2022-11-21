@@ -20,13 +20,15 @@ class DatabaseSeeder extends Seeder
             // ProdukSeeder::class,
             StrukturSeeder::class,
             UserSeeder::class,
+            TipeProdukSeeder::class,
             ProdukSeeder::class,
             KegiatanSeeder::class,
             GaleriSeeder::class,
             ProgramSeeder::class,
             DonaturSeeder::class,
             BinaanSeeder::class,
-            BankSeeder::class
+            BankSeeder::class,
+            
 
         ]);
     }

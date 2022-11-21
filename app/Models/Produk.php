@@ -14,6 +14,7 @@ class Produk extends Model
         'nama',
         'gambar',
         'harga',
+        'tipeproduk_id',
     ];
 
     public function PesanDetails()
@@ -26,4 +27,8 @@ class Produk extends Model
         return $this->hasMany(Riwayat::class);
     }
 
+    public function TipeProduk()
+    {
+        return $this->hasMany(TipeProduk::class);
+    }
 }
