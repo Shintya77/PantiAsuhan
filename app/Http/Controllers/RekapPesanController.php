@@ -19,10 +19,10 @@ class RekapPesanController extends Controller
     public function index()
     {
         //
-        $data = Riwayat::all(); 
+        $data = PesanDetail::all(); 
         $pesan = DB::table('pesans')->get();
         $title = 'Data Pesanan';
-        $paginate = Riwayat::orderBy('id', 'asc')->paginate(3);
+        $paginate = PesanDetail::orderBy('id', 'asc')->paginate(3);
         return view('admin.pesan_kue.rekap.index', compact('data','pesan','title','paginate'));
     }
 
@@ -56,7 +56,7 @@ class RekapPesanController extends Controller
     public function show($id)
     {
         //menampilkan detail data pesanan berdasarkan Id siswa
-        $pesanan = Riwayat::where('id',$id)->first();
+        $pesanan = PesanDetail::where('id',$id)->first();
         $title = 'Data Rekapan Pesanan';
         return view('admin.pesan_kue.rekap.detail', compact('pesanan', 'title'));
     }
@@ -93,7 +93,7 @@ class RekapPesanController extends Controller
     public function destroy($id)
     {
          //
-         Riwayat::where('id',$id)->delete();
+         PesanDetail::where('id',$id)->delete();
          return redirect()->route('pesan.index')
          -> with('success', 'Pesanan Berhasil Dihapus');
     }
@@ -102,10 +102,10 @@ class RekapPesanController extends Controller
     {
         $keyword = $request->cari; 
         $produk = Produk::where('nama',$keyword)->get('id');
-        $data = Riwayat::where('produk_id', 'like', '%' . $keyword . '%')->paginate(3);
+        $data = PesanDetail::where('produk_id', 'like', '%' . $keyword . '%')->paginate(3);
         $data->appends(['keyword' => $produk]);
         $title = 'Pencarian Data Kue';
-        $paginate = Riwayat::orderBy('id', 'asc')->paginate(3);
+        $paginate = PesanDetail::orderBy('id', 'asc')->paginate(3);
         return view('admin.pesan_kue.rekap.index', compact('data','paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -121,13 +121,17 @@ class RekapPesanController extends Controller
         $total_transaksi = 0;
         $total_pendapatan = 0;
 
+        
+        $akhir = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAkhir)));
+        $rincian = Riwayat::whereBetween('created_at',[$tanggalAwal,$akhir])->get();
+
         while (strtotime($tanggalAwal) <= strtotime($tanggalAkhir)) {
             $tanggal = $tanggalAwal;
             $tanggalAwal = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAwal)));
 
             $transaksi = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->sum('pesan_id');
             $pendapatan = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->sum('total');
-            $rincian = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->get();
+            // $rincian = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->get();
 
             $total_pendapatan += $pendapatan;
             $total_transaksi += $transaksi;

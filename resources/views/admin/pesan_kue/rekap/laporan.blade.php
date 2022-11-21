@@ -82,6 +82,8 @@
                     </div>
                     </div>
                 </div>
+                
+                <button align="right" class="btn btn-sm btn-flat btn-danger"><i class="fa fa-print"></i> Cetak PDF</button>
                 </div>
             </div>
         </div>
