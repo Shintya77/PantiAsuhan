@@ -24,7 +24,7 @@
                 <div class="col-lg-4 col-2">
                   <div class="small-box bg-warning">
                     <div class="inner">
-                      <h3>10</h3>
+                      <h3>{{$jumlah_galeri}}</h3>
   
                     <h5>Galeri</h5>
                       <p>- Galeri Panti -</p>
@@ -38,9 +38,9 @@
                 </div>
   
                 <div class="col-lg-4 col-2">
-                  <div class="small-box bg-warning">
+                  <div class="small-box bg-success">
                     <div class="inner">
-                      <h3>12</h3>
+                      <h3>{{$jumlah_kegiatan}}</h3>
                       <h5>Kegiatan Panti</h5>
                       <p>- Kegiatan Panti -</p>
                       <p></p>
@@ -54,9 +54,9 @@
   
                 <div class="col-lg-4 col-2">
                   <!-- small box -->
-                  <div class="small-box bg-info">
+                  <div class="small-box bg-danger">
                     <div class="inner">
-                      <h3>43</h3>
+                      <h3>{{$jumlah_struktur}}</h3>
   
                       <h5>Struktur Kepengurusan</h5>
                       <p>-Struktur kepengurusan panti-</p>
@@ -80,43 +80,43 @@
                   <!-- small box -->
                   <div class="small-box bg-primary">
                     <div class="inner">
-                      <h3>0</h3>
+                      <h3>{{$jumlah_binaan}}</h3>
 
                       <h5>Binaan</h5>
                       <p>- Donasi terkumpul saat ini -</p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-bag"></i>
+                      <i class="bi bi-person-fill"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{route('binaan.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <div class="col-lg-3 col-2">
                   <!-- small box -->
-                  <div class="small-box bg-primary">
+                  <div class="small-box bg-info">
                     <div class="inner">
-                      <h3>0</h3>
+                      <h3>{{$jumlah_bank}}</h3>
 
                       <h5>Bank</h5>
                       <p>- Bank tersedia saat ini -</p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-bag"></i>
+                       <i class="bi bi-wallet"></i>
                     </div>
-                    <a href="{{route('program.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{route('bank.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <div class="col-lg-3 col-2">
                   <!-- small box -->
                   <div class="small-box bg-primary">
                     <div class="inner">
-                      <h3>2</h3>
+                      <h3>{{$jumlah_program}}</h3>
 
                       <h5>Program</h5>
                       <p>- Program tersedia saat ini -</p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-bag"></i>
+                      <i class="bi bi-menu-button-wide-fill"></i>
                     </div>
                     <a href="{{route('program.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
@@ -124,132 +124,53 @@
 
                 <div class="col-lg-3 col-2">
                   <!-- small box -->
-                  <div class="small-box bg-primary">
+                  <div class="small-box bg-info">
                     <div class="inner">
-                      <h3>0</h3>
+                      <h3>{{$jumlah_donatur}}</h3>
 
                       <h5>Donatur</h5>
                       <p>- Donatur saat ini -</p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-bag"></i>
+                      <i class="bi bi-person"></i>
                     </div>
                     <a href="{{route('donatur.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
-                <div class="col-lg-6 col-2">
-                  <div class="small-box bg-primary">
-                    <div class="inner">
-                      <h3>Tabel Program</h3>
-                      <div class="table-responsive">
-                        <table class="table caption-top">
-                          <caption>List of users</caption>
-                          <thead>
-                            <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">First</th>
-                              <th scope="col">Last</th>
-                              <th scope="col">Handle</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="col-lg-6 col-2">
-                  <div class="small-box bg-primary">
+                <div class="col-lg-12 col-2">
+                  <div class="small-box bg-secondary">
                     <div class="inner">
-                      <h3>Tabel Program</h3>
+                      <h3>Data Program</h3>
                       <div class="table-responsive">
                         <table class="table caption-top">
-                          <caption>List of users</caption>
                           <thead>
                             <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">First</th>
-                              <th scope="col">Last</th>
-                              <th scope="col">Handle</th>
+                              <th scope="col">Nama Program</th>
+                              <th scope="col">Donasi Butuh</th>
+                              <th scope="col">Donasi Kurang</th>
+                              <th scope="col">Donasi Terkumpul</th>
+                              <th scope="col">Status</th>
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach ($program as $pgr)
+                            @php
+                                $kurang = $pgr -> dns_butuh - $pgr -> dns_terkumpul;
+                              @endphp
                             <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
+                              <td class="text-black">{{ $pgr->nama_program}}</td>
+                              <td class="text-black">Rp.{{ number_format($pgr->dns_butuh) }}</td>
+                              <td class="text-black">Rp.{{ number_format($kurang) }}</td>
+                              <td class="text-black">Rp. {{ number_format($pgr->dns_terkumpul) }}</td>
+                            <td class="text-black">{{ $pgr->status }}</td>
                             </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                            </tr>
+                            @endforeach
                           </tbody>
                         </table>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="table-responsive">
-                  <table class="table caption-top">
-                    <caption>List of users</caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </div>
