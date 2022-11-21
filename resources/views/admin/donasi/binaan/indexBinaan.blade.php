@@ -46,7 +46,7 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                    <th>No </th>
+                    <th>Id Binaan </th>
                         <th>Nama Binaan</th>
                         <th>TTL</th>
                         <th>Jenis Kelamin</th>

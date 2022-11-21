@@ -46,7 +46,7 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Nomor </th>
+                        <th>Id </th>
                         <th>Nama </th>
                         <th>Jabatan</th>
                         <th>Keterangan</th>

@@ -34,7 +34,7 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>No </th>
+                        <th>Id Gambar</th>
                         <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>

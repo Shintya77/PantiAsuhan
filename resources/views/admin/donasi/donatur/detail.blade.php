@@ -75,7 +75,7 @@
                             <form action="{{ route('donatur.update',$donatur->id_donatur) }}" method="POST">
                               @csrf
                               @method('PUT')
-                              <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>Masuk</button>
+                              <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Masuk</button>
                             </form>
                         </td>
                     </tr>
