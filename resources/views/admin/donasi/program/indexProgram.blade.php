@@ -67,7 +67,7 @@
                             @method('PUT')
                             <a class="btn btn-warning" href="{{ route('program.edit',$pgr->id_program) }}"><i class="fa fa-edit"></i></a>
                           </form>
-
+                          {{-- //TODO UBAH STATUS JADI TUTUP, KALAU SUDAH DITUTUP TIDAK MUNCUL PILIHAN PROGRAM TERSEBUT --}}
                             <form action="{{ route('program.update',$pgr->id_program) }}" method="POST">
                               @csrf
                               @method('PUT')

@@ -40,7 +40,7 @@
                             <li class="list-group-item">Donasi Kumpul : Rp.{{ number_format($p->dns_terkumpul) }}</li>
                             <li class="list-group-item">Donasi Kurang : Rp.{{ number_format($kurang) }}</li>
                         </ul>
-                        <a href="{{ route('donatur.program',$p->id_program) }}" class="btn btn-primary">Lihat Data</a>
+                        <a href="program-donasi/{{$p->id_program}}" class="btn btn-primary">Lihat Data</a>
                       </div>
                     </div>
                   </div>
