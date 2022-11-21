@@ -27,6 +27,7 @@
         </div>
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('donatur.create') }}">Tambah Data Donatur</a> 
+                  <a class="btn btn-success" href="{{ route('donatur.cetak') }}">Cetak Data Donatur</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))

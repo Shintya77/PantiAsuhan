@@ -83,7 +83,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('binaan/cari/data', [BinaanController::class, 'cari'])->name('binaan.cari');
     Route::get('program-donasi/{program}',[DonaturController::class, 'program'])->name('donatur.program');
     Route::get('donatur/cari/data', [DonaturController::class, 'cari'])->name('donatur.cari');
-
+    Route::get('donatur/cetak_pdf', [DonaturController::class, 'cetak_pdf'])->name('donatur.cetak');
 
     //ROUTE ADMIN WEB PROFIL
     Route::resource('struktur', StrukturController::class);
