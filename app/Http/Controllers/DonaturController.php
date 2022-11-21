@@ -50,7 +50,9 @@ class DonaturController extends Controller
     {
         $title ="Tambah Data Donatur";
         $donatur = donatur::all();
-        return view('admin.donasi.donatur.tambah', compact('title', 'donatur'));
+        $program = program::all();
+        $bank = Bank::all();
+        return view('admin.donasi.donatur.tambah', compact('title', 'donatur','program','bank'));
     }
 
     /**

@@ -45,11 +45,20 @@
                         </div>
                         <div class="form-group">
                             <label for="tgl_donasi">Tanggal Donasi</label>
-                            <input type="date" name="tgl_donasi" class="form-control" id="tgl_donasi" aria-describedby="tgl_donasi" >
+                            <input type="date" name="tgl_donasi" class="form-control" id="tgl_donasi" aria-describedby="tgl_donasi" value="{{date('Y-m-d')}}" >
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
                             <input type="text" name="alamat" class="form-control" id="alamat" aria-describedby="alamat" >
+                        </div>
+                        <div class="form-group">
+                          <h6 class="text-black">Bank</h6>
+                              <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
+                                  {{-- <option selected>Bank</option> --}}
+                                  @foreach ($bank as $b)
+                                  <option value="{{$b->id_bank}}" >{{$b->nama_bank}} - {{$b->norekening}}</option>
+                                  @endforeach
+                              </select>
                         </div>
                         <div class="form-group">
                             <label for="nominal">Nominal</label>
@@ -64,16 +73,21 @@
                             <input type="text" name="no_rekening" class="form-control" id="no_rekening" aria-describedby="no_rekening" >
                         </div>
                         <div class="form-group">
+                          <h6 class="text-black">Pilih Program</h6>
+                          <select name="id_program" id="nama_program" class="form-select border-0" style="height: 55px;">
+                              @foreach ($program as $p)
+                              <option value="{{$p->id_program}}" >{{$p->nama_program}}</option>
+                              @endforeach
+                          </select>
+                        </div>
+                        <div class="form-group">
                             <label for="keterangan">Keterangan</label>
                             <input type="text" name="keterangan" class="form-control" id="keterangan" aria-describedby="keterangan" >
                         </div>
                         <div class="form-group">
                             <label for="bukti_tf">Bukti Transfer</label>
-                            <input type="file" name="bukti_tf" class="form-control" id="bukti_tf" aria-describedby="bukti_tf" >
-                        </div>
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <input type="text" name="status" class="form-control" id="status" aria-describedby="status" >
+                            <img src="" class="img-preview img-fluid mb-3 " alt="">
+                            <input type="file" name="bukti_tf" class="form-control border-0" placeholder="Upload Bukti Transfer Donasi" style="height: 55px;" id="image" onchange="previewImage()">
                         </div>
                         {{-- <a class="btn btn-secondary " href="{{ route('donatur.program') }}">Kembali</a> --}}
                         <button type="submit" class="btn btn-warning">Submit</button>
@@ -89,4 +103,21 @@
     </section>
     <!-- /.content -->
  
+@endsection
+@section('script')
+<script>
+  function previewImage(){
+      const image = document.querySelector('#image');
+      const imgPreview = document.querySelector('.img-preview');
+
+      imgPreview.style.display = 'block';
+
+      const oFReader = new FileReader();
+      oFReader.readAsDataURL(image.files[0]);
+
+      oFReader.onload = function(oFREvent){
+          imgPreview.src = oFREvent.target.result;
+      }
+  }
+</script>
 @endsection
