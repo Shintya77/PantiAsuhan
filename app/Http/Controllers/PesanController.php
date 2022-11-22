@@ -63,35 +63,30 @@ class PesanController extends Controller
         $produk = Produk::find($request->produk_id);
         $pesan = Pesan::where('user_id', auth()->user()->id)->first();
         $detailPesan = PesanDetail::where('produk_id', $produk->id)->first();
-        
+
         $genap = 1600;
         $ganjil = 1300;
         $jumlah = 0;
-        
+
         if($produk->tipeproduk_id == 1){
-         if($request->jumlah_pesan % 2 == 0){
-          $boxGenap = $request->jumlah_pesan / 4;
-          $totalGenap = $boxGenap * $genap;
-          $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGenap;
-
-          $box = $boxGenap;
-          $hargaBox = $genap;
-          } else {
-          $boxGanjil = $request->jumlah_pesan / 3;
-          $totalGanjil = $boxGanjil * $ganjil;
-          $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGanjil;
-
-          $box = $boxGanjil;
-          $hargaBox = $ganjil;
-          }
+            if($request->jumlah_pesan % 2 == 0){
+                $boxGenap = $request->jumlah_pesan % 4;
+                $totalGenap = $boxGenap * $genap;
+                $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGenap;
+            }else{
+                $boxGanjil = $request->jumlah_pesan / 3;
+                $totalGanjil = $boxGanjil * $ganjil;
+                $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGanjil;
+            }
         }else if($produk->tipeproduk_id == 2){
-         $jumlah = ($produk->harga * $request->jumlah_pesan) + 4000;
+            $kemasan = $request->jumlah_pesan * 4000;
+            $jumlah = ($produk->harga * $request->jumlah_pesan) + $kemasan;
         }else{
          $jumlah = $produk->harga * $request->jumlah_pesan;
         }
-        
-        
-    
+
+
+
         $addorder = [];
         if(empty($detailPesan)){
             $addorder = [
@@ -99,11 +94,11 @@ class PesanController extends Controller
                 'produk_id' => $request->produk_id,
                 'jumlah' => $request->jumlah_pesan,
                 'total' => $jumlah
-                
+
 
             ];
             PesanDetail::create($addorder);
-        
+
         }
         else{
             return redirect('/produk');
@@ -112,8 +107,6 @@ class PesanController extends Controller
 
         Alert::success('Berhasil', 'Berhasil ditambahkan ke keranjang');
         return redirect('/keranjang');
-        
-
     }
 
     /**

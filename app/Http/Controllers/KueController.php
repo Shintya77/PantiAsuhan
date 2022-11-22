@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\TipeProduk;
 use Storage;
 use DB; 
 
@@ -84,9 +85,12 @@ class KueController extends Controller
     public function edit($id)
     {
         //menampilkan detail data kue berdasarkan id produk untuk diedit
-        $kue = Produk::all()->where('id', $id)->first();
-        $title = 'Data Kue';
-        return view('admin.pesan_kue.produk.edit', compact('kue','title'));
+        $kue = Produk::where('id', $id)->first();
+        return view('admin.pesan_kue.tipe.edit', [
+            'title' => 'Data Kue',
+            'tipe' => TipeProduk::all(),
+            'kue' => $kue
+        ]);
     }
 
     /**
@@ -103,6 +107,7 @@ class KueController extends Controller
             'nama' => 'required',
             'gambar' => 'required',
             'harga' => 'required',
+            'tipeproduk' => 'required',
         ]);
 
         $kue = Produk::where('id',$id)->first();
@@ -111,11 +116,17 @@ class KueController extends Controller
             Storage::delete('public/'. $kue->gambar);
         }
 
+        $tipe = new TipeProduk;
+        $tipe->id = $request->get('tipeproduk');
+
         $image_name = $request->file('gambar')->store('images', 'public');
         $kue->gambar = $image_name;
         $kue->harga = $request->get('harga');
+        
+        $kue->tipe()->associate($tipe);
         $kue->save();
         
+
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('kue.index')
             ->with('success', 'Data Kue Berhasil Diupdate');

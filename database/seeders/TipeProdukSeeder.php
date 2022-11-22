@@ -14,19 +14,18 @@ class TipeProdukSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tipeproduk')->insert(
-            [
-                'nama' => 'kue',
+        DB::table('tipeproduk')->insert([ 
+            [    'nama' => 'kue',
                 
             ],
             [
-                'nama' => 'nasi',
+                'nama' => 'nasi', 
                 
             ],
             [
-                'nama' => 'tumpeng',
+                'nama' => 'tumpeng', 
                 
             ],
-        );
+        ]);
     }
 }

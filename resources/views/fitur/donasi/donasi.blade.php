@@ -39,47 +39,51 @@
 Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, transparansi dan akuntabilitas donasi Anda lebih terjamin melalui sistem donasi ini.</p>
                             @guest
                             {{-- <a href="{{url('/login')}}" class="btn btn-warning rounded-pill py-3 px-5 animated slideInLeft">Login</a> --}}
-                            <div class="row g-4" >
-                              <div class="col-md-6 col-lg-4 wow fadeInUp " data-wow-delay="0.1s" >
-                                <div class="service-item rounded overflow-hidden">
-                                    <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
-                                    <div class="position-relative p-4 pt-0">
-                                        <div class="service-icon">
-                                            <i class="bi bi-person-circle display-6"></i>
-                                        </div>
-                                        <h4 class="mb-3" >Login Donatur</h4>
-                                        <p>Dengan login anda akan bisa melihat Riwayat donasi dan Daftar Binaan pada Panti Asuhan</p>
-                                        <a class="small fw-medium" href="{{url('/login')}}">Login<i class="fa fa-arrow-right ms-2"></i></a>
+                            <div class="card">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="row g-4" >
+                                    <div class="col-md-6 col-lg-4 wow fadeInUp " data-wow-delay="0.1s" >
+                                      <div class="service-item rounded">
+                                          <div class="position-relative p-4 pt-0">
+                                              <div class="service-icon">
+                                                  <i class="bi bi-person-circle display-6"></i>
+                                              </div>
+                                              <h4 class="mb-3" >Login Donatur</h4>
+                                              <p>Dengan login anda akan bisa melihat Riwayat donasi dan Daftar Binaan pada Panti Asuhan</p>
+                                              <a class="small fw-medium" href="{{url('/login')}}">Login<i class="fa fa-arrow-right ms-2"></i></a>
+                                          </div>
+                                      </div>
                                     </div>
-                                </div>
-                              </div>
-                              <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="service-item rounded overflow-hidden">
-                                    <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
-                                    <div class="position-relative p-4 pt-0">
-                                        <div class="service-icon">
-                                            <i class="bi bi-file-earmark-text display-6"></i>
-                                        </div>
-                                        <h4 class="mb-3">Formulir Donasi </h4>
-                                        <p>Tanpa login anda juga bisa melakukan donasi dan riwayat donasi anda akan langsung terdaftar ke rekap donasi</p>
-                                        <a class="small fw-medium" href="{{url('/formulir-donasi-panti')}}">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
+                                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                                      <div class="service-item rounded">
+                                          <div class="position-relative p-4 pt-0">
+                                              <div class="service-icon">
+                                                  <i class="bi bi-file-earmark-text display-6"></i>
+                                              </div>
+                                              <h4 class="mb-3">Formulir Donasi </h4>
+                                              <p>Tanpa login anda bisa melakukan donasi dan riwayat donasi anda akan masuk ke rekap donasi</p>
+                                              <a class="small fw-medium" href="{{url('/formulir-donasi-panti')}}">Buka Form<i class="fa fa-arrow-right ms-2"></i></a>
+                                          </div>
+                                      </div>
                                     </div>
-                                </div>
-                              </div>
-                              <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="service-item rounded overflow-hidden">
-                                    <img class="img-fluid" src="img/img-600x400-4.jpg" alt="">
-                                    <div class="position-relative p-4 pt-0">
-                                        <div class="service-icon">
-                                            <i class="bi bi-journal-bookmark display-6"></i>
-                                        </div>
-                                        <h4 class="mb-3">Rekap Donasi </h4>
-                                        <p>Laporan Donasi yang telah masuk ke panti asuhan</p>
-                                        <a class="small fw-medium" href="{{url('/rekap-donasi')}}">Rekap<i class="fa fa-arrow-right ms-2"></i></a>
+                                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                                      <div class="service-item rounded">
+                                          <div class="position-relative p-4 pt-0">
+                                              <div class="service-icon">
+                                                  <i class="bi bi-journal-bookmark display-6"></i>
+                                              </div>
+                                              <h4 class="mb-3">Rekap Donasi </h4>
+                                              <p>Laporan Donasi yang saudara lakukan telah masuk ke panti asuhan dan dapat diakses disini </p>
+                                              <a class="small fw-medium" href="{{url('/rekap-donasi')}}">Rekap<i class="fa fa-arrow-right ms-2"></i></a>
+                                          </div>
+                                      </div>
                                     </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
+                            
                             
 
                             @else
@@ -121,8 +125,11 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
                               <td style="text-align:center"><class="text-black">{{ $program->id_program}}</td>
                               <td class="text-black">{{ $program->nama_program}}</td>
                               <td class="text-black">Rp.{{ number_format($program->dns_butuh) }}</td>
-                              
+                              @if ($program->nama_program=='Donasi Bebas')
+                              <td class="text-black">Rp. - </td>
+                              @else
                               <td class="text-black">Rp.{{ number_format($kurang) }}</td>
+                              @endif
                               <td class="text-black">Rp. {{ number_format($program->dns_terkumpul) }}</td>
                                 </form>
                               </td>  

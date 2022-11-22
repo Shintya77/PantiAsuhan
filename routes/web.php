@@ -23,6 +23,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BankCateringController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RekapPesanController;
+use App\Http\Controllers\TipeProdukController;
 
 
 /*
@@ -108,7 +109,8 @@ Route::middleware(['auth', 'admin'])->group(function (){
         });
     
     Route::get('pesan/pendapatan/data', [RekapPesanController::class, 'pendapatan'])->name('pesan.pendapatan');
-
+        
+    Route::resource('tipe', TipeProdukController::class);
 });
 
 Route::middleware(['auth', 'donatur'])->group(function (){
