@@ -64,9 +64,14 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Pilih Program</h6>
-                                    <select name="id_program" id="nama_program" class="form-select border-0" style="height: 55px;">
+                                    <select name="id_program" id="inputNamaProgram" class="form-select border-0" style="height: 55px;">
+                                        {{-- <option >Pilih Program</option> --}}
                                         @foreach ($program as $p)
-                                        <option value="{{$p->id_program}}" >{{$p->nama_program}}</option>
+                                        @if ($p->status == 'open')
+                                        <option value="{{$p->nama_program}}" >{{$p->nama_program}}</option>
+                                        @else
+                                        <option >Tidak Ada Program Tersedia</option>
+                                        @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -75,7 +80,7 @@
                                     <textarea type="text" name="keterangan" class="form-control border-0" placeholder="Keterangan bila perlu"></textarea>
                                 </div>
                                 </div class="col-12">
-                                    <h6 class="description">Upload Bukti Transfer</h6>
+                                    <h6 class="description">Upload Bukti Transfer (.png, .jpg, .jpeg)</h6>
                                     <img src="" class="img-preview img-fluid mb-3 " alt="">
                                     <input type="file" name="bukti_tf" class="form-control border-0" placeholder="Upload Bukti Transfer Donasi" style="height: 55px;" id="image" onchange="previewImage()">
                                 </div>
@@ -110,7 +115,6 @@
                 <p class="description">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p><br>  
                 </div>  
             <p class="description">Donasi anda adalah sebesar              : <span id="nominal"></span>  </p><br> 
-            {{-- //TODO menampilkan nama program  --}}
             <p class="description">Donasi untuk Program                    : <span id="nama_program"></span></p><br>
             <p class="description">Nomor Rekening Anda                     : <span id="no_rekening"></span></p><br>  
             <p class="description">Atas Nama                               : <span id="atas_nama"></span></p><br>  
@@ -189,6 +193,12 @@ const upload = () => {
     const noRekening = document.querySelector('#no_rekening');
     inputNoRekening.addEventListener('keyup', function(e){
         noRekening.innerHTML = this.value;
+    })
+    // Mengambil select yang dipilih
+    const inputNamaProgram = document.querySelector('#inputNamaProgram');
+    const namaProgram = document.querySelector('#nama_program');
+    inputNamaProgram.addEventListener('change', function(e){
+        namaProgram.innerHTML = this.value;
     })
 </script>
 <script>

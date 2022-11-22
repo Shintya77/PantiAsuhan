@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="post" action="{{ route('program.update', $program->id_program) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('program.ubah', $program->id_program) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">

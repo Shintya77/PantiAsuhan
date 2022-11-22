@@ -163,8 +163,6 @@ class DonaturController extends Controller
         $donasi = donatur::where('id_donatur', $id)->first();
         $program =  program::where('id_program', $donasi -> id_program) -> first();
 
-        
-
         $program -> dns_terkumpul -= $donasi -> nominal;
         $program -> save();
 
@@ -173,7 +171,7 @@ class DonaturController extends Controller
     }
 
     public function cetak_pdf(program $program){
-        $donatur = donatur::all();
+        $donatur = donatur::where('id_program', $program->id_program)->get();
         $pdf = PDF::loadview('admin.donasi.donatur.rekap.index', ['donatur'=>$donatur])->setPaper('a4', 'landscape');
         return $pdf->stream();
     }

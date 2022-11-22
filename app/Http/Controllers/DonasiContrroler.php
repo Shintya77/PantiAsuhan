@@ -49,10 +49,10 @@ class DonasiContrroler extends Controller
 
     public function formulir(Request $request)
     {
-        
+        $targetProgram = program::where('nama_program', $request->id_program)->first();
+
         $data =  $request->validate([
             'id_bank' => 'required',
-            'id_program' => 'required',
             'name' => 'required',
             'tgl_donasi' => 'required',
             'alamat' => 'required',
@@ -61,32 +61,34 @@ class DonasiContrroler extends Controller
             'no_rekening' => 'required',
             'bukti_tf' => 'image|file|max:1024',
         ]);
+        $data['id_program'] = $targetProgram->id_program;
+
         $data['id_pengguna'] = Auth::user()->id;
 
-        if ($request->file('bukti_tf')){
+        if ($request->file('bukti_tf')) {
             $data['bukti_tf'] = $request->file('bukti_tf')->store('bukti_tf', 'public');
         }
 
         donatur::create($data);
 
         $donaturUpdate = donatur::where('bukti_tf', $data['bukti_tf'])->first();
-        
+
         // $donaturUpdate -> name = 'Hamba Allah - '.$donaturUpdate -> id_donatur;
         // $donaturUpdate -> update();
 
-       if($request -> hide == 'on'){
-        donatur::where('bukti_tf', $data['bukti_tf'])
-        ->update([
-            'name' => 'Hamba Allah-'.$donaturUpdate->id_donatur
-        ]);
-       }
+        if ($request->hide == 'on') {
+            donatur::where('bukti_tf', $data['bukti_tf'])
+                ->update([
+                    'name' => 'Hamba Allah-' . $donaturUpdate->id_donatur
+                ]);
+        }
 
         $program = program::all();
         $bank = Bank::all();
         $donatur = donatur::all();
         Alert::success('Success', 'Donasi anda diproses oleh pihak Panti');
 
-        return redirect('/dashboard-donasi'); 
+        return redirect('/dashboard-donasi');
     }
 
     //Riwayat
