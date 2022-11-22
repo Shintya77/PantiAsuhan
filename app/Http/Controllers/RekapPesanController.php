@@ -8,6 +8,7 @@ use App\Models\PesanDetail;
 use App\Models\Riwayat;
 use App\Models\Pesan;
 use DB;
+use PDF;
 
 class RekapPesanController extends Controller
 {
@@ -117,6 +118,8 @@ class RekapPesanController extends Controller
         $tanggalAwal = $request->tanggal_awal;
         $tanggalAkhir = $request->tanggal_akhir;
 
+        $awal=$request->tanggal_awal;
+
         $data = array();
         $total_transaksi = 0;
         $total_pendapatan = 0;
@@ -145,55 +148,48 @@ class RekapPesanController extends Controller
 
         }
 
-        // $data[] = [
-        //     'tanggal' => '',
-        //     'transaksi' => '',
-        //     'pendapatan' => $total_pendapatan,
-        // ];
-
-        return view('admin.pesan_kue.rekap.laporan', compact('tanggalAwal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
+        return view('admin.pesan_kue.rekap.laporan', compact('awal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
     }
 
-    // public function getData($awal, $akhir)
-    // {
-    //     $no = 1;
-    //     $data = array();
-    //     $pendapatan = 0;
-    //     $total_pendapatan = 0;
+    public function cetak(Request $request){
+        $tanggalAwal = date('Y-m-d', mktime(0, 0, 0, date('m'), 1, date('Y')));
+        $tanggalAkhir = date('Y-m-d');
 
-    //     while (strtotime($awal) <= strtotime($akhir)) {
-    //         $tanggal = $awal;
-    //         $awal = date('Y-m-d', strtotime("+1 day", strtotime($awal)));
+        $tanggalAwal = $request->tanggal_awal;
+        $tanggalAkhir = $request->tanggal_akhir;
 
-    //         $total_transaksi = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->sum('pesan_id');
-    //         $pendapatan = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->sum('total');
+        $awal=$request->tanggal_awal;
 
+        $data = array();
+        $total_transaksi = 0;
+        $total_pendapatan = 0;
 
-    //         $row = array();
-    //         $row['DT_RowIndex'] = $no++;
-    //         $row['tanggal'] = tanggal_indonesia($tanggal, false);
-    //         $row['transaksi'] = format_number($transaksi);
-    //         $row['pendapatan'] = format_uang($pendapatan);
+        
+        $akhir = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAkhir)));
+        $rincian = Riwayat::whereBetween('created_at',[$tanggalAwal,$akhir])->get();
 
-    //         $data[] = $row;
-    //     }
+        while (strtotime($tanggalAwal) <= strtotime($tanggalAkhir)) {
+            $tanggal = $tanggalAwal;
+            $tanggalAwal = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAwal)));
 
-    //     $data[] = [
-    //         'DT_RowIndex' => '',
-    //         'tanggal' => '',
-    //         'transaksi' => '',
-    //         'pendapatan' => format_uang($pendapatan),
-    //     ];
+            $transaksi = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->sum('pesan_id');
+            $pendapatan = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->sum('total');
 
-    //     return $data;
-    // }
+            $total_pendapatan += $pendapatan;
+            $total_transaksi += $transaksi;
 
-    // public function data($awal, $akhir)
-    // {
-    //     $data = $this->getData($awal, $akhir);
+            $row = array();
+            $row['tanggal'] = $tanggal;
+            $row['transaksi'] = $total_transaksi;
+            $row['pendapatan'] = $total_pendapatan;
 
-    //     return datatables()
-    //         ->of($data)
-    //         ->make(true);
-    // }
+            $data[] = $row;
+
+        }
+
+        // return view('admin.pesan_kue.rekap.cetak', compact('tanggalAwal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
+        $pdf = PDF::loadview('admin.pesan_kue.rekap.cetak', compact('awal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
+        return $pdf->stream();
+    }
+
 }

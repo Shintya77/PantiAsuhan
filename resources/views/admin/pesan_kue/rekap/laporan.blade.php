@@ -28,7 +28,7 @@
                     <h3 class="card-title">Laporan Pendapatan</h3>
                     </div>
                     <div class="card-body">
-                    <h3 class="text-center">Periode Tanggal {{$tanggalAwal, false}} s/d {{$tanggalAkhir, false}}</h3>
+                    <h3 class="text-center">Periode Tanggal {{$awal}} s/d {{$tanggalAkhir}}</h3>
                     <br>
                     <div class="row">
                         <div class="col col-lg-4 col-md-4">
@@ -57,8 +57,6 @@
                                 <th>Nama Produk</th>
                                 <th>Jumlah Kue</th>
                                 <th>Harga/Kue</th>
-                                <th>Jumlah Box</th>
-                                <th>Harga/Box</th>
                                 <th>Total Bayar</th>
                                 </tr>
                             </thead>
@@ -70,8 +68,6 @@
                                     <td>{{ $d->produk->nama }}</td>
                                     <td>{{ $d->jumlah }} biji</td>
                                     <td>Rp {{ number_format($d->produk->harga)}}</td>
-                                    <td>{{ $d->jumlah_box }}</td>
-                                    <td>Rp {{ number_format($d->harga_box)}}</td>
                                     <td>Rp. {{ $d->total }}</td>
                                 </tr>
                                 @endforeach
@@ -83,7 +79,7 @@
                     </div>
                 </div>
                 
-                <button align="right" class="btn btn-sm btn-flat btn-danger"><i class="fa fa-print"></i> Cetak PDF</button>
+                <a class="btn btn-sm btn-flat btn-warning" href="{{ url('/form') }}"><i class="fa fa-arrow-left"></i> Kembali</a>
                 </div>
             </div>
         </div>

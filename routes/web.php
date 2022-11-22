@@ -106,9 +106,14 @@ Route::middleware(['auth', 'admin'])->group(function (){
 
     Route::get('/form', function () {
         return view('admin.pesan_kue.rekap.form');
-        });
+    });
+
+    Route::get('/form-cetak-laporan', function () {
+        return view('admin.pesan_kue.rekap.formCetak');
+    });
     
     Route::get('pesan/pendapatan/data', [RekapPesanController::class, 'pendapatan'])->name('pesan.pendapatan');
+    Route::get('pesan/cetak/data', [RekapPesanController::class, 'cetak'])->name('pesan.cetak');
         
     Route::resource('tipe', TipeProdukController::class);
 });

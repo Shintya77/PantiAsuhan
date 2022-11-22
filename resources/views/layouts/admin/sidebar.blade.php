@@ -163,6 +163,14 @@
                 </a>
               </li>
             </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('/form-cetak-laporan')}}" class="nav-link ">
+                  <i class="far fa-star nav-icon"></i>
+                  <p>Cetak Pendapatan</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <!-- Setting -->

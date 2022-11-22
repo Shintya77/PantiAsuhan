@@ -104,6 +104,16 @@ class PesanController extends Controller
             return redirect('/produk');
         }
 
+        $addriwayat = [
+            'pesan_id' => $pesan->id,
+            'produk_id' => $request->produk_id,
+            'jumlah' => $request->jumlah_pesan,
+            'total' => $jumlah
+
+
+        ];
+        Riwayat::create($addriwayat);
+
 
         Alert::success('Berhasil', 'Berhasil ditambahkan ke keranjang');
         return redirect('/keranjang');
