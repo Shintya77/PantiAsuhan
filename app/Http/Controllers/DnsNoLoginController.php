@@ -29,10 +29,10 @@ class DnsNoLoginController extends Controller
 
     public function formulir(Request $request)
     {
-        
+        $targetProgram = program::where('nama_program', $request->id_program)->first();
+
         $data =  $request->validate([
             'id_bank' => 'required',
-            'id_program' => 'required',
             'name' => 'required',
             'tgl_donasi' => 'required',
             'alamat' => 'required',
@@ -41,7 +41,7 @@ class DnsNoLoginController extends Controller
             'no_rekening' => 'required',
             'bukti_tf' => 'image|file|max:1024',
         ]);
-        
+        $data['id_program'] = $targetProgram->id_program;
 
         if ($request->file('bukti_tf')){
             $data['bukti_tf'] = $request->file('bukti_tf')->store('bukti_tf', 'public');

@@ -89,8 +89,16 @@ class ProgramController extends Controller
      * @param  \App\Models\program  $program
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, program $program)
     {
+        $program->status = 'close';
+        $program->save();   
+
+        return redirect()->route('program.index')->with('success', 'Data Program Berhasil Diupdate');
+    }
+
+    public function ubah(Request $request, program $program){
+      
         //melakukan validasi data
         $request->validate([
             'nama_program' => 'required',
@@ -102,7 +110,6 @@ class ProgramController extends Controller
         $program->dns_butuh = $request->get('dns_butuh');
         $program->dns_terkumpul = $request->get('dns_terkumpul');
         $program->save();
-
         return redirect()->route('program.index')->with('success', 'Data Program Berhasil Diupdate');
     }
 

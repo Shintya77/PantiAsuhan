@@ -121,6 +121,7 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
                               <td style="text-align:center"><class="text-black">{{ $program->id_program}}</td>
                               <td class="text-black">{{ $program->nama_program}}</td>
                               <td class="text-black">Rp.{{ number_format($program->dns_butuh) }}</td>
+                              
                               <td class="text-black">Rp.{{ number_format($kurang) }}</td>
                               <td class="text-black">Rp. {{ number_format($program->dns_terkumpul) }}</td>
                                 </form>

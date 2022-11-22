@@ -62,17 +62,19 @@
                         <td class="text-black">{{ $pgr->status }}</td>
                         {{-- <td><a class="btn btn-info" href="{{ route('program.edit',$pgr->id_program) }}">Edit</td> --}}
                         <td>
+                          {{-- //TODO EDIT DATA PROGRAM TIDAK BISA --}}
                           <form action="{{ route('program.edit',$pgr->id_program) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <a class="btn btn-warning" href="{{ route('program.edit',$pgr->id_program) }}"><i class="fa fa-edit"></i></a>
                           </form>
                           {{-- //TODO UBAH STATUS JADI TUTUP, KALAU SUDAH DITUTUP TIDAK MUNCUL PILIHAN PROGRAM TERSEBUT --}}
-                            <form action="{{ route('program.update',$pgr->id_program) }}" method="POST">
-                              @csrf
-                              @method('PUT')
-                              <button type="submit" class="btn btn-info"><i class="bi bi-lock-fill"></i></button>
-                            </form>
+                          <form action="{{ route('program.update',$pgr->id_program) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="id_program" value="{{ $pgr -> id_program }}">
+                            <button type="submit" class="btn btn-info"><i class="bi bi-lock-fill"></i></button>
+                          </form>
     
                           <form action="{{ route('program.destroy',$pgr->id_program) }}" method="POST">
     

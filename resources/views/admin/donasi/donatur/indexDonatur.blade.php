@@ -76,6 +76,7 @@
                         <td><img width="100px" height="100px" src="{{asset('storage/'.$donasi->bukti_tf)}}"></td>
                         <td class="text-black">{{ $donasi->status }}</td>
                         <td>
+                          {{-- //TODO LIHAT DATA --}}
                           <form action="{{ route('donatur.show',$donasi->id_donatur) }}" method="POST">
                             @csrf
                             @method('PUT')

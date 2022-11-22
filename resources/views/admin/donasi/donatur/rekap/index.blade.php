@@ -41,6 +41,7 @@
         <th>Atas Nama</th>
         <th>No Rekening Donatur</th>
         <th>Keterangan</th>
+        <th>Program</th>
         <th>Status</th>
        </tr> 
        @foreach ($donatur as $donasi)
@@ -53,6 +54,7 @@
            <td class="text-black">{{ $donasi->atas_nama }}</td>
            <td class="text-black">{{ $donasi->no_rekening }}</td>
            <td class="text-black">{{ $donasi->keterangan }}</td>
+           <td class="text-black">{{ $donasi->program->nama_program }}</td>
            <td class="text-black">{{ $donasi->status }}</td>
            <td>
        @endforeach  

@@ -86,9 +86,10 @@
                         </div>
                         {{-- //TODO Preview image tidak muncul--}}
                         <div class="form-group">
-                            <label for="bukti_tf">Bukti Transfer</label>
-                            <img src="" class="img-preview img-fluid mb-3 " alt="">
-                            <input type="file" name="bukti_tf" class="form-control border-0" placeholder="Upload Bukti Transfer Donasi" style="height: 55px;" id="image" onchange="previewImage()">
+                          <label for="bukti_tf">Bukti Transfer</label>
+                          <img src="" class="img-preview img-fluid mb-3 " alt="">
+                          <input type="file" name="bukti_tf" class="form-control border-0"
+                            placeholder="Upload Bukti Transfer Donasi" style="height: 55px;" id="image" onchange="previewImage()">
                         </div>
                         {{-- <a class="btn btn-secondary " href="{{ route('donatur.program') }}">Kembali</a> --}}
                         <button type="submit" class="btn btn-warning">Submit</button>

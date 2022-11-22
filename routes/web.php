@@ -78,10 +78,13 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('program', ProgramController::class);
     Route::resource('binaan', BinaanController::class);
     Route::resource('donatur', DonaturController::class);
+    
+    Route::post('program/ubah/{id}', [ProgramController::class, 'ubah'])->name('program.ubah');
     Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
     Route::get('bank/cari/data', [BankController::class, 'cari'])->name('bank.cari');
     Route::get('binaan/cari/data', [BinaanController::class, 'cari'])->name('binaan.cari');
     //TODO MENAMPILKAN INDEX DONATUR
+    Route::get('donatur/{id}',[DonaturController::class, 'show'])->name('donatur.show');
     Route::get('program-donasi/{program}',[DonaturController::class, 'program'])->name('donatur.program');
     Route::get('donatur/cari/data', [DonaturController::class, 'cari'])->name('donatur.cari');
     Route::get('donatur/cetak_pdf/{program}', [DonaturController::class, 'cetak_pdf'])->name('donatur.cetak');
