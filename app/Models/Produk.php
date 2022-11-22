@@ -27,8 +27,13 @@ class Produk extends Model
         return $this->hasMany(Riwayat::class);
     }
 
-    public function TipeProduk()
+    // public function TipeProduk()
+    // {
+    //     return $this->hasMany(TipeProduk::class);
+    // }
+
+    public function tipeproduk()
     {
-        return $this->hasMany(TipeProduk::class);
+        return $this->belongsTo(TipeProduk::class);
     }
 }

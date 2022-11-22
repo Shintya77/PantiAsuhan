@@ -18,10 +18,11 @@ class KueController extends Controller
     public function index()
     {
         // Mengambil semua isi tabel
-        $produk = Produk::all(); 
+        $produk = Produk::all();
+        $tipeproduk = DB::table('tipeproduk')->get(); 
         $title = 'Data Kue';
         $paginate = Produk::orderBy('id', 'asc')->paginate(9);
-        return view('admin.pesan_kue.produk.index', compact('produk','title','paginate'));
+        return view('admin.pesan_kue.produk.index', compact('produk','title','tipeproduk','paginate'));
     }
 
     /**
@@ -33,7 +34,8 @@ class KueController extends Controller
     {
         //
         $title = 'Data Kue';
-        return view('admin.pesan_kue.produk.create', compact('title'));
+        $tipeproduk = TipeProduk::all();
+        return view('admin.pesan_kue.produk.create', compact('title','tipeproduk'));
     }
 
     /**
@@ -49,6 +51,7 @@ class KueController extends Controller
             'nama' => 'required',
             'gambar' => 'required',
             'harga' => 'required',
+            'tipeproduk' => 'required',
         ]);
 
         $kue = new Produk;
@@ -58,6 +61,9 @@ class KueController extends Controller
         }
         $kue->gambar = $image_name;
         $kue->harga = $request->get('harga');
+        $tipeproduk = new TipeProduk;
+        $tipeproduk->id = $request->get('tipeproduk');
+        $kue->tipeproduk()->associate($tipeproduk);
         $kue->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
@@ -86,9 +92,9 @@ class KueController extends Controller
     {
         //menampilkan detail data kue berdasarkan id produk untuk diedit
         $kue = Produk::where('id', $id)->first();
-        return view('admin.pesan_kue.tipe.edit', [
+        return view('admin.pesan_kue.produk.edit', [
             'title' => 'Data Kue',
-            'tipe' => TipeProduk::all(),
+            'tipeproduk' => TipeProduk::all(),
             'kue' => $kue
         ]);
     }
@@ -116,14 +122,14 @@ class KueController extends Controller
             Storage::delete('public/'. $kue->gambar);
         }
 
-        $tipe = new TipeProduk;
-        $tipe->id = $request->get('tipeproduk');
+        $tipeproduk = new TipeProduk;
+        $tipeproduk->id = $request->get('tipeproduk');
 
         $image_name = $request->file('gambar')->store('images', 'public');
         $kue->gambar = $image_name;
         $kue->harga = $request->get('harga');
         
-        $kue->tipe()->associate($tipe);
+        $kue->tipeproduk()->associate($tipeproduk);
         $kue->save();
         
 

@@ -44,6 +44,14 @@
                             <input type="text" name="nama" class="form-control" id="nama" aria-describedby="nama" >
                         </div>
                         <div class="form-group">
+                            <label for="tipeproduk">Tipe Produk</label>
+                            <select name="tipeproduk" id="tipeproduk" class="form-control">
+                              @foreach ($tipeproduk as $t)
+                                <option value="{{$t->id}}">{{$t->nama}}</option>
+                              @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="Gambar">Gambar</label>
                             <input type="file" class="form-control" required="required" name="gambar" >
                         </div>

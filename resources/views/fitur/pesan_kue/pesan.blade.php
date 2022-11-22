@@ -33,10 +33,8 @@
                                         <th>No</th>
                                         <th>Gambar</th>
                                         <th>Nama Produk</th>
-                                        <th>Jumlah Kue</th>
-                                        <th>Harga/Kue</th>
-                                        <th>Jumlah Box</th>
-                                        <th>Harga/Box</th>
+                                        <th>Jumlah Produk</th>
+                                        <th>Harga/Produk</th>
                                         <th>Total Harga</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -51,8 +49,6 @@
                                         <td>{{ $item->produk->nama }}</td>
                                         <td>{{ $item->jumlah }}</td>
                                         <td>Rp. {{ $item->produk->harga }} </td>
-                                        <td>Rp. {{$item->jumlah_box}}</td>
-                                        <td>Rp. {{$item->harga_box}}</td>
                                         <td>Rp. {{ $item->total }}</td>
                                         <td>
                                             <form action="/keranjang/{{$item->id}}" method="POST">
@@ -66,9 +62,7 @@
 
                                     
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td colspan="5" align="right"><strong>Total Harga :</strong></td>
+                                        <td colspan="5" align="right"><strong>Total Bayar :</strong></td>
                                         <form action="/bayar" method="POST" enctype="multipart/form-data">
                                             @csrf
                                         <td><strong>Rp. {{ $total }}</strong></td>
@@ -93,6 +87,15 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <B>NB:</B>
+                            <p>- Total Harga sudah termasuk biaya kemasan</p>
+                            <p>- Box kue isi 3 : Rp. 1300</p>
+                            <p>- Box kue isi 4 : Rp. 1600</p>
+                            <p>- Box nasi : Rp. 4000</p>
+                            <p>- Anda dapat memesan langsung melalui <B>WhatsApp</B> namun rekapan pesanan anda tidak tercatat di sistem</p>
+                        <a target="_blank" href="https://wa.link/ibjkiy" class="btn btn-success"><i class="fa fa-comments"></i> WhatsApp</a>
+                        <br><br>
+                        <p>- Jika ingin menambahkan pesanan silahkan kembali ke halaman produk dengan klik button <B>Kembali</B>, dibawah ini</p>
                         <a href="{{ url('/produk') }}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>

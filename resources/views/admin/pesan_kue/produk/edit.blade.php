@@ -46,9 +46,9 @@
                         </div>
                         <div class="form-group">
                           <label for="tipeproduk">Tipe</label>
-                          {{-- <input type="kelas" name="kelas" class="form-control" id="kelas" value="{{ $siswa->$kelas->nama_kelas }}" aria-describedby="kelas" > --}}
+                          {{-- <input type="tipeproduk" name="tipeproduk" class="form-control" id="tipeproduk" value="{{ $kue->$tipeproduk->nama}}" aria-describedby="kelas" > --}}
                           <select name="tipeproduk" id="tipeproduk" class="form-control">
-                              @foreach ($tipe as $t)
+                              @foreach ($tipeproduk as $t)
                                 <option value="{{$t->id}}" {{$kue->tipeproduk_id == $t->id ? 'selected' : ''}} >{{$t->nama}}</option>
                               @endforeach
                           </select>

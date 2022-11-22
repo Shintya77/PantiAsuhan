@@ -15,7 +15,12 @@ class TipeProduk extends Model
        
     ];
 
-    public function produk(){
-        return $this->belongsTo(Produk::class);
+    // public function produk(){
+    //     return $this->belongsTo(Produk::class);
+    // }
+
+    public function produk()
+    {
+        return $this->hasMany(Produk::class);
     }
 }
