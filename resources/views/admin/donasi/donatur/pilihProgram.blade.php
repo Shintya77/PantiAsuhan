@@ -38,7 +38,11 @@
                         <ul class="list-group list-group-flush" style="width: 18rem;">
                             <li class="list-group-item">Donasi Target : Rp.{{ number_format($p->dns_butuh) }}</li>
                             <li class="list-group-item">Donasi Kumpul : Rp.{{ number_format($p->dns_terkumpul) }}</li>
+                            @if ($p->nama_program == 'Donasi Bebas')
+                            <li class="list-group-item">Donasi Kurang : Rp. - </li>
+                            @else
                             <li class="list-group-item">Donasi Kurang : Rp.{{ number_format($kurang) }}</li>
+                            @endif  
                         </ul>
                         <a href="program-donasi/{{$p->id_program}}" class="btn btn-primary">Lihat Data</a>
                       </div>

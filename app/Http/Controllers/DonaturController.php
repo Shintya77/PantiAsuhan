@@ -70,14 +70,12 @@ class DonaturController extends Controller
             'tgl_donasi' => 'required',
             'alamat' => 'required',
             'nominal' => 'required',
-            'atas_nama' => 'required',
-            'no_rekening' => 'required',
-            'bukti_tf' => 'image|file|max:1024',
+            // 'bukti_tf' => 'image|file|max:1024',
         ]);
 
-        if ($request->file('bukti_tf')){
-            $image_name = $request->file('bukti_tf')->store('bukti_tf', 'public');
-        }
+        // if ($request->file('bukti_tf')){
+        //     $image_name = $request->file('bukti_tf')->store('bukti_tf', 'public');
+        // }
 
         $donatur = new donatur();
         $donatur->id_pengguna = $request->id_pengguna;
@@ -90,10 +88,10 @@ class DonaturController extends Controller
         $donatur->atas_nama = $request->atas_nama;
         $donatur->no_rekening = $request->no_rekening;
         $donatur->keterangan = $request->keterangan;
-        $donatur->bukti_tf = $image_name;
+        // $donatur->bukti_tf = $image_name;
         $donatur->save();
 
-        return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Ditambahkan');
+        return redirect()->route('donatur.program',$donatur->id_program)->with('success', 'Data Donatur Berhasil Ditambahkan');
     }
 
     /**
@@ -149,7 +147,7 @@ class DonaturController extends Controller
         $programUpdate -> dns_terkumpul = $donasi;
         $programUpdate -> save();
 
-        return redirect()->route('donatur.index');
+        return redirect()->route('donatur.program',$donatur->id_program);
     }
 
     /**
@@ -167,7 +165,7 @@ class DonaturController extends Controller
         $program -> save();
 
         donatur::where('id_donatur',$id)->delete();
-        return redirect()->route('donatur.index')->with('success', 'Data Donatur Berhasil Dihapus');
+        return redirect()->route('donatur.program',$program->id_program)->with('success', 'Data Donatur Berhasil Dihapus');
     }
 
     public function cetak_pdf(program $program){

@@ -31,8 +31,12 @@ class BankSeeder extends Seeder
                 'nama_rekening' => 'Panti Asuhan Putri Aisyiyah',
                 'norekening'=> '0012-01-50-063175-6'
              
+            ],
+            [
+                'nama_bank'=>'Tunai',
+                'nama_rekening' => '',
+                'norekening'=> ''
             ]
-         
             ));  
     }
 }

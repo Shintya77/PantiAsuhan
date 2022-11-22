@@ -25,8 +25,8 @@ class CreateDonatursTable extends Migration
             $table->date('tgl_donasi');
             $table->string('alamat');
             $table->bigInteger('nominal');
-            $table->string('atas_nama');
-            $table->string('no_rekening',25);
+            $table->string('atas_nama')->nullable();
+            $table->string('no_rekening',25)->nullable();
             $table->string('keterangan')->nullable();
             $table->string('bukti_tf')->nullable();
             $table->string('status')->default('proses');
