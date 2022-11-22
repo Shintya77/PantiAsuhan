@@ -62,6 +62,7 @@ Route::get('/rekap-program-cari', [DonasiContrroler::class, 'rekapCari'])->name(
 
 
 Route::resource('produk', ProdukController::class);
+Route::get('produk/cari/data', [ProdukController::class, 'cari'])->name('produk.cari');
 
 Auth::routes();
 
