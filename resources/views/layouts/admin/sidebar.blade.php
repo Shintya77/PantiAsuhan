@@ -161,7 +161,7 @@
           <!-- Setting -->
           <li class="nav-header">SETTINGS</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{url('/pengguna')}}" class="nav-link">
               <i class="far fa-user nav-icon"></i>
               <p>
                 Pengguna

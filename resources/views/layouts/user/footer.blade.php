@@ -32,7 +32,7 @@
                     </div>
                     <div class="mb-2 d-flex">
                       <a class="btn btn-square btn-outline-light btn-social text-warning mx-3" href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg"><i class="fab fa-youtube"></i></a>
-                      <a href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg" class="text-warning">Paputri Aisyiyah</a>
+                      <a href="https://youtube.com/channel/UCRT5whfV3WW9xPVr92-whCg" class="text-warning">Panti Putri Aisyiyah Malang</a>
                     </div>
                 </div>
           </div>

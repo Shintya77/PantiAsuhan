@@ -37,7 +37,7 @@
                     @endif  --}}
 
                     {{-- //TODO CARI MASIH SEMUA BELUM PER PROGRAM  --}}
-                  <form class="form" method="get" action="{{route('donatur.cari')}}">
+                  <form class="form" method="get" action="{{route('donatur.cari', $program->id_program)}}">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Donatur</label>
                           <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Donasi">
@@ -76,12 +76,7 @@
                         <td><img width="100px" height="100px" src="{{asset('storage/'.$donasi->bukti_tf)}}"></td>
                         <td class="text-black">{{ $donasi->status }}</td>
                         <td>
-                          {{-- //TODO LIHAT DATA --}}
-                          <form action="{{ route('donatur.show',$donasi->id_donatur) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" class="btn btn-info"><i class="bi bi-eye display-9"></i></button>
-                          </form>
+                          <a class="btn btn-info" href="{{ route('donatur.show',$donasi->id_donatur) }}"><i class="fa fa-eye"></i></a>
                         </td>
                         <td>
                           {{-- <form action="{{ route('donatur.update',$donasi->id_donatur) }}" method="POST">
