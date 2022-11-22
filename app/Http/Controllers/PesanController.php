@@ -68,31 +68,36 @@ class PesanController extends Controller
         $ganjil = 1300;
         $jumlah = 0;
         
-        if($request->jumlah_pesan % 2 == 0){
+        if($produk->tipeproduk_id == 1){
+         if($request->jumlah_pesan % 2 == 0){
           $boxGenap = $request->jumlah_pesan / 4;
           $totalGenap = $boxGenap * $genap;
           $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGenap;
 
           $box = $boxGenap;
           $hargaBox = $genap;
-        } else {
+          } else {
           $boxGanjil = $request->jumlah_pesan / 3;
           $totalGanjil = $boxGanjil * $ganjil;
           $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGanjil;
 
           $box = $boxGanjil;
           $hargaBox = $ganjil;
+          }
+        }else if($produk->tipeproduk_id == 2){
+         $jumlah = ($produk->harga * $request->jumlah_pesan) + 4000;
+        }else{
+         $jumlah = $produk->harga * $request->jumlah_pesan;
         }
         
-
+        
+    
         $addorder = [];
         if(empty($detailPesan)){
             $addorder = [
                 'pesan_id' => $pesan->id,
                 'produk_id' => $request->produk_id,
                 'jumlah' => $request->jumlah_pesan,
-                'jumlah_box' => $box,
-                'harga_box' => $hargaBox,
                 'total' => $jumlah
                 
 
@@ -104,21 +109,9 @@ class PesanController extends Controller
             return redirect('/produk');
         }
 
-        $addriwayat = [
-            'pesan_id' => $pesan->id,
-            'produk_id' => $request->produk_id,
-            'jumlah' => $request->jumlah_pesan,
-            'jumlah_box' => $box,
-            'harga_box' => $hargaBox,
-            'total' => $jumlah
-            
-
-        ];
-        Riwayat::create($addriwayat);
 
         Alert::success('Berhasil', 'Berhasil ditambahkan ke keranjang');
         return redirect('/keranjang');
-
         
 
     }
