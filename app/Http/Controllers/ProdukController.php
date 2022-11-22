@@ -99,4 +99,12 @@ class ProdukController extends Controller
     {
         //
     }
+
+    public function cari(Request $request)
+    {
+        $keyword = $request->cari;
+        $data = Produk::where('nama', 'like', '%' . $keyword . '%')->get();
+        $title = 'Pencarian Data Kue';
+        return view('fitur.pesan_kue.produk', compact('data','title'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }

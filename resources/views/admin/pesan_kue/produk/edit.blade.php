@@ -45,6 +45,15 @@
                             <input type="text" name="nama" class="form-control" required="required" value="{{ $kue->nama }}" >
                         </div>
                         <div class="form-group">
+                          <label for="tipeproduk">Tipe</label>
+                          {{-- <input type="kelas" name="kelas" class="form-control" id="kelas" value="{{ $siswa->$kelas->nama_kelas }}" aria-describedby="kelas" > --}}
+                          <select name="tipeproduk" id="tipeproduk" class="form-control">
+                              @foreach ($tipe as $t)
+                                <option value="{{$t->id}}" {{$kue->tipeproduk_id == $t->id ? 'selected' : ''}} >{{$t->nama}}</option>
+                              @endforeach
+                          </select>
+                        </div>
+                        <div class="form-group">
                             <label for="gambar">Gambar</label>
                             <input type="file" class="form-control" required="required" name="gambar" value="{{ $kue->gambar }}" >
                             <img width="100px" src="{{asset('storage/'.$kue->gambar)}}">

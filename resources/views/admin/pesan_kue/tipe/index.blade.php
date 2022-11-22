@@ -26,7 +26,7 @@
             <h3 class="card-title">{{ $title }}</h3>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="{{ route('kue.create')}}">Tambah Produk Kue</a> 
+                  <a class="btn btn-primary" href="{{ route('tipe.create')}}">Tambah Tipe Produk</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))
@@ -35,33 +35,23 @@
                       </div>
                     @endif  --}}
 
-                  <form class="form" method="get" action="{{ route('kue.cari') }}">
-                      <div class="form-group w-100 mb-3">
-                          <label for="search" class="d-block mr-2">Pencarian Data Kue</label>
-                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Kue">
-                          <button type="submit" class="btn btn-success mb-1">Cari</button>
-                      </div>
-                  </form>
 
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Nama Kue</th>
-                        <th>Gambar</th>
-                        <th>Harga</th>
+                        <th>Nomor</th>
+                        <th>Tipe Produk</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($paginate as $kue)
+                    @foreach ($paginate as $tipe)
                             <tr>
-                                <td>{{ $kue->nama }}</td>
-                                <td><img width="150px" height="150px" src="{{asset('storage/'.$kue->gambar)}}"></td>
-                                <td>Rp. {{ $kue->harga }}</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $tipe->nama }}</td>
                                 <td>
-                                  <a class="btn btn-warning" href="{{ route('kue.edit',$kue->id) }}"><i class="fa fa-edit"></i></a>
-                                  <form action="{{ route('kue.destroy',$kue->id) }}" method="POST">
-                                    
+                                  <form action="{{ route('tipe.destroy',$tipe->id) }}" method="POST">
+                                    <a class="btn btn-warning" href="{{ route('tipe.edit',$tipe->id) }}"><i class="fa fa-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
