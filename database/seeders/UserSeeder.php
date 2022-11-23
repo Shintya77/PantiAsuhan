@@ -48,6 +48,17 @@ class UserSeeder extends Seeder
                 'nohp'=>'081298765432',
                 'role'=>'admin'   
                 
+            ],
+            [
+                
+                
+                'name'=>'irma',
+                'email'=>'irma@gmail.com',
+                'password' => Hash::make('donatur'),
+                'alamat'=>'pasuruan',
+                'nohp'=>'085604833794',
+                'role'=>'donatur'   
+                
             ]
             ));
     }

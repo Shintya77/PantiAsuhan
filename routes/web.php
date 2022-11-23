@@ -25,7 +25,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RekapPesanController;
 use App\Http\Controllers\TipeProdukController;
 use App\Http\Controllers\PenggunaController;
-
+use App\Http\Controllers\updatePenggunaAll;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ Route::get('/formulir-donasi-panti',[DnsNoLoginController::class, 'form']);
 Route::post('/formulir-donasi-panti',[DnsNoLoginController::class, 'formulir']);
 Route::get('/rekap-donasi',[DonasiContrroler::class, 'rekap']);
 Route::get('/rekap-donasi/{program}',[DonasiContrroler::class, 'rekapProgram'])->name('rekap.donasi');
-Route::get('/rekap-program-cari', [DonasiContrroler::class, 'rekapCari'])->name('rekapProgram.cari');
+Route::get('/rekap-program/{program}/', [DonasiContrroler::class, 'rekapCari'])->name('rekapProgram.cari');
 
 
 
@@ -102,6 +102,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     //ROUTE PENGGUNA
     Route::resource('pengguna', PenggunaController::class);
     Route::get('pengguna/cari/data', [PenggunaController::class, 'cari'])->name('pengguna.cari');
+    Route::post('/updatePengguna/{id}', [updatePenggunaAll::class, 'ubahPengguna']);
     
     // ROUTE ADMIN CATERING KUE
     Route::resource('kue', KueController::class);

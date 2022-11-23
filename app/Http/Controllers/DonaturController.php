@@ -34,7 +34,7 @@ class DonaturController extends Controller
     public function cari(Request $request, program $program)
     {
         $keyword = $request->cari;
-        $donatur = donatur::where('name', 'like', '%' . $keyword . '%') -> paginate(5);
+        $donatur = donatur::where('name', 'like', '%' . $keyword . '%')->where('id_program', $program->id_program) -> paginate(5);
         $donatur->appends(['keyword' => $keyword]);
         return view('admin.donasi.donatur.indexDonatur', [
             'program'=>$program ?? null, 'donatur'=>$donatur ?? null, 

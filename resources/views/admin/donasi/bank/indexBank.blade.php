@@ -75,7 +75,7 @@
                             <a class="btn btn-warning" href="{{ route('bank.edit',$b->id_bank) }}"><i class="fa fa-edit"></i></a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                         </td>  
                   @endforeach
                 </tbody>

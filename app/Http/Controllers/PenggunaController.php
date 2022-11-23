@@ -139,4 +139,8 @@ class PenggunaController extends Controller
         $title = 'Pencarian Data Pengguna';
         return view('admin.pengguna.indexPengguna', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function ubahPengguna(Request $request,$id){
+        dd($request -> all());
+    }
 }
