@@ -46,7 +46,8 @@
               <table id="example2" class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Nama Kue</th>
+                        <th>Nama Produk</th>
+                        <th>Tipe Produk</th>
                         <th>Gambar</th>
                         <th>Harga</th>
                         <th>Action</th>
@@ -56,6 +57,7 @@
                     @foreach ($paginate as $kue)
                             <tr>
                                 <td>{{ $kue->nama }}</td>
+                                <td>{{ $kue->tipeproduk->nama }}</td>
                                 <td><img width="150px" height="150px" src="{{asset('storage/'.$kue->gambar)}}"></td>
                                 <td>Rp. {{ $kue->harga }}</td>
                                 <td>

@@ -113,5 +113,8 @@ class TipeProdukController extends Controller
     public function destroy($id)
     {
         //
+        TipeProduk::where('id',$id)->delete();
+        return redirect()->route('tipe.index')
+        -> with('success', 'Tipe Produk Berhasil Dihapus');
     }
 }

@@ -19,8 +19,6 @@
                                 <th>Nama Kue</th>
                                 <th>Jumlah Kue</th>
                                 <th>Harga/Kue</th>
-                                <th>Jumlah Box</th>
-                                <th>Harga/Box</th>
                                 <th>Total Bayar</th>
                                 <th>Bukti Pembayaran</th>
 
@@ -34,8 +32,6 @@
                               <td class="text-black">{{ $r->produk->nama }}</td>
                               <td class="text-black">{{ $r->jumlah }}</td>
                               <td class="text-black">Rp {{ number_format($r->produk->harga)}}</td>
-                              <td class="text-black">{{ $r->jumlah_box }}</td>
-                              <td class="text-black">Rp {{ number_format($r->harga_box)}}</td>
                               <td class="text-black">{{ $r->total }}</td>
                               <td> <img src="{{asset('storage/'.$r->bukti_pembayaran)}}" width="100" height="100"/></td>
                                 </form>

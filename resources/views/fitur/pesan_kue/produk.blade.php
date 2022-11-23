@@ -37,6 +37,15 @@
                         <p>Berbagai macam produk kue kami sediakan dengan masing-masing kue berbeda ukuran yaitu ukuran normal,tanggung, dan mini</p>
                     </div>
 
+                    <!-- Cari Produk -->
+                    <form class="form" method="get" action="{{ route('produk.cari') }}">
+                      <div class="form-group w-100 mb-3">
+                          <label for="search" class="d-block mr-2"><strong>Cari Produk Disini</strong></label>
+                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama kue/nasi/tumpeng">
+                          <button type="submit" class="btn btn-warning mb-1"><i class="fa fa-search"></i>Cari</button>
+                      </div>
+                    </form>
+
                     <!-- List Produk -->
                     <table class="table table-Info table-striped">
                         <thead>
@@ -54,16 +63,6 @@
                             @endforeach
                         </tbody>
                     </table>
-
-                    <!-- Cari Produk -->
-                    <form class="form" method="get" action="{{ route('produk.cari') }}">
-                      <div class="form-group w-100 mb-3">
-                          <label for="search" class="d-block mr-2"><strong>Cari Produk Disini</strong></label>
-                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama kue/nasi/tumpeng">
-                          <button type="submit" class="btn btn-warning mb-1"><i class="fa fa-search"></i>Cari</button>
-                      </div>
-                    </form>
-
 
                     <div class="row">
                         @foreach($data as $d)

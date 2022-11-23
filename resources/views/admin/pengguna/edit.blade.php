@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control" required="required" value="{{ $pengguma->email }}" >
+                            <input type="text" name="email" class="form-control" required="required" value="{{ $pengguna->email }}" >
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>

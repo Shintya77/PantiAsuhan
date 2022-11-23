@@ -24,6 +24,7 @@ use App\Http\Controllers\BankCateringController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RekapPesanController;
 use App\Http\Controllers\TipeProdukController;
+use App\Http\Controllers\PenggunaController;
 
 
 /*
@@ -97,6 +98,10 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('kegiatan', KegiatanDetailController::class);
     Route::get('struktur/cari/data', [StrukturController::class, 'cari'])->name('struktur.cari');
     Route::get('kegiatan/cari/data', [KegiatanDetailController::class, 'cari'])->name('kegiatan.cari');
+
+    //ROUTE PENGGUNA
+    Route::resource('pengguna', PenggunaController::class);
+    Route::get('pengguna/cari/data', [PenggunaController::class, 'cari'])->name('pengguna.cari');
     
     // ROUTE ADMIN CATERING KUE
     Route::resource('kue', KueController::class);
@@ -106,9 +111,14 @@ Route::middleware(['auth', 'admin'])->group(function (){
 
     Route::get('/form', function () {
         return view('admin.pesan_kue.rekap.form');
-        });
+    });
+
+    Route::get('/form-cetak-laporan', function () {
+        return view('admin.pesan_kue.rekap.formCetak');
+    });
     
     Route::get('pesan/pendapatan/data', [RekapPesanController::class, 'pendapatan'])->name('pesan.pendapatan');
+    Route::get('pesan/cetak/data', [RekapPesanController::class, 'cetak'])->name('pesan.cetak');
         
     Route::resource('tipe', TipeProdukController::class);
 });
@@ -150,9 +160,8 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
-  
-
 });
+
 // Route::get('/bayar', [BankCateringController::class, 'index']);
 // Route::post('/bayar', [BankCateringController::class, 'bayar']);
 // Route::get('/onProcess', [CheckoutController::class,  'onProcess']);

@@ -133,7 +133,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-               
+                <a href="{{route('tipe.index')}}" class="nav-link ">
+                  <i class="far fa-star nav-icon"></i>
+                  <p>Data Tipe Produk</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
                 <a href="{{ route('kue.index')}}" class="nav-link ">
                   <i class="far fa-star nav-icon"></i>
                   <p>Data Produk</p>
@@ -158,9 +165,9 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('tipe.index')}}" class="nav-link ">
+                <a href="{{url('/form-cetak-laporan')}}" class="nav-link ">
                   <i class="far fa-star nav-icon"></i>
-                  <p>Data Tipe Produk</p>
+                  <p>Cetak Pendapatan</p>
                 </a>
               </li>
             </ul>

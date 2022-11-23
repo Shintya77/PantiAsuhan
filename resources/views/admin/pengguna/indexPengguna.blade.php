@@ -53,6 +53,7 @@
                         <th>Alamat</th>
                         <th>No HP</th>
                         <th>Role</th>
+                        <th>Aksi</th>
                     </tr>
                     </thead>
                     <tbody>
