@@ -25,7 +25,7 @@
 </div>
 <!-- Carousel End -->
 
-======= Icon Boxes Section ======= -->
+<!-- ======= Icon Boxes Section ======= --> 
 <section id="icon-boxes" class="icon-boxes">
     <div class="container">
 
