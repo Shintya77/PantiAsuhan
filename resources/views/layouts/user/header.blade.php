@@ -21,7 +21,7 @@
             <a href="{{url('/kegiatan-panti')}}" class="nav-item nav-link text-white">Kegiatan</a>
             <a href="{{url('/donasi')}}" class="nav-item nav-link text-white">Donasi</a>
 
-            <a href="{{url('/produk')}}" class="nav-item nav-link text-white">Catering Kue</a>
+            <a href="{{url('/produk')}}" class="nav-item nav-link text-white">Catering</a>
                 @guest
                             @if (Route::has('login'))
                                 <a href="{{route('login')}}" class="nav-item nav-link text-white">Login</a>

@@ -182,7 +182,7 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Katering Kue</h3>
+              <h3 class="card-title">Catering</h3>
             </div>
             <div class="card-body">
               <div class="row">
@@ -192,11 +192,11 @@
                     <div class="inner">
                       <h3>{{$produk}}</h3>
 
-                      <h4>Produk Kue</h4>
-                      <p>- ukuran normal/tanggung/mini -</p>
+                      <h4>Produk</h4>
+                      <p>- kue,nasi,tumpeng -</p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-bag"></i>
+                      <i class="bi bi-bag"></i>
                     </div>
                     <a href="{{route('kue.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
@@ -213,7 +213,7 @@
                       <p></p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-bag"></i>
+                      <i class="bi bi-card-list"></i>
                     </div>
                     <a href="{{route('pesan.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
@@ -227,11 +227,12 @@
 
                       <h4>Pendapatan</h4>
                       <p>- Pendapatan keseluruhan -</p>
+                      <p></p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-bag"></i>
+                      <i class="bi bi-cash-stack"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{url('/form')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
               </div>

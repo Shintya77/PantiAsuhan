@@ -37,9 +37,9 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="post" action="{{ route('pengguna.update', $pengguna->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="/updatePengguna/{{$pengguna->id}}" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
+                        
                         <div class="form-group">
                             <label for="name">Nama </label>
                             <input type="text" name="name" class="form-control" required="required" value="{{ $pengguna->name }}" >
