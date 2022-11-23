@@ -6,7 +6,7 @@
 <div class="container bg-light overflow-hidden my-5 px-lg-0" id="show">
     @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> Ada Kesalahan dalam Data Penginputan<br><br>
+        <strong>Upss!</strong> Ada Kesalahan dalam Data Penginputan<br><br>
         <ul>
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -43,10 +43,13 @@
 
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Bank</h6>
-                                    <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
+                                    <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;" required>
                                         {{-- <option selected>Bank</option> --}}
+                                        
                                         @foreach ($bank as $b)
+                                        @if ($b->nama_bank != 'Tunai')
                                         <option value="{{$b->id_bank}}" >{{$b->nama_bank}} - {{$b->norekening}}</option>
+                                        @endif
                                         @endforeach
                                     </select>
                                 </div>
