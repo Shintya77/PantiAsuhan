@@ -41,10 +41,8 @@
                       <th>Tanggal</th>
                       <th>Gambar</th>
                       <th>Nama Produk</th>
-                      <th>Jumlah Kue</th>
-                      <th>Harga/Kue</th>
-                      <th>Jumlah Box</th>
-                      <th>Harga/Box</th>
+                      <th>Jumlah</th>
+                      <th>Harga/Produk</th>
                       <th>Total Bayar</th>
                       <th>Aksi</th>
                   </tr>
@@ -60,8 +58,6 @@
                   <td align="center">{{ $item->produk->nama }}</td>
                   <td class="text-black">{{ $item->jumlah }}</td>
                   <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
-                  <td class="text-black">{{ $item->jumlah_box }}</td>
-                  <td class="text-black">Rp {{ number_format($item->harga_box)}}</td>
                   <td class="text-black">{{ $item->total }}</td>
                   <td>
                     <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
