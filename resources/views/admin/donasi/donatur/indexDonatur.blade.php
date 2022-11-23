@@ -27,14 +27,8 @@
         </div>
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('donatur.create') }}">Tambah Data Donatur</a> 
-                  <a class="btn btn-danger" href="{{ route('donatur.cetak', $program->id_program) }}">Cetak Laporan Donasi</a> 
+                  <a class="btn btn-danger"  href="{{ route('donatur.cetak', $program->id_program) }}"><i class="bi bi-printer"></i> Cetak Laporan Donasi</a> 
                     <br><br>
-
-                    {{-- @if ($message = Session::get('success'))
-                      <div class="alert alert-success">
-                        <p>{{ $message }}</p>
-                      </div>
-                    @endif  --}}
 
                     {{-- //TODO CARI MASIH SEMUA BELUM PER PROGRAM  --}}
                   <form class="form" method="get" action="{{route('donatur.cari', $program->id_program)}}">
@@ -89,7 +83,7 @@
   
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                              <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                             </form> 
                         </td>
                         @endforeach  

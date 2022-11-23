@@ -160,8 +160,13 @@
                               @endphp
                             <tr>
                               <td class="text-black">{{ $pgr->nama_program}}</td>
-                              <td class="text-black">Rp.{{ number_format($pgr->dns_butuh) }}</td>
-                              <td class="text-black">Rp.{{ number_format($kurang) }}</td>
+                              @if ($pgr->nama_program == 'Donasi Bebas')
+                              <td class="text-black" ><i class="bi bi-infinity"></i></td>
+                              <td class="text-black">Rp -</td>
+                               @else
+                               <td class="text-black">Rp.{{ number_format($pgr->dns_butuh) }}</td>
+                               <td class="text-black">Rp.{{ number_format($kurang) }}</td>
+                              @endif  
                               <td class="text-black">Rp. {{ number_format($pgr->dns_terkumpul) }}</td>
                             <td class="text-black">{{ $pgr->status }}</td>
                             </tr>

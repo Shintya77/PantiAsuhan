@@ -5,7 +5,7 @@
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h2 class="mb-4 text-primary" >Laporan Donasi Program {{$program->nama_program}} </h2>
         </div>
-        <form class="form" method="get" action="{{route('rekapProgram.cari')}}">
+        <form class="form" method="get" action="{{route('rekapProgram.cari',$program->id_program)}}">
             <div class="form-group w-100 mb-3">
                 <h5 for="search" class="d-block mr-2">Pencarian Riwayat Donasi</h5>
                 <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Donatur">

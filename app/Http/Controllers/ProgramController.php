@@ -97,9 +97,9 @@ class ProgramController extends Controller
         return redirect()->route('program.index')->with('success', 'Data Program Berhasil Diupdate');
     }
 
-    public function ubah(Request $request, program $program){
-      
+    public function ubah(Request $request, $id){
         //melakukan validasi data
+        
         $request->validate([
             'nama_program' => 'required',
             'dns_butuh' => 'required',

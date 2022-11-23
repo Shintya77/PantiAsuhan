@@ -37,20 +37,20 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('program.ubah', $program->id_program) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('program.ubah', $program -> id_program)}}" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
+                      
                         <div class="form-group">
                             <label for="nama_program">Nama Program</label>
                             <input type="text" name="nama_program" class="form-control" required="required" value="{{ $program->nama_program }}" >
                         </div>
                         <div class="form-group">
                             <label for="dns_butuh">Donasi Butuh</label>
-                            <input type="text" name="dns_butuh" class="form-control" required="required" value="{{ $program->dns_butuh }}" >
+                            <input type="number" name="dns_butuh" class="form-control" required="required" value="{{ $program->dns_butuh }}" >
                         </div>
                         <div class="form-group">
                             <label for="dns_terkumpul">Donasi Terkumpul</label>
-                            <input type="text" name="dns_terkumpul" class="form-control" value="{{ $program->dns_terkumpul }}" >
+                            <input type="number" name="dns_terkumpul" class="form-control" value="{{ $program->dns_terkumpul }}" >
                         </div>
                         <div class="form-group">
                           <label for="dns_terkumpul">Status</label>
