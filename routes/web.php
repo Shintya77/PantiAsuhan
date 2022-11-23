@@ -25,7 +25,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RekapPesanController;
 use App\Http\Controllers\TipeProdukController;
 use App\Http\Controllers\PenggunaController;
-
+use App\Http\Controllers\updatePenggunaAll;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +102,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     //ROUTE PENGGUNA
     Route::resource('pengguna', PenggunaController::class);
     Route::get('pengguna/cari/data', [PenggunaController::class, 'cari'])->name('pengguna.cari');
+    Route::post('/updatePengguna/{id}', [updatePenggunaAll::class, 'ubahPengguna']);
     
     // ROUTE ADMIN CATERING KUE
     Route::resource('kue', KueController::class);
