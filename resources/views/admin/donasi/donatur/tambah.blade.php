@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nominal">Nominal</label>
-                            <input type="bigInteger" name="nominal" class="form-control" id="nominal" aria-describedby="nominal" >
+                            <input type="number" name="nominal" class="form-control" id="nominal" aria-describedby="nominal" >
                         </div>
                         <div class="form-group">
                             <label for="atas_nama">Atas Nama</label>

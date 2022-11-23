@@ -55,7 +55,7 @@ Route::get('/formulir-donasi-panti',[DnsNoLoginController::class, 'form']);
 Route::post('/formulir-donasi-panti',[DnsNoLoginController::class, 'formulir']);
 Route::get('/rekap-donasi',[DonasiContrroler::class, 'rekap']);
 Route::get('/rekap-donasi/{program}',[DonasiContrroler::class, 'rekapProgram'])->name('rekap.donasi');
-Route::get('/rekap-program-cari', [DonasiContrroler::class, 'rekapCari'])->name('rekapProgram.cari');
+Route::get('/rekap-program/{program}/', [DonasiContrroler::class, 'rekapCari'])->name('rekapProgram.cari');
 
 
 

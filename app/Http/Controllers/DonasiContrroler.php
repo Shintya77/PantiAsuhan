@@ -115,7 +115,8 @@ class DonasiContrroler extends Controller
     public function rekapCari(Request $request, program $program)
     {
         $keyword = $request->cari;
-        $donatur = donatur::where('name', 'like', '%' . $keyword . '%') -> paginate(5);
+        $donatur = donatur::where('name', 'like', '%' . $keyword . '%')->where('id_program', $program->id_program) -> paginate(5);
+        // $donatur = donatur::where('name', 'like', '%' . $keyword . '%')->where('id_program', $program->id_program)-> paginate(5);
         $donatur->appends(['keyword' => $keyword]);
         return view('fitur.donasi.programRekap', [
             'program'=>$program ?? null, 'donatur'=>$donatur ?? null, 

@@ -45,11 +45,11 @@
                         </div>
                         <div class="form-group">
                             <label for="dns_butuh">Donasi Butuh</label>
-                            <input type="text" name="dns_butuh" class="form-control" id="dns_butuh" aria-describedby="dns_butuh" >
+                            <input type="number" name="dns_butuh" class="form-control" id="dns_butuh" aria-describedby="dns_butuh" >
                         </div>
                         <div class="form-group">
                             <label for="dns_terkumpul">Donasi Terkumpul</label>
-                            <input type="text" name="dns_terkumpul" class="form-control" id="dns_terkumpul" aria-describedby="dns_terkumpul" >
+                            <input type="number" name="dns_terkumpul" class="form-control" id="dns_terkumpul" aria-describedby="dns_terkumpul" >
                         </div>
                         <div class="form-group">
                           <label for="status">Status</label>
