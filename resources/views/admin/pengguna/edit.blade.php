@@ -62,8 +62,20 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Role</label>
-                            <input type="text" name="role" class="form-control" value="{{ $pengguna->role }}" >
+                            <div class="col-md-6">
+                              <select name="role" id="role" class="form-control">
+                                <option value="donatur">Donatur</option>
+                                <option value="pemesan">Pemesan</option>
+                              </select>
+
+                                @error('role')
+                                  <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                  </span>
+                                @enderror
+                              </div>
                         </div>
+
                         <a class="btn btn-secondary " href="{{ route('pengguna.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
