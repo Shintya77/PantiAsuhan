@@ -64,7 +64,7 @@
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Pilih Program</h6>
                                     <select name="id_program" id="inputNamaProgram" class="form-select border-0" style="height: 55px;">
-                                        {{-- <option >Pilih Program</option> --}}
+                                        <option >Pilih Program</option>
                                         @foreach ($program as $p)
                                         @if ($p->status == 'open')
                                         <option value="{{$p->nama_program}}" >{{$p->nama_program}}</option>
