@@ -117,6 +117,8 @@
                 <div class="d-flex justify-content-center">
                 <p class="description">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p><br>  
                 </div>  
+                {{-- //TODO --}}
+                <div class="swiper-slide"><img src="assets/img/logopanti.png" class="img-fluid" alt=""></div>
             <p class="description">Donasi anda adalah sebesar              : <span id="nominal"></span>  </p><br> 
             <p class="description">Donasi untuk Program                    : <span id="nama_program"></span></p><br>
             <p class="description">Nomor Rekening Anda                     : <span id="no_rekening"></span></p><br>  
@@ -125,7 +127,8 @@
             <p class="description">* TERIMAKASIH TELAH IKUT MEMBANTU SAUDARA-SAUDARA KITA YANG LEBIH MEMBUTUHKAN *</p><br>  
         </div> 
         <div class="d-flex justify-content-center">
-            <p class="description">*SEMOGA AMALAN BAIK ANDA KEMBALI KE ANDA, Terimakasih ^^</p><br>  
+            <p class="description">*Semoga Allah Yang Maha Pemurah melimpahkan barokah-Nya atas amal baik Bapak/Ibu /Saudara sekeluarga*</p><br>  
+            <p class="description">Aamiin</p>
         </div>  
                   </div>
                 </div>

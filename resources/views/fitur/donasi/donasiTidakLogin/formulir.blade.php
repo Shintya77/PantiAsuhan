@@ -105,24 +105,30 @@
               <div class="col-12 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
                   <div class="icon-box">
                       <div class="d-flex justify-content-center">
-                          <h4 class=""><a href="" class="text-center">INFORMASI DONASI </a></h4>
+                          <h4 class=""><a href="" class="text-center">INFORMASI DONASI </a></h4><br>
                       </div>
 
-
+                      <div class="d-flex justify-content-center">
+                        <p class="description ">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p><br>  
+                     </div>
+                    <div class="swiper-slide"><img src="assets/img/logopanti.png" class="img-fluid" alt=""></div>
+                <div class="d-flex justify-content-left">
+                
+                </div> 
+                    <p class="description">Donasi anda adalah sebesar              :  <span id="nominal"></span>  </p><br> 
+                    <p class="description">Donasi untuk Program                    :  <span id="nama_program"></p><br>
+                    <p class="description">Nomor Rekening Anda                     :  <span id="no_rekening"> </p><br>  
+                    <p class="description">Atas Nama                               :  <span id="atas_nama"></p><br>  
                 <div class="d-flex justify-content-center">
-                <p class="description">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p><br>  
+                    <p class="description">* TERIMAKASIH TELAH IKUT MEMBANTU SAUDARA-SAUDARA KITA YANG LEBIH MEMBUTUHKAN *</p><br>  
+                </div> 
+                <div class="d-flex justify-content-center">
+                     <p class="description">*Semoga Allah Yang Maha Pemurah melimpahkan barokah-Nya atas amal baik Bapak/Ibu /Saudara sekeluarga*</p><br>  
                 </div>  
-            <p class="description">Donasi anda adalah sebesar              :  <span id="nominal"></span>  </p><br> 
-            <p class="description">Donasi untuk Program                    :  <span id="nama_program"></p><br>
-            <p class="description">Nomor Rekening Anda                     :  <span id="no_rekening"> </p><br>  
-            <p class="description">Atas Nama                               :  <span id="atas_nama"></p><br>  
-            <div class="d-flex justify-content-center">
-            <p class="description">* TERIMAKASIH TELAH IKUT MEMBANTU SAUDARA-SAUDARA KITA YANG LEBIH MEMBUTUHKAN *</p><br>  
-        </div> 
-        <div class="d-flex justify-content-center">
-            <p class="description">* SEMOGA AMALAN BAIK ANDA KEMBALI KE ANDA, Terimakasih ^^</p><br>  
-        </div>  
-                  </div>
+                <div class="d-flex justify-content-center">
+                    <p class="description">Aamiin</p>
+                </div> 
+                </div>
                 </div>
           </div>
         </div>

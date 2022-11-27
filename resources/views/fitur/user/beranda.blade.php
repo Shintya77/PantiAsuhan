@@ -32,29 +32,29 @@
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
             <div class="icon-box">
-              <h4 class="title"><a href="">Batik Celup</a></h4>
-              <p class="description">Merupakan kegiatan rutin yang dilakukan di panti Asuhan Putri 'Aisyiyah Malang. Batik celup adalah proses membuat motif dan warna pada kain putih polos dengan teknik mengikat dan menutup sebagian kain dengan karet selanjutnya dicelup pada pewarna kain misalnya wantex.</p>
+              <h4 class="title"><a href="">Al-Baqarah ayat 220</a></h4>
+              <p class="description">Dan mereka bertanya kepadamu tentang anak yatim, katakalah: "Mengurus urusan mereka secara patut adalah baik, dan jika kamu bergaul dengan mereka, maka mereka adalah saudaramu; dan Allah mengetahui siapa yang membuat kerusakan dari yang mengadakan perbaikan </p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <h4 class="title"><a href="">Jalan - Jalan Ceria</a></h4>
-              <p class="description">Kegiatan yang dilakukan guna untuk melepas lelah dan penat selama kegiatan belajar mengajar yang diikuti oleh siswa maupun pengasuh. Kegiatan ini merupakan salah acara liburan yang ada di Panti Asuhan ini</p>
+              <h4 class="title"><a href="">HR Bukhari</a></h4>
+              <p class="description">Dari Sahl bin Sa’ad RA, berkata bahwa Rasulullah SAW bersabda: ‘Saya dan orang yang memelihara anak yatim itu dalam surga seperti ini.’ Beliau mengisyaratkan dengan jari telunjuk dan jari tengahnya serta merenggangkan keduanya.”</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <h4 class="title"><a href="">Parenting</a></h4>
-              <p class="description">Merupakan kegiatan atau pekerjaan orangtua dalam mengasuh anak melalui kegiatan parenting juga orangtua dapat mengetahui capaian perkembangan anak dan memberikan pengetahuan kepada orangtua.</p>
+              <h4 class="title"><a href="">Pendidikan kerohanian</a></h4>
+              <p class="description">Anak asuh Panti Asuhan Putri Aisyiyah mendapatkan pendidikan formal  sebagaimana pada umumnya yang dilaksanakan di sekolah masing2 berdasarkan kemampuan mereka. Sementara pendidikan non formal difasilitasi Panti yang meliputi kegiatan kerohanian seperti pendidikan baca tulis Al Quran, Tafsir, Qiroah dan pengajian rutin  serta peningkatan keterampilan secara terjadwal</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <h4 class="title"><a href="">Penyembelihan Kurban</a></h4>
-              <p class="description">Kegiatan yang dilakukan dalam rangka memperingati Hari Raya Idul Adha disetiap tahunnya, Panti Asuhan Putri 'Aisyiyah Malang melaksanakan kegiatan penyembelihan hewan qurban.</p>
+              <h4 class="title"><a href="">Paputria Catering</a></h4>
+              <p class="description">Guna menunjang operasional Panti, Panti Asuhan Putri Aisyiyah Malang mempunyai Usaha Unit Ekonomi Produktif di Bidang Catering. Dengan memesan kue dan nasi di Paputria Catering berarti membantu operasional Panti Putri 'Aisyiah Malang.</p>
             </div>
           </div>
 

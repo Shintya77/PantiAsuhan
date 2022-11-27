@@ -126,12 +126,12 @@ Berikan shodaqoh/amal jariyah/donasi terbaik Saudara. InsyaAllah kenyamanan, tra
                               <td class="text-black" style="text-align: center">{{ $program->nama_program}}</td>
                               @if ($program->nama_program=='Donasi Bebas')
                               <td class="text-black" style="text-align: center" ><i class="bi bi-infinity"></i></td>
-                              <td class="text-black" style="text-align: center">Rp. - </td>
+                              <td class="text-black" style="text-align: center">Rp - </td>
                               @else
-                              <td class="text-black" style="text-align: center">Rp.{{ number_format($program->dns_butuh) }}</td>
-                              <td class="text-black"style="text-align: center">Rp.{{ number_format($kurang) }}</td>
+                              <td class="text-black" style="text-align: center">Rp {{ number_format($program->dns_butuh) }}</td>
+                              <td class="text-black"style="text-align: center " ><b>Rp {{ number_format($kurang) }}</b></td>
                               @endif
-                              <td class="text-black"style="text-align: center">Rp. {{ number_format($program->dns_terkumpul) }}</td>
+                              <td class="text-black"style="text-align: center">Rp {{ number_format($program->dns_terkumpul) }}</td>
                                 </form>
                               </td>  
                               @endforeach
