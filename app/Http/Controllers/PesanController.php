@@ -25,14 +25,15 @@ class PesanController extends Controller
     public function index(StorePesanRequest $request)
     {
         //
-        $pesan = Pesan::where('user_id', auth()->user()->id)->first();
-        $data = PesanDetail::where('pesan_id', $pesan->id)->get();
+        $pesan = Pesan::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
+        $data = PesanDetail::where('pesan_id', $pesan->id)->orderBy('id', 'desc')->get();
         $iniTanggal = PesanDetail::where('pesan_id', $pesan->id)->first();
 
         return view('fitur.pesan_kue.pesan', [
             'active'=>'active', 
             'title'=>'Keranjang',
             'data' => $data,
+            'pesan' => $pesan,
             'total' => PesanDetail::where('pesan_id', $pesan->id)->get()->sum('total'),
             'date' => $iniTanggal
         ]);
@@ -104,15 +105,15 @@ class PesanController extends Controller
             return redirect('/produk');
         }
 
-        $addriwayat = [
-            'pesan_id' => $pesan->id,
-            'produk_id' => $request->produk_id,
-            'jumlah' => $request->jumlah_pesan,
-            'total' => $jumlah
+        // $addriwayat = [
+        //     'pesan_id' => $pesan->id,
+        //     'produk_id' => $request->produk_id,
+        //     'jumlah' => $request->jumlah_pesan,
+        //     'total' => $jumlah
 
 
-        ];
-        Riwayat::create($addriwayat);
+        // ];
+        // Riwayat::create($addriwayat);
 
 
         Alert::success('Berhasil', 'Berhasil ditambahkan ke keranjang');
@@ -184,8 +185,8 @@ class PesanController extends Controller
         $pesanDetailId = PesanDetail::where('id', $id)->first();
         $pesan = Pesan::where('id', $pesanDetailId->pesan_id)->first();
         $pesanDetailId->delete();
-        // $pesan->delete();
+        $pesan->delete();
         Alert::success('Berhasil', 'Berhasil dihapus');
-        return redirect('/keranjang');
+        return redirect('/produk');
     }
 }

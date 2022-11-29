@@ -45,7 +45,7 @@ class CheckOutController extends Controller
     public function store(Request $request, $id)
     {
         
-        $pesan = Pesan::where('user_id', Auth::user()->id)->first();
+        $pesan = Pesan::where('user_id', Auth::user()->id)->orderBy('id','desc')->first();
         $PesanDetail = PesanDetail::where('pesan_id', $pesan->id)->first();
         $produk = Produk::where('id', $PesanDetail->produk_id)->first();
 
@@ -123,8 +123,7 @@ class CheckOutController extends Controller
     }
 
     public function riwayat(){
-        $pesan = Pesan::where('user_id', Auth::user()->id)->first();
-        $riwayat = PesanDetail::where('pesan_id', $pesan->id)->get();
+        $riwayat = PesanDetail::all();
         return view('fitur.pesan_kue.riwayat', [
             'riwayat'=>$riwayat
         ]);

@@ -155,11 +155,11 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     Route::get('/riwayat', [CheckOutController::class, 'riwayat']);
 
   
-    Route::get('/bayar', [BankCateringController::class, 'index']);
-    Route::post('/bayar', [BankCateringController::class, 'bayar']);
-    Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
-    Route::get('/bayar', [BankCateringController::class, 'index']);
-    Route::post('/bayar', [BankCateringController::class, 'bayar']);
+    // Route::get('/bayar', [BankCateringController::class, 'index']);
+    // Route::post('/bayar', [BankCateringController::class, 'bayar']);
+    // Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
+    // Route::get('/bayar', [BankCateringController::class, 'index']);
+    // Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
 });
 
