@@ -6,8 +6,10 @@
  <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="owl-carousel header-carousel position-relative">
         <div class="owl-carousel-item position-relative" data-dot="<img src='{{asset('assets')}}/img/carousel-1.jpg'>">
-            <img class="img-fluid" src="{{asset('assets')}}/img/background.jpeg" alt="">
+          <img src="assets/img/logo.png" align="top"class="img-fluid mx-1 " alt="" style="width:150px;height:150px;">
+          <img class="img-fluid" src="{{asset('assets')}}/img/background.jpeg" alt="">
             <div class="owl-carousel-inner">
+              {{-- <img src="assets/img/logo.png" align="top"class="img-fluid mx-1 " alt="" style="width:150px;height:150px;"> --}}
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-10 col-lg-8 text-center">

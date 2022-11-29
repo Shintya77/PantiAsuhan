@@ -42,7 +42,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Kelompok 2</span></strong> TI 3E POLINEMA
+        &copy; Copyright <strong><span>Ruby Girl</span></strong> TI-3E'20 POLINEMA
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
