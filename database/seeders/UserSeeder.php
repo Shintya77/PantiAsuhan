@@ -59,6 +59,39 @@ class UserSeeder extends Seeder
                 'nohp'=>'085604833794',
                 'role'=>'donatur'   
                 
+            ],
+
+            [
+                
+                'name'=>'admin1',
+                'email'=>'paputri1@gmail.com',
+                'password' => Hash::make('admin'),
+                'alamat'=>'malang',
+                'nohp'=>'081233967234',
+                'role'=>'admin'   
+                
+            ],
+
+            [
+                
+                'name'=>'admin2',
+                'email'=>'paputri2@gmail.com',
+                'password' => Hash::make('donatur'),
+                'alamat'=>'malang',
+                'nohp'=>'081233967234',
+                'role'=>'donatur'   
+                
+            ],
+
+            [
+                
+                'name'=>'admin3',
+                'email'=>'paputri3@gmail.com',
+                'password' => Hash::make('pemesan'),
+                'alamat'=>'malang',
+                'nohp'=>'081233967234',
+                'role'=>'pemesan'   
+                
             ]
             ));
     }

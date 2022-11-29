@@ -132,7 +132,7 @@ class DonaturController extends Controller
      */
     public function update(Request $request, $id_donatur)
     {
-
+        
        
         donatur::where('id_donatur', $id_donatur)
         ->update([
@@ -140,7 +140,8 @@ class DonaturController extends Controller
         ]);
         $donatur = donatur::where('id_donatur', $id_donatur) -> first();
         
-        $donasi = donatur::where('status', 'masuk') -> sum('nominal');
+
+        $donasi = donatur::where('id_program', $donatur -> id_program)->where('status', 'masuk') -> sum('nominal');
         
         $programUpdate = program::where('id_program', $donatur -> id_program) -> first();
         

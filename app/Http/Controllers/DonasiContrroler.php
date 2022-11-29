@@ -42,7 +42,8 @@ class DonasiContrroler extends Controller
     public function form()
     {
         $program = program::all();
-        $bank = Bank::all();
+        $bank = Bank::where('nama_bank' , '!=', 'Tunai') -> get();
+        
         $donatur = donatur::all();
         return view('fitur.donasi.formulir', compact('program','bank','donatur')); 
     }

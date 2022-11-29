@@ -168,7 +168,7 @@
                                <td class="text-black">Rp.{{ number_format($kurang) }}</td>
                               @endif  
                               <td class="text-black">Rp. {{ number_format($pgr->dns_terkumpul) }}</td>
-                            <td class="text-black">{{ $pgr->status }}</td>
+                              <td class="text-black">{{ $pgr->status }}</td>
                             </tr>
                             @endforeach
                           </tbody>

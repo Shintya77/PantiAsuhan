@@ -6,7 +6,7 @@
 <div class="container bg-light overflow-hidden my-5 px-lg-0" id="show">
     @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> Ada Kesalahan dalam Data Penginputan<br><br>
+        <strong>Upss!</strong> Ada Kesalahan dalam Data Penginputan<br><br>
         <ul>
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -43,10 +43,13 @@
 
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Bank</h6>
-                                    <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
+                                    <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;" required>
                                         {{-- <option selected>Bank</option> --}}
+                                        
                                         @foreach ($bank as $b)
+                                        @if ($b->nama_bank != 'Tunai')
                                         <option value="{{$b->id_bank}}" >{{$b->nama_bank}} - {{$b->norekening}}</option>
+                                        @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -106,14 +109,14 @@
           <div class="row">
               <div class="col-12 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
                   <div class="icon-box">
-                      <div class="d-flex justify-content-center">
-                          <h4 class=""><a href="" class="text-center">INFORMASI DONASI </a></h4>
+                    <div class="d-flex" style="transform: translateY(-30px)">
+                        <img src="assets/img/logopanti.png" class="img-fluid mx-5 " alt="">
+                        <div class="m-auto">
+                            <p class="description">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p>
+                            <h4 class=""><a href="" class="text-center">INFORMASI DONASI </a></h4>
+                        </div>
                       </div>
 
-
-                <div class="d-flex justify-content-center">
-                <p class="description">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p><br>  
-                </div>  
             <p class="description">Donasi anda adalah sebesar              : <span id="nominal"></span>  </p><br> 
             <p class="description">Donasi untuk Program                    : <span id="nama_program"></span></p><br>
             <p class="description">Nomor Rekening Anda                     : <span id="no_rekening"></span></p><br>  
@@ -122,7 +125,10 @@
             <p class="description">* TERIMAKASIH TELAH IKUT MEMBANTU SAUDARA-SAUDARA KITA YANG LEBIH MEMBUTUHKAN *</p><br>  
         </div> 
         <div class="d-flex justify-content-center">
-            <p class="description">*SEMOGA AMALAN BAIK ANDA KEMBALI KE ANDA, Terimakasih ^^</p><br>  
+            <p class="description">*Semoga Allah Yang Maha Pemurah melimpahkan barokah-Nya atas amal baik Bapak/Ibu /Saudara sekeluarga*</p><br>  
+        </div> 
+        <div class="d-flex justify-content-center">
+            <p class="description">Aamiin</p>
         </div>  
                   </div>
                 </div>
