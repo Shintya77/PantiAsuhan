@@ -47,35 +47,83 @@
                     </form>
 
                     <!-- List Produk -->
-                    <table class="table table-Info table-striped">
-                        <thead>
-                        <tr>
-                            <th style="text-align:center"><B>Nomor</th>
-                            <th style="text-align:center"><B>Nama Produk</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($data as $d)
-                                <tr>
-                                    <td align="center">{{ $loop->iteration }}</td>
-                                    <td align="center">{{$d->nama}}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
-                    <div class="row">
-                        @foreach($data as $d)
-                        <div class="col-lg-4" data-aos="fade-up">
-                            <div class="box">
-                                <span>{{$d->nama}}</span>
-                                <img src="{{asset('storage/'.$d->gambar)}}" width="300" height="250"><br><br>
-                                <h5>Harga: Rp. {{$d->harga}}</h5>
-                                <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
+                    
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Kue</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Nasi</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Tumpeng</button>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                            @forelse ($data as $d)
+                            @if ($d->tipeproduk_id == 1)
+                            
+                                <div class="col-lg-4" data-aos="fade-up">
+                                    <div class="box">
+                                        <span>{{$d->nama}}</span>
+                                        <img src="{{asset('storage/'.$d->gambar)}}" width="300" height="250"><br><br>
+                                        <h5>Harga: Rp. {{$d->harga}}</h5>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
+                                    </div>
+                                </div>
+                           
+                            @endif
+                            @empty
+                            <h3>Tidak ada Data</h3>
+                            
+                            @endforelse
+                        </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                @forelse ($data as $d)
+                                @if ($d->tipeproduk_id == 2)
+                                
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="box">
+                                            <span>{{$d->nama}}</span>
+                                            <img src="{{asset('storage/'.$d->gambar)}}" width="300" height="250"><br><br>
+                                            <h5>Harga: Rp. {{$d->harga}}</h5>
+                                            <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
+                                        </div>
+                                    </div>
+                               
+                                @endif
+                                @empty
+                                <h3>Tidak ada Data</h3>
+                                
+                                @endforelse
                             </div>
                         </div>
-                        @endforeach
-                    </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="row">
+                                @forelse ($data as $d)
+                                @if ($d->tipeproduk_id == 3)
+                                    <div class="col-lg-4" data-aos="fade-up">
+                                        <div class="box">
+                                            <span>{{$d->nama}}</span>
+                                            <img src="{{asset('storage/'.$d->gambar)}}" width="300" height="250"><br><br>
+                                            <h5>Harga: Rp. {{$d->harga}}</h5>
+                                            <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
+                                        </div>
+                                    </div>
+                               
+                                @endif
+                                @empty
+                                <h3>Tidak ada Data</h3>
+                                
+                                @endforelse
+                            </div>
+                        </div>
+                      </div>
+                    
                 </div>
             </section>
         </div>

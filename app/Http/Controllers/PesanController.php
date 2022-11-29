@@ -61,7 +61,7 @@ class PesanController extends Controller
             'user_id' => auth()->user()->id,
         ]);
         $produk = Produk::find($request->produk_id);
-        $pesan = Pesan::where('user_id', auth()->user()->id)->first();
+        $pesan = Pesan::where('user_id', auth()->user()->id)->where('bank_id', null)->first();
         $detailPesan = PesanDetail::where('produk_id', $produk->id)->first();
 
         $genap = 1600;

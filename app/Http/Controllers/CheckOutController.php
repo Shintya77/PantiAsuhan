@@ -124,7 +124,7 @@ class CheckOutController extends Controller
 
     public function riwayat(){
         $pesan = Pesan::where('user_id', Auth::user()->id)->first();
-        $riwayat = Riwayat::where('pesan_id', $pesan->id)->get();
+        $riwayat = PesanDetail::where('pesan_id', $pesan->id)->get();
         return view('fitur.pesan_kue.riwayat', [
             'riwayat'=>$riwayat
         ]);
