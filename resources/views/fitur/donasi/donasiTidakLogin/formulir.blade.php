@@ -104,14 +104,15 @@
           <div class="row">
               <div class="col-12 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
                   <div class="icon-box">
-                      <div class="d-flex justify-content-center">
-                          <h4 class=""><a href="" class="text-center">INFORMASI DONASI </a></h4><br>
+                    <div class="d-flex" style="transform: translateY(-30px)">
+                        <img src="assets/img/logopanti.png" class="img-fluid mx-5 " alt="">
+                        <div class="m-auto">
+                            <p class="description">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p>
+                            <h4 class=""><a href="" class="text-center">INFORMASI DONASI </a></h4>
+                        </div>
                       </div>
 
-                      <div class="d-flex justify-content-center">
-                        <p class="description ">INFORMASI DONASI ANDA SEBAGAI BERIKUT</p><br>  
-                     </div>
-                    <div class="swiper-slide"><img src="assets/img/logopanti.png" class="img-fluid" alt=""></div>
+                      
                 <div class="d-flex justify-content-left">
                 
                 </div> 
