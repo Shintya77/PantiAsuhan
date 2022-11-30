@@ -58,22 +58,11 @@ Route::get('/rekap-donasi/{program}',[DonasiContrroler::class, 'rekapProgram'])-
 Route::get('/rekap-program/{program}/', [DonasiContrroler::class, 'rekapCari'])->name('rekapProgram.cari');
 
 
-
-
-
-
-
 Route::resource('produk', ProdukController::class);
 Route::get('produk/cari/data', [ProdukController::class, 'cari'])->name('produk.cari');
 
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::middleware(['auth', 'admin'])->group(function (){
-    // Route::get('/dashboard', function () {
-    // return view('layouts.admin.dashboard');
-    // });
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
     // ROUTE ADMIN DONASI 
@@ -86,8 +75,6 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
     Route::get('bank/cari/data', [BankController::class, 'cari'])->name('bank.cari');
     Route::get('binaan/cari/data', [BinaanController::class, 'cari'])->name('binaan.cari');
-    //TODO MENAMPILKAN INDEX DONATUR
-    // Route::get('program-donatur/{id}',[AdminDonaturController::class, 'show'])->name('donatur.show');
     Route::get('program-donasi/{program}',[DonaturController::class, 'program'])->name('donatur.program');
     Route::get('donatur/cari/data/{program}/', [DonaturController::class, 'cari'])->name('donatur.cari');
      Route::get('donatur/cetak_pdf/{program}', [DonaturController::class, 'cetak_pdf'])->name('donatur.cetak');
@@ -133,40 +120,15 @@ Route::middleware(['auth', 'donatur'])->group(function (){
     Route::get('/donasi-upload',[VisiController::class, 'upload']);
     Route::get('/donasi-riwayat',[DonasiContrroler::class, 'riwayat']);
 });
-// Route::resource('produk', ProdukController::class);
-// Route::get('/produk', [ProdukController::class, 'index']);
 
 Route::get('/produk/detail', [ProdukController::class, 'show']);
 
 Route::middleware(['auth', 'pemesan'])->group(function (){
-    // Route::get('/keranjang', [PesanController::class, 'index'])->name('index');
-    // Route::post('/keranjang', [PesanController::class, 'store'])->name('store');
     Route::resource('/keranjang', PesanController::class)->only(['index', 'store', 'destroy']);
-
-    // Route::get('/bayar', function () {
-    //     return view('fitur.pesan_kue.checkout');
-    //     });
-
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
-
-
     Route::post('/checkout/{id}', [CheckOutController::class, 'store']);
-
     Route::get('/riwayat', [CheckOutController::class, 'riwayat']);
 
-  
-    // Route::get('/bayar', [BankCateringController::class, 'index']);
-    // Route::post('/bayar', [BankCateringController::class, 'bayar']);
-    // Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
-    // Route::get('/bayar', [BankCateringController::class, 'index']);
-    // Route::post('/bayar', [BankCateringController::class, 'bayar']);
-
 });
-
-// Route::get('/bayar', [BankCateringController::class, 'index']);
-// Route::post('/bayar', [BankCateringController::class, 'bayar']);
-// Route::get('/onProcess', [CheckoutController::class,  'onProcess']);
-//     Route::get('/bayar', [BankCateringController::class, 'index']);
-//     Route::post('/bayar', [BankCateringController::class, 'bayar']);
 
