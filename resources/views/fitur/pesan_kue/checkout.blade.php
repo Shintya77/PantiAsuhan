@@ -80,6 +80,7 @@
                                 <div class="accordion-body">
                                     <ul>
                                         <li>No Rekening : {{$b->norekening}}</li>
+                                        <li>Atas nama : {{$b->nama_rekening}}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -89,10 +90,18 @@
                     </div>
                 </div>
                 <div class="col">
-                    <h4>Informasi Pembarayan</h4>
+                    <h4>Informasi Pembayaran</h4>
                     
-                
-                    <hr>
+                            <p> 1. Pilih Bank <br>
+                                2. Lakukan pembayaran melalui ATM Bank yang dipilih. <br>
+                                3. Pilih menu Transaksi Lain. <br>
+                                4. Pilih menu Pembayaran. <br>
+                                5. Pilih menu Lainnya. <br>
+                                6. Pilih menu transfer. <br>
+                                7. Silahkan Upload Bukti Pembayaran <br>
+                            </p>
+                    
+                             <hr>
                     
         
                         <div class="form-group">

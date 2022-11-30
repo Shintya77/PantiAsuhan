@@ -93,9 +93,10 @@
                             <p>- Box kue isi 4 : Rp. 1600</p>
                             <p>- Box nasi : Rp. 4000</p>
                             <p>- Anda dapat memesan langsung melalui <B>WhatsApp</B> namun rekapan pesanan anda tidak tercatat di sistem</p>
-                        <a target="_blank" href="https://wa.link/ibjkiy" class="btn btn-success"><i class="fa fa-comments"></i> WhatsApp</a>
+                        <a target="_blank" href="https://wa.link/eocdf5" class="btn btn-success"><i class="fa fa-comments"></i> WhatsApp</a>
                         <br><br>
-                        <p>- Jika ingin menambahkan pesanan silahkan kembali ke halaman produk dengan klik button <B>Kembali</B>, dibawah ini</p>
+                        <p>- Anda hanya bisa memasukkan 1 produk dalam keranjang</p>
+                        <p>- Jika ingin menambahkan pesanan silahkan selesaikan terlebih dahulu pembayaran</p>
                         <a href="{{ url('/produk') }}" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>

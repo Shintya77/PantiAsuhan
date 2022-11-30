@@ -25,18 +25,23 @@
                               </tr>
                             </thead>
                             <tbody>
-                              @foreach ($riwayat as $r)
-                              <tr>
-                              <td style="text-align:center"><class="text-black">{{ $loop->iteration }}</td>
-                              <td class="text-black">{{ $r->created_at->format('Y-m-d')}}</td>
-                              <td class="text-black">{{ $r->produk->nama }}</td>
-                              <td class="text-black">{{ $r->jumlah }}</td>
-                              <td class="text-black">Rp {{ number_format($r->produk->harga)}}</td>
-                              <td class="text-black">{{ $r->total }}</td>
-                              <td> <img src="{{asset('storage/'.$r->bukti_pembayaran)}}" width="100" height="100"/></td>
-                                </form>
-                              </td>  
-                              @endforeach
+                              @if ($riwayat != null)
+                                @foreach ($riwayat as $item)
+                                  @if ($item->pesan->user_id == Auth::user()->id)
+                                  <tr>
+                                    <td style="text-align:center"><class="text-black">{{ $loop->iteration }}</td>
+                                    <td class="text-black">{{ $item->created_at->format('Y-m-d')}}</td>
+                                    <td class="text-black">{{ $item->produk->nama }}</td>
+                                    <td class="text-black">{{ $item->jumlah }}</td>
+                                    <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
+                                    <td class="text-black">{{ $item->total }}</td>
+                                    <td> <img src="{{asset('storage/'.$item->bukti_pembayaran)}}" width="100" height="100"/></td>
+                                    </td>  
+                                  @endif
+                                @endforeach
+                                @else
+                                <h3>Tidak Ada Riwayat</h3>
+                              @endif
                             </tbody>
                           </table>
                           {{-- <div class="paginate">

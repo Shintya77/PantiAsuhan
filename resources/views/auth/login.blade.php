@@ -50,14 +50,14 @@
                                         <input type="submit" name="login" class="btn btn-primary btn-user btn-block">
                                         </a>
                                     </form>
-                                    <hr>
+                                    {{-- <hr>
                                     @if (Route::has('password.request'))
                                     <div class="text-center">
                                         <a class="small" href="{{ route('password.request') }}">
                                             {{ __('Lupa Password?') }}
                                         </a>
                                     </div>
-                                    @endif
+                                    @endif --}}
                                     <div class="text-center">
                                         <a class="small" href="{{ url('/register')}}">Buat akun!</a>
                                     </div>

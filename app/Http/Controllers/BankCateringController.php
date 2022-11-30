@@ -16,7 +16,7 @@ class BankCateringController extends Controller
      */
     public function index()
     {
-        $pesan = Pesan::where('user_id', auth()->user()->id)->first();
+        $pesan = Pesan::where('user_id', auth()->user()->id)->orderBy('id','desc')->first();
         $pesanDetail = PesanDetail::where('pesan_id', $pesan->id)->first();
         
         
@@ -25,7 +25,7 @@ class BankCateringController extends Controller
             'title' => 'Checkout',
             'pesan' => $pesan,
             'details' => $pesanDetail,
-            'bank' => Bank::all(),
+            'bank' => Bank::where('id_bank',5)->get(),
         ]);
     }
 
