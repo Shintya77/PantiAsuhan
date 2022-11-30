@@ -36,6 +36,11 @@ class BankSeeder extends Seeder
                 'nama_bank'=>'Tunai',
                 'nama_rekening' => '',
                 'norekening'=> ''
+            ],
+            [
+                'nama_bank'=>'BRI',
+                'nama_rekening' => 'Panti Asuhan Putri Aisyiyah',
+                'norekening'=> '3127-01-030223-53-8'
             ]
             ));  
     }
