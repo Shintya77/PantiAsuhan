@@ -34,7 +34,7 @@
                     <div class="section-title">
                         <span>Produk</span>
                         <h2>Produk</h2>
-                        <p>Berbagai macam produk kue kami sediakan dengan masing-masing kue berbeda ukuran yaitu ukuran normal,tanggung, dan mini</p>
+                        <p>Berbagai macam produk kami sediakan mulai dari jenis kue dengan berbagai macam ukuran, nasi dan tumpeng</p>
                     </div>
 
                     <!-- Cari Produk -->
