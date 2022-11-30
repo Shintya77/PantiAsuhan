@@ -80,6 +80,7 @@
                                 <div class="accordion-body">
                                     <ul>
                                         <li>No Rekening : {{$b->norekening}}</li>
+                                        <li>Atas nama : {{$b->nama_rekening}}</li>
                                     </ul>
                                 </div>
                             </div>
