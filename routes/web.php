@@ -90,6 +90,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     // Route::get('program-donatur/{id}',[AdminDonaturController::class, 'show'])->name('donatur.show');
     Route::get('program-donasi/{program}',[DonaturController::class, 'program'])->name('donatur.program');
     Route::get('donatur/cari/data/{program}/', [DonaturController::class, 'cari'])->name('donatur.cari');
+     Route::get('donatur/cetak_pdf/{program}', [DonaturController::class, 'cetak_pdf'])->name('donatur.cetak');
     Route::get('donatur/cetak_pdf/{program}', [DonaturController::class, 'cetak_pdf'])->name('donatur.cetak');
 
     //ROUTE ADMIN WEB PROFIL

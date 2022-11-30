@@ -18,37 +18,37 @@ class KegiatanSeeder extends Seeder
             [
                 // 'foto' => 'batik celup.jpeg',
                 'judul' => 'Batik Celup',
-                'deskripsi' => 'Kegiatan rutin yang dilakukan di panti Asuhan Putri Aisyiyah Malang'
+                'deskripsi' => 'Kegiatan Batik Celup di Panti Asuhan yang dilakukan oleh para santriwati'
             ],
             [
                 // 'foto' => 'batik celup1.jpeg',
                 'judul' => 'Batik Celup',
-                'deskripsi' => 'Kegiatan rutin yang dilakukan di panti Asuhan Putri Aisyiyah Malang'
+                'deskripsi' => 'Kegiatan Batik Celup di Panti Asuhan yang dilakukan oleh para santriwati'
             ],
             [
                 // 'foto' => 'batik celup2.jpeg',
                 'judul' => 'Batik Celup',
-                'deskripsi' => 'Kegiatan rutin yang dilakukan di panti Asuhan Putri Aisyiyah Malang'
+                'deskripsi' => 'Kegiatan Batik Celup di Panti Asuhan yang dilakukan oleh para santriwati'
             ],
             [
                 // 'foto' => 'batik celup3.jpeg',
                 'judul' => 'Batik Celup',
-                'deskripsi' => 'Kegiatan rutin yang dilakukan di panti Asuhan Putri Aisyiyah Malang'
+                'deskripsi' => 'Kegiatan Batik Celup di Panti Asuhan yang dilakukan oleh para santriwati'
             ],
             [
                 // 'foto' => 'jalan jalan.jpeg',
                 'judul' => 'Jalan - Jalan Ceria',
-                'deskripsi' => 'Kegiatan yang dilakukan guna untuk melepas lelah dan penat selama kegiatan belajar mengajar yang diikuti oleh siswa maupun pengasuh'
+                'deskripsi' => 'Kegiatan liburan yang dilakukan bersama seluruh keluarga panti'
             ],
             [
                 // 'foto' => 'jalan jalan2.jpeg',
                 'judul' => 'Jalan Jalan Ceria 2',
-                'deskripsi' => 'Kegiatan yang dilakukan guna untuk melepas lelah dan penat selama kegiatan belajar mengajar yang diikuti oleh siswa maupun pengasuh'
+                'deskripsi' => 'Kegiatan liburan yang dilakukan bersama seluruh keluarga panti'
             ],
             [
                 // 'foto' => 'jalan jalan3.jpeg',
                 'judul' => 'Jalan Jalan Ceria 3',
-                'deskripsi' => 'Kegiatan yang dilakukan guna untuk melepas lelah dan penat selama kegiatan belajar mengajar yang diikuti oleh siswa maupun pengasuh'
+                'deskripsi' => 'Acara bersama seluruh keluarga besar panti asuhan ke tempat liburan'
             ],
             [
                 // 'foto' => 'kurban.jpeg',
@@ -72,8 +72,8 @@ class KegiatanSeeder extends Seeder
             ],
             [
                 // 'foto' => 'riilah2.jpeg',
-                'judul' => 'Kegiatan perpisahan dan pelepasan Santriwati',
-                'deskripsi' => 'Riilah merupakan kegiatan perjalanan yang dilakukan oleh santri untuk menuntut ilmu diluar panti asuhan'
+                'judul' => 'Rihlah dan Pelepasan Santri',
+                'deskripsi' => 'Rihlah dilakukan dalam rangka pelepasan santriwati dari panti asuhan, acara ini dilaksanakan dengan ceria di pantai'
             ] 
         ]
         );

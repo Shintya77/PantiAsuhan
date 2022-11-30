@@ -7,7 +7,7 @@
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h1 class="mb-4">Kegiatan Panti Asuhan </h1>
-            <h6 class="text-primary">Kegiatan Panti Asuhan</h6>
+            <h6 class="text-primary">Berikut merupakan kegiatan yang pernah dilakukan di Panti Asuhan</h6>
         </div>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -15,7 +15,7 @@
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/1.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Batik Celup</h4>
-                        <p>Kegiatan Batik Celup di Panti Asuhan </p>
+                        <p>Kegiatan Batik Celup di Panti Asuhan yang dilakukan oleh para santriwati </p>
                     </div>
                 </div>
             </div>
@@ -24,34 +24,35 @@
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/18.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Foto Bersama</h4>
-                        <p>Foto Bersama Pengurus Panti dan Anak Panti</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/7.jpeg" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Jalan Jalan Ceria</h4>
-                        <p>Jalan Jalan Ceria Bersama</p>
+                        <p>Foto Bersama Pengurus Panti beserta santriwati</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/6.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/8.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Jalan Jalan Ceria</h4>
-                        <p>Jalan Jalan Ceria Bersama </p>
+                        <p>Kegiatan liburan yang dilakukan bersama seluruh keluarga panti </p>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item rounded overflow-hidden">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/9.jpeg" alt="">
+                    <div class="position-relative p-4 pt-0">
+                        <h4 class="mb-3">Jalan Jalan Ceria</h4>
+                        <p>Acara bersama seluruh keluarga besar panti asuhan ke tempat liburan</p>
+                    </div>
+                </div>
+            </div>
+            
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/13.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Parenting</h4>
-                        <p>Kegiatan Sosialisasi Parenting</p>
+                        <p>Kegiatan sosialisasi yang membahas tentang parenting yang diberikan sebagai bekal masa depan santriwati</p>
                     </div>
                 </div>
             </div>
@@ -60,7 +61,7 @@
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/10.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Penyembelihan Qurban</h4>
-                        <p>Merayakan Hari Raya Idul Adha</p>
+                        <p>Merayakan Hari Raya Idul Adha Panti asuhan menyembelih hewan kurban</p>
                     </div>
                 </div>
             </div>
@@ -69,7 +70,7 @@
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/6.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Penerimaan Beasiswa</h4>
-                        <p>Penerimaan Beasiswa</p>
+                        <p>Donasi berupa beasiswa pendidikan yang diberikan kepada santriwati berprestasi</p>
                     </div>
                 </div>
             </div>
@@ -77,8 +78,8 @@
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/16.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Rillah dan Pelepasan Santri</h4>
-                        <p>Riilah dan Pelepasan Santri</p>
+                        <h4 class="mb-3">Rihlah dan Pelepasan Santri</h4>
+                        <p>Rihlah dilakukan dalam rangka pelepasan santriwati dari panti asuhan, kegiatan ini dilaksanakan dilaksanakan dengan ceria di pantai</p>
                     </div>
                 </div>
             </div>
@@ -86,8 +87,8 @@
                 <div class="service-item rounded overflow-hidden">
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/17.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
-                        <h4 class="mb-3">Riilah dan Pelepasan Santri</h4>
-                        <p>Riilah dan Pelepasan Santri</p>
+                        <h4 class="mb-3">Rihlah dan Pelepasan Santri</h4>
+                        <p>Rihlah dilakukan dalam rangka pelepasan santriwati dari panti asuhan, acara ini dilaksanakan dengan ceria di pantai</p>
                     </div>
                 </div>
             </div>
