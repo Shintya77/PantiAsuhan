@@ -34,8 +34,8 @@ class BankSeeder extends Seeder
             ],
             [
                 'nama_bank'=>'Tunai',
-                'nama_rekening' => '',
-                'norekening'=> ''
+                // 'nama_rekening' => '',
+                // 'norekening'=> ''
             ],
             [
                 'nama_bank'=>'BRI',
