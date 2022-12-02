@@ -9,7 +9,8 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{url('/beranda')}}" class="nav-item nav-link active text-white">Beranda</a>
             <div class="nav-item dropdown">
-                <a href="{{url('/profil/sejarah')}}" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Profil</a>
+                <a href="{{url('/profil/sejarah')}}" class="nav-link dropdown-toggle text-white"
+                    data-bs-toggle="dropdown">Profil</a>
                 <div class="dropdown-menu bg-light m-0">
                     <a href="{{url('/profil/sejarah')}}" class="dropdown-item ">Sejarah</a>
                     <a href="{{url('/profil/visi')}}" class="dropdown-item ">Visi, Misi & Tujuan</a>
@@ -22,31 +23,29 @@
             <a href="{{url('/donasi')}}" class="nav-item nav-link text-white">Donasi</a>
 
             <a href="{{url('/produk')}}" class="nav-item nav-link text-white">Catering</a>
-                @guest
-                            @if (Route::has('login'))
-                                <a href="{{route('login')}}" class="nav-item nav-link text-white">Login</a>
-                                
-                            @endif   
-                            
-                @else
-                            <div class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-item nav-link text-white">
-                                    {{ Auth::user()->name }}
-                                </a>
+            @guest
+            @if (Route::has('login'))
+            <a href="{{route('login')}}" class="nav-item nav-link text-white">Login</a>
 
-                                <div class="dropdown-menu dropdown-menu-end overflow-hidden" style="transform: translateX(-30px)" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left"></i>
-                                        {{ __('LogOut') }}
-                                    </a>
+            @endif
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </div>
-                @endguest
+            @else
+            <div class="nav-item dropdown">
+                <a href="{{url('/profil/sejarah')}}" class="nav-link dropdown-toggle text-white"
+                    data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                                                         document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left"></i>
+                        {{ __('LogOut') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+            @endguest
         </div>
     </div>
 </nav>

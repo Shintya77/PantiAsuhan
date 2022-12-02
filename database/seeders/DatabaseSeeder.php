@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             DonaturSeeder::class,
             BinaanSeeder::class,
             BankSeeder::class,
-            
+
 
         ]);
     }
