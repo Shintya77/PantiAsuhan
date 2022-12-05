@@ -55,6 +55,7 @@ class BinaanController extends Controller
             'umur' => 'required',
             'kelas' => 'required',
             'status' => 'required',
+            'domisili' => 'required',
         ]);
 
         $binaan = new binaan;
@@ -65,6 +66,7 @@ class BinaanController extends Controller
         $binaan->umur = $request->umur;
         $binaan->kelas = $request->kelas;
         $binaan->status = $request->status;
+        $binaan->domisili = $request->domisili;
         $binaan->save();
 
         return redirect()->route('binaan.index')->with('success', 'Data Binaan Berhasil Ditambahkan');
@@ -112,6 +114,7 @@ class BinaanController extends Controller
             'umur' => 'required',
             'kelas' => 'required',
             'status' => 'required',
+            'domisili' => 'required',
         ]);
 
         $binaan = binaan::where('id_binaan',$id)->first();
@@ -122,6 +125,7 @@ class BinaanController extends Controller
         $binaan->umur = $request->get('umur');
         $binaan->kelas = $request->get('kelas');
         $binaan->status = $request->get('status');
+        $binaan->domisili = $request->get('domisili');
         $binaan->save();
         
         return redirect()->route('binaan.index')->with('success', 'Data Binaan Berhasil Diupdate');

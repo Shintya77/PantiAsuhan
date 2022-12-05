@@ -42,35 +42,36 @@
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
-
-              <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>Id </th>
-                        <th>Nama </th>
-                        <th>Jabatan</th>
-                        <th>Keterangan</th>
-                        <th>Aksi</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($paginate as $str)
-                        <tr>
-                        <td class="text-black" style="text-align: center" >{{ $str->id}}</td>
-                        <td class="text-black">{{ $str->name}}</td>
-                        <td class="text-black">{{ $str->jabatan }}</td>
-                        <td class="text-black">{{ $str->keterangan }}</td>
-                        <td>
-                          <form action="{{ route('struktur.destroy',$str->id) }}" method="POST">
-                            <a class="btn btn-warning" href="{{ route('struktur.edit',$str->id) }}"><i class="fa fa-edit"></i></a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                          </form>
-                        </td>  
-                        @endforeach  
-                    </tbody>
-              </table>
+                  <div class="table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                          <th>Id </th>
+                          <th>Nama </th>
+                          <th>Jabatan</th>
+                          <th>Keterangan</th>
+                          <th>Aksi</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($paginate as $str)
+                          <tr>
+                          <td class="text-black" style="text-align: center" >{{ $str->id}}</td>
+                          <td class="text-black">{{ $str->name}}</td>
+                          <td class="text-black">{{ $str->jabatan }}</td>
+                          <td class="text-black">{{ $str->keterangan }}</td>
+                          <td>
+                            <form action="{{ route('struktur.destroy',$str->id) }}" method="POST">
+                              <a class="btn btn-warning" href="{{ route('struktur.edit',$str->id) }}"><i class="fa fa-edit"></i></a>
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </form>
+                          </td>  
+                          @endforeach  
+                      </tbody>
+                    </table>
+                  </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">

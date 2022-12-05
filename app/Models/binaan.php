@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class binaan extends Model
 {
     use HasFactory;
+    protected $table = 'binaans';
+    protected $primaryKey = 'id_binaan';
 }

@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
               <li class="breadcrumb-item active">Kelola Data</li>
             </ol>
           </div>
@@ -29,37 +29,40 @@
             </div>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="{{ route('galeri.create') }}">Tambah Galeri</a> 
-                    <br><br>
-              <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>Id Gambar</th>
-                        <th>Gambar</th>
-                        <th>Aksi</th>
-                    </tr>
-                     
-                    </thead>
-                    <tbody>
-                    @foreach ($paginate as $glr)
-                    <tr>
-                        <td class="text-black">{{ $glr->id}}</td>
-                        <td>
-                          @if ($glr -> foto)
-                          <img src="{{('storage/'.$glr -> foto)}}" class="img-flui" alt="..." width="350px">
-                          @else
-                          <img src="{{('assets/img/kegiatan/'.$glr -> id.'.jpeg')}}" class="img-flui" alt="..." width="350px">
-                          @endif
-                        <td>
-                          <form action="{{ route('galeri.destroy',$glr->id) }}" method="POST">
-                            <a class="btn btn-warning" href="{{ route('galeri.edit',$glr->id) }}"><i class="fa fa-edit"></i></a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                        </td>  
-                  @endforeach
-                </tbody>
-              </table>
+              <a class="btn btn-primary" href="{{ route('galeri.create') }}">Tambah Galeri</a> 
+              <br><br>
+              <div class="table-responsive">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                      <th>Id Gambar</th>
+                      <th>Gambar</th>
+                      <th>Aksi</th>
+                  </tr>
+                   
+                  </thead>
+                  <tbody>
+                  @foreach ($paginate as $glr)
+                  <tr>
+                      <td class="text-black">{{ $glr->id}}</td>
+                      <td>
+                        @if ($glr -> foto)
+                        <img src="{{('storage/'.$glr -> foto)}}" class="img-flui" alt="..." width="350px">
+                        @else
+                        <img src="{{('assets/img/kegiatan/'.$glr -> id.'.jpeg')}}" class="img-flui" alt="..." width="350px">
+                        @endif
+                      <td>
+                        <form action="{{ route('galeri.destroy',$glr->id) }}" method="POST">
+                          <a class="btn btn-warning" href="{{ route('galeri.edit',$glr->id) }}"><i class="fa fa-edit"></i></a>
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                      </td>  
+                @endforeach
+              </tbody>
+            </table>
+            </div>
+              
           </div>
           <!-- /.card-body -->
           <div class="card-footer">

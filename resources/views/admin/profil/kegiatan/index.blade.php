@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
               <li class="breadcrumb-item active">Kelola Data</li>
             </ol>
           </div>
@@ -38,41 +38,42 @@
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
-
-              <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>Id Kegiatan</th>
-                        <th>Foto</th>
-                        <th>Nama Kegiatan</th>
-                        <th>Deskripsi</th>
-                        <th>Aksi</th>
-                    </tr>
-                     
-                    </thead>
-                    <tbody>
-                    @foreach ($paginate as $kg)
-                    <tr>
-                        <td class="text-black">{{ $kg->id }}</td>
-                        <td>
-                          @if ($kg -> foto)
-                          <img src="{{('storage/'.$kg -> foto)}}" class="img-flui" alt="..." width="350px">
-                          @else
-                          <img src="{{('assets/img/kegiatanDetail/'.$kg -> id.'.jpeg')}}" class="img-flui" alt="..." width="350px">
-                          @endif
-                        </td>
-                        <td class="text-black">{{ $kg->judul}}</td>
-                        <td class="text-black">{{ $kg->deskripsi }}</td>
-                        <td>
-                          <a class="btn btn-warning" href="{{ route('kegiatan.edit',$kg->id) }}"><i class="fa fa-edit"></i></a>
-                          <form action="{{ route('kegiatan.destroy',$kg->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger" ><i class="fa fa-trash"></i></button>
-                        </td>  
-                  @endforeach
-                </tbody>
-              </table>
+                  <div class="table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                          <th>Id Kegiatan</th>
+                          <th>Foto</th>
+                          <th>Nama Kegiatan</th>
+                          <th>Deskripsi</th>
+                          <th>Aksi</th>
+                      </tr>
+                       
+                      </thead>
+                      <tbody>
+                      @foreach ($paginate as $kg)
+                      <tr>
+                          <td class="text-black">{{ $kg->id }}</td>
+                          <td>
+                            @if ($kg -> foto)
+                            <img src="{{('storage/'.$kg -> foto)}}" class="img-flui" alt="..." width="350px">
+                            @else
+                            <img src="{{('assets/img/kegiatanDetail/'.$kg -> id.'.jpeg')}}" class="img-flui" alt="..." width="350px">
+                            @endif
+                          </td>
+                          <td class="text-black">{{ $kg->judul}}</td>
+                          <td class="text-black">{{ $kg->deskripsi }}</td>
+                          <td>
+                            <a class="btn btn-warning" href="{{ route('kegiatan.edit',$kg->id) }}"><i class="fa fa-edit"></i></a>
+                            <form action="{{ route('kegiatan.destroy',$kg->id) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger" ><i class="fa fa-trash"></i></button>
+                          </td>  
+                    @endforeach
+                  </tbody>
+                </table>
+                  </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
