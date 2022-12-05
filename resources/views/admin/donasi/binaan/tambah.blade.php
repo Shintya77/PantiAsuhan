@@ -67,6 +67,10 @@
                             <label for="status">Status</label>
                             <input type="text" name="status" class="form-control" id="status" aria-describedby="status" >
                         </div>
+                        <div class="form-group">
+                          <label for="domisili">Domisili</label>
+                          <input type="text" name="domisili" class="form-control" id="domisili" aria-describedby="domisili" >
+                        </div>
                         <a class="btn btn-secondary " href="{{ route('binaan.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-warning">Submit</button>
                     </form>

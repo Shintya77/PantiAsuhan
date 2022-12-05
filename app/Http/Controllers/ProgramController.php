@@ -44,7 +44,6 @@ class ProgramController extends Controller
     {
         //melakukan validasi data
         $testing = program::where('nama_program', $request -> nama_program)->first();
-        dd($testing);
         $request->validate([
             'nama_program' => 'required',
             'dns_butuh' => 'required',

@@ -68,6 +68,10 @@
                             <label for="status">Status</label>
                             <input type="text" name="status" class="form-control" required="required" value="{{ $binaan->status }}" >
                         </div>
+                        <div class="form-group">
+                          <label for="domisili">Domisili</label>
+                          <input type="text" name="domisili" class="form-control" required="required" value="{{ $binaan->domisili }}" >
+                        </div>
                         <a class="btn btn-secondary " href="{{ route('binaan.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

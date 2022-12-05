@@ -11,8 +11,8 @@
                           <h4 class="text-center text-primary">Daftar Binaan Panti Asuhan Putri Aisyiyah Malang</h4>
                       </div>
                       <div>
-                        {{-- <a class="btn btn-info" href="{{url('struktur/create')}}">Tambah</a> --}}
-                        <table id="example1" class="table table-bordered table-striped">
+                        <div class="table-responsive">
+                          <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
                                 <th style="text-align:center">No </th>
@@ -44,7 +44,9 @@
                               @endforeach
                             </tbody> 
                             
-                          </table>
+                        </table>
+                        </div>
+                      
 
                           <div class="paginate">
                             <div class="container">

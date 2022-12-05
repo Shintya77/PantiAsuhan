@@ -42,43 +42,46 @@
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
-
-              <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                    <th>Id Binaan </th>
-                        <th>Nama Binaan</th>
-                        <th>TTL</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Pendidikan</th>
-                        <th>Umur</th>
-                        <th>Kelas</th>
-                        <th>Status</th>
-                        <th>Aksi</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                      @foreach ($paginate as $bina)
+                  <div class="table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
                       <tr>
-                      <td class="text-black">{{ $bina->id_binaan}}</td>
-                      <td class="text-black">{{ $bina->nama_binaan}}</td>
-                      <td class="text-black">{{ $bina->ttl}}</td>
-                      <td class="text-black">{{ $bina->jekel }}</td>
-                      <td class="text-black">{{ $bina->pendidikan }}</td>
-                      <td class="text-black">{{ $bina->umur }}</td>
-                      <td class="text-black">{{ $bina->kelas }}</td>
-                      <td class="text-black">{{ $bina->status }}</td>
-                      <td>
-                      <form action="{{ route('binaan.destroy',$bina->id_binaan) }}" method="POST">
-                            <a class="btn btn-warning" href="{{ route('binaan.edit',$bina->id_binaan) }}"><i class="fa fa-edit"></i></a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                          </form> 
-                      </td>
-                      @endforeach  
-                    </tbody>
-              </table>
+                      <th>Id Binaan </th>
+                          <th>Nama Binaan</th>
+                          <th>TTL</th>
+                          <th>Jenis Kelamin</th>
+                          <th>Pendidikan</th>
+                          <th>Umur</th>
+                          <th>Kelas</th>
+                          <th>Status</th>
+                          <th>Domisili</th>
+                          <th>Aksi</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($paginate as $bina)
+                        <tr>
+                        <td class="text-black">{{ $bina->id_binaan}}</td>
+                        <td class="text-black">{{ $bina->nama_binaan}}</td>
+                        <td class="text-black">{{ $bina->ttl}}</td>
+                        <td class="text-black">{{ $bina->jekel }}</td>
+                        <td class="text-black">{{ $bina->pendidikan }}</td>
+                        <td class="text-black">{{ $bina->umur }}</td>
+                        <td class="text-black">{{ $bina->kelas }}</td>
+                        <td class="text-black">{{ $bina->status }}</td>
+                        <td class="text-black">{{ $bina->domisili }}</td>
+                        <td>
+                        <form action="{{ route('binaan.destroy',$bina->id_binaan) }}" method="POST">
+                              <a class="btn btn-warning" href="{{ route('binaan.edit',$bina->id_binaan) }}"><i class="fa fa-edit"></i></a>
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </form> 
+                        </td>
+                        @endforeach  
+                      </tbody>
+                    </table>
+                  </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">

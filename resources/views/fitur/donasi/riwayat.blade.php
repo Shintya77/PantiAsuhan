@@ -11,8 +11,8 @@
                           <h4 class="text-center text-primary">RIWAYAT DONASI</h4>
                       </div>
                       <div>
-                        {{-- <a class="btn btn-info" href="{{url('struktur/create')}}">Tambah</a> --}}
-                        <table id="example1" class="table table-bordered table-striped">
+                        <div class="table-responsive">
+                          <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
                                 <th>Nomor</th>
@@ -36,7 +36,8 @@
                               </td>  
                               @endforeach
                             </tbody>
-                          </table>
+                        </table>
+                        </div>
                           {{-- <div class="paginate">
                             <div class="container">
                               <div class="row">
