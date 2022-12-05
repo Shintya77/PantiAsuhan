@@ -25,7 +25,7 @@ class BankCateringController extends Controller
             'title' => 'Checkout',
             'pesan' => $pesan,
             'details' => $pesanDetail,
-            'bank' => Bank::where('id_bank',4)->get(),
+            'bank' => Bank::where('id_bank',5)->get(),
         ]);
     }
 

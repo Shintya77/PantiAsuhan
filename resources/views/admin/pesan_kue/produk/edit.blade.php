@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Kelola Data Harga Kue</h1>
+            <h1>Kelola Data Produk</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -41,7 +41,7 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="nama">Nama Kue</label>
+                            <label for="nama">Nama Produk</label>
                             <input type="text" name="nama" class="form-control" required="required" value="{{ $kue->nama }}" >
                         </div>
                         <div class="form-group">

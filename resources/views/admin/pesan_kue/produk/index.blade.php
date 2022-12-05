@@ -26,7 +26,7 @@
             <h3 class="card-title">{{ $title }}</h3>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="{{ route('kue.create')}}">Tambah Produk Kue</a> 
+                  <a class="btn btn-primary" href="{{ route('kue.create')}}">Tambah Produk</a> 
                     <br><br>
 
                     {{-- @if ($message = Session::get('success'))
@@ -37,7 +37,7 @@
 
                   <form class="form" method="get" action="{{ route('kue.cari') }}">
                       <div class="form-group w-100 mb-3">
-                          <label for="search" class="d-block mr-2">Pencarian Data Kue</label>
+                          <label for="search" class="d-block mr-2">Pencarian Data Produk</label>
                           <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Kue">
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
