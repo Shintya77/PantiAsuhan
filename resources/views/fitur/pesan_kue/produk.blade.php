@@ -1,5 +1,5 @@
 @extends('layouts.user.master')
- 
+
 @section('content')
 
 
@@ -17,7 +17,7 @@
                         <div class="col">
                             <div style="float: right">
 
-                                <a href="/riwayat" class="nav-item nav-link"><i class="fas fa-file-alt" 
+                                <a href="/riwayat" class="nav-item nav-link"><i class="fas fa-file-alt"
                                     style="font-size : 1.8em"></i>
                                     Riwayat
                                 </a>
@@ -25,9 +25,9 @@
                         </div>
                     </div>
 
-                    
 
-                    
+
+
 
 
 
@@ -47,7 +47,7 @@
                     </form>
 
                     <!-- List Produk -->
-                    
+
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Kue</button>
@@ -64,20 +64,25 @@
                             <div class="row">
                             @forelse ($data as $d)
                             @if ($d->tipeproduk_id == 1)
-                            
+
                                 <div class="col-lg-4" data-aos="fade-up">
                                     <div class="box">
                                         <span>{{$d->nama}}</span>
+                                        @if (File::exists(public_path('storage/'.$d->gambar)))
                                         <img src="{{asset('storage/'.$d->gambar)}}" width="300" height="250"><br><br>
+                                        @elseif($d->gambar)
+                                        <img src="{{asset($d->gambar)}}" width="300" height="250"><br><br>
+                                        @endif
+
                                         <h5>Harga: Rp. {{$d->harga}}</h5>
                                         <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
                                     </div>
                                 </div>
-                           
+
                             @endif
                             @empty
                             <h3>Tidak ada Data</h3>
-                            
+
                             @endforelse
                         </div>
                         </div>
@@ -85,7 +90,7 @@
                             <div class="row">
                                 @forelse ($data as $d)
                                 @if ($d->tipeproduk_id == 2)
-                                
+
                                     <div class="col-lg-4" data-aos="fade-up">
                                         <div class="box">
                                             <span>{{$d->nama}}</span>
@@ -94,11 +99,11 @@
                                             <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
                                         </div>
                                     </div>
-                               
+
                                 @endif
                                 @empty
                                 <h3>Tidak ada Data</h3>
-                                
+
                                 @endforelse
                             </div>
                         </div>
@@ -114,16 +119,16 @@
                                             <a class="btn btn-primary btn-sm" href="{{ route('produk.show',$d->id) }}">Detail</a>
                                         </div>
                                     </div>
-                               
+
                                 @endif
                                 @empty
                                 <h3>Tidak ada Data</h3>
-                                
+
                                 @endforelse
                             </div>
                         </div>
                       </div>
-                    
+
                 </div>
             </section>
         </div>
