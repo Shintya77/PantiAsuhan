@@ -90,6 +90,5 @@
 
     
 
-  </main><!-- End #main -->
-
+  </main>
 @endsection
