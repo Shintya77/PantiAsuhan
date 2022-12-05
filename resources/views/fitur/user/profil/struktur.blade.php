@@ -9,36 +9,38 @@
             <h6 class="text-black">Pengurus yang berada dalam susunan kepengurusan Panti Asuhan Putri ‘Aisyiyah memiliki tugas sebagai berikut</h6>
         </div>
         <div>
-            {{-- <a class="btn btn-info" href="{{url('struktur/create')}}">Tambah</a> --}}
-            <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th style="text-align: center">Nama</th>
-                    <th style="text-align: center">Jabatan</th>
-                    <th style="text-align: center">Keterangan</th>
-                    {{-- <th colspan="2">Edit</th> --}}
-
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($data as $str)
-                  <tr>
-                  <td class="text-black" style="text-align: center">{{ $str->name}}</td>
-                  <td class="text-black" style="text-align: center">{{ $str->jabatan }}</td>
-                  <td class="text-black" style="text-align: center">{{ $str->keterangan }}</td>
-                  {{-- <td><a class="btn btn-info" href="{{url('struktur/'.$str->id.'/edit')}}">Edit</td> --}}
-                  {{-- <td>
-                    <form action="{{url('struktur/'.$str->id)}}" method="POST">
-                        @csrf
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-danger" type="submit">DELETE</button>
-
-                    </form>
-                  </td>   --}}
-                  @endforeach
-                </tbody>
-              </table>
+            <div class="table-responsive">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th style="text-align: center">Nama</th>
+                        <th style="text-align: center">Jabatan</th>
+                        <th style="text-align: center">Keterangan</th>
+                        {{-- <th colspan="2">Edit</th> --}}
+    
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($data as $str)
+                      <tr>
+                      <td class="text-black" style="text-align: center">{{ $str->name}}</td>
+                      <td class="text-black" style="text-align: center">{{ $str->jabatan }}</td>
+                      <td class="text-black" style="text-align: center">{{ $str->keterangan }}</td>
+                      {{-- <td><a class="btn btn-info" href="{{url('struktur/'.$str->id.'/edit')}}">Edit</td> --}}
+                      {{-- <td>
+                        <form action="{{url('struktur/'.$str->id)}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger" type="submit">DELETE</button>
+    
+                        </form>
+                      </td>   --}}
+                      @endforeach
+                    </tbody>
+                </table>
+            </div>
+           
         </div>
         
 

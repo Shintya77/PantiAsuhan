@@ -42,41 +42,41 @@
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
-
-              <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>Id </th>
-                        <th>Nama </th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Alamat</th>
-                        <th>No HP</th>
-                        <th>Role</th>
-                        <th>Aksi</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($paginate as $pgn)
-                        <tr>
-                        <td class="text-black" style="text-align: center" >{{ $pgn->id}}</td>
-                        <td class="text-black">{{ $pgn->name}}</td>
-                        <td class="text-black">{{ $pgn->email }}</td>
-                        <td class="text-black">{{ $pgn->password}}</td>
-                        <td class="text-black">{{ $pgn->alamat}}</td>
-                        <td class="text-black">{{ $pgn->nohp}}</td>
-                        <td class="text-black">{{ $pgn->role}}</td>
-                        <td>
-                          <form action="{{ route('pengguna.destroy',$pgn->id) }}" method="POST">
-                            <a class="btn btn-warning" href="{{ route('pengguna.edit',$pgn->id) }}"><i class="fa fa-edit"></i></a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                          </form>
-                        </td>  
-                        @endforeach  
-                    </tbody>
-              </table>
+                  <div class="table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                          <th>Id </th>
+                          <th>Nama </th>
+                          <th>Email</th>
+                          <th>Alamat</th>
+                          <th>No HP</th>
+                          <th>Role</th>
+                          <th>Aksi</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($paginate as $pgn)
+                          <tr>
+                          <td class="text-black" style="text-align: center" >{{ $pgn->id}}</td>
+                          <td class="text-black">{{ $pgn->name}}</td>
+                          <td class="text-black">{{ $pgn->email }}</td>
+                          <td class="text-black">{{ $pgn->alamat}}</td>
+                          <td class="text-black">{{ $pgn->nohp}}</td>
+                          <td class="text-black">{{ $pgn->role}}</td>
+                          <td>
+                            <form action="{{ route('pengguna.destroy',$pgn->id) }}" method="POST">
+                              <a class="btn btn-warning" href="{{ route('pengguna.edit',$pgn->id) }}"><i class="fa fa-edit"></i></a>
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </form>
+                          </td>  
+                          @endforeach  
+                      </tbody>
+                </table>
+                  </div>
+              
           </div>
           <!-- /.card-body -->
           <div class="card-footer">

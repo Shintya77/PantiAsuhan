@@ -28,39 +28,33 @@
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('tipe.create')}}">Tambah Tipe Produk</a> 
                     <br><br>
-
-                    {{-- @if ($message = Session::get('success'))
-                      <div class="alert alert-success">
-                        <p>{{ $message }}</p>
-                      </div>
-                    @endif  --}}
-
-
-              <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>Nomor</th>
-                        <th>Tipe Produk</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($paginate as $tipe)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $tipe->nama }}</td>
-                                <td>
-                                  <form action="{{ route('tipe.destroy',$tipe->id) }}" method="POST">
-                                    <a class="btn btn-warning" href="{{ route('tipe.edit',$tipe->id) }}"><i class="fa fa-edit"></i></a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                  </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-              </table>
+                    <div class="table-responsive">
+                      <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Nomor</th>
+                            <th>Tipe Produk</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($paginate as $tipe)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $tipe->nama }}</td>
+                                    <td>
+                                      <form action="{{ route('tipe.destroy',$tipe->id) }}" method="POST">
+                                        <a class="btn btn-warning" href="{{ route('tipe.edit',$tipe->id) }}"><i class="fa fa-edit"></i></a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                      </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                  </table>
+                    </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">

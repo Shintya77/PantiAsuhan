@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/18.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/fotobersama.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Foto Bersama</h4>
                         <p>Foto Bersama Pengurus Panti beserta santriwati</p>
@@ -49,7 +49,7 @@
             
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/13.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/parenting.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Parenting</h4>
                         <p>Kegiatan sosialisasi yang membahas tentang parenting yang diberikan sebagai bekal masa depan santriwati</p>
@@ -76,7 +76,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/16.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/riilah.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Rihlah dan Pelepasan Santri</h4>
                         <p>Rihlah dilakukan dalam rangka pelepasan santriwati dari panti asuhan, kegiatan ini dilaksanakan dilaksanakan dengan ceria di pantai</p>
@@ -85,7 +85,7 @@
             </div>
             <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/17.jpeg" alt="">
+                    <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/riilah1.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Rihlah dan Pelepasan Santri</h4>
                         <p>Rihlah dilakukan dalam rangka pelepasan santriwati dari panti asuhan, acara ini dilaksanakan dengan ceria di pantai</p>
