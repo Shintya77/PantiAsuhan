@@ -123,10 +123,12 @@ class CheckOutController extends Controller
     }
 
     public function riwayat(){
-        $riwayat = PesanDetail::all();
-        return view('fitur.pesan_kue.riwayat', [
-            'riwayat'=>$riwayat
-        ]);
+        $rwt = PesanDetail::all()->whereNotNull('bukti_pembayaran');
+        if($rwt){
+            return view('fitur.pesan_kue.riwayat', [
+                'riwayat'=>$rwt
+            ]);
+        }
 
     }
 
