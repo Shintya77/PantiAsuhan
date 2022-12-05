@@ -49,7 +49,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <h4 class="title"><a href="">Pendidikan kerohanian</a></h4>
-              <p class="description">Anak asuh Panti Asuhan Putri Aisyiyah mendapatkan pendidikan formal  sebagaimana pada umumnya yang dilaksanakan di sekolah masing2 berdasarkan kemampuan mereka. Sementara pendidikan non formal difasilitasi Panti yang meliputi kegiatan kerohanian seperti pendidikan baca tulis Al Quran, Tafsir, Qiroah dan pengajian rutin  serta peningkatan keterampilan secara terjadwal</p>
+              <p class="description">Anak asuh Panti Asuhan Putri Aisyiyah mendapatkan pendidikan formal  sebagaimana pada umumnya yang dilaksanakan di sekolah masing - masing berdasarkan kemampuan mereka. Sementara pendidikan non formal difasilitasi Panti yang meliputi kegiatan kerohanian seperti pendidikan baca tulis Al Quran, Tafsir, Qiroah dan pengajian rutin  serta peningkatan keterampilan secara terjadwal</p>
             </div>
           </div>
 
