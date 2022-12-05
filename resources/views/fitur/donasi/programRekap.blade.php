@@ -12,6 +12,7 @@
                 <button type="submit" class="btn btn-success mb-1"><i class="bi bi-search"></i></button>
             </div>
         </form>
+        <div class="table-responsive">
           <table class="table table-Info table-striped">
             <thead>
               <tr>
@@ -34,6 +35,7 @@
                 @endforeach
             </tbody>
           </table>
+        </div> 
           <div class="paginate">
             <div class="container">
               <div class="row">
