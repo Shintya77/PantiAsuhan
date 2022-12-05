@@ -26,67 +26,69 @@
                             @else 
                                  <p align="right">Tanggal Pesan :</p>
                             @endif
-                            
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Gambar</th>
-                                        <th>Nama Produk</th>
-                                        <th>Jumlah Produk</th>
-                                        <th>Harga/Produk</th>
-                                        <th>Total Harga</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($data as $item)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>
-                                            <img src="{{ asset('storage/'. $item->produk->gambar) }}" width="100" height="100"/>
-                                        </td>
-                                        <td>{{ $item->produk->nama }}</td>
-                                        <td>{{ $item->jumlah }}</td>
-                                        <td>Rp. {{ $item->produk->harga }} </td>
-                                        <td>Rp. {{ $item->total }}</td>
-                                        <td>
-                                            <form action="/keranjang/{{$item->id}}" method="POST">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Gambar</th>
+                                            <th>Nama Produk</th>
+                                            <th>Jumlah Produk</th>
+                                            <th>Harga/Produk</th>
+                                            <th>Total Harga</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($data as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                <img src="{{ asset('storage/'. $item->produk->gambar) }}" width="100" height="100"/>
+                                            </td>
+                                            <td>{{ $item->produk->nama }}</td>
+                                            <td>{{ $item->jumlah }}</td>
+                                            <td>Rp. {{ $item->produk->harga }} </td>
+                                            <td>Rp. {{ $item->total }}</td>
+                                            <td>
+                                                <form action="/keranjang/{{$item->id}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus data ?');"><i class="fa fa-trash"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+    
+                                        
+                                        <tr>
+                                            <td colspan="5" align="right"><strong>Total Bayar :</strong></td>
+                                            <form action="/bayar" method="POST" enctype="multipart/form-data">
                                                 @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus data ?');"><i class="fa fa-trash"></i></button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-
-                                    
-                                    <tr>
-                                        <td colspan="5" align="right"><strong>Total Bayar :</strong></td>
-                                        <form action="/bayar" method="POST" enctype="multipart/form-data">
-                                            @csrf
-                                        <td><strong>Rp. {{ $total }}</strong></td>
-                                        <input type="hidden" name="total_bayar" value="{{$total}}" />
-                                        <td>
+                                            <td><strong>Rp. {{ $total }}</strong></td>
+                                            <input type="hidden" name="total_bayar" value="{{$total}}" />
+                                            <td>
+                                                    
+                                @if (!empty($date -> pesan_id))
+                                         <input type="hidden" name="pesan_id" value="{{$date -> pesan_id}}">
+                                @else 
+                                         <input type="hidden" name="pesan_id" value="">
+                                @endif
+                                
+    
+                                               
+                                                    <button type="submit" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
+                                                        <i class="fa fa-shopping-cart"></i> Check Out
+                                                    </button>
+                                                    
                                                 
-                            @if (!empty($date -> pesan_id))
-                                     <input type="hidden" name="pesan_id" value="{{$date -> pesan_id}}">
-                            @else 
-                                     <input type="hidden" name="pesan_id" value="">
-                            @endif
-                            
-
-                                           
-                                                <button type="submit" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
-                                                    <i class="fa fa-shopping-cart"></i> Check Out
-                                                </button>
-                                                
-                                            
-                                        </td>
-                                    </form>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            </td>
+                                        </form>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                           
                             <B>NB:</B>
                             <p>- Total Harga sudah termasuk biaya kemasan</p>
                             <p>- Box kue isi 3 : Rp. 1300</p>

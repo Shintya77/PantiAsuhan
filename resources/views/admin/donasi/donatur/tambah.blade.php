@@ -84,7 +84,6 @@
                             <label for="keterangan">Keterangan</label>
                             <input type="text" name="keterangan" class="form-control" id="keterangan" aria-describedby="keterangan" >
                         </div>
-                        {{-- //TODO Preview image tidak muncul--}}
                         <div class="form-group">
                           <label for="bukti_tf">Bukti Transfer</label>
                           <img src="" class="img-preview img-fluid mb-3 " alt="">

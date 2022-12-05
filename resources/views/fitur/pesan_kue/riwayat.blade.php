@@ -11,7 +11,8 @@
                           <h4 class="text-center text-primary">RIWAYAT PESANAN</h4>
                       </div>
                       <div>
-                        <table id="example1" class="table table-bordered table-striped">
+                        <div class="table-responsive">
+                          <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
                                 <th>Nomor</th>
@@ -43,7 +44,9 @@
                                 <h3>Tidak Ada Riwayat</h3>
                               @endif
                             </tbody>
-                          </table>
+                        </table>
+                        </div>
+                        
                           {{-- <div class="paginate">
                             <div class="container">
                               <div class="row">
