@@ -8,11 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class BankController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $bank = Bank::all();
@@ -23,11 +19,6 @@ class BankController extends Controller
         );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $title ="Tambah Data Bank";
@@ -35,17 +26,8 @@ class BankController extends Controller
         return view('admin.donasi.bank.tambah', compact('title', 'bank'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-
-        // dd($request->all());
-        //melakukan validasi data
         $request->validate([
             'nama_bank' => 'required',
             'nama_rekening' => 'required',
@@ -69,23 +51,6 @@ class BankController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id_bank)
     {
         $title = 'Edit Data Bank';
@@ -93,17 +58,8 @@ class BankController extends Controller
         return view('admin.donasi.bank.edit', compact('title', 'bank'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        // dd($request -> all());
-        ///melakukan validasi data
         $request->validate([
             'nama_bank' => 'required',
             'nama_rekening' => 'required',
@@ -128,24 +84,20 @@ class BankController extends Controller
             ->with('success', 'Data Bank Berhasil Diupdate');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Bank::where('id_bank',$id)->delete();
         return redirect()->route('bank.index')->with('success', 'Data Bank Berhasil Dihapus');
  
     }
+    
     public function cari(Request $request)
     {
         $keyword = $request->cari;
         $paginate = Bank::where('nama_bank', 'like', '%' . $keyword . '%')->paginate(3);
         $paginate->appends(['keyword' => $keyword]);
         $title = 'Pencarian Data Bank';
-        return view('admin.donasi.bank.indexBank', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('admin.donasi.bank.indexBank', compact('paginate','title'))->with('i', 
+        (request()->input('page', 1) - 1) * 5);
     }
 }

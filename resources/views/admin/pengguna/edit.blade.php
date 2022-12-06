@@ -83,11 +83,6 @@
             </div>
           </div>
         </div>
-        <!-- /.card-footer-->
       </div>
-        
-      <!-- /.card -->
     </section>
-    <!-- /.content -->
- 
 @endsection

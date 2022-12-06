@@ -181,18 +181,10 @@
     const form = () => {
     document.querySelector('#show').classList.add('d-none');
     document.querySelector('#hide').classList.remove('d-none');
-    // document.querySelector('#edit').classList.add('d-none');
-    // document.querySelector('#back').classList.remove('d-none');
-    // document.querySelector('#update').classList.remove('d-none');
-    // document.querySelector('#username').classList.add('d-none');
 }
 const upload = () => {
     document.querySelector('#show').classList.remove('d-none');
     document.querySelector('#hide').classList.add('d-none');
-    // document.querySelector('#edit').classList.remove('d-none');
-    // document.querySelector('#back').classList.add('d-none');
-    // document.querySelector('#update').classList.add('d-none');
-    // document.querySelector('#username').classList.remove('d-none');
 }
 </script>
 

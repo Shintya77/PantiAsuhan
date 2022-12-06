@@ -61,7 +61,6 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Role </label>
-                            <!-- <input type="text" name="role" class="form-control" id="role" aria-describedby="role" > -->
                             <div class="col-md-6">
                               <select name="role" id="role" class="form-control">
                                 <option value="donatur">Donatur</option>

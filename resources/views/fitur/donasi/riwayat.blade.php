@@ -59,5 +59,4 @@
         </div>
       </section><!-- End Icon Boxes Section -->
  </div>
- 
 @endsection

@@ -52,9 +52,6 @@ class DnsNoLoginController extends Controller
 
         $donaturUpdate = donatur::where('bukti_tf', $data['bukti_tf'])->first();
         
-        // $donaturUpdate -> name = 'Hamba Allah - '.$donaturUpdate -> id_donatur;
-        // $donaturUpdate -> update();
-
        if($request -> hide == 'on'){
         donatur::where('bukti_tf', $data['bukti_tf'])
         ->update([

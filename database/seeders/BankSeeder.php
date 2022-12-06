@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class BankSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('banks')->insert(array(
@@ -24,13 +19,11 @@ class BankSeeder extends Seeder
                 'nama_bank' => 'BRI',
                 'nama_rekening' => 'Panti Asuhan Putri Aisyiyah',
                 'norekening' => '3127-01-001515-53-6'
-
             ],
             [
                 'nama_bank' => 'BTN',
                 'nama_rekening' => 'Panti Asuhan Putri Aisyiyah',
                 'norekening' => '0012-01-50-063175-6'
-
             ],
             [
                 'nama_bank' => 'BRI',

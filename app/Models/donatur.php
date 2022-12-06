@@ -40,5 +40,4 @@ class donatur extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }

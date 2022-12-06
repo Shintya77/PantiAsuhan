@@ -20,8 +20,6 @@ class DonasiContrroler extends Controller
         $data = program::where('id_program', 1) -> first();
         $paginate = program::orderBy('id_program', 'asc')->paginate(5);
 
-        // dd($data -> dns_butuh);
-
         return view('fitur.donasi.donasi', compact('data','paginate'));      
     }
     
@@ -74,9 +72,6 @@ class DonasiContrroler extends Controller
 
         $donaturUpdate = donatur::where('bukti_tf', $data['bukti_tf'])->first();
 
-        // $donaturUpdate -> name = 'Hamba Allah - '.$donaturUpdate -> id_donatur;
-        // $donaturUpdate -> update();
-
         if ($request->hide == 'on') {
             donatur::where('bukti_tf', $data['bukti_tf'])
                 ->update([
@@ -117,11 +112,9 @@ class DonasiContrroler extends Controller
     {
         $keyword = $request->cari;
         $donatur = donatur::where('name', 'like', '%' . $keyword . '%')->where('id_program', $program->id_program) -> paginate(5);
-        // $donatur = donatur::where('name', 'like', '%' . $keyword . '%')->where('id_program', $program->id_program)-> paginate(5);
         $donatur->appends(['keyword' => $keyword]);
         return view('fitur.donasi.programRekap', [
             'program'=>$program ?? null, 'donatur'=>$donatur ?? null, 
         ]);
     }
-   
 }
