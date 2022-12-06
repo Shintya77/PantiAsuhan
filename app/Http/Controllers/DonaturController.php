@@ -174,7 +174,4 @@ class DonaturController extends Controller
         $pdf = PDF::loadview('admin.donasi.donatur.rekap.index', ['donatur'=>$donatur])->setPaper('a4', 'landscape');
         return $pdf->stream();
     }
-
-
-
 }

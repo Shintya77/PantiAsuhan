@@ -29,8 +29,6 @@
                   <a class="btn btn-primary" href="{{ route('donatur.create') }}">Tambah Data Donatur</a> 
                   <a class="btn btn-danger"  href="{{ route('donatur.cetak', $program->id_program) }}"><i class="bi bi-printer"></i> Cetak Laporan Donasi</a> 
                     <br><br>
-
-                    {{-- //TODO CARI MASIH SEMUA BELUM PER PROGRAM  --}}
                   <form class="form" method="get" action="{{route('donatur.cari', $program->id_program)}}">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Donatur</label>
@@ -73,11 +71,6 @@
                           <a class="btn btn-info" href="{{ route('donatur.show',$donasi->id_donatur) }}"><i class="fa fa-eye"></i></a>
                         </td>
                         <td>
-                          {{-- <form action="{{ route('donatur.update',$donasi->id_donatur) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" class="btn btn-success"><i class="fa fa-check"></i></button>
-                          </form> --}}
   
                         <form action="{{ route('donatur.destroy',$donasi->id_donatur) }}" method="POST">
   

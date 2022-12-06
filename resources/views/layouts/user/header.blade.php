@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary navbar-light sticky-top p-0">
     <a href="{{url('/beranda')}}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-        <h6 class="m-3s text-white">PANTI ASUHAN PUTRI ‘AISYIYAH</h6>
+        <h6 class="m-3s text-white">PA PUTRI ‘AISYIYAH</h6>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>

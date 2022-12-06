@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
               <li class="breadcrumb-item active">Data Pesanan</li>
             </ol>
           </div>
@@ -33,39 +33,40 @@
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
-
-              <table id="example2" class="table table-bordered table-hover">
-              <thead>
-                  <tr>
-                      <th>No</th>
-                      <th>Tanggal</th>
-                      <th>Gambar</th>
-                      <th>Nama Produk</th>
-                      <th>Jumlah</th>
-                      <th>Harga/Produk</th>
-                      <th>Total Bayar</th>
-                      <th>Aksi</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  @foreach ($data as $item)
-                  <tr>
-                  <td align="center">{{ $loop->iteration }}</td>
-                  <td align="center">{{ $item->created_at->format('Y-m-d') }}</td>
-                  <td align="center">
-                  <img src="{{ asset('storage/'. $item->produk->gambar) }}" width="100" height="150"/>
-                  </td>
-                  <td align="center">{{ $item->produk->nama }}</td>
-                  <td class="text-black">{{ $item->jumlah }}</td>
-                  <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
-                  <td class="text-black">{{ $item->total }}</td>
-                  <td>
-                    <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
-                  </td>
-                  </tr>
-                  @endforeach
-              </tbody>
-              </table>
+                  <div class="table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                          <tr>
+                              <th>No</th>
+                              <th>Tanggal</th>
+                              <th>Gambar</th>
+                              <th>Nama Produk</th>
+                              <th>Jumlah</th>
+                              <th>Harga/Produk</th>
+                              <th>Total Bayar</th>
+                              <th>Aksi</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($data as $item)
+                          <tr>
+                          <td align="center">{{ $loop->iteration }}</td>
+                          <td align="center">{{ $item->created_at->format('Y-m-d') }}</td>
+                          <td align="center">
+                          <img src="{{ asset('storage/'. $item->produk->gambar) }}" width="100" height="150"/>
+                          </td>
+                          <td align="center">{{ $item->produk->nama }}</td>
+                          <td class="text-black">{{ $item->jumlah }}</td>
+                          <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
+                          <td class="text-black">{{ $item->total }}</td>
+                          <td>
+                            <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
+                          </td>
+                          </tr>
+                          @endforeach
+                      </tbody>
+                      </table>
+                  </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">

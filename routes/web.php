@@ -21,7 +21,7 @@ use App\Http\Controllers\DonaturController;
 use App\Http\Controllers\DnsNoLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BankCateringController;
-use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CheckOutController;
 use App\Http\Controllers\RekapPesanController;
 use App\Http\Controllers\TipeProdukController;
 use App\Http\Controllers\PenggunaController;

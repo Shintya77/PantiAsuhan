@@ -9,24 +9,6 @@
             <h6 class="text-black">Kumpulan kegiatan yang dilakukan di Panti Asuhan Putri Aisyiyah Malang, meliputi </h6>
         </div>
         <div>
-            {{-- <a class="btn btn-info mb-3" href="{{url('kegiatan/create')}}">Tambah</a> --}}
-            {{-- <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <td>foto</td>
-                    <td>judul</td>
-                    <td>deskripsi</td>
-                  </tr>
-                </thead>
-                 <tbody>
-                  @foreach ($data as $str)
-                  <tr>
-                    <td><img src="{{('storage/'.$str -> foto)}}" alt="" width="250px"></td>
-                  <td class="text-black">{{ $str->judul }}</td>
-                  <td class="text-black">{{ $str->deskripsi }}</td> 
-                  @endforeach
-                </tbody> 
-              </table> --}}
               <div class="row">
                 @foreach ($data as $str)
                 <div class="col-lg-4 col-sm-4">

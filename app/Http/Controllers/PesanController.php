@@ -26,17 +26,24 @@ class PesanController extends Controller
     {
         //
         $pesan = Pesan::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
-        $data = PesanDetail::where('pesan_id', $pesan->id)->orderBy('id', 'desc')->get();
-        $iniTanggal = PesanDetail::where('pesan_id', $pesan->id)->first();
+        
+        
+        if(!empty($pesan)){
+            $data = PesanDetail::where('pesan_id', $pesan->id)->orderBy('id', 'desc')->get();
+            $iniTanggal = PesanDetail::where('pesan_id', $pesan->id)->first();
+            return view('fitur.pesan_kue.pesan', [
+                'active'=>'active', 
+                'title'=>'Keranjang',
+                'data' => $data,
+                'pesan' => $pesan,
+                'total' => PesanDetail::where('pesan_id', $pesan->id)->get()->sum('total'),
+                'date' => $iniTanggal
+            ]);
+        }else {
+            Alert::warning('Maaf Keranjang anda kosong','Silahkan masukkan produk ke keranjang terlebih dahulu');
+            return redirect('/produk');
+        }
 
-        return view('fitur.pesan_kue.pesan', [
-            'active'=>'active', 
-            'title'=>'Keranjang',
-            'data' => $data,
-            'pesan' => $pesan,
-            'total' => PesanDetail::where('pesan_id', $pesan->id)->get()->sum('total'),
-            'date' => $iniTanggal
-        ]);
     }
 
     /**

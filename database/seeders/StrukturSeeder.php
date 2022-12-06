@@ -15,12 +15,6 @@ class StrukturSeeder extends Seeder
      */
     public function run()
     {
-    //    DB::table('strukturs')->insert([
-    //        [
-    //            'name' => 'Aning Rochani',
-    //            'jabatan' => 'Kepala Panti'
-    //        ]
-    //    ]);
         DB::table('strukturs')->insert([
             [
             'name' => 'Aning Rochani',
