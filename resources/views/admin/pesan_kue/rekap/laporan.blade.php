@@ -55,8 +55,8 @@
                                 <th>No</th>
                                 <th>Tanggal</th>
                                 <th>Nama Produk</th>
-                                <th>Jumlah Kue</th>
-                                <th>Harga/Kue</th>
+                                <th>Jumlah Produk</th>
+                                <th>Harga/Produk</th>
                                 <th>Total Bayar</th>
                                 </tr>
                             </thead>
