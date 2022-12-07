@@ -47,7 +47,7 @@ class CheckOutController extends Controller
         
         $pesan = Pesan::where('user_id', Auth::user()->id)->orderBy('id','desc')->first();
         $PesanDetail = PesanDetail::where('pesan_id', $pesan->id)->first();
-        $produk = Produk::where('id', $PesanDetail->produk_id)->first();
+       
 
         $validatedData = $request->validate([
             
@@ -66,12 +66,12 @@ class CheckOutController extends Controller
             'bukti_pembayaran' => $validateData['bukti_pembayaran'],
         ]);
 
-        Riwayat::where('pesan_id', $pesan->id)->update([
-            
-            'bukti_pembayaran' => $validateData['bukti_pembayaran'],
-        ]);
+       
         
         Pesan::where('id', $pesan->id)->update($pesans);
+        Pesan::where('id', $pesan->id)->update([
+            'status' => 'success'
+        ]);
         Alert::success('Berhasil', 'Pembayaran Berhasil');
         return redirect('/riwayat');
        

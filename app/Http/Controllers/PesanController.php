@@ -25,7 +25,7 @@ class PesanController extends Controller
     public function index(StorePesanRequest $request)
     {
         //
-        $pesan = Pesan::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->first();
+        $pesan = Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->first();
         
         
         if(!empty($pesan)){
@@ -64,12 +64,11 @@ class PesanController extends Controller
      */
     public function store(StorePesanRequest $request)
     {
-        
         Pesan::insert([
             'user_id' => auth()->user()->id,
         ]);
         $produk = Produk::find($request->produk_id);
-        $pesan = Pesan::where('user_id', auth()->user()->id)->where('bank_id', null)->first();
+        $pesan = Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->first();
         $detailPesan = PesanDetail::where('produk_id', $produk->id)->first();
 
         $genap = 1600;

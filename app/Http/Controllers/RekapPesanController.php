@@ -135,7 +135,7 @@ class RekapPesanController extends Controller
             $transaksi = PesanDetail::where('created_at', 'LIKE', "%$tanggal%")->whereNotNull('bukti_pembayaran')->count();
             $pendapatan = PesanDetail::where('created_at', 'LIKE', "%$tanggal%")->whereNotNull('bukti_pembayaran')->sum('total');
             // $rincian = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->get();
-
+           
             $total_pendapatan += $pendapatan;
             $total_transaksi += $transaksi;
 
@@ -148,9 +148,13 @@ class RekapPesanController extends Controller
 
         }
 
+
+
         return view('admin.pesan_kue.rekap.laporan', compact('awal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
     }
 
+
+    
     public function cetak(Request $request){
         $tanggalAwal = date('Y-m-d', mktime(0, 0, 0, date('m'), 1, date('Y')));
         $tanggalAkhir = date('Y-m-d');

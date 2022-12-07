@@ -16,7 +16,7 @@ class BankCateringController extends Controller
      */
     public function index()
     {
-        $pesan = Pesan::where('user_id', auth()->user()->id)->orderBy('id','desc')->first();
+        $pesan = Pesan::where('user_id', auth()->user()->id)->where('status','pending')->first();
         $pesanDetail = PesanDetail::where('pesan_id', $pesan->id)->first();
         
         
