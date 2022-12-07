@@ -18,14 +18,14 @@ class BankCateringController extends Controller
     {
         $pesan = Pesan::where('user_id', auth()->user()->id)->where('status','pending')->first();
         $pesanDetail = PesanDetail::where('pesan_id', $pesan->id)->first();
-        
-        
+
+
 
         return view('fitur.pesan_kue.checkout', [
             'title' => 'Checkout',
             'pesan' => $pesan,
             'details' => $pesanDetail,
-            'bank' => Bank::where('id_bank',5)->get(),
+            'bank' => Bank::where('id_bank',4)->get(),
         ]);
     }
 
@@ -58,7 +58,7 @@ class BankCateringController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -101,7 +101,7 @@ class BankCateringController extends Controller
         $pesan -> total_bayar = $request -> total_bayar;
 
         $pesan -> save();
-        
+
 
         return redirect('/bayar');
     }

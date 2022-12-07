@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Alert;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CloudinaryStorage;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +10,7 @@ use App\Models\Produk;
 use App\Models\PesanDetail;
 use App\Models\Pesan;
 use App\Models\Riwayat;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CheckOutController extends Controller
 {
@@ -44,37 +44,25 @@ class CheckOutController extends Controller
      */
     public function store(Request $request, $id)
     {
-        
+
         $pesan = Pesan::where('user_id', Auth::user()->id)->orderBy('id','desc')->first();
         $PesanDetail = PesanDetail::where('pesan_id', $pesan->id)->first();
-       
 
-        $validatedData = $request->validate([
-            
-            'bukti_pembayaran' => 'image|file',
-        ]);
+
         $pesans = $request->validate([
             'bank_id' => 'required',
+            'bukti_pembayaran' => 'image|file'
         ]);
 
         if ($request->file('bukti_pembayaran')) {
-            $validateData['bukti_pembayaran'] = $request->file('bukti_pembayaran')->store('bukti_pembayaran', 'public');
+            $pesans['bukti_pembayaran'] = $request->file('bukti_pembayaran')->store('bukti_pembayaran', 'public');
         }
-        
-        PesanDetail::where('pesan_id', $pesan->id)->update([
-            
-            'bukti_pembayaran' => $validateData['bukti_pembayaran'],
-        ]);
+        $pesans['status'] = 'success';
 
-       
-        
         Pesan::where('id', $pesan->id)->update($pesans);
-        Pesan::where('id', $pesan->id)->update([
-            'status' => 'success'
-        ]);
         Alert::success('Berhasil', 'Pembayaran Berhasil');
         return redirect('/riwayat');
-       
+
     }
 
     /**
@@ -123,13 +111,23 @@ class CheckOutController extends Controller
     }
 
     public function riwayat(){
-        $rwt = PesanDetail::all()->whereNotNull('bukti_pembayaran');
+        $rwt = PesanDetail::all();
         if($rwt){
             return view('fitur.pesan_kue.riwayat', [
                 'riwayat'=>$rwt
             ]);
         }
 
+    }
+
+    public function riwayatDetail($id)
+    {
+        $getID = PesanDetail::where('id', $id)->first();
+        $pesan = Pesan::where('id', $getID->id)->first();
+        return view('fitur.pesan_kue.riwayat-detail', [
+            'title' => 'Riwayat Detail',
+            'details' => $getID,
+        ]);
     }
 
 }

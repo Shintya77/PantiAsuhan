@@ -35,5 +35,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(donatur::class);
     }
-    
+
+    public function pesan()
+    {
+        return $this->hasMany(Pesan::class);
+    }
+
 }

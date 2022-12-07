@@ -11,12 +11,16 @@ class Pesan extends Model
     protected $table='pesans';
 
     public function bank(){
-        return $this->belongsTo(Bank::class);
+        return $this->belongsTo(Bank::class, 'bank_id');
     }
     public function pesanDetail(){
         return $this->hasMany(PesanDetail::class);
     }
     public function riwayat(){
         return $this->hasMany(Riwayat::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use Alert;
 use App\Models\Pesan;
-use App\Http\Requests\StorePesanRequest;
-use App\Http\Requests\UpdatePesanRequest;
 use App\Models\Produk;
-use App\Models\PesanDetail;
 use App\Models\Riwayat;
+use App\Models\PesanDetail;
+use App\Http\Requests\StorePesanRequest;
+use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\UpdatePesanRequest;
+use DateTime;
 
 class PesanController extends Controller
 {
@@ -26,13 +27,13 @@ class PesanController extends Controller
     {
         //
         $pesan = Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->first();
-        
-        
+
+
         if(!empty($pesan)){
             $data = PesanDetail::where('pesan_id', $pesan->id)->orderBy('id', 'desc')->get();
             $iniTanggal = PesanDetail::where('pesan_id', $pesan->id)->first();
             return view('fitur.pesan_kue.pesan', [
-                'active'=>'active', 
+                'active'=>'active',
                 'title'=>'Keranjang',
                 'data' => $data,
                 'pesan' => $pesan,
@@ -64,12 +65,18 @@ class PesanController extends Controller
      */
     public function store(StorePesanRequest $request)
     {
-        Pesan::insert([
-            'user_id' => auth()->user()->id,
-        ]);
+        if(empty(Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->first()))
+        {
+            $dateTime = new DateTime();
+            Pesan::insert([
+                'user_id' => auth()->user()->id,
+                'status' => 'pending',
+                'created_at' => $dateTime->format('Y-m-d H:i:s'),
+            ]);
+        }
         $produk = Produk::find($request->produk_id);
         $pesan = Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->first();
-        $detailPesan = PesanDetail::where('produk_id', $produk->id)->first();
+        $detailPesan = PesanDetail::where('pesan_id', $pesan->id)->where('produk_id', $produk->id)->first();
 
         $genap = 1600;
         $ganjil = 1300;
@@ -93,7 +100,6 @@ class PesanController extends Controller
         }
 
 
-
         $addorder = [];
         if(empty($detailPesan)){
             $addorder = [
@@ -110,16 +116,6 @@ class PesanController extends Controller
         else{
             return redirect('/produk');
         }
-
-        // $addriwayat = [
-        //     'pesan_id' => $pesan->id,
-        //     'produk_id' => $request->produk_id,
-        //     'jumlah' => $request->jumlah_pesan,
-        //     'total' => $jumlah
-
-
-        // ];
-        // Riwayat::create($addriwayat);
 
 
         Alert::success('Berhasil', 'Berhasil ditambahkan ke keranjang');
@@ -157,27 +153,7 @@ class PesanController extends Controller
      */
     public function update(UpdatePesanRequest $request, Pesan $pesan)
     {
-        return $request->all();
-        // dd($request->all());
-        $pesan = Pesan::where('user_id', Auth::user()->id)->first();
-        $validateData = $request->validate([
-            'bukti_pembayaran' => 'image|file',
-        ]);
-        $cek = $this->validate($request, [
-            'bukti_pembayaran' => 'image|file',
-        ]);
-        // dd($cek);
 
-        // dd($validateData);
-       
-        if ($request->file('bukti_pembayaran')) {
-            $validateData['bukti_pembayaran'] = CloudinaryStorage::upload($request->file('bukti_pembayaran')->getRealPath(), $request->file('bukti_pembayaran')->getClientOriginalName());
-        }
-        // $order->status = 1;
-        // dd($validateData);
-        Order::where('user_id', Auth::user()->id)->update($validateData);
-        Alert::success('Berhasil', 'Pembayaran Berhasil');
-        return redirect('/riwayat');
     }
 
     /**

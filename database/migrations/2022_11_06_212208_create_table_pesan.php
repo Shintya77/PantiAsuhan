@@ -20,6 +20,7 @@ class CreateTablePesan extends Migration
             $table->unsignedBigInteger('bank_id')->nullable();
             $table->foreign('bank_id')->references('id_bank')->on('banks');
             $table->integer('total_bayar')->nullable();
+            $table->string('bukti_pembayaran')->nullable();
             $table->string('status')->default('pending');
             $table->timestamps();
         });

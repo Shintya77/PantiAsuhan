@@ -65,12 +65,12 @@ Auth::routes();
 Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
-    // ROUTE ADMIN DONASI 
+    // ROUTE ADMIN DONASI
     Route::resource('bank', BankController::class);
     Route::resource('program', ProgramController::class);
     Route::resource('binaan', BinaanController::class);
     Route::resource('donatur', DonaturController::class);
-    
+
     Route::post('program/ubah/{id}', [ProgramController::class, 'ubah'])->name('program.ubah');
     Route::get('program/cari/data', [ProgramController::class, 'cari'])->name('program.cari');
     Route::get('bank/cari/data', [BankController::class, 'cari'])->name('bank.cari');
@@ -91,7 +91,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('pengguna', PenggunaController::class);
     Route::get('pengguna/cari/data', [PenggunaController::class, 'cari'])->name('pengguna.cari');
     Route::post('/updatePengguna/{id}', [updatePenggunaAll::class, 'ubahPengguna']);
-    
+
     // ROUTE ADMIN CATERING KUE
     Route::resource('kue', KueController::class);
     Route::get('kue/cari/data', [KueController::class, 'cari'])->name('kue.cari');
@@ -105,10 +105,10 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('/form-cetak-laporan', function () {
         return view('admin.pesan_kue.rekap.formCetak');
     });
-    
+
     Route::get('pesan/pendapatan/data', [RekapPesanController::class, 'pendapatan'])->name('pesan.pendapatan');
     Route::get('pesan/cetak/data', [RekapPesanController::class, 'cetak'])->name('pesan.cetak');
-        
+
     Route::resource('tipe', TipeProdukController::class);
 });
 
@@ -129,6 +129,7 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
     Route::post('/checkout/{id}', [CheckOutController::class, 'store']);
     Route::get('/riwayat', [CheckOutController::class, 'riwayat']);
+    Route::get('/riwayat-detail/{id}', [CheckOutController::class, 'riwayatDetail']);
 
 });
 

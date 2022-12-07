@@ -21,7 +21,7 @@
                                 <th>Jumlah Kue</th>
                                 <th>Harga/Kue</th>
                                 <th>Total Bayar</th>
-                                <th>Bukti Pembayaran</th>
+                                <th>Action</th>
 
                               </tr>
                             </thead>
@@ -36,8 +36,9 @@
                                     <td class="text-black">{{ $item->jumlah }}</td>
                                     <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
                                     <td class="text-black">{{ $item->total }}</td>
-                                    <td> <img src="{{asset('storage/'.$item->bukti_pembayaran)}}" width="100" height="100"/></td>
-                                    </td>  
+                                    <td><a href="/riwayat-detail/{{ $item->id }}" class="btn btn-primary"
+                                        title="Lihat Details"><i class="fas fa-eye"></i> Detail</a></td>
+                                    </td>
                                   @endif
                                 @endforeach
                                 @else
@@ -46,7 +47,7 @@
                             </tbody>
                         </table>
                         </div>
-                        
+
                           {{-- <div class="paginate">
                             <div class="container">
                               <div class="row">
@@ -68,5 +69,5 @@
         </div>
       </section><!-- End Icon Boxes Section -->
  </div>
- 
+
 @endsection
