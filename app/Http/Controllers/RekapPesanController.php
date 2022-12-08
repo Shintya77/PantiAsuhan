@@ -20,10 +20,10 @@ class RekapPesanController extends Controller
     public function index()
     {
         //
-        $data = PesanDetail::whereNotNull('bukti_pembayaran')->get(); 
+        $data = PesanDetail::all(); 
         $pesan = DB::table('pesans')->get();
         $title = 'Data Pesanan';
-        $paginate = PesanDetail::whereNotNull('bukti_pembayaran')->orderBy('id', 'asc')->paginate(3);
+        $paginate = PesanDetail::orderBy('id', 'asc')->paginate(3);
         return view('admin.pesan_kue.rekap.index', compact('data','pesan','title','paginate'));
     }
 
@@ -126,15 +126,14 @@ class RekapPesanController extends Controller
 
         
         $akhir = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAkhir)));
-        $rincian = PesanDetail::whereBetween('created_at',[$tanggalAwal,$akhir])->whereNotNull('bukti_pembayaran')->get();
+        $rincian = PesanDetail::whereBetween('created_at',[$tanggalAwal,$akhir])->get();
 
         while (strtotime($tanggalAwal) <= strtotime($tanggalAkhir)) {
             $tanggal = $tanggalAwal;
             $tanggalAwal = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAwal)));
 
-            $transaksi = PesanDetail::where('created_at', 'LIKE', "%$tanggal%")->whereNotNull('bukti_pembayaran')->count();
-            $pendapatan = PesanDetail::where('created_at', 'LIKE', "%$tanggal%")->whereNotNull('bukti_pembayaran')->sum('total');
-            // $rincian = Riwayat::where('created_at', 'LIKE', "%$tanggal%")->get();
+            $transaksi = Pesan::where('created_at', 'LIKE', "%$tanggal%")->where('status','success')->count();
+            $pendapatan = Pesan::where('created_at', 'LIKE', "%$tanggal%")->where('status','success')->sum('total_bayar');
            
             $total_pendapatan += $pendapatan;
             $total_transaksi += $transaksi;
@@ -170,14 +169,14 @@ class RekapPesanController extends Controller
 
         
         $akhir = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAkhir)));
-        $rincian = PesanDetail::whereBetween('created_at',[$tanggalAwal,$akhir])->whereNotNull('bukti_pembayaran')->get();
+        $rincian = PesanDetail::whereBetween('created_at',[$tanggalAwal,$akhir])->get();
 
         while (strtotime($tanggalAwal) <= strtotime($tanggalAkhir)) {
             $tanggal = $tanggalAwal;
             $tanggalAwal = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAwal)));
 
-            $transaksi = PesanDetail::where('created_at', 'LIKE', "%$tanggal%")->whereNotNull('bukti_pembayaran')->count();
-            $pendapatan = PesanDetail::where('created_at', 'LIKE', "%$tanggal%")->whereNotNull('bukti_pembayaran')->sum('total');
+            $transaksi = Pesan::where('created_at', 'LIKE', "%$tanggal%")->where('status','success')->count();
+            $pendapatan = Pesan::where('created_at', 'LIKE', "%$tanggal%")->where('status','success')->sum('total_bayar');
 
             $total_pendapatan += $pendapatan;
             $total_transaksi += $transaksi;

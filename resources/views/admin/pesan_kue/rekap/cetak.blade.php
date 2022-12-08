@@ -51,6 +51,7 @@
         </thead>
         <tbody>
             @foreach ($rincian as $d)
+            @if ($d->pesan->status == "success")
             <tr>
                 <td align="center">{{ $loop->iteration }}</td>
                 <td align="center">{{ $d->created_at->format('Y-m-d') }}</td>
@@ -59,6 +60,7 @@
                 <td align="center">Rp {{ number_format($d->produk->harga)}}</td>
                 <td align="center">Rp. {{ $d->total }}</td>
             </tr>
+            @endif
             @endforeach 
         </tbody>
     </table>

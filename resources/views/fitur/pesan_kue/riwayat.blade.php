@@ -29,6 +29,7 @@
                               @if ($riwayat != null)
                                 @foreach ($riwayat as $item)
                                   @if ($item->pesan->user_id == Auth::user()->id)
+                                      @if ($item->pesan->status == "success")
                                   <tr>
                                     <td style="text-align:center"><class="text-black">{{ $loop->iteration }}</td>
                                     <td class="text-black">{{ $item->created_at->format('Y-m-d')}}</td>
@@ -39,6 +40,7 @@
                                     <td><a href="/riwayat-detail/{{ $item->id }}" class="btn btn-primary"
                                         title="Lihat Details"><i class="fas fa-eye"></i> Detail</a></td>
                                     </td>
+                                    @endif
                                   @endif
                                 @endforeach
                                 @else

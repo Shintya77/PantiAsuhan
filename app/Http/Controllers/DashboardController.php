@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\Pesan;
 use App\Models\PesanDetail;
 use App\Models\Riwayat;
 use App\Models\Galeri;
@@ -20,7 +21,7 @@ class DashboardController extends Controller
     public function index (){
         $produk = Produk::all()->count();
         $pesanan= PesanDetail::all()->count();
-        $pendapatan = Riwayat::all()->sum('total');
+        $pendapatan = Pesan::where('status','success')->sum('total_bayar');
         $jumlah_galeri = Galeri::all()->count();
         $jumlah_kegiatan = Kegiatan::all()->count();
         $jumlah_struktur = Struktur::all()->count();

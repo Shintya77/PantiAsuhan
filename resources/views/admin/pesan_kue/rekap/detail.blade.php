@@ -39,9 +39,9 @@
                 <div class="card-body">
                       <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>Tanggal pesanan : </b>{{ $pesanan->created_at}}</li>
-                            <li class="list-group-item"><b>Nama Customer : </b>{{ Auth::user()->name }}</li>
+                            <li class="list-group-item"><b>Nama Customer : </b>{{ $pesanan->pesan->user->name }}</li>
                             <li class="list-group-item"><b>Alamat : </b>{{ Auth::user()->alamat }}</li>
-                            <li class="list-group-item"><b>Bukti Pembayaran : </b><p align="center"> <img width="250px" src="{{asset('storage/'.$pesanan->bukti_pembayaran)}}"></li>
+                            <li class="list-group-item"><b>Bukti Pembayaran : </b><p align="center"> <img width="250px" src="{{asset('storage/'.$pesanan->pesan->bukti_pembayaran)}}"></li>
                             <li></li>
                             <li class="list-group-item"><b>Detail Pesanan</b></li>
                             <li class="list-group-item"><b>Produk : </b>{{$pesanan->produk->nama }}</li>

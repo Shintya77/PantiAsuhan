@@ -49,6 +49,7 @@
                       </thead>
                       <tbody>
                           @foreach ($data as $item)
+                          @if ($item->pesan->status == "success")
                           <tr>
                           <td align="center">{{ $loop->iteration }}</td>
                           <td align="center">{{ $item->created_at->format('Y-m-d') }}</td>
@@ -63,6 +64,7 @@
                             <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
                           </td>
                           </tr>
+                          @endif
                           @endforeach
                       </tbody>
                       </table>
