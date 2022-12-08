@@ -80,24 +80,24 @@ class PesanController extends Controller
 
         $genap = 1600;
         $ganjil = 1300;
-        $jumlah = 0;
+        $jumlah = $produk->harga * $request->jumlah_pesan;;
 
-        if($produk->tipeproduk_id == 1){
-            if($request->jumlah_pesan % 2 == 0){
-                $boxGenap = $request->jumlah_pesan % 4;
-                $totalGenap = $boxGenap * $genap;
-                $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGenap;
-            }else{
-                $boxGanjil = $request->jumlah_pesan / 3;
-                $totalGanjil = $boxGanjil * $ganjil;
-                $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGanjil;
-            }
-        }else if($produk->tipeproduk_id == 2){
-            $kemasan = $request->jumlah_pesan * 4000;
-            $jumlah = ($produk->harga * $request->jumlah_pesan) + $kemasan;
-        }else{
-         $jumlah = $produk->harga * $request->jumlah_pesan;
-        }
+        // if($produk->tipeproduk_id == 1){
+        //     if($request->jumlah_pesan % 2 == 0){
+        //         $boxGenap = $request->jumlah_pesan % 4;
+        //         $totalGenap = $boxGenap * $genap;
+        //         $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGenap;
+        //     }else{
+        //         $boxGanjil = $request->jumlah_pesan / 3;
+        //         $totalGanjil = $boxGanjil * $ganjil;
+        //         $jumlah = ($produk->harga * $request->jumlah_pesan) + $totalGanjil;
+        //     }
+        // }else if($produk->tipeproduk_id == 2){
+        //     $kemasan = $request->jumlah_pesan * 4000;
+        //     $jumlah = ($produk->harga * $request->jumlah_pesan) + $kemasan;
+        // }else{
+        //  $jumlah = $produk->harga * $request->jumlah_pesan;
+        // }
 
 
         $addorder = [];

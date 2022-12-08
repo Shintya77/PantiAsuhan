@@ -47,7 +47,7 @@
                             <li class="list-group-item"><b>Produk : </b>{{$pesanan->produk->nama }}</li>
                             <li class="list-group-item"><b>Jumlah Pesan : </b>{{$pesanan->jumlah}} biji</li>
                             <li class="list-group-item"><b>Harga per produk : </b>Rp. {{$pesanan->produk->harga}}</li>
-                            <li class="list-group-item"><b>Total Bayar: </b>Rp. {{$pesanan->total}}</li>
+                            <li class="list-group-item"><b>Total Bayar: </b>Rp. {{$pesanan->total}} (+ biaya kemasan)</li>
                       </ul>
                       <a class="btn btn-secondary mt-3" href="{{ route('pesan.index') }}">Kembali</a>
                 </div>

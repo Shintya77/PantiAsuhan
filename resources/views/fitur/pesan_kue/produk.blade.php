@@ -35,6 +35,7 @@
                         <span>Produk</span>
                         <h2>Produk</h2>
                         <p>Berbagai macam produk kami sediakan mulai dari jenis kue dengan berbagai macam ukuran, nasi dan tumpeng</p>
+                        <p>Saudara dapat melakukan pemesanan via WhatsApp dengan nomor berikut <a href="https://wa.link/0r016t">0813-3440-1911</a></p>
                     </div>
 
                     <!-- Cari Produk -->
