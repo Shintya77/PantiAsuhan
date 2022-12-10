@@ -57,6 +57,7 @@ class DonasiContrroler extends Controller
             'alamat' => 'required',
             'nominal' => 'required',
             'atas_nama' => 'required',
+            'nama_bank' => 'required',
             'no_rekening' => 'required',
             'bukti_tf' => 'image|file|max:1024',
         ]);
