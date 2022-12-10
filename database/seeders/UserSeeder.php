@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('donatur'),
                 'alamat'=>'malang',
                 'nohp'=>'081212345678',
-                'role'=>'donatur'       
+                'role'=>'user'       
             ],
             [ 
                 'name'=>'anisa',
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('pemesan'),
                 'alamat'=>'malang',
                 'nohp'=>'081330551209',
-                'role'=>'pemesan'      
+                'role'=>'user'      
             ],
             [
                 'name'=>'ifa',
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('donatur'),
                 'alamat'=>'pasuruan',
                 'nohp'=>'085604833794',
-                'role'=>'donatur'     
+                'role'=>'user'     
             ],
             [   
                 'name'=>'admin1',
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('donatur'),
                 'alamat'=>'malang',
                 'nohp'=>'081233967234',
-                'role'=>'donatur'   
+                'role'=>'user'   
             ],
 
             [
@@ -67,7 +67,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('pemesan'),
                 'alamat'=>'malang',
                 'nohp'=>'081233967234',
-                'role'=>'pemesan'   
+                'role'=>'user'   
                 
             ]
             ));

@@ -112,18 +112,16 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('tipe', TipeProdukController::class);
 });
 
-Route::middleware(['auth', 'donatur'])->group(function (){
+Route::middleware(['auth', 'user'])->group(function (){
+    // ROUTE DONASI
     Route::get('/dashboard-donasi',[KegiatanController::class, 'dashboard']);
     Route::get('/formulir-donasi',[DonasiContrroler::class, 'form']);
     Route::post('/formulir-donasi',[DonasiContrroler::class, 'formulir']);
     Route::get('/daftar-binaan',[DonasiContrroler::class, 'binaan']);
     Route::get('/donasi-upload',[VisiController::class, 'upload']);
     Route::get('/donasi-riwayat',[DonasiContrroler::class, 'riwayat']);
-});
 
-Route::get('/produk/detail', [ProdukController::class, 'show']);
-
-Route::middleware(['auth', 'pemesan'])->group(function (){
+    // ROUTE CATERING
     Route::resource('/keranjang', PesanController::class)->only(['index', 'store', 'destroy']);
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
@@ -132,4 +130,7 @@ Route::middleware(['auth', 'pemesan'])->group(function (){
     Route::get('/riwayat-detail/{id}', [CheckOutController::class, 'riwayatDetail']);
 
 });
+
+Route::get('/produk/detail', [ProdukController::class, 'show']);
+
 
