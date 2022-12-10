@@ -93,7 +93,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            //TODO nomor rekening muncul keteika selesai memilih bank
+                                            {{-- //TODO nomor rekening muncul keteika selesai memilih bank --}}
                                             <div class="col-12 col-sm-6">
                                                 <h6 class="text-black">Bank</h6>
                                                 <select name="id_bank" id="nama_bank" class="form-select border-0"
@@ -104,7 +104,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            //TODO menampilkan pilihan gambar
+                                            {{-- //TODO menampilkan pilihan gambar --}}
                                             <div class="col-12 col-sm-6">
                                                 <h6 class="text-black">Bank</h6>
                                                 <select name="id_bank" id="nama_bank" class="form-select border-0"
