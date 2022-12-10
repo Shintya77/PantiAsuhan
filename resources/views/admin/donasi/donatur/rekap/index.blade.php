@@ -48,7 +48,7 @@
        <tr>
            <td class="text-black">{{ $donasi->id_donatur}}</td>
            <td class="text-black">{{ $donasi->name}}</td>
-           <td class="text-black">{{ $donasi->tgl_donasi}}</td>
+           <td class="text-black">{{ $donasi->created_at->format('d-m-Y')}}</td>
            <td class="text-black">{{ $donasi->alamat }}</td>
            <td class="text-black">{{ $donasi->nominal }}</td>
            <td class="text-black">{{ $donasi->atas_nama }}</td>

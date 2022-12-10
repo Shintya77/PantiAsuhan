@@ -66,6 +66,7 @@
                         <td class="text-black">{{ $donasi->atas_nama }}</td>
                         <td class="text-black">{{ $donasi->nama_bank }}</td>
                         <td class="text-black">{{ $donasi->no_rekening }}</td>
+                        {{-- //TODO keterangan tidak muncul --}}
                         <td class="text-black">{{ $donasi->keterangan }}</td>
                         <td><img width="100px" height="100px" src="{{asset('storage/'.$donasi->bukti_tf)}}"></td>
                         <td class="text-black">{{ $donasi->status }}</td>
