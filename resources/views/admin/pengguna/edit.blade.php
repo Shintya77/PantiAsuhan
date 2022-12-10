@@ -49,10 +49,6 @@
                             <input type="text" name="email" class="form-control" required="required" value="{{ $pengguna->email }}" >
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="text" name="password" class="form-control" value="{{ $pengguna->password }}" >
-                        </div>
-                        <div class="form-group">
                             <label for="alamat">Alamat</label>
                             <input type="text" name="alamat" class="form-control" value="{{ $pengguna->alamat }}" >
                         </div>

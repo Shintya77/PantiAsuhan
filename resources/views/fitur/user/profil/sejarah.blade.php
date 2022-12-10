@@ -13,8 +13,10 @@
                       <div class="col-10 col-lg-8 text-center">
                           <h1 class=" text-white animated slideInDown">PROFIL PANTI ASUHAN</h1>
                           <p class=" fw-medium text-white mb-4 pb-3">
-                            Panti asuhan adalah suatu lembaga usaha kesejahteraan sosial yang mempunyai tanggung jawab untuk memberikan pelayanan kesejahteraan sosial kepada anak telantar dengan melaksanakan penyantunan dan pengentasan anak telantar, memberikan pelayanan pengganti fisik, mental, dan sosial pada anak asuh, sehingga memperoleh kesempatan yang luas, tepat dan memadai bagi perkembangan kepribadiannya sesuai dengan yang diharapkan sebagai bagian dari generasi penerus cita-cita bangsa dan sebagai insan yang akan turut serta aktif di dalam bidang pembangunan nasional
-                          </p>
+                            Panti asuhan adalah suatu lembaga usaha kesejahteraan sosial yang mempunyai tanggung jawab 
+                            untuk memberikan pelayanan kesejahteraan sosial kepada anak telantar dengan melaksanakan penyantunan 
+                            dan pengentasan anak telantar, memberikan pelayanan pengganti fisik, mental, 
+                            dan sosial pada anak asuh, sehingga memperoleh kesempatan yang luas, tepat dan memadai.
                       </div>
                   </div>
               </div>

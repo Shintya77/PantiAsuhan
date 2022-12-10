@@ -48,10 +48,6 @@
                             <input type="text" name="email" class="form-control" id="email" aria-describedby="email" >
                         </div>
                         <div class="form-group">
-                            <label for="password">Password </label>
-                            <input type="text" name="password" class="form-control" id="password" aria-describedby="password" >
-                        </div>
-                        <div class="form-group">
                             <label for="alamat">Alamat </label>
                             <input type="text" name="alamat" class="form-control" id="alamat" aria-describedby="alamat" >
                         </div>

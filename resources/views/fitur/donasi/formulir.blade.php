@@ -14,13 +14,8 @@
             </ul>
         </div>
         @endif
-        
         <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
-            <div class="card">
-            <div class="card-body">
-          <div class="row">
-            <div class="row g-4">
 
                 <div class="d-flex justify-content-center">
                     <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -28,11 +23,10 @@
                             <h2 class="mb-4">FORMULIR DONASI PANTI ASUHAN </h2>
                             <div class="row g-3">
                             <div class="card">
-            <div class="card-body">
-          <div class="row">
-                            <div class="row g-0 mx-lg-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="row g-4">
                                 <div class="col-12 col-sm-6">
-                                    
                                     <h6 class="text-black">Nama Donatur</h6>
                                     <input type="text" name="name" class="form-control border-0"
                                         placeholder="Nama Donatur" style="height: 55px; "
@@ -57,7 +51,7 @@
                                         value="{{Auth::user() -> alamat}}">
                                 </div>
 
-                                <div class="col-12 col-sm-6">
+                                <!-- <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Bank</h6>
                                     <select name="id_bank" id="nama_bank" class="form-select border-0"
                                         style="height: 55px;" required>
@@ -69,9 +63,7 @@
                                         @endif
                                         @endforeach
                                     </select>
-                                </div>
-                                </div>
-                </div>
+                                </div> -->
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nominal Donasi</h6>
                                     <input type="number" name="nominal" class="form-control border-0"
@@ -83,19 +75,20 @@
                                         class="form-control border-0" placeholder="Rekening Atas Nama"
                                         style="height: 55px;">
                                 </div>
-            </div>
-                            </div>
-            <div class="row g-0 mx-lg-0">
-            <div class="card">
-            <div class="card-body">
-          <div class="row">
-                            </div>
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Nomor Rekening Donatur</h6>
                                     <input type="text" name="no_rekening" id="input_noRekening"
                                         class="form-control border-0" placeholder="Nomor Rekening"
                                         style="height: 55px;">
                                 </div>
+                                </div>
+                                       </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                      <div class="row">
+                                        <div class="row g-4">
                                 <div class="col-12 col-sm-6">
                                     <h6 class="text-black">Pilih Program</h6>
                                     <select name="id_program" id="inputNamaProgram" class="form-select border-0"
@@ -110,28 +103,11 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <h6 class="text-black">Bank</h6>
-                                    <select name="id_bank" id="nama_bank" class="form-select border-0"
-                                        style="height: 55px;" required>
-                                        <!-- <option selected>Bank</option>  -->
-
-                                        @foreach ($bank as $b)
-                                        @if ($b->nama_bank != 'Tunai')
-                                        <option value="{{$b->gambar}}">{{$b->nama_bank}} - {{$b->norekening}}</option>
-                                        @endif
-                                        @endforeach
-                                        <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="{{asset('assets')}}/img/1.png" alt="">
-                    <div class="position-relative p-4 pt-0">
-                                    </select>
-                                </div>
                                 <div class="col-12">
                                     <h6 class="text-black">Keterangan </h6>
                                     <textarea type="text" name="keterangan" class="form-control border-0"
                                         placeholder="Keterangan bila perlu"></textarea>
                                 </div>
-                                
                             </div class="col-12">
                             <h6 class="description">Upload Bukti Transfer (.png, .jpg, .jpeg)</h6>
                             <img src="" class="img-preview img-fluid mb-3 " alt="">
@@ -147,8 +123,9 @@
                             {{-- <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button> --}}
                         </div>
                     </div>
+                        </div>
                     </div>
-                
+                </div>
             </div>
         </div>
     </div>
@@ -262,6 +239,7 @@ const upload = () => {
         namaProgram.innerHTML = this.value;
     })
 </script>
+
 <script>
     function previewImage(){
         const image = document.querySelector('#image');
