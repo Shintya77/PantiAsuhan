@@ -105,7 +105,7 @@
                                                 </select>
                                             </div>
                                             {{-- //TODO menampilkan pilihan gambar --}}
-                                            <div class="col-12 col-sm-6">
+                                            {{-- <div class="col-12 col-sm-6">
                                                 <h6 class="text-black">Bank</h6>
                                                 <select name="id_bank" id="nama_bank" class="form-select border-0"
                                                 style="height: 55px;">
@@ -113,7 +113,7 @@
                                                     <option img src="{{('assets/img/'.$b ->id_bank.'.png')}}"></option>
                                                 @endforeach
                                                 </select>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-12">
                                                 <h6 class="text-black">Keterangan </h6>
                                                 <textarea type="text" name="keterangan" class="form-control border-0"

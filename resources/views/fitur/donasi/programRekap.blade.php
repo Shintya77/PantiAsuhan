@@ -28,7 +28,7 @@
                 <tr>
                     <td><class="text-black">{{$loop->iteration}}</td>
                     <td class="text-black">{{$d->name}}</td>
-                    <td>{{ $d->created_at->format('d-m-Y | H:i:s')}}</td>
+                    <td>{{ $d->created_at->format('d-m-Y')}}</td>
                     <td>Rp.{{ number_format($d->nominal) }}</td>
                     <td>{{$d->status}}</td>
                   </tr>
