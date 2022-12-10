@@ -17,9 +17,9 @@
                               <tr>
                                 <th>Nomor</th>
                                 <th>Tanggal</th>
-                                <th>Nama Kue</th>
-                                <th>Jumlah Kue</th>
-                                <th>Harga/Kue</th>
+                                <th>Nama Produk</th>
+                                <th>Jumlah Produk</th>
+                                <th>Harga/Produk</th>
                                 <th>Total Bayar</th>
                                 <th>Action</th>
 
