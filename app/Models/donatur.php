@@ -23,6 +23,7 @@ class donatur extends Model
         'alamat',
         'nominal',
         'atas_nama',
+        'nama_bank',
         'no_rekening',
         'keterangan',
         'bukti_tf',

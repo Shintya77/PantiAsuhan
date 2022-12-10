@@ -46,6 +46,7 @@
                           <th>Alamat</th>
                           <th>Nominal</th>
                           <th>Atas Nama</th>
+                          <th>Nama Bank</th>
                           <th>No Rekening Donatur</th>
                           <th>Keterangan</th>
                           <th>Bukti Transfer</th>
@@ -63,6 +64,7 @@
                         <td class="text-black">{{ $donasi->alamat }}</td>
                         <td class="text-black">{{ $donasi->nominal }}</td>
                         <td class="text-black">{{ $donasi->atas_nama }}</td>
+                        <td class="text-black">{{ $donasi->nama_bank }}</td>
                         <td class="text-black">{{ $donasi->no_rekening }}</td>
                         <td class="text-black">{{ $donasi->keterangan }}</td>
                         <td><img width="100px" height="100px" src="{{asset('storage/'.$donasi->bukti_tf)}}"></td>

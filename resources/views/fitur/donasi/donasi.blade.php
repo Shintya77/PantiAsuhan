@@ -62,8 +62,6 @@
   <section id="icon-boxes" class="icon-boxes">
     <div class="container">
       @guest
-      {{-- <a href="{{url('/login')}}" class="btn btn-warning rounded-pill py-3 px-5 animated
-      slideInLeft">Login</a> --}}
       <div class="card">
         <div class="card-body">
           <div class="row">
