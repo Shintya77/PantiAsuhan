@@ -54,6 +54,10 @@
                         <td class="text-black">{{ $donatur->atas_nama }}</td>
                     </tr>
                     <tr>
+                      <th>Nama Bank</th>
+                      <td class="text-black">{{ $donatur->nama_bank }}</td>
+                  </tr>
+                    <tr>
                         <th>No Rekening Donatur</th>
                         <td class="text-black">{{ $donatur->no_rekening }}</td>
                     </tr>

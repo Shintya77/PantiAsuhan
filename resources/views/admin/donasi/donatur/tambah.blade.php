@@ -69,6 +69,10 @@
                             <input type="text" name="atas_nama" class="form-control" id="atas_nama" aria-describedby="atas_nama" >
                         </div>
                         <div class="form-group">
+                          <label for="nama_bank">Nama Bank</label>
+                          <input type="text" name="nama_bank" class="form-control" id="nama_bank" aria-describedby="nama_bank" >
+                      </div>
+                        <div class="form-group">
                             <label for="no_rekening">No Rekening</label>
                             <input type="text" name="no_rekening" class="form-control" id="no_rekening" aria-describedby="no_rekening" >
                         </div>
