@@ -68,7 +68,7 @@ class KueController extends Controller
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('kue.index')
-        ->with('success', 'Data Kue Berhasil Ditambahkan');
+        ->with('success', 'Data Produk Berhasil Ditambahkan');
     }
 
     /**
@@ -135,7 +135,7 @@ class KueController extends Controller
 
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('kue.index')
-            ->with('success', 'Data Kue Berhasil Diupdate');
+            ->with('success', 'Data Produk Berhasil Diupdate');
     }
 
     /**
@@ -149,7 +149,7 @@ class KueController extends Controller
         //
         Produk::where('id',$id)->delete();
         return redirect()->route('kue.index')
-        -> with('success', 'Harga Kue Berhasil Dihapus');
+        -> with('success', 'Produk Berhasil Dihapus');
     }
 
     public function cari(Request $request)
