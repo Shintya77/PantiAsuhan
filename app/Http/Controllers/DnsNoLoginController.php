@@ -22,8 +22,8 @@ class DnsNoLoginController extends Controller
     public function form()
     {
         $program = program::all();
-        $bankkiw = Bank::where('nama_bank' , '!=', 'Tunai');
-        $bank= $bankkiw -> where('id_bank','!=', 4)->get();
+        $bank1 = Bank::where('nama_bank' , '!=', 'Tunai');
+        $bank= $bank1 -> where('id_bank','!=', 4)->get();
         
         $donatur = donatur::all();
         return view('fitur.donasi.donasiTidakLogin.formulir', compact('program','bank','donatur')); 

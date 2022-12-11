@@ -70,25 +70,32 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-check">
-                                                            <label class="form-check-label " for="exampleRadios{{ $loop -> iteration }}">
+                                                            <label class="form-check-label "
+                                                                for="exampleRadios{{ $loop -> iteration }}">
                                                                 @if ($bank -> image)
-                                        
-                                                                <img src="{{ asset('storage/'.$item -> image) }}" alt="" height="100px"
-                                                                    style="object-fit: fill;border-radius: 20px;" class="img-target">
+
+                                                                <img src="{{ asset('storage/'.$item -> image) }}" alt=""
+                                                                    height="100px"
+                                                                    style="object-fit: fill;border-radius: 20px;"
+                                                                    class="img-target">
                                                                 @else
-                                                                <img src="{{ asset('assets/img/'.$bank -> nama_bank.'.png') }}" alt="" height="100px"
-                                                                    style="object-fit: fill;border-radius: 20px;" class="img-target">
-                                        
+                                                                <img src="{{ asset('assets/img/'.$bank -> nama_bank.'.png') }}"
+                                                                    alt="" height="100px"
+                                                                    style="object-fit: fill;border-radius: 20px;"
+                                                                    class="img-target">
+
                                                                 @endif
                                                                 <p id="target-norek">{{ $bank -> norekening }}</p>
                                                             </label>
-                                                            <input class="form-check-input d-none opt-radio" type="radio" name="bank_id"
-                                                                id="exampleRadios{{ $loop -> iteration }}" value="{{ $bank->id }}">
+                                                            <input class="form-check-input d-none opt-radio"
+                                                                type="radio" name="id_bank"
+                                                                id="exampleRadios{{ $loop -> iteration }}"
+                                                                value="{{ $bank->id_bank }}">
 
                                                         </div>
                                                     </div>
                                                 </div>
-                                        
+
                                             </div>
                                             @endforeach
                                         </div>
