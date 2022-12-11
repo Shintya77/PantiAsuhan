@@ -149,7 +149,7 @@ class RekapPesanController extends Controller
 
 
 
-        return view('admin.pesan_kue.rekap.laporan', compact('awal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
+        return view('admin.pesan_kue.rekap.laporan', compact('awal', 'tanggalAkhir', 'total_transaksi', 'total_pendapatan', 'rincian'));
     }
 
 
