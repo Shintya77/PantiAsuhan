@@ -64,41 +64,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            @foreach ($bank as $bank)
-                                            <div class="col mb-4 align-self-center">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-check">
-                                                            <label class="form-check-label "
-                                                                for="exampleRadios{{ $loop -> iteration }}">
-                                                                @if ($bank -> image)
-
-                                                                <img src="{{ asset('storage/'.$item -> image) }}" alt=""
-                                                                    height="100px"
-                                                                    style="object-fit: fill;border-radius: 20px;"
-                                                                    class="img-target">
-                                                                @else
-                                                                <img src="{{ asset('assets/img/'.$bank -> nama_bank.'.png') }}"
-                                                                    alt="" height="100px"
-                                                                    style="object-fit: fill;border-radius: 20px;"
-                                                                    class="img-target">
-
-                                                                @endif
-                                                                <p id="target-norek">{{ $bank -> norekening }}</p>
-                                                            </label>
-                                                            <input class="form-check-input d-none opt-radio"
-                                                                type="radio" name="id_bank"
-                                                                id="exampleRadios{{ $loop -> iteration }}"
-                                                                value="{{ $bank->id_bank }}">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            @endforeach
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="card">
@@ -133,8 +99,43 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
+                                                <div class="row">
+                                                    @foreach ($bank as $bank)
+                                                    <div class="col mb-4 align-self-center">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="form-check">
+                                                                    <label class="form-check-label "
+                                                                        for="exampleRadios{{ $loop -> iteration }}">
+                                                                        @if ($bank -> image)
+        
+                                                                        <img src="{{ asset('storage/'.$item -> image) }}" alt=""
+                                                                            height="50px"
+                                                                            style="object-fit: fill;border-radius: 20px;"
+                                                                            class="img-target">
+                                                                        @else
+                                                                        <img src="{{ asset('assets/img/'.$bank -> nama_bank.'.png') }}"
+                                                                            alt="" height="50px"
+                                                                            style="object-fit: fill;border-radius: 20px;"
+                                                                            class="img-target">
+        
+                                                                        @endif
+                                                                        <p id="target-norek">{{ $bank -> norekening }}</p>
+                                                                    </label>
+                                                                    <input class="form-check-input d-none opt-radio"
+                                                                        type="radio" name="id_bank"
+                                                                        id="exampleRadios{{ $loop -> iteration }}"
+                                                                        value="{{ $bank->id_bank }}">
+        
+                                                                </div>
+                                                            </div>
+                                                        </div>
+        
+                                                    </div>
+                                                    @endforeach
+                                                </div>
                                                 {{-- //TODO nomor rekening muncul keteika selesai memilih bank --}}
-                                                <h1 id="rekening"></h1>
+                                                {{-- <h1 id="rekening"></h1> --}}
                                                 {{-- //TODO menampilkan pilihan gambar --}}
                                                 {{-- <div class="col-12 col-sm-6">
                                                 <h6 class="text-black">Bank</h6>
