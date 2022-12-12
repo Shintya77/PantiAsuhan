@@ -102,12 +102,12 @@
                                                                 @if ($bank -> image)
 
                                                                 <img src="{{ asset('storage/'.$item -> image) }}" alt=""
-                                                                    height="100px"
+                                                                    height="50px"
                                                                     style="object-fit: fill;border-radius: 20px;"
                                                                     class="img-target">
                                                                 @else
                                                                 <img src="{{ asset('assets/img/'.$bank -> nama_bank.'.png') }}"
-                                                                    alt="" height="100px"
+                                                                    alt="" height="50px"
                                                                     style="object-fit: fill;border-radius: 20px;"
                                                                     class="img-target">
 
