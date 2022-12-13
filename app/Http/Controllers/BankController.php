@@ -32,7 +32,7 @@ class BankController extends Controller
             'nama_bank' => 'required',
             'nama_rekening' => 'required',
             'norekening' => 'required',
-            'gambar' => 'image|file|max:1024',
+            'gambar' => 'image|file|max:1024|required',
         ]);
 
         if ($request->file('gmbr_bank')){
@@ -64,7 +64,7 @@ class BankController extends Controller
             'nama_bank' => 'required',
             'nama_rekening' => 'required',
             'norekening' => 'required',
-            'gambar' => 'image|file|max:1024',
+            'gambar' => 'image|file|max:1024|required',
         ]);
 
         $bank = Bank::where('id_bank',$id)->first();
