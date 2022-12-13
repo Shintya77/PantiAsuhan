@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <label for="gambar">Gambar</label>
-                            <input type="file" name="gambar" id="gmbr_bank" class="form-control" value="{{ $bank->gambar }}" >
+                            <input type="file" name="gmbr_bank" id="gmbr_bank" class="form-control" value="{{ $bank->gambar }}" >
                             <img width="100px" src="{{asset('storage/'.$bank->gambar)}}">
                         </div>
                         <a class="btn btn-secondary " href="{{ route('bank.index') }}">Kembali</a>
