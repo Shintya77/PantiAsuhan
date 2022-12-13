@@ -34,13 +34,13 @@ class BankController extends Controller
 
         if ($request->file('gmbr_bank')){
             $image_name = $request->file('gmbr_bank')->store('gmbr_bank', 'public');
-            $bank->gambar = $image_name;
         }
 
         $bank = new Bank;
         $bank->nama_bank = $request->nama_bank;
         $bank->nama_rekening = $request->nama_rekening;
         $bank->norekening = $request->norekening;
+        $bank->gambar = $image_name;
         $bank->save();
 
         return redirect()->route('bank.index')->with('success', 'Data Bank Berhasil Ditambahkan');
