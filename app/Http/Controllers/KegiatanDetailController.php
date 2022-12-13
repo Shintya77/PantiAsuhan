@@ -45,7 +45,7 @@ class KegiatanDetailController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'foto' => 'image|file|max:1024',
+            'foto' => 'image|file|max:1024|required',
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);
@@ -99,7 +99,7 @@ class KegiatanDetailController extends Controller
         
         ///melakukan validasi data
         $request->validate([
-            'foto' => 'image|file|max:1024',
+            'foto' => 'image|file|max:1024|required',
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);

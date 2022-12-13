@@ -45,7 +45,7 @@ class GaleriController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'gambar' => 'required',
+            'gambar' => 'image|file|max:1024|required',
         ]);
 
         if ($request->file('gambar')){
@@ -94,7 +94,7 @@ class GaleriController extends Controller
     {
         ///melakukan validasi data
         $request->validate([
-            'gambar' => 'image|file|max:1024',
+            'gambar' => 'image|file|max:1024|required',
         ]);
 
         $galeri = Galeri::where('id',$id)->first();

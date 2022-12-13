@@ -29,11 +29,11 @@
                   <a class="btn btn-primary" href="{{ route('binaan.create') }}">Tambah Data</a> 
                     <br><br>
 
-                    {{-- @if ($message = Session::get('success'))
+                    @if ($message = Session::get('success'))
                       <div class="alert alert-success">
                         <p>{{ $message }}</p>
                       </div>
-                    @endif  --}}
+                    @endif 
 
                   <form class="form" method="get" action="{{route('binaan.cari')}}">
                       <div class="form-group w-100 mb-3">

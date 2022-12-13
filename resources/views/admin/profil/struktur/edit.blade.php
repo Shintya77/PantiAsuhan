@@ -42,15 +42,15 @@
                         @method('PUT')
                         <div class="form-group">
                             <label for="name">Nama </label>
-                            <input type="text" name="name" class="form-control" required="required" value="{{ $struktur->name }}" >
+                            <input type="text" name="name" id="name" class="form-control" required="required" value="{{ $struktur->name }}" >
                         </div>
                         <div class="form-group">
                             <label for="jabatan">Jabatan</label>
-                            <input type="text" name="jabatan" class="form-control" required="required" value="{{ $struktur->jabatan }}" >
+                            <input type="text" name="jabatan" id="jabatan" class="form-control" required="required" value="{{ $struktur->jabatan }}" >
                         </div>
                         <div class="form-group">
                             <label for="keterangan">Keterangan</label>
-                            <input type="text" name="keterangan" class="form-control" value="{{ $struktur->keterangan }}" >
+                            <input type="text" name="keterangan" id="keterangan" class="form-control" value="{{ $struktur->keterangan }}" >
                         </div>
                         <a class="btn btn-secondary " href="{{ route('struktur.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-primary">Submit</button>

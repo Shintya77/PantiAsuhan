@@ -62,7 +62,7 @@ class DonasiContrroler extends Controller
             'atas_nama' => 'required',
             'nama_bank' => 'required',
             'no_rekening' => 'required',
-            'bukti_tf' => 'image|file|max:1024',
+            'bukti_tf' => 'image|file|max:1024|required',
             'keterangan' => 'nullable'
         ]);
         $data['id_program'] = $targetProgram->id_program;

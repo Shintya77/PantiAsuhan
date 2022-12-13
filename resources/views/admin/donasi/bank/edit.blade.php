@@ -42,19 +42,19 @@
                         @method('PUT')
                         <div class="form-group">
                             <label for="nama_bank">Nama Bank</label>
-                            <input type="text" name="nama_bank" class="form-control" required="required" value="{{ $bank->nama_bank }}" >
+                            <input type="text" name="nama_bank" id="nama_bank" class="form-control" required="required" value="{{ $bank->nama_bank }}" >
                         </div>
                         <div class="form-group">
                             <label for="nama_rekening">Nama Rekening</label>
-                            <input type="text" name="nama_rekening" class="form-control" required="required" value="{{ $bank->norekening }}" >
+                            <input type="text" name="nama_rekening" id="nama_rekening" class="form-control" required="required" value="{{ $bank->norekening }}" >
                         </div>
                         <div class="form-group">
                             <label for="norekening">No Rekening</label>
-                            <input type="text" name="norekening" class="form-control" value="{{ $bank->norekening }}" >
+                            <input type="text" name="norekening" id="norekening" class="form-control" value="{{ $bank->norekening }}" >
                         </div>
                         <div class="form-group">
                             <label for="gambar">Gambar</label>
-                            <input type="file" name="gambar" class="form-control" value="{{ $bank->gambar }}" >
+                            <input type="file" name="gambar" id="gmbr_bank" class="form-control" value="{{ $bank->gambar }}" >
                             <img width="100px" src="{{asset('storage/'.$bank->gambar)}}">
                         </div>
                         <a class="btn btn-secondary " href="{{ route('bank.index') }}">Kembali</a>

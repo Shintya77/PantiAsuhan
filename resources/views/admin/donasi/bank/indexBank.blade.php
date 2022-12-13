@@ -32,11 +32,11 @@
                   <a class="btn btn-primary" href="{{ route('bank.create') }}">Tambah Bank</a> 
                     <br><br>
 
-                    {{-- @if ($message = Session::get('success'))
+                    @if ($message = Session::get('success'))
                       <div class="alert alert-success">
                         <p>{{ $message }}</p>
                       </div>
-                    @endif  --}}
+                    @endif 
 
                   <form class="form" method="get" action="{{route('bank.cari')}}">
                       <div class="form-group w-100 mb-3">

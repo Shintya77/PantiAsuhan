@@ -31,7 +31,13 @@
           <div class="card-body">
                   <a class="btn btn-primary" href="{{ route('kegiatan.create') }}">Tambah Kegiatan</a> 
                     <br><br>
-                  <form class="form" method="get" action="#">
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                      <p>{{ $message }}</p>
+                    </div>
+                  @endif 
+
+                  <form class="form" method="get" action="{{route('kegiatan.cari')}}">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Kegiatan</label>
                           <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Kegiatan">

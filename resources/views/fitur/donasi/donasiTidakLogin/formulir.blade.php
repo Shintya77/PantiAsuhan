@@ -28,7 +28,7 @@
                                             <div class="row g-4">
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Nama Donatur</h6>
-                                                    <input type="text" name="name" class="form-control border-1"
+                                                    <input type="text" name="name" id="inputName" class="form-control border-1"
                                                         placeholder="Nama Donatur" style="height: 55px; ">
                                                     <div class="form-check my-3">
                                                         <input class="form-check-input" type="checkbox" name="hide"
@@ -40,7 +40,7 @@
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Alamat Donatur</h6>
-                                                    <input type="text" name="alamat" class="form-control border-1"
+                                                    <input type="text" name="alamat" id="inputAlamat" class="form-control border-1"
                                                         placeholder="Alamat Donatur" style="height: 55px;">
                                                 </div>
                                                 <div class="col-12 col-sm-6">
@@ -73,7 +73,7 @@
                                             <div class="row g-4">
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Tanggal Donasi</h6>
-                                                    <input type="date" name="tgl_donasi" class="form-control border-1"
+                                                    <input type="date" name="tgl_donasi" id="inputTanggal" class="form-control border-1"
                                                         value="{{date('Y-m-d')}}" placeholder="Tanggal Donasi"
                                                         style="height: 55px;">
                                                 </div>
@@ -148,7 +148,7 @@
                                             </div> --}}
                                             <div class="col-12">
                                                 <h6 class="text-black">Keterangan </h6>
-                                                <textarea type="text" name="keterangan" class="form-control border-1"
+                                                <textarea type="text" name="keterangan" id="inputKeterangan" class="form-control border-1"
                                                     placeholder="Keterangan bila perlu"></textarea>
                                             </div>
                                             <div class="col-12">

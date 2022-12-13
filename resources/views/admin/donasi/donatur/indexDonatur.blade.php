@@ -29,6 +29,14 @@
       <a class="btn btn-primary" href="{{ route('donatur.create') }}">Tambah Data Donatur</a>
       <a class="btn btn-danger" href="{{ route('donatur.cetak', $program->id_program) }}"><i class="bi bi-printer"></i>
         Cetak Laporan Donasi</a>
+        
+      @if ($message = Session::get('success'))
+      <div class="alert alert-success">
+        <p>{{ $message }}</p>
+      </div>
+     @endif 
+
+   
       <br><br>
       <form class="form" method="get" action="{{route('donatur.cari', $program->id_program)}}">
         <div class="form-group w-100 mb-3">

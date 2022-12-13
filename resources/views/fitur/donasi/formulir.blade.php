@@ -28,7 +28,7 @@
                                             <div class="row g-4">
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Nama Donatur</h6>
-                                                    <input type="text" name="name" class="form-control border-1"
+                                                    <input type="text" name="name" id="inputName" class="form-control border-1"
                                                         placeholder="Nama Donatur" style="height: 55px; "
                                                         value="{{Auth::user() -> name}}">
                                                     <div class="form-check">
@@ -40,16 +40,28 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
-                                                    <h6 class="text-black">Tanggal Donasi</h6>
-                                                    <input type="date" name="tgl_donasi" class="form-control border-1"
-                                                        placeholder="Tanggal Donasi" style="height: 55px;"
-                                                        value="{{date('Y-m-d')}}">
-                                                </div>
-                                                <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Alamat Donatur</h6>
-                                                    <input type="text" name="alamat" class="form-control border-1"
+                                                    <input type="text" name="alamat" id="inputAlamat" class="form-control border-1"
                                                         placeholder="Alamat Donatur" style="height: 55px;"
                                                         value="{{Auth::user() -> alamat}}">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Rekening Atas Nama</h6>
+                                                    <input type="text" name="atas_nama" id="inputAtasNama"
+                                                        class="form-control border-1" placeholder="Rekening Atas Nama"
+                                                        style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Nama Bank</h6>
+                                                    <input type="text" name="nama_bank" id="inputNamaBank"
+                                                        class="form-control border-1" placeholder="Nama Bank Donatur"
+                                                        style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Nomor Rekening Donatur</h6>
+                                                    <input type="text" name="no_rekening" id="inputNoRekening"
+                                                        class="form-control border-1" placeholder="Nomor Rekening"
+                                                        style="height: 55px;">
                                                 </div>
 
                                                 <!-- <div class="col-12 col-sm-6">
@@ -64,31 +76,7 @@
                                         @endif
                                         @endforeach --}}
                                     </select>
-                                </div> -->
-                                                <div class="col-12 col-sm-6">
-                                                    <h6 class="text-black">Nominal Donasi</h6>
-                                                    <input type="number" name="nominal" class="form-control border-1"
-                                                        placeholder="Nominal Donasi" style="height: 55px;"
-                                                        id="inputNominal">
-                                                </div>
-                                                <div class="col-12 col-sm-6">
-                                                    <h6 class="text-black">Rekening Atas Nama</h6>
-                                                    <input type="text" name="atas_nama" id="input_atasNama"
-                                                        class="form-control border-1" placeholder="Rekening Atas Nama"
-                                                        style="height: 55px;">
-                                                </div>
-                                                <div class="col-12 col-sm-6">
-                                                    <h6 class="text-black">Nama Bank</h6>
-                                                    <input type="text" name="nama_bank" id="inputNamaBank"
-                                                        class="form-control border-1" placeholder="Nama Bank Donatur"
-                                                        style="height: 55px;">
-                                                </div>
-                                                <div class="col-12 col-sm-6">
-                                                    <h6 class="text-black">Nomor Rekening Donatur</h6>
-                                                    <input type="text" name="no_rekening" id="input_noRekening"
-                                                        class="form-control border-1" placeholder="Nomor Rekening"
-                                                        style="height: 55px;">
-                                                </div>
+                                </div> -->   
                                             </div>
                                         </div>
                                     </div>
@@ -97,6 +85,18 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="row g-4">
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Tanggal Donasi</h6>
+                                                    <input type="date" name="tgl_donasi" id="inputTanggal" class="form-control border-1"
+                                                        placeholder="Tanggal Donasi" style="height: 55px;"
+                                                        value="{{date('Y-m-d')}}">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Nominal Donasi</h6>
+                                                    <input type="number" name="nominal" id="inputNominal" class="form-control border-1"
+                                                        placeholder="Nominal Donasi" style="height: 55px;"
+                                                        id="inputNominal">
+                                                </div>
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Pilih Program</h6>
                                                     <select name="id_program" id="inputNamaProgram"
@@ -149,7 +149,7 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <h6 class="text-black">Keterangan </h6>
-                                                    <textarea type="text" name="keterangan"
+                                                    <textarea type="text" name="keterangan" id="inputKeterangan"
                                                         class="form-control border-1"
                                                         placeholder="Keterangan bila perlu"></textarea>
                                                 </div>
