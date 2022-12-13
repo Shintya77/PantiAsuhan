@@ -43,13 +43,13 @@
                               <th>Nama Produk</th>
                               <th>Jumlah</th>
                               <th>Harga/Produk</th>
+                              <th>Harga Kemasan</th>
                               <th>Total Bayar</th>
                               <th>Aksi</th>
                           </tr>
                       </thead>
                       <tbody>
                           @foreach ($data as $item)
-                          @if ($item->pesan->status == "success")
                           <tr>
                           <td align="center">{{ $loop->iteration }}</td>
                           <td align="center">{{ $item->created_at->format('Y-m-d') }}</td>
@@ -59,12 +59,19 @@
                           <td align="center">{{ $item->produk->nama }}</td>
                           <td class="text-black">{{ $item->jumlah }}</td>
                           <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
-                          <td class="text-black">{{ $item->total }}</td>
+                          <td>
+                            @if ($item->pesan->kemasan == null)
+                            <a href="{{ route('pesan.edit', $item->id) }}" class="btn btn-primary">Tambah</a>
+                            @else
+                            {{ $item->pesan->kemasan }}
+                            @endif
+
+                          </td>
+                          <td class="text-black">{{ $item->pesan->total_bayar }}</td>
                           <td>
                             <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
                           </td>
                           </tr>
-                          @endif
                           @endforeach
                       </tbody>
                       </table>
@@ -89,5 +96,5 @@
       <!-- /.card -->
     </section>
     <!-- /.content -->
- 
+
 @endsection

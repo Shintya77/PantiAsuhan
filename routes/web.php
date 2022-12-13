@@ -122,7 +122,7 @@ Route::middleware(['auth', 'user'])->group(function (){
     Route::get('/donasi-riwayat',[DonasiContrroler::class, 'riwayat']);
 
     // ROUTE CATERING
-    Route::resource('/keranjang', PesanController::class)->only(['index', 'store', 'destroy']);
+    Route::resource('/keranjang', PesanController::class)->only(['index', 'store', 'destroy', 'update']);
     Route::get('/bayar', [BankCateringController::class, 'index']);
     Route::post('/bayar', [BankCateringController::class, 'bayar']);
     Route::post('/checkout/{id}', [CheckOutController::class, 'store']);
