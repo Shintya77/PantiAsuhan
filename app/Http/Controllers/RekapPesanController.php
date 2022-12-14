@@ -21,10 +21,11 @@ class RekapPesanController extends Controller
     public function index()
     {
         //
-        $data = PesanDetail::all();
+
+        $data = Pesan::all();
         $pesan = DB::table('pesans')->get();
         $title = 'Data Pesanan';
-        $paginate = PesanDetail::orderBy('id', 'asc')->paginate(3);
+        $paginate = Pesan::orderBy('id', 'asc')->paginate(3);
         return view('admin.pesan_kue.rekap.index', compact('data','pesan','title','paginate'));
     }
 
@@ -58,7 +59,7 @@ class RekapPesanController extends Controller
     public function show($id)
     {
         //menampilkan detail data pesanan berdasarkan Id siswa
-        $pesanan = PesanDetail::where('id',$id)->first();
+        $pesanan = PesanDetail::where('pesan_id',$id)->get();
         $title = 'Data Rekapan Pesanan';
         return view('admin.pesan_kue.rekap.detail', compact('pesanan', 'title'));
     }
@@ -71,7 +72,7 @@ class RekapPesanController extends Controller
      */
     public function edit($id)
     {
-        $pesan = PesanDetail::where('id',$id)->first();
+        $pesan = Pesan::where('id',$id)->first();
         $title = 'Input Harga Kemasan';
         return view('admin.pesan_kue.rekap.kemasan', compact('pesan', 'title'));
     }
@@ -85,8 +86,7 @@ class RekapPesanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $detail = PesanDetail::where('id',$id)->first();
-        $pesan = Pesan::where('id',$detail->pesan_id)->first();
+        $pesan = Pesan::where('id',$id)->first();
         $pesan->update([
             'kemasan' => $request->kemasan,
             'total_bayar' => $pesan->total_bayar + $request->kemasan,
@@ -113,11 +113,10 @@ class RekapPesanController extends Controller
     public function cari(Request $request)
     {
         $keyword = $request->cari;
-        $produk = Produk::where('nama',$keyword)->get('id');
-        $data = PesanDetail::where('produk_id', 'like', '%' . $keyword . '%')->paginate(3);
-        $data->appends(['keyword' => $produk]);
-        $title = 'Pencarian Data Kue';
-        $paginate = PesanDetail::orderBy('id', 'asc')->paginate(3);
+        $data = Pesan::where('created_at', 'like', '%' . $keyword . '%')->paginate(3);
+        $data->appends(['keyword' => $keyword]);
+        $title = 'Pencarian Data Pesanan';
+        $paginate = Pesan::orderBy('id', 'asc')->paginate(3);
         return view('admin.pesan_kue.rekap.index', compact('data','paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -202,7 +201,7 @@ class RekapPesanController extends Controller
         }
 
         // return view('admin.pesan_kue.rekap.cetak', compact('tanggalAwal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
-        $pdf = PDF::loadview('admin.pesan_kue.rekap.cetak', compact('awal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
+        $pdf = PDF::loadview('admin.pesan_kue.rekap.cetak', compact('awal', 'tanggalAkhir', 'total_transaksi', 'total_pendapatan', 'rincian'));
         return $pdf->stream();
     }
 

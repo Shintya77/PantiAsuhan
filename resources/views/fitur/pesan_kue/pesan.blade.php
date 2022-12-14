@@ -166,8 +166,9 @@
 
                                 <B>NB:</B>
                                 <p>- Total Harga <B>BELUM termasuk biaya kemasan</B></p>
-                                <p>- Sebelum melakukan pembayaran, silahkan konfirmasi via <B>WhatsApp</B> berikut untuk
-                                    <B>tambahan biaya kemasan</B>
+                                <p>- Sebelum melakukan pembayaran, silahkan klik button <B>Konfirmasi</B></p>
+                                <p>- Lalu, hubungi <B>WhatsApp</B> berikut untuk
+                                    <B>konfirmasi tambahan biaya kemasan</B>
                                 </p>
                                 <a target="_blank" href="https://wa.link/0r016t" class="btn btn-success"><i
                                         class="fa fa-comments"></i> WhatsApp</a>

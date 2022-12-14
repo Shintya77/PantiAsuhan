@@ -170,10 +170,8 @@ class PesanController extends Controller
     public function destroy($id)
     {
         $pesanDetailId = PesanDetail::where('id', $id)->first();
-        $pesan = Pesan::where('id', $pesanDetailId->pesan_id)->first();
         $pesanDetailId->delete();
-        $pesan->delete();
         Alert::success('Berhasil', 'Berhasil dihapus');
-        return redirect('/produk');
+        return redirect('/keranjang');
     }
 }
