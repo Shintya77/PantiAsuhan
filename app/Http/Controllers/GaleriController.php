@@ -19,7 +19,9 @@ class GaleriController extends Controller
         $title = 'Data Galeri';
         $paginate = Galeri::orderBy('id', 'asc')->paginate(5);
 
-        return view ('admin.profil.galeri.index', compact('galeri', 'title', 'paginate')
+        return view(
+            'admin.profil.galeri.index',
+            compact('galeri', 'title', 'paginate')
         );
     }
 
@@ -30,7 +32,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        $title ="Tambah Data Galeri";
+        $title = "Tambah Data Galeri";
         $galeri = Galeri::all();
         return view('admin.profil.galeri.tambah', compact('title', 'galeri'));
     }
@@ -48,7 +50,7 @@ class GaleriController extends Controller
             'gambar' => 'image|file|max:1024|required',
         ]);
 
-        if ($request->file('gambar')){
+        if ($request->file('gambar')) {
             $image_name = $request->file('gambar')->store('gambar', 'public');
         }
 
@@ -97,14 +99,17 @@ class GaleriController extends Controller
             'gambar' => 'image|file|max:1024|required',
         ]);
 
-        $galeri = Galeri::where('id',$id)->first();
-        if ($galeri->gambar && file_exists(storage_path('app/public/'.$galeri->gambar))){
-            Storage::delete('public/'. $galeri->gambar);
+        $galeri = Galeri::where('id', $id)->first();
+        if ($galeri->gambar && file_exists(storage_path('app/public/' . $galeri->gambar))) {
+            Storage::delete('public/' . $galeri->gambar);
         }
 
         $image_name = $request->file('gambar')->store('images', 'public');
+        // update data
+
+        $galeri->gambar = $image_name;
         $galeri->save();
-        
+
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('galeri.index')
             ->with('success', 'Data Galeri Berhasil Diupdate');
@@ -118,7 +123,7 @@ class GaleriController extends Controller
      */
     public function destroy($id)
     {
-        Galeri::where('id',$id)->delete();
+        Galeri::where('id', $id)->delete();
         return redirect()->route('galeri.index')->with('success', 'Data Galeri Berhasil Dihapus');
     }
 }
