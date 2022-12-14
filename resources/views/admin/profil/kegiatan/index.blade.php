@@ -67,7 +67,6 @@
                 @else
                 <img src="{{asset('assets/img/kegiatanDetail/'.$kg -> id.'.jpeg')}}" class="img-flui" alt="{{ $kg -> id }}"
                   width="350px">
-
                 @endif
               </td>
               <td class="text-black">{{ $kg->judul}}</td>

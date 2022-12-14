@@ -107,9 +107,9 @@
                                                                 <div class="form-check">
                                                                     <label class="form-check-label "
                                                                         for="exampleRadios{{ $loop -> iteration }}">
-                                                                        @if ($bank -> image)
+                                                                        @if ($bank -> gambar)
         
-                                                                        <img src="{{ asset('storage/'.$item -> image) }}" alt=""
+                                                                        <img src="{{ asset('storage/'.$bank -> gambar) }}" alt=""
                                                                             height="50px"
                                                                             style="object-fit: fill;border-radius: 20px;"
                                                                             class="img-target">
