@@ -76,7 +76,7 @@ class StrukturController extends Controller
     public function edit($id)
     {
         $struktur = Struktur::find($id);
-        $title = 'Edit Data Program Donasi';
+        $title = 'Edit Data Struktur Kepengurusan';
         return view('admin.profil.struktur.edit', compact('struktur','title'));
     }
 

@@ -32,7 +32,7 @@ class BankController extends Controller
             'nama_bank' => 'required',
             'nama_rekening' => 'required',
             'norekening' => 'required',
-            'gambar' => 'image|file|max:1024',
+            'gmbr_bank' => 'image|file|max:1024|required',
         ]);
 
         if ($request->file('gmbr_bank')){
@@ -64,7 +64,7 @@ class BankController extends Controller
             'nama_bank' => 'required',
             'nama_rekening' => 'required',
             'norekening' => 'required',
-            'gambar' => 'image|file|max:1024',
+            'gmbr_bank' => 'image|file|max:1024|required',
         ]);
 
         $bank = Bank::where('id_bank',$id)->first();
@@ -75,7 +75,7 @@ class BankController extends Controller
             Storage::delete('public/'. $bank->gambar);
         }
 
-        $image_name = $request->file('gambar')->store('images', 'public');
+        $image_name = $request->file('gmbr_bank')->store('gmbr_bank', 'public');
         $bank -> gambar = $image_name;
         $bank->save();
         

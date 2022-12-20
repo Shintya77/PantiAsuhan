@@ -19,7 +19,9 @@ class KegiatanDetailController extends Controller
         $title = 'Data Kegiatan';
         $paginate = Kegiatan::orderBy('id', 'asc')->paginate(5);
 
-        return view ('admin.profil.kegiatan.index', compact('kegiatan', 'title', 'paginate')
+        return view(
+            'admin.profil.kegiatan.index',
+            compact('kegiatan', 'title', 'paginate')
         );
     }
 
@@ -30,7 +32,7 @@ class KegiatanDetailController extends Controller
      */
     public function create()
     {
-        $title ="Tambah Data Kegiatan";
+        $title = "Tambah Data Kegiatan";
         $kegiatan = Kegiatan::all();
         return view('admin.profil.kegiatan.tambah', compact('title', 'kegiatan'));
     }
@@ -45,12 +47,12 @@ class KegiatanDetailController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'foto' => 'image|file|max:1024',
+            'foto' => 'image|file|max:1024|required',
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);
 
-        if ($request->file('foto')){
+        if ($request->file('foto')) {
             $image_name = $request->file('foto')->store('foto', 'public');
         }
 
@@ -96,25 +98,25 @@ class KegiatanDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         ///melakukan validasi data
         $request->validate([
-            'foto' => 'image|file|max:1024',
+            'foto' => 'image|file|max:1024|required',
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);
 
-        $kegiatan = Kegiatan::where('id',$id)->first();
-        if ($kegiatan->foto && file_exists(storage_path('app/public/'.$kegiatan->foto))){
-            Storage::delete('public/'. $kegiatan->foto);
+        $kegiatan = Kegiatan::where('id', $id)->first();
+        if ($kegiatan->foto && file_exists(storage_path('app/public/' . $kegiatan->foto))) {
+            Storage::delete('public/' . $kegiatan->foto);
         }
         $image_name = $request->file('foto')->store('images', 'public');
-        
-        $kegiatan -> foto = $image_name;
+
+        $kegiatan->foto = $image_name;
         $kegiatan->judul = $request->get('judul');
         $kegiatan->deskripsi = $request->get('deskripsi');
         $kegiatan->save();
-        
+
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('kegiatan.index')
             ->with('success', 'Data Kegiatan Berhasil Diupdate');
@@ -129,15 +131,24 @@ class KegiatanDetailController extends Controller
     public function destroy($id)
     {
         // $kegiatan->delete();
-        Kegiatan::where('id',$id)->delete();
+        Kegiatan::where('id', $id)->delete();
         return redirect()->route('kegiatan.index')->with('success', 'Data Kegiatan Berhasil Dihapus');
     }
     public function cari(Request $request)
     {
+        // $keyword = $request->cari;
+        // $paginate = Kegiatan::where('judul', 'like', '%' . $keyword . '%')->paginate(3);
+        // $paginate->appends(['keyword' => $keyword]);
+        // $title = 'Pencarian Data Kegiatan';
+        // return view('admin.profil.kegiatan.index', compact('paginate', 'title'))->with('i', (request()->input('page', 1) - 1) * 5);
+
         $keyword = $request->cari;
-        $paginate = Kegiatan::where('judul', 'like', '%' . $keyword . '%')->paginate(3);
-        $paginate->appends(['keyword' => $keyword]);
+        $target = Kegiatan::where('judul', 'like', '%' . $keyword . '%')->paginate(3);
         $title = 'Pencarian Data Kegiatan';
-        return view('admin.profil.kegiatan.index', compact('paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('admin.profil.kegiatan.index', [
+            'kegiatan' => $target,
+            'title' => $title,
+            'paginate' => $target
+        ]);
     }
 }

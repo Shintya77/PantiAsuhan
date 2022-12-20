@@ -31,6 +31,12 @@
     <div class="card-body">
       <a class="btn btn-primary" href="{{ route('galeri.create') }}">Tambah Galeri</a>
       <br><br>
+      @if ($message = Session::get('success'))
+      <div class="alert alert-success">
+        <p>{{ $message }}</p>
+      </div>
+    @endif 
+
       <div class="table-responsive">
         <table id="example2" class="table table-bordered table-hover">
           <thead>

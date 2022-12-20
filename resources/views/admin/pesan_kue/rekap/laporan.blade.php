@@ -37,11 +37,11 @@
                             <tbody>
                             <tr>
                                 <td><B>Total Pendapatan</td>
-                                <td>Rp. {{$pendapatan}}</td>
+                                <td>Rp. {{$total_pendapatan}}</td>
                             </tr>
                             <tr>
                                 <td><B>Total Transaksi</td>
-                                <td>{{$transaksi}}</td>
+                                <td>{{$total_transaksi}}</td>
                             </tr>
                             </tbody>
                         </table>

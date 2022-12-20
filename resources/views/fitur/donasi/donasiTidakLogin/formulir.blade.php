@@ -24,90 +24,122 @@
                             <div class="row g-3">
                                 <div class="card">
                                     <div class="card-body">
-                                      <div class="row">
-                                        <div class="row g-4">
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Nama Donatur</h6>
-                                                <input type="text" name="name" class="form-control border-0"
-                                                    placeholder="Nama Donatur" style="height: 55px; ">
-                                                <div class="form-check my-3">
-                                                    <input class="form-check-input" type="checkbox" name="hide"
-                                                        id="flexCheckDefault">
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                        Sembunyikan nama anda sebagai donatur
-                                                    </label>
+                                        <div class="row">
+                                            <div class="row g-4">
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Nama Donatur</h6>
+                                                    <input type="text" name="name" id="inputName" class="form-control border-1"
+                                                        placeholder="Nama Donatur" style="height: 55px; ">
+                                                    <div class="form-check my-3">
+                                                        <input class="form-check-input" type="checkbox" name="hide"
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            Sembunyikan nama anda sebagai donatur
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Alamat Donatur</h6>
-                                                <input type="text" name="alamat" class="form-control border-0"
-                                                    placeholder="Alamat Donatur" style="height: 55px;">
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Rekening Atas Nama</h6>
-                                                <input type="text" name="atas_nama" id="inputAtasNama" class="form-control border-0"
-                                                    placeholder="Rekening Atas Nama" style="height: 55px;">
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Nama Bank</h6>
-                                                <input type="text" name="nama_bank" id="inputNamaBank" class="form-control border-0"
-                                                    placeholder="Nama Bank Donatur" style="height: 55px;">
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Nomor Rekening Donatur</h6>
-                                                <input type="text" name="no_rekening" id="inputNoRekening"
-                                                    class="form-control border-0" placeholder="Nomor Rekening"
-                                                    style="height: 55px;">
-                                            </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Alamat Donatur</h6>
+                                                    <input type="text" name="alamat" id="inputAlamat" class="form-control border-1"
+                                                        placeholder="Alamat Donatur" style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Rekening Atas Nama</h6>
+                                                    <input type="text" name="atas_nama" id="inputAtasNama"
+                                                        class="form-control border-1" placeholder="Rekening Atas Nama"
+                                                        style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Nama Bank</h6>
+                                                    <input type="text" name="nama_bank" id="inputNamaBank"
+                                                        class="form-control border-1" placeholder="Nama Bank Donatur"
+                                                        style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Nomor Rekening Donatur</h6>
+                                                    <input type="text" name="no_rekening" id="inputNoRekening"
+                                                        class="form-control border-1" placeholder="Nomor Rekening"
+                                                        style="height: 55px;">
+                                                </div>
 
+                                            </div>
                                         </div>
-                                       </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
-                                      <div class="row">
-                                        <div class="row g-4">
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Tanggal Donasi</h6>
-                                                <input type="date" name="tgl_donasi" class="form-control border-0"
-                                                    value="{{date('Y-m-d')}}" placeholder="Tanggal Donasi" style="height: 55px;">
-                                            </div>
-                                            
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Nominal Donasi</h6>
-                                                <input type="number" name="nominal" id="inputNominal" class="form-control border-0"
-                                                    placeholder="Nominal Donasi" style="height: 55px;">
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Pilih Program</h6>
-                                                <select name="id_program" id="inputNamaProgram" class="form-select border-0"
-                                                    style="height: 55px;">
-                                                    <option>Pilih Program</option>
-                                                    @foreach ($program as $p)
-                                                    @if ($p->status == 'open')
-                                                    <option value="{{$p->nama_program}}">{{$p->nama_program}}</option>
-                                                    @else
-                                                    <option>Tidak Ada Program Tersedia</option>
-                                                    @endif
+                                        <div class="row">
+                                            <div class="row g-4">
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Tanggal Donasi</h6>
+                                                    <input type="date" name="tgl_donasi" id="inputTanggal" class="form-control border-1"
+                                                        value="{{date('Y-m-d')}}" placeholder="Tanggal Donasi"
+                                                        style="height: 55px;">
+                                                </div>
+
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Nominal Donasi</h6>
+                                                    <input type="number" name="nominal" id="inputNominal"
+                                                        class="form-control border-1" placeholder="Nominal Donasi"
+                                                        style="height: 55px;">
+                                                </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <h6 class="text-black">Pilih Program</h6>
+                                                    <select name="id_program" id="inputNamaProgram"
+                                                        class="form-select border-1" style="height: 55px;">
+                                                        <option>Pilih Program</option>
+                                                        @foreach ($program as $p)
+                                                        @if ($p->status == 'open')
+                                                        <option value="{{$p->nama_program}}">{{$p->nama_program}}
+                                                        </option>
+                                                        @else
+                                                        <option>Tidak Ada Program Tersedia</option>
+                                                        @endif
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="row">
+                                                    @foreach ($bank as $bank)
+                                                    <div class="col mb-4 align-self-center">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="form-check">
+                                                                    <label class="form-check-label "
+                                                                        for="exampleRadios{{ $loop -> iteration }}">
+                                                                        @if ($bank -> gambar)
+        
+                                                                        <img src="{{ asset('storage/'.$bank -> gambar) }}" alt=""
+                                                                            height="50px"
+                                                                            style="object-fit: fill;border-radius: 20px;"
+                                                                            class="img-target">
+                                                                        @else
+                                                                        <img src="{{ asset('assets/img/'.$bank -> nama_bank.'.png') }}"
+                                                                            alt="" height="50px"
+                                                                            style="object-fit: fill;border-radius: 20px;"
+                                                                            class="img-target">
+        
+                                                                        @endif
+                                                                        <p id="target-norek">{{ $bank -> norekening }}</p>
+                                                                    </label>
+                                                                    <input class="form-check-input d-none opt-radio"
+                                                                        type="radio" name="id_bank"
+                                                                        id="exampleRadios{{ $loop -> iteration }}"
+                                                                        value="{{ $bank->id_bank }}">
+        
+                                                                </div>
+                                                            </div>
+                                                        </div>
+        
+                                                    </div>
                                                     @endforeach
-                                                </select>
-                                            </div>
-                                            {{-- //TODO nomor rekening muncul keteika selesai memilih bank --}}
-                                            <div class="col-12 col-sm-6">
+                                                </div>
+                                                {{-- //TODO nomor rekening muncul keteika selesai memilih bank --}}
+                                                {{-- <h1 id="rekening"></h1> --}}
+                                                {{-- //TODO menampilkan pilihan gambar --}}
+                                                {{-- <div class="col-12 col-sm-6">
                                                 <h6 class="text-black">Bank</h6>
-                                                <select name="id_bank" id="nama_bank" class="form-select border-0"
-                                                    style="height: 55px;">
-                                                    {{-- <option selected>Bank</option> --}}
-                                                    @foreach ($bank as $b)
-                                                    <option value="{{$b->id_bank}}">{{$b->nama_bank}} - {{$b->norekening}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            {{-- //TODO menampilkan pilihan gambar --}}
-                                            {{-- <div class="col-12 col-sm-6">
-                                                <h6 class="text-black">Bank</h6>
-                                                <select name="id_bank" id="nama_bank" class="form-select border-0"
+                                                <select name="id_bank" id="nama_bank" class="form-select border-1"
                                                 style="height: 55px;">
                                                 @foreach ($bank as $b)
                                                     <option img src="{{('assets/img/'.$b ->id_bank.'.png')}}"></option>
@@ -116,33 +148,33 @@
                                             </div> --}}
                                             <div class="col-12">
                                                 <h6 class="text-black">Keterangan </h6>
-                                                <textarea type="text" name="keterangan" class="form-control border-0"
+                                                <textarea type="text" name="keterangan" id="inputKeterangan" class="form-control border-1"
                                                     placeholder="Keterangan bila perlu"></textarea>
                                             </div>
                                             <div class="col-12">
                                                 <h6 class="description">Upload Bukti Transfer (.png, .jpg, .jpeg)</h6>
                                                 <img src="" class="img-preview img-fluid mb-3 " alt="">
-                                                <input type="file" name="bukti_tf" class="form-control border-0"
+                                                <input type="file" name="bukti_tf" class="form-control border-1"
                                                     placeholder="Nominal Donasi" style="height: 55px;" id="image"
                                                     onchange="previewImage()">
                                             </div>
                                         </div>
-                                      </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <a href="{{url('/donasi')}}"
-                                        class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
-                                    <a id="form" onclick="form()"
-                                        class="btn btn-primary rounded-pill py-2 px-4 animated slideInRight">Berikutnya</a>
-                                    {{-- <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button> --}}
-                                </div>
+                            </div>
+                            <div class="col-12">
+                                <a href="{{url('/donasi')}}"
+                                    class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Batal</a>
+                                <a id="form" onclick="form()"
+                                    class="btn btn-primary rounded-pill py-2 px-4 animated slideInRight">Berikutnya</a>
+                                {{-- <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <section id="hide" class="icon-boxes d-none">
@@ -269,5 +301,26 @@ const upload = () => {
             imgPreview.src = oFREvent.target.result;
         }
     }
+</script>
+<script>
+    const radio = document.querySelectorAll('.opt-radio');
+            const target = document.querySelectorAll('.img-target');
+            const target_norek = document.querySelectorAll('#target-norek');
+            const rekening = document.querySelector('#rekening');
+
+            radio.forEach(function (item, index) {
+                item.addEventListener('click', function () {
+                    target.forEach(function (item, index) {
+                        item.style.backgroundColor = 'white';
+                        item.style.transform = 'scale(1)';
+                    });
+                    target[index].style.backgroundColor = 'rgba(0,0,0,0.08)';
+                    target[index].style.transform = 'scale(1.2)';
+                    // Mengambil value dari element p target norek
+                    target_norek.forEach(function (item, index) {
+                        rekening.innerHTML = item.value;
+                    });
+                });
+            });
 </script>
 @endsection

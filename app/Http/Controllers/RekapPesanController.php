@@ -9,6 +9,7 @@ use App\Models\Riwayat;
 use App\Models\Pesan;
 use DB;
 use PDF;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RekapPesanController extends Controller
 {
@@ -20,10 +21,11 @@ class RekapPesanController extends Controller
     public function index()
     {
         //
-        $data = PesanDetail::all(); 
+
+        $data = Pesan::all();
         $pesan = DB::table('pesans')->get();
         $title = 'Data Pesanan';
-        $paginate = PesanDetail::orderBy('id', 'asc')->paginate(3);
+        $paginate = Pesan::orderBy('id', 'asc')->paginate(3);
         return view('admin.pesan_kue.rekap.index', compact('data','pesan','title','paginate'));
     }
 
@@ -57,7 +59,7 @@ class RekapPesanController extends Controller
     public function show($id)
     {
         //menampilkan detail data pesanan berdasarkan Id siswa
-        $pesanan = PesanDetail::where('id',$id)->first();
+        $pesanan = PesanDetail::where('pesan_id',$id)->get();
         $title = 'Data Rekapan Pesanan';
         return view('admin.pesan_kue.rekap.detail', compact('pesanan', 'title'));
     }
@@ -70,7 +72,9 @@ class RekapPesanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pesan = Pesan::where('id',$id)->first();
+        $title = 'Input Harga Kemasan';
+        return view('admin.pesan_kue.rekap.kemasan', compact('pesan', 'title'));
     }
 
     /**
@@ -82,7 +86,14 @@ class RekapPesanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pesan = Pesan::where('id',$id)->first();
+        $pesan->update([
+            'kemasan' => $request->kemasan,
+            'total_bayar' => $pesan->total_bayar + $request->kemasan,
+            'status' => 'process'
+        ]);
+        Alert::success('Berhasil', 'Berhasil menambahkan harga kemasan');
+        return redirect('/pesan');
     }
 
     /**
@@ -101,12 +112,11 @@ class RekapPesanController extends Controller
 
     public function cari(Request $request)
     {
-        $keyword = $request->cari; 
-        $produk = Produk::where('nama',$keyword)->get('id');
-        $data = PesanDetail::where('produk_id', 'like', '%' . $keyword . '%')->paginate(3);
-        $data->appends(['keyword' => $produk]);
-        $title = 'Pencarian Data Kue';
-        $paginate = PesanDetail::orderBy('id', 'asc')->paginate(3);
+        $keyword = $request->cari;
+        $data = Pesan::where('created_at', 'like', '%' . $keyword . '%')->paginate(3);
+        $data->appends(['keyword' => $keyword]);
+        $title = 'Pencarian Data Pesanan';
+        $paginate = Pesan::orderBy('id', 'asc')->paginate(3);
         return view('admin.pesan_kue.rekap.index', compact('data','paginate','title'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -124,7 +134,7 @@ class RekapPesanController extends Controller
         $total_transaksi = 0;
         $total_pendapatan = 0;
 
-        
+
         $akhir = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAkhir)));
         $rincian = PesanDetail::whereBetween('created_at',[$tanggalAwal,$akhir])->get();
 
@@ -134,7 +144,7 @@ class RekapPesanController extends Controller
 
             $transaksi = Pesan::where('created_at', 'LIKE', "%$tanggal%")->where('status','success')->count();
             $pendapatan = Pesan::where('created_at', 'LIKE', "%$tanggal%")->where('status','success')->sum('total_bayar');
-           
+
             $total_pendapatan += $pendapatan;
             $total_transaksi += $transaksi;
 
@@ -149,11 +159,11 @@ class RekapPesanController extends Controller
 
 
 
-        return view('admin.pesan_kue.rekap.laporan', compact('awal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
+        return view('admin.pesan_kue.rekap.laporan', compact('awal', 'tanggalAkhir', 'total_transaksi', 'total_pendapatan', 'rincian'));
     }
 
 
-    
+
     public function cetak(Request $request){
         $tanggalAwal = date('Y-m-d', mktime(0, 0, 0, date('m'), 1, date('Y')));
         $tanggalAkhir = date('Y-m-d');
@@ -167,7 +177,7 @@ class RekapPesanController extends Controller
         $total_transaksi = 0;
         $total_pendapatan = 0;
 
-        
+
         $akhir = date('Y-m-d', strtotime("+1 day", strtotime($tanggalAkhir)));
         $rincian = PesanDetail::whereBetween('created_at',[$tanggalAwal,$akhir])->get();
 
@@ -191,7 +201,7 @@ class RekapPesanController extends Controller
         }
 
         // return view('admin.pesan_kue.rekap.cetak', compact('tanggalAwal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
-        $pdf = PDF::loadview('admin.pesan_kue.rekap.cetak', compact('awal', 'tanggalAkhir', 'transaksi', 'pendapatan', 'rincian'));
+        $pdf = PDF::loadview('admin.pesan_kue.rekap.cetak', compact('awal', 'tanggalAkhir', 'total_transaksi', 'total_pendapatan', 'rincian'));
         return $pdf->stream();
     }
 

@@ -26,7 +26,7 @@ class PesanController extends Controller
     public function index(StorePesanRequest $request)
     {
         //
-        $pesan = Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->first();
+        $pesan = Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->orWhere('status', 'process')->first();
 
 
         if(!empty($pesan)){
@@ -78,8 +78,7 @@ class PesanController extends Controller
         $pesan = Pesan::where('user_id', auth()->user()->id)->where('status', 'pending')->first();
         $detailPesan = PesanDetail::where('pesan_id', $pesan->id)->where('produk_id', $produk->id)->first();
 
-        $genap = 1600;
-        $ganjil = 1300;
+
         $jumlah = $produk->harga * $request->jumlah_pesan;;
 
         // if($produk->tipeproduk_id == 1){
@@ -151,9 +150,15 @@ class PesanController extends Controller
      * @param  \App\Models\Pesan  $pesan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePesanRequest $request, Pesan $pesan)
+    public function update(UpdatePesanRequest $request, $id)
     {
-
+        $detail = PesanDetail::where('id', $id)->first();
+        $pesan = Pesan::where('id', $detail->pesan_id)->first();
+        $pesan->update([
+            'total_bayar' => $request->total_bayar,
+        ]);
+        Alert::success('Berhasil', 'Harap konfirmasi melalui Whatsapp');
+        return redirect('/keranjang');
     }
 
     /**
@@ -165,10 +170,8 @@ class PesanController extends Controller
     public function destroy($id)
     {
         $pesanDetailId = PesanDetail::where('id', $id)->first();
-        $pesan = Pesan::where('id', $pesanDetailId->pesan_id)->first();
         $pesanDetailId->delete();
-        $pesan->delete();
         Alert::success('Berhasil', 'Berhasil dihapus');
-        return redirect('/produk');
+        return redirect('/keranjang');
     }
 }

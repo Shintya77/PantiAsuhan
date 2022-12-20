@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group">
                           <h6 class="text-black">Bank</h6>
-                              <select name="id_bank" id="nama_bank" class="form-select border-0" style="height: 55px;">
+                              <select name="id_bank" id="id_bank" class="form-select border-0" style="height: 55px;">
                                   {{-- <option selected>Bank</option> --}}
                                   @foreach ($bank as $b)
                                   <option value="{{$b->id_bank}}" >{{$b->nama_bank}} - {{$b->norekening}}</option>

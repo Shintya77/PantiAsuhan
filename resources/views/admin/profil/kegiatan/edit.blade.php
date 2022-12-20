@@ -42,16 +42,16 @@
                         @method('PUT')
                         <div class="form-group">
                             <label for="foto">Foto</label>
-                            <input type="file" name="foto" class="form-control" value="{{ $kegiatan->foto}}" >
+                            <input type="file" name="foto" id="foto" class="form-control" value="{{ $kegiatan->foto}}" >
                             <img width="100px" src="{{asset('storage/'.$kegiatan->foto)}}">
                         </div>
                         <div class="form-group">
                             <label for="judul">Nama Kegiatan</label>
-                            <input type="text" name="judul" class="form-control" required="required" value="{{ $kegiatan->judul }}" >
+                            <input type="text" name="judul" id="judul" class="form-control" required="required" value="{{ $kegiatan->judul }}" >
                         </div>
                         <div class="form-group">
                             <label for="deskripsi">Deskripsi</label>
-                            <input type="text" name="deskripsi" class="form-control" required="required" value="{{ $kegiatan->deskripsi }}" >
+                            <input type="text" name="deskripsi" id="deskripsi" class="form-control" required="required" value="{{ $kegiatan->deskripsi }}" >
                         </div>
                         <a class="btn btn-secondary " href="{{ route('kegiatan.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-primary">Submit</button>

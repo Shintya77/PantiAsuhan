@@ -70,12 +70,12 @@ class DonaturController extends Controller
             'tgl_donasi' => 'required',
             'alamat' => 'required',
             'nominal' => 'required',
-            // 'bukti_tf' => 'image|file|max:1024',
+            'bukti_tf' => 'image|file|max:1024',
         ]);
 
-        // if ($request->file('bukti_tf')){
-        //     $image_name = $request->file('bukti_tf')->store('bukti_tf', 'public');
-        // }
+        if ($request->file('bukti_tf')){
+            $image_name = $request->file('bukti_tf')->store('bukti_tf', 'public');
+        }
 
         $donatur = new donatur();
         $donatur->id_pengguna = $request->id_pengguna;

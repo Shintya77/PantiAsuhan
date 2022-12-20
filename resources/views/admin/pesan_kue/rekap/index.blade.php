@@ -29,7 +29,7 @@
                   <form class="form" method="get" action="{{ route('pesan.cari') }}">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Pesanan</label>
-                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="nama kue/tanggal">
+                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Tanggal">
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
@@ -39,32 +39,31 @@
                           <tr>
                               <th>No</th>
                               <th>Tanggal</th>
-                              <th>Gambar</th>
-                              <th>Nama Produk</th>
-                              <th>Jumlah</th>
-                              <th>Harga/Produk</th>
-                              <th>Total Bayar</th>
+                              <th>Customer</th>
+                              <th>Harga Kemasan</th>
+                              <th>Total Bayar + Kemasan</th>
                               <th>Aksi</th>
                           </tr>
                       </thead>
                       <tbody>
                           @foreach ($data as $item)
-                          @if ($item->pesan->status == "success")
                           <tr>
                           <td align="center">{{ $loop->iteration }}</td>
                           <td align="center">{{ $item->created_at->format('Y-m-d') }}</td>
-                          <td align="center">
-                          <img src="{{ asset('storage/'. $item->produk->gambar) }}" width="100" height="150"/>
+                          <td align="center">{{ $item->user->name }}</td>
+                          <td>
+                            @if ($item->kemasan == null)
+                            <a href="{{ route('pesan.edit', $item->id) }}" class="btn btn-primary">Tambah</a>
+                            @else
+                            {{ $item->kemasan }}
+                            @endif
+
                           </td>
-                          <td align="center">{{ $item->produk->nama }}</td>
-                          <td class="text-black">{{ $item->jumlah }}</td>
-                          <td class="text-black">Rp {{ number_format($item->produk->harga)}}</td>
-                          <td class="text-black">{{ $item->total }}</td>
+                          <td class="text-black">{{ $item->total_bayar }}</td>
                           <td>
                             <a class="btn btn-warning" href="{{ route('pesan.show',$item->id) }}"><i class="fa fa-eye"></i></a>
                           </td>
                           </tr>
-                          @endif
                           @endforeach
                       </tbody>
                       </table>
@@ -89,5 +88,5 @@
       <!-- /.card -->
     </section>
     <!-- /.content -->
- 
+
 @endsection

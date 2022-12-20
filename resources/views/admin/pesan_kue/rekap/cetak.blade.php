@@ -31,8 +31,8 @@
         <p>-----------------------------------------------------------------------------------------------------------------------------------</p>
     </center>
     <h4 class="text-center">Ringkasan Transaksi</h4>
-    <p><strong>Total Pendapatan</strong> : Rp. {{$pendapatan}}</p>
-    <p><strong>Total Transaksi</strong> : {{$transaksi}}</p>
+    <p><strong>Total Pendapatan</strong> : Rp. {{$total_pendapatan}}</p>
+    <p><strong>Total Transaksi</strong> : {{$total_transaksi}}</p>
     <p>-----------------------------------------------------------------------------------------------------------------------------------</p>
                 
     <center>

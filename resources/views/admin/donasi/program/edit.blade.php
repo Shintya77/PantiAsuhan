@@ -42,19 +42,19 @@
                       
                         <div class="form-group">
                             <label for="nama_program">Nama Program</label>
-                            <input type="text" name="nama_program" class="form-control" required="required" value="{{ $program->nama_program }}" >
+                            <input type="text" name="nama_program" id="nama_program" class="form-control" required="required" value="{{ $program->nama_program }}" >
                         </div>
                         <div class="form-group">
                             <label for="dns_butuh">Donasi Butuh</label>
-                            <input type="number" name="dns_butuh" class="form-control" required="required" value="{{ $program->dns_butuh }}" >
+                            <input type="number" name="dns_butuh" id="dns_butuh" class="form-control" required="required" value="{{ $program->dns_butuh }}" >
                         </div>
                         <div class="form-group">
                             <label for="dns_terkumpul">Donasi Terkumpul</label>
-                            <input type="number" name="dns_terkumpul" class="form-control" value="{{ $program->dns_terkumpul }}" >
+                            <input type="number" name="dns_terkumpul" id="dns_terkumpul" class="form-control" value="{{ $program->dns_terkumpul }}" >
                         </div>
                         <div class="form-group">
                           <label for="dns_terkumpul">Status</label>
-                          <input type="text" name="status" class="form-control" value="{{ $program->status }}" >
+                          <input type="text" name="status" id="status" class="form-control" value="{{ $program->status }}" >
                       </div>
                         <a class="btn btn-secondary " href="{{ route('program.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-primary">Submit</button>

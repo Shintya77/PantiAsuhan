@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Kelola Data Struktur Kepengurusan</h1>
+            <h1>Input Harga Kemasan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Kelola Data Struktur Kepengurusan</li>
+              <li class="breadcrumb-item active">Input Harga Kemasan</li>
             </ol>
           </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="card-body">
                     @if ($errors->any())
                     <div class="alert alert-danger">
-                        <strong>Whoops!</strong> Ada Kesalahan dalam Data Penginputan<br><br>
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
                         <ul>
                             @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -37,23 +37,15 @@
                         </ul>
                     </div>
                     @endif
-                    <form method="post" action="{{ route('struktur.update', $struktur->id) }}" enctype="multipart/form-data">
-                        @csrf
+                    <form action="{{ route('pesan.update', $pesan->id) }}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
+                        @csrf
                         <div class="form-group">
-                            <label for="name">Nama </label>
-                            <input type="text" name="name" id="name" class="form-control" required="required" value="{{ $struktur->name }}" >
+                            <label for="kemasan">Harga Kemasan</label>
+                            <input type="number" name="kemasan" class="form-control" id="kemasan" aria-describedby="kemasan" >
                         </div>
-                        <div class="form-group">
-                            <label for="jabatan">Jabatan</label>
-                            <input type="text" name="jabatan" id="jabatan" class="form-control" required="required" value="{{ $struktur->jabatan }}" >
-                        </div>
-                        <div class="form-group">
-                            <label for="keterangan">Keterangan</label>
-                            <input type="text" name="keterangan" id="keterangan" class="form-control" value="{{ $struktur->keterangan }}" >
-                        </div>
-                        <a class="btn btn-secondary " href="{{ route('struktur.index') }}">Kembali</a>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class="btn btn-secondary " href="{{ route('pesan.index') }}">Kembali</a>
+                        <button type="submit" class="btn btn-warning">Submit</button>
                     </form>
                 </div>
             </div>
@@ -61,9 +53,9 @@
         </div>
         <!-- /.card-footer-->
       </div>
-        
+
       <!-- /.card -->
     </section>
     <!-- /.content -->
- 
+
 @endsection

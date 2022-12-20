@@ -85,6 +85,19 @@
                                         </h6>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th class="text-start">
+                                        <h6>Total Bayar</h6>
+                                    </th>
+                                    <td>
+                                        <h6>:</h6>
+                                    </td>
+                                    <td class="text-end">
+                                        <h6>
+                                           Rp. {{ number_format($details->pesan->total_bayar) }}
+                                        </h6>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

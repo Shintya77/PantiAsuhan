@@ -59,7 +59,7 @@
                                     </div>
                                     @endif --}}
                                     <div class="text-center">
-                                        <a class="small" href="{{ url('/register')}}">Buat akun!</a>
+                                        <a class="small" href="{{ url('/register')}}">Buat akun</a>
                                     </div>
                                 </div>
                             </div>

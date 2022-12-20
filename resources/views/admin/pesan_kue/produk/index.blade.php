@@ -29,16 +29,16 @@
                   <a class="btn btn-primary" href="{{ route('kue.create')}}">Tambah Produk</a> 
                     <br><br>
 
-                    {{-- @if ($message = Session::get('success'))
+                    @if ($message = Session::get('success'))
                       <div class="alert alert-success">
                         <p>{{ $message }}</p>
                       </div>
-                    @endif  --}}
+                    @endif
 
                   <form class="form" method="get" action="{{ route('kue.cari') }}">
                       <div class="form-group w-100 mb-3">
                           <label for="search" class="d-block mr-2">Pencarian Data Produk</label>
-                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Kue">
+                          <input type="text" name="cari" class="form-control w-50 d-inline" id="cari" placeholder="Nama Produk">
                           <button type="submit" class="btn btn-success mb-1">Cari</button>
                       </div>
                   </form>
@@ -66,7 +66,7 @@
                                       
                                       @csrf
                                       @method('DELETE')
-                                      <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                      <button type="submit" class="btn btn-danger"  onclick="return confirm('Anda yakin akan menghapus data ini?');"><i class="fa fa-trash"></i></button>
                                     </form>
                                   </td>
                               </tr>
