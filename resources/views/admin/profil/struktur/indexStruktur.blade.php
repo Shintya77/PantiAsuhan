@@ -46,7 +46,7 @@
                     <table id="example2" class="table table-bordered table-hover">
                       <thead>
                       <tr>
-                          <th>Id </th>
+                          <th>No </th>
                           <th>Nama </th>
                           <th>Jabatan</th>
                           <th>Keterangan</th>
@@ -56,7 +56,7 @@
                       <tbody>
                           @foreach ($paginate as $str)
                           <tr>
-                          <td class="text-black" style="text-align: center" >{{ $str->id}}</td>
+                          <td class="text-black" style="text-align: center" >{{ $loop -> iteration}}</td>
                           <td class="text-black">{{ $str->name}}</td>
                           <td class="text-black">{{ $str->jabatan }}</td>
                           <td class="text-black">{{ $str->keterangan }}</td>

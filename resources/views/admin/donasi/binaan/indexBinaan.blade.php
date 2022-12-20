@@ -46,7 +46,7 @@
                     <table id="example2" class="table table-bordered table-hover">
                       <thead>
                       <tr>
-                      <th>Id Binaan </th>
+                          <th>No </th>
                           <th>Nama Binaan</th>
                           <th>TTL</th>
                           <th>Jenis Kelamin</th>
@@ -61,7 +61,7 @@
                       <tbody>
                         @foreach ($paginate as $bina)
                         <tr>
-                        <td class="text-black">{{ $bina->id_binaan}}</td>
+                        <td class="text-black">{{ $loop -> iteration}}</td>
                         <td class="text-black">{{ $bina->nama_binaan}}</td>
                         <td class="text-black">{{ $bina->ttl}}</td>
                         <td class="text-black">{{ $bina->jekel }}</td>

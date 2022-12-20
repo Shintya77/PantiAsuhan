@@ -41,7 +41,7 @@
         <table id="example2" class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>Id Gambar</th>
+              <th>No</th>
               <th>Gambar</th>
               <th>Aksi</th>
             </tr>
@@ -50,7 +50,7 @@
           <tbody>
             @foreach ($paginate as $glr)
             <tr>
-              <td class="text-black">{{ $glr->id}}</td>
+              <td class="text-black">{{ $loop -> iteration}}</td>
               <td>
                 @if ($glr -> gambar)
                 <img src="{{asset('storage/'.$glr -> gambar)}}" class="img-fluid" alt="..." width="350px">
