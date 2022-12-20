@@ -28,9 +28,9 @@
                                             <div class="row g-4">
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Nama Donatur</h6>
-                                                    <input type="text" name="name" id="inputName" class="form-control border-1"
-                                                        placeholder="Nama Donatur" style="height: 55px; "
-                                                        value="{{Auth::user() -> name}}">
+                                                    <input type="text" name="name" id="inputName"
+                                                        class="form-control border-1" placeholder="Nama Donatur"
+                                                        style="height: 55px; " value="{{Auth::user() -> name}}">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="hide"
                                                             id="flexCheckDefault">
@@ -41,9 +41,9 @@
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Alamat Donatur</h6>
-                                                    <input type="text" name="alamat" id="inputAlamat" class="form-control border-1"
-                                                        placeholder="Alamat Donatur" style="height: 55px;"
-                                                        value="{{Auth::user() -> alamat}}">
+                                                    <input type="text" name="alamat" id="inputAlamat"
+                                                        class="form-control border-1" placeholder="Alamat Donatur"
+                                                        style="height: 55px;" value="{{Auth::user() -> alamat}}">
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Rekening Atas Nama</h6>
@@ -63,20 +63,6 @@
                                                         class="form-control border-1" placeholder="Nomor Rekening"
                                                         style="height: 55px;">
                                                 </div>
-
-                                                <!-- <div class="col-12 col-sm-6">
-                                    <h6 class="text-black">Bank</h6>
-                                    <select name="id_bank" id="nama_bank" class="form-select border-1"
-                                        style="height: 55px;" required>
-                                        {{-- <option selected>Bank</option> --}}
-
-                                        {{-- @foreach ($bank as $b)
-                                        @if ($b->nama_bank != 'Tunai')
-                                        <option value="{{$b->id_bank}}">{{$b->nama_bank}} - {{$b->norekening}}</option>
-                                        @endif
-                                        @endforeach --}}
-                                    </select>
-                                </div> -->   
                                             </div>
                                         </div>
                                     </div>
@@ -87,15 +73,15 @@
                                             <div class="row g-4">
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Tanggal Donasi</h6>
-                                                    <input type="date" name="tgl_donasi" id="inputTanggal" class="form-control border-1"
-                                                        placeholder="Tanggal Donasi" style="height: 55px;"
-                                                        value="{{date('Y-m-d')}}">
+                                                    <input type="date" name="tgl_donasi" id="inputTanggal"
+                                                        class="form-control border-1" placeholder="Tanggal Donasi"
+                                                        style="height: 55px;" value="{{date('Y-m-d')}}">
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Nominal Donasi</h6>
-                                                    <input type="number" name="nominal" id="inputNominal" class="form-control border-1"
-                                                        placeholder="Nominal Donasi" style="height: 55px;"
-                                                        id="inputNominal">
+                                                    <input type="number" name="nominal" id="inputNominal"
+                                                        class="form-control border-1" placeholder="Nominal Donasi"
+                                                        style="height: 55px;" id="inputNominal">
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <h6 class="text-black">Pilih Program</h6>
@@ -121,9 +107,9 @@
                                                                     <label class="form-check-label "
                                                                         for="exampleRadios{{ $loop -> iteration }}">
                                                                         @if ($bank -> gambar)
-        
-                                                                        <img src="{{ asset('storage/'.$bank -> gambar) }}" alt=""
-                                                                            height="50px"
+
+                                                                        <img src="{{ asset('storage/'.$bank -> gambar) }}"
+                                                                            alt="" height="50px"
                                                                             style="object-fit: fill;border-radius: 20px;"
                                                                             class="img-target">
                                                                         @else
@@ -131,23 +117,25 @@
                                                                             alt="" height="50px"
                                                                             style="object-fit: fill;border-radius: 20px;"
                                                                             class="img-target">
-        
+
                                                                         @endif
-                                                                        <p id="target-norek">{{ $bank -> norekening }}</p>
+                                                                        <p id="target-norek">{{ $bank -> norekening }}
+                                                                        </p>
                                                                     </label>
                                                                     <input class="form-check-input d-none opt-radio"
                                                                         type="radio" name="id_bank"
                                                                         id="exampleRadios{{ $loop -> iteration }}"
                                                                         value="{{ $bank->id_bank }}">
-        
+
                                                                 </div>
                                                             </div>
                                                         </div>
-        
+
                                                     </div>
                                                     @endforeach
                                                 </div>
                                                 <div class="col-12">
+
                                                     <h6 class="text-black">Keterangan </h6>
                                                     <textarea type="text" name="keterangan" id="inputKeterangan"
                                                         class="form-control border-1"
@@ -250,39 +238,43 @@ const upload = () => {
     const inputNominal = document.querySelector('#inputNominal');
     const nominal = document.querySelector('#nominal');
     inputNominal.addEventListener('keyup', function(e){
-        nominal.innerHTML = formatCurrency(this.value, 'Rp. ');
+    nominal.innerHTML = formatCurrency(this.value, 'Rp. ');
     })
-
+    
     function formatCurrency(angka, prefix){
-        let number_string = angka.replace(/[^,\d]/g,'').toString(),
-            split = number_string.split(','),
-            sisa = split[0].length % 3,
-            rupiah = split[0].substr(0, sisa),
-            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-        if(ribuan){
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    let number_string = angka.replace(/[^,\d]/g,'').toString(),
+    split = number_string.split(','),
+    sisa = split[0].length % 3,
+    rupiah = split[0].substr(0, sisa),
+    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+    
+    if(ribuan){
+    separator = sisa ? '.' : '';
+    rupiah += separator + ribuan.join('.');
     }
-    const inputAtasNama = document.querySelector('#input_atasNama');
+    rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+    return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+    
+    const inputAtasNama = document.querySelector('#inputAtasNama');
     const atasNama = document.querySelector('#atas_nama');
     inputAtasNama.addEventListener('keyup', function(e){
-        atasNama.innerHTML = this.value;
+    atasNama.innerHTML = this.value;
     })
-    const inputNoRekening = document.querySelector('#input_noRekening');
+    
+    const inputNoRekening = document.querySelector('#inputNoRekening');
     const noRekening = document.querySelector('#no_rekening');
     inputNoRekening.addEventListener('keyup', function(e){
-        noRekening.innerHTML = this.value;
+    noRekening.innerHTML = this.value;
     })
     // Mengambil select yang dipilih
     const inputNamaProgram = document.querySelector('#inputNamaProgram');
     const namaProgram = document.querySelector('#nama_program');
     inputNamaProgram.addEventListener('change', function(e){
-        namaProgram.innerHTML = this.value;
+    namaProgram.innerHTML = this.value;
     })
+
+    // show value inputNamaProgram in consolelog
 </script>
 
 <script>
