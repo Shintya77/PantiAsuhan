@@ -49,7 +49,7 @@
         <table id="example2" class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>Id</th>
+              <th>No</th>
               <th>Nama</th>
               <th>Tanggal</th>
               <th>Alamat</th>
