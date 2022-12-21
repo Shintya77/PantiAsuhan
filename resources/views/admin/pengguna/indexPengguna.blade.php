@@ -46,7 +46,6 @@
                     <table id="example2" class="table table-bordered table-hover">
                       <thead>
                       <tr>
-                          <th>No </th>
                           <th>Nama </th>
                           <th>Email</th>
                           <th>Alamat</th>
@@ -57,8 +56,8 @@
                       </thead>
                       <tbody>
                           @foreach ($paginate as $pgn)
+                          @if($pgn->role == "admin")
                           <tr>
-                          <td class="text-black" style="text-align: center" >{{ $loop -> iteration}}</td>
                           <td class="text-black">{{ $pgn->name}}</td>
                           <td class="text-black">{{ $pgn->email }}</td>
                           <td class="text-black">{{ $pgn->alamat}}</td>
@@ -72,6 +71,7 @@
                               <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                           </td>  
+                          @endif
                           @endforeach  
                       </tbody>
                 </table>

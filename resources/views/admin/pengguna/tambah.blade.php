@@ -59,8 +59,7 @@
                             <label for="role">Role </label>
                             <div class="col-md-6">
                               <select name="role" id="role" class="form-control">
-                                <option value="donatur">Donatur</option>
-                                <option value="pemesan">Pemesan</option>
+                                <option value="admin">Admin</option>
                               </select>
 
                                 @error('role')
@@ -69,6 +68,10 @@
                                   </span>
                                 @enderror
                               </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" name="password" class="form-control" id="password" aria-describedby="password" >
                         </div>
                         <a class="btn btn-secondary " href="{{ route('pengguna.index') }}">Kembali</a>
                         <button type="submit" class="btn btn-warning">Submit</button>
