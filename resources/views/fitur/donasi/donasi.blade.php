@@ -138,7 +138,7 @@
             @endphp
             <tr>
               <td style="text-align:center">
-                <class="text-black">{{ $program->id_program}}
+                <class="text-black">{{ $loop -> iteration}}
               </td>
               <td class="text-black" style="text-align: center">{{ $program->nama_program}}</td>
               @if ($program->nama_program=='Donasi Bebas')

@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <div class="testimonial-text text-center rounded p-4">
-                    <p>Terwujudnya pelayanan dan pengasuhan </p>
                     <h5 class="mb-1">Visi</h5>
+                    <p>Terwujudnya Pelayanan dan Penyantunan Perasaskan Islam serta Bersumber pada Alqur’an Surat Al-Ma’un ayat 1-3, Surat Al-Balad ayat 12-16 </p>      
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -28,9 +28,8 @@
                     </div>
                 </div>
                 <div class="testimonial-text text-center rounded p-4">
-                    <p>-	Menerapkan kehidupan sehari-hari  sesuai dengan pedoman hidup islam warga Muhammadiyah </p>
-                    <p>-	Mencetak muslimah berwawasan luas dan beraqidah islam bersumber kepada Al-quran dan Al Hadits </p>
                     <h5 class="mb-1">Misi</h5>
+                    <p>Menyampaikan risalah islam melalui bidang pendidikan </p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -41,8 +40,11 @@
                     </div>
                 </div>
                 <div class="testimonial-text text-center rounded p-4">
-                    <p>“Menjadi kader penerus perjuangan persyarikatan Muhammadiyah”</p>
                     <h5 class="mb-1">Tujuan</h5>
+                    <p>1. Tertanamnya jiwa keislaman yang terwujud dalam pengamalan dan perilaku sehari-hari secara baik</p>
+                    <p>2. Anak asuh dapat menyelesaikan pendidikan sampai dengan SMU/SMK</p>
+                    <p>3. Anak asuh memiliki satu ketrampilan yang bernilai ekonomis sehingga mereka mendapat bekal untuk hidup mandiri</p>
+                    <p>4. Diarahkan dan dibina untuk menjadi kader Muhammadiyah yang nantinya dapat ikut mendukung amal usaha Persyarikatan Muhammadiyah</p>    
                 </div>
             </div>
         </div>

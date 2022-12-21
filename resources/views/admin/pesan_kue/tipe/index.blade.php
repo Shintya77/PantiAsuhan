@@ -26,8 +26,7 @@
             <h3 class="card-title">{{ $title }}</h3>
         </div>
           <div class="card-body">
-                  <a class="btn btn-primary" href="{{ route('tipe.create')}}">Tambah Tipe Produk</a> 
-                    <br><br>
+                  {{-- <a class="btn btn-primary" href="{{ route('tipe.create')}}">Tambah Tipe Produk</a>  --}}
 
                     @if ($message = Session::get('success'))
                       <div class="alert alert-success">
@@ -53,8 +52,8 @@
                                       <form action="{{ route('tipe.destroy',$tipe->id) }}" method="POST">
                                         <a class="btn btn-warning" href="{{ route('tipe.edit',$tipe->id) }}"><i class="fa fa-edit"></i></a>
                                         @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"  onclick="return confirm('Anda yakin akan menghapus data ini?');"><i class="fa fa-trash"></i></button>
+                                        {{-- @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"  onclick="return confirm('Anda yakin akan menghapus data ini?');"><i class="fa fa-trash"></i></button> --}}
                                       </form>
                                     </td>
                                 </tr>

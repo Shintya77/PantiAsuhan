@@ -30,7 +30,7 @@
                             <tbody>
                               @foreach ($paginate as $bnn)
                               <tr>
-                              <td style="text-align:center"><class="text-black">{{$bnn->id_binaan}}</td>
+                              <td style="text-align:center"><class="text-black">{{ $loop -> iteration}}</td>
                               <td class="text-black">{{ $bnn->nama_binaan}}</td>
                               <td class="text-black">{{ $bnn->ttl }}</td>
                               <td style="text-align:center"><class="text-black">{{ $bnn->jekel }}</td>

@@ -52,7 +52,7 @@
                     <img class="img-fluid" src="{{asset('assets')}}/img/kegiatan/parenting.jpeg" alt="">
                     <div class="position-relative p-4 pt-0">
                         <h4 class="mb-3">Parenting</h4>
-                        <p>Kegiatan sosialisasi yang membahas tentang parenting yang diberikan sebagai bekal masa depan santriwati</p>
+                        <p> Kegiatan sosialisasi dengan mengundang bapak ibu santriwati sehingga terjalin komunikasi yg efektif antara santriwati, orang tua dan pengurus panti</p>
                     </div>
                 </div>
             </div>

@@ -73,12 +73,12 @@
                               <button type="submit" class="btn btn-info"><i class="bi bi-lock-fill"></i></button>
                             </form>
       
-                            <form action="{{ route('program.destroy',$pgr->id_program) }}" method="POST">
+                            {{-- <form action="{{ route('program.destroy',$pgr->id_program) }}" method="POST">
       
                                   @csrf
                                   @method('DELETE')
                                   <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                            </form> 
+                            </form>  --}}
                           </td>  
                           @endforeach  
                       </tbody>
