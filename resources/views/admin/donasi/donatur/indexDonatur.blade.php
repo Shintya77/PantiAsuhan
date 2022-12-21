@@ -49,7 +49,7 @@
         <table id="example2" class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>No</th>
+              <th>Id</th>
               <th>Nama</th>
               <th>Tanggal</th>
               <th>Alamat</th>
@@ -58,7 +58,7 @@
               <th>Nama Bank</th>
               <th>No Rekening Donatur</th>
               <th>Keterangan</th>
-              <th>Bukti Transfer</th>
+              {{-- <th>Bukti Transfer</th> --}}
               <th>Status</th>
               <th>Lihat Data</th>
               <th>Aksi</th>
@@ -67,7 +67,7 @@
           <tbody>
             @foreach ($donatur as $donasi)
             <tr>
-              <td class="text-black">{{ $loop -> iteration}}</td>
+              <td class="text-black">{{ $donasi->id_donatur}}</td>
               <td class="text-black">{{ $donasi->name}}</td>
               <td class="text-black">{{ $donasi->tgl_donasi}}</td>
               <td class="text-black">{{ $donasi->alamat }}</td>
@@ -77,9 +77,9 @@
               <td class="text-black">{{ $donasi->no_rekening }}</td>
               {{-- //TODO keterangan tidak muncul --}}
               <td class="text-black">{{ $donasi->keterangan }}</td>
-              <td>
+              {{-- <td>
                 <img width="100px" height="100px" src="{{asset('storage/'.$donasi -> bukti_tf)}}">
-              </td>
+              </td> --}}
               <td class="text-black">{{ $donasi->status }}</td>
               <td>
                 <a class="btn btn-info" href="{{ route('donatur.show',$donasi->id_donatur) }}"><i
