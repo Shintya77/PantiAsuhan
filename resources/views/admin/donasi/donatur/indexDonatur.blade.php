@@ -49,7 +49,7 @@
         <table id="example2" class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>Id</th>
+              <th>No</th>
               <th>Nama</th>
               <th>Tanggal</th>
               <th>Alamat</th>
@@ -67,7 +67,7 @@
           <tbody>
             @foreach ($donatur as $donasi)
             <tr>
-              <td class="text-black">{{ $donasi->id_donatur}}</td>
+              <td class="text-black">{{ $loop -> iteration}}</td>
               <td class="text-black">{{ $donasi->name}}</td>
               <td class="text-black">{{ $donasi->tgl_donasi}}</td>
               <td class="text-black">{{ $donasi->alamat }}</td>
